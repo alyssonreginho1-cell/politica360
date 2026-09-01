@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política 360º — Eleições 2026</title>
+<meta name="description" content="Política 360º: acompanhe os candidatos à Presidência 2026 com notícias reais, escritas com a fonte original identificada, comparação de propostas e fontes neutras como TSE, Aos Fatos e Jota.">
+<meta name="keywords" content="política 360, eleições 2026, candidatos presidência, checagem de fatos, TSE, propostas dos candidatos">
+<meta property="og:title" content="Política 360º — Eleições 2026">
+<meta property="og:description" content="Notícias reais e verificadas sobre os candidatos à Presidência 2026, com a fonte original sempre identificada.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-card:#FFFFFF;
+    --bg-card-2:#E7F7F6;
+    --navy:#0B2038;
+    --tiffany:#0ABAB5;
+    --tiffany-deep:#068C88;
+    --tiffany-tint:rgba(10,186,181,0.10);
+    --ink:#0B2038;
+    --ink-soft:#5C7382;
+    --line:#DCEBEA;
+    --verified:#3FD1CC;
+    --amber:#FBEFDD;--amber-ink:#8A5E13;
+    --c1:#0ABAB5;--c2:#D9A441;--c3:#E0836F;--c4:#9C8CD9;--c5:#6FB08A;
+    --shadow:0 1px 3px rgba(11,32,56,0.06);
+    --shadow-hover:0 10px 22px rgba(11,32,56,0.10);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;line-height:1.5;
+    -webkit-font-smoothing:antialiased;padding-bottom:78px;
+  }
+  .app{max-width:760px;margin:0 auto;}
+
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--navy);
+    border-bottom:1px solid var(--line);padding:14px 18px 12px;
+    width:100%;
+  }
+  .topbar-row, .chip-scroll{max-width:760px;width:100%;margin-left:auto;margin-right:auto;}
+  .topbar-row{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:9px;}
+  .brand-mark{width:34px;height:30px;border-radius:8px;background:var(--tiffany);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-weight:700;font-size:10.5px;color:var(--navy);}
+  .brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:15px;letter-spacing:-.01em;color:#EAF6F5;}
+  .live-pill{display:flex;align-items:center;gap:6px;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--verified);
+    border:1px solid rgba(63,209,204,0.35);background:rgba(63,209,204,0.08);
+    padding:5px 10px;border-radius:20px;}
+  .live-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--verified);
+    animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  .chip-scroll{display:flex;gap:8px;overflow-x:auto;margin-top:14px;padding-bottom:2px;scrollbar-width:none;}
+  .chip-scroll::-webkit-scrollbar{display:none;}
+  .chip{flex:0 0 auto;display:flex;align-items:center;gap:7px;background:var(--bg-card);
+    border:1px solid var(--line);padding:7px 13px 7px 7px;border-radius:20px;
+    font-size:12.5px;font-weight:500;color:var(--ink-soft);cursor:pointer;
+    transition:border-color .15s ease, color .15s ease;white-space:nowrap;}
+  .chip .dot{width:9px;height:9px;border-radius:50%;}
+  .chip.active{border-color:var(--tiffany);color:var(--ink);background:var(--bg-card-2);}
+
+  .estrip{display:flex;margin:16px 18px 4px;
+    background:linear-gradient(135deg,var(--bg-card) 0%,var(--bg-card-2) 100%);
+    border:1px solid var(--line);border-radius:14px;padding:14px 16px;}
+  .estrip .e{flex:1;text-align:center;border-right:1px solid var(--line);}
+  .estrip .e:last-child{border-right:none;}
+  .estrip .num{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--tiffany);font-weight:500;}
+  .estrip .lbl{font-size:9px;color:var(--ink-soft);margin-top:2px;line-height:1.3;}
+
+  section{padding:0 18px;margin-top:26px;}
+  .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px;flex-wrap:wrap;}
+  .section-title h2{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0;}
+  .verified-tag{display:flex;align-items:center;gap:5px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--tiffany-deep);
+    background:var(--tiffany-tint);padding:4px 9px;border-radius:20px;white-space:nowrap;}
+
+  /* Feed cards */
+  .feed-card{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 16px 14px;margin-bottom:12px;text-decoration:none;color:inherit;display:block;
+    box-shadow:var(--shadow);cursor:pointer;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+  .feed-card:hover{border-color:var(--tiffany);transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+
+  .empty-state{
+    display:none;
+    text-align:center;
+    padding:40px 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+    border:1px dashed var(--line);
+    border-radius:14px;
+    background:var(--bg-card);
+  }
+
+  /* Article reader view */
+  .article-view{display:none;}
+  .back-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:none;border:1px solid var(--line);border-radius:20px;
+    color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:500;
+    padding:7px 14px;cursor:pointer;margin-bottom:18px;
+  }
+  .back-btn:hover{border-color:var(--tiffany);color:var(--tiffany);}
+  .article-header{
+    display:flex;align-items:center;gap:8px;margin-bottom:10px;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  }
+  .article-source{color:var(--tiffany);font-weight:500;}
+  .article-source::before{content:"● ";}
+  .article-date{color:var(--ink-soft);}
+  .article-title{
+    font-family:'Fraunces',serif;font-weight:700;font-size:22px;line-height:1.3;
+    margin:0 0 18px;
+  }
+  .article-body p{font-size:15px;color:var(--ink);line-height:1.65;margin:0 0 14px;}
+  .article-original-link{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
+    color:var(--ink-soft);text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;
+  }
+  .article-original-link:hover{color:var(--tiffany);border-color:var(--tiffany);}
+  .fc-top{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+  .fc-avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--navy);flex-shrink:0;}
+  .fc-cand{font-size:12.5px;font-weight:600;color:var(--ink);}
+  .fc-dot{width:3px;height:3px;border-radius:50%;background:var(--ink-soft);}
+  .fc-time{font-size:11.5px;color:var(--ink-soft);}
+  .fc-headline{font-size:15px;font-weight:500;line-height:1.4;margin:0 0 10px;}
+  .fc-bottom{display:flex;align-items:center;justify-content:space-between;}
+  .fc-source{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--tiffany-deep);}
+  .fc-link{font-size:11px;color:var(--ink-soft);}
+
+  .verify-note{display:flex;gap:10px;background:var(--bg-card);border:1px dashed var(--line);
+    border-radius:12px;padding:14px 16px;margin:20px 18px 0;font-size:12.5px;color:var(--ink-soft);}
+  .verify-note b{color:var(--tiffany);}
+
+  /* Candidate cards (Comparar tab) */
+  .cand-grid{display:flex;flex-direction:column;gap:10px;}
+  .candidate{background:var(--bg-card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);}
+  .cand-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .cand-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);flex-shrink:0;}
+  .cand-name{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;}
+  .cand-party{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);}
+  .status-pill{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:3px 9px;border-radius:20px;
+    text-transform:uppercase;letter-spacing:.03em;display:inline-block;margin-bottom:8px;}
+  .status-confirmado{background:var(--tiffany-tint);color:var(--tiffany);}
+  .status-indefinido{background:rgba(217,164,65,0.12);color:var(--c2);}
+  .status-lider{background:var(--tiffany);color:var(--navy);}
+  .cand-body p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+  /* Comparison table */
+  .compare-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg-card);margin-top:22px;box-shadow:var(--shadow);}
+  .compare-table{border-collapse:collapse;width:100%;min-width:1400px;font-size:13px;}
+  .compare-table thead th{background:var(--bg-card-2);color:var(--ink);text-align:left;padding:12px 14px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:13px;line-height:1.3;border-bottom:1px solid var(--line);}
+  .compare-table thead th span{display:block;font-family:'JetBrains Mono',monospace;font-weight:500;
+    font-size:10px;color:var(--tiffany);text-transform:uppercase;letter-spacing:.04em;margin-top:3px;}
+  .compare-table td{padding:12px 14px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top;}
+  .compare-table td.theme-col{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;
+    letter-spacing:.04em;color:var(--tiffany);background:rgba(10,186,181,0.06);font-weight:500;white-space:nowrap;}
+  .compare-table td.empty-cell{color:var(--line);text-align:center;font-family:'JetBrains Mono',monospace;}
+  .compare-note{font-size:12px;color:var(--ink-soft);margin-top:10px;}
+
+  /* Comments */
+  .comments-box{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);}
+  .comments-intro{font-size:14px;color:var(--ink-soft);margin:0 0 18px;}
+  .login-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+  .login-btn{display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid var(--line);
+    border-radius:9px;background:var(--bg-card-2);font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;
+    color:var(--ink);cursor:pointer;transition:border-color .15s ease;}
+  .login-btn:hover{border-color:var(--tiffany);}
+  .comment-form-locked{display:flex;align-items:center;gap:8px;padding:14px;border:1px dashed var(--line);
+    border-radius:9px;background:var(--tiffany-tint);color:var(--tiffany);font-size:13px;
+    font-family:'JetBrains Mono',monospace;}
+
+  /* Sources */
+  .sources-list{display:flex;flex-direction:column;gap:8px;}
+  .src-row{display:flex;align-items:center;justify-content:space-between;background:var(--bg-card);
+    border:1px solid var(--line);border-radius:10px;padding:13px 15px;text-decoration:none;color:inherit;box-shadow:var(--shadow);}
+  .src-row .name{font-size:13.5px;font-weight:500;}
+  .src-row .desc{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+  .src-row .arrow{color:var(--tiffany);font-family:'JetBrains Mono',monospace;font-size:13px;}
+
+  .notice{background:var(--tiffany-tint);border:1px solid rgba(10,186,181,0.3);border-left:3px solid var(--tiffany);
+    border-radius:6px;padding:14px 16px;margin:0 0 22px;font-size:13px;color:var(--ink-soft);}
+  .notice b{color:var(--tiffany);}
+
+  footer.note{margin:30px 18px 0;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+
+  /* Bottom nav */
+  .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--navy);
+    border-top:1px solid var(--line);display:flex;width:100%;}
+  .bottomnav-inner{display:flex;max-width:760px;margin:0 auto;width:100%;}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:11px 0 9px;
+    color:#7E97A0;text-decoration:none;font-size:10px;font-weight:500;background:none;border:none;
+    font-family:'Inter',sans-serif;cursor:pointer;}
+  .nav-item.active{color:var(--tiffany);}
+  .nav-item svg{width:20px;height:20px;}
+
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  @media (max-width:400px){.fc-headline{font-size:14px;}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z83BM7FMS3');
+</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-row">
+      <div class="brand">
+        <div class="brand-mark">360</div>
+        <div class="brand-name">Política 360º</div>
+      </div>
+      <div class="live-pill">Campanha no ar</div>
+    </div>
+    <div class="chip-scroll" id="chipScroll">
+      <div class="chip all active" data-filter="all">Todos</div>
+      <div class="chip" data-filter="lula"><span class="dot" style="background:var(--c1)"></span>Lula</div>
+      <div class="chip" data-filter="flavio"><span class="dot" style="background:var(--c2)"></span>Flávio</div>
+      <div class="chip" data-filter="zema"><span class="dot" style="background:var(--c3)"></span>Zema</div>
+      <div class="chip" data-filter="caiado"><span class="dot" style="background:var(--c4)"></span>Caiado</div>
+      <div class="chip" data-filter="renan"><span class="dot" style="background:var(--c5)"></span>Renan Santos</div>
+      <div class="chip" data-filter="dc"><span class="dot" style="background:#5C7A8A"></span>Aldo Rebelo / Barbosa</div>
+      <div class="chip" data-filter="cury"><span class="dot" style="background:#5C7A8A"></span>Augusto Cury</div>
+      <div class="chip" data-filter="daciolo"><span class="dot" style="background:#5C7A8A"></span>Cabo Daciolo</div>
+      <div class="chip" data-filter="edmilson"><span class="dot" style="background:#5C7A8A"></span>Edmilson Costa</div>
+      <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
+      <div class="chip" data-filter="pimenta"><span class="dot" style="background:#5C7A8A"></span>Rui Costa Pimenta</div>
+      <div class="chip" data-filter="samara"><span class="dot" style="background:#5C7A8A"></span>Samara Martins</div>
+    </div>
+  </div><!-- /topbar -->
+
+  <div class="app">
+
+  <div class="estrip">
+    <div class="e"><div class="num">Hoje, 20h</div><div class="lbl">debate na Band</div></div>
+    <div class="e"><div class="num">28 ago</div><div class="lbl">propaganda no rádio/TV</div></div>
+    <div class="e"><div class="num">4 out</div><div class="lbl">1º turno</div></div>
+    <div class="e"><div class="num">11</div><div class="lbl">candidaturas registradas</div></div>
+  </div>
+
+  <!-- FEED TAB -->
+  <div class="tab-panel active" id="tab-feed">
+    <section id="feed" style="margin-top:24px;">
+      <div class="section-title">
+        <h2>Últimas</h2>
+        <div class="verified-tag">✓ toda notícia linka a fonte</div>
+      </div>
+
+      <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="debate-hoje" role="button" tabindex="0" onclick="openArticle('debate-hoje')" onkeypress="if(event.key=='Enter')openArticle('debate-hoje')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">TV</div><span class="fc-cand">Debate presidencial</span><span class="fc-dot"></span><span class="fc-time">hoje, 20h</span></div>
+        <p class="fc-headline">Primeiro debate presidencial vai ao ar hoje às 20h, na Band; Lula e Flávio sinalizam que não devem participar.</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="caiado" data-id="caiado-kassab" role="button" tabindex="0" onclick="openArticle('caiado-kassab')" onkeypress="if(event.key=='Enter')openArticle('caiado-kassab')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c4)">RC</div><span class="fc-cand">Ronaldo Caiado</span><span class="fc-dot"></span><span class="fc-time">21 ago</span></div>
+        <p class="fc-headline">Com Gilberto Kassab como vice, Caiado aposta em se apresentar como o único nome capaz de derrotar Lula num eventual segundo turno.</p>
+        <div class="fc-bottom"><span class="fc-source">● Terra</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="flavio-urnas" role="button" tabindex="0" onclick="openArticle('flavio-urnas')" onkeypress="if(event.key=='Enter')openArticle('flavio-urnas')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">21 ago</span></div>
+        <p class="fc-headline">Em entrevista à TV Band, Flávio afirmou que vai respeitar o resultado das urnas, diferente da postura do pai após a derrota em 2022.</p>
+        <div class="fc-bottom"><span class="fc-source">● Terra</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="flavio-tse" role="button" tabindex="0" onclick="openArticle('flavio-tse')" onkeypress="if(event.key=='Enter')openArticle('flavio-tse')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">20 ago</span></div>
+        <p class="fc-headline">Candidatura de Flávio Bolsonaro é oficialmente registrada no TSE, tendo Alfredo Gaspar como vice na chapa.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="tv-tempo" role="button" tabindex="0" onclick="openArticle('tv-tempo')" onkeypress="if(event.key=='Enter')openArticle('tv-tempo')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">TV</div><span class="fc-cand">Propaganda eleitoral</span><span class="fc-dot"></span><span class="fc-time">18 ago</span></div>
+        <p class="fc-headline">Lula deve ter o maior tempo de propaganda gratuita no rádio e na TV entre os presidenciáveis, cerca de 1 minuto a mais que Flávio Bolsonaro.</p>
+        <div class="fc-bottom"><span class="fc-source">● TVT News</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="tse-11" role="button" tabindex="0" onclick="openArticle('tse-11')" onkeypress="if(event.key=='Enter')openArticle('tse-11')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">17 ago</span></div>
+        <p class="fc-headline">11 candidaturas à Presidência já foram registradas oficialmente; a propaganda eleitoral gratuita no rádio e TV começa dia 28 de agosto.</p>
+        <div class="fc-bottom"><span class="fc-source">● Canal Rural</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="campanha-lancamento" role="button" tabindex="0" onclick="openArticle('campanha-lancamento')" onkeypress="if(event.key=='Enter')openArticle('campanha-lancamento')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">360</div><span class="fc-cand">Cobertura geral</span><span class="fc-dot"></span><span class="fc-time">domingo, 16 ago</span></div>
+        <p class="fc-headline">Cinco principais presidenciáveis lançam campanha oficial neste domingo, cada um em sua cidade de origem política.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="tse-prazo" role="button" tabindex="0" onclick="openArticle('tse-prazo')" onkeypress="if(event.key=='Enter')openArticle('tse-prazo')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">15 ago</span></div>
+        <p class="fc-headline">Prazo para os partidos formalizarem o registro das candidaturas termina hoje, véspera do início da propaganda eleitoral.</p>
+        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="kassab-zero" role="button" tabindex="0" onclick="openArticle('kassab-zero')" onkeypress="if(event.key=='Enter')openArticle('kassab-zero')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
+        <p class="fc-headline">Presidente do PSD, Gilberto Kassab, avalia publicamente que as chances de vitória de Flávio são nulas.</p>
+        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="flavio-pt-boato" role="button" tabindex="0" onclick="openArticle('flavio-pt-boato')" onkeypress="if(event.key=='Enter')openArticle('flavio-pt-boato')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
+        <p class="fc-headline">Candidato nega boatos de que teria recebido convite para se filiar ao PT durante desentendimento com o Missão.</p>
+        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="renan" data-id="renan-pl-embate" role="button" tabindex="0" onclick="openArticle('renan-pl-embate')" onkeypress="if(event.key=='Enter')openArticle('renan-pl-embate')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
+        <p class="fc-headline">PL rebate declarações do Missão em bate-boca de bastidores às vésperas do início oficial da campanha.</p>
+        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="renan" data-id="renan-largo-sf" role="button" tabindex="0" onclick="openArticle('renan-largo-sf')" onkeypress="if(event.key=='Enter')openArticle('renan-largo-sf')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
+        <p class="fc-headline">Campanha do Missão começa no Largo São Francisco, em São Paulo, onde o candidato iniciou sua militância estudantil.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="zema" data-id="zema-montes-claros" role="button" tabindex="0" onclick="openArticle('zema-montes-claros')" onkeypress="if(event.key=='Enter')openArticle('zema-montes-claros')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">RZ</div><span class="fc-cand">Romeu Zema</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
+        <p class="fc-headline">Zema lança candidatura em Montes Claros (MG), cidade onde começou a carreira política, sem o vice na chapa presente.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="caiado" data-id="caiado-entorno-df" role="button" tabindex="0" onclick="openArticle('caiado-entorno-df')" onkeypress="if(event.key=='Enter')openArticle('caiado-entorno-df')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c4)">RC</div><span class="fc-cand">Ronaldo Caiado</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
+        <p class="fc-headline">Em vez de um ato único, Caiado percorre cidades do Entorno do DF no primeiro dia oficial de campanha.</p>
+        <div class="fc-bottom"><span class="fc-source">● O Anhanguera</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="lula" data-id="lula-vila-euclides" role="button" tabindex="0" onclick="openArticle('lula-vila-euclides')" onkeypress="if(event.key=='Enter')openArticle('lula-vila-euclides')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">LU</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
+        <p class="fc-headline">Lula abre campanha à reeleição na Vila Euclides, em São Bernardo do Campo, berço político do petista.</p>
+        <div class="fc-bottom"><span class="fc-source">● O Anhanguera</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="lula" data-id="lula-pec-seguranca" role="button" tabindex="0" onclick="openArticle('lula-pec-seguranca')" onkeypress="if(event.key=='Enter')openArticle('lula-pec-seguranca')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">LU</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
+        <p class="fc-headline">Após encontro com Lula, Alcolumbre libera pauta da PEC da Segurança e do fim da escala de trabalho 6x1.</p>
+        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="amcham-retaliacao" role="button" tabindex="0" onclick="openArticle('amcham-retaliacao')" onkeypress="if(event.key=='Enter')openArticle('amcham-retaliacao')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">EC</div><span class="fc-cand">Economia &amp; eleição</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
+        <p class="fc-headline">Amcham alerta para riscos de retaliação comercial dos EUA como pano de fundo do ano eleitoral.</p>
+        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      </div><!-- /feedList -->
+
+      <div id="articleView" class="article-view"></div>
+    </section>
+
+    <div class="verify-note" id="verifyNote">
+      <span>🔎</span>
+      <span><b>Sem fake news, por princípio:</b> cada notícia é escrita com base numa reportagem real, com a fonte original identificada no topo do texto. Nenhuma manchete aqui é inventada.</span>
+    </div>
+  </div>
+
+  <!-- COMPARAR TAB -->
+  <div class="tab-panel" id="tab-comparar">
+    <section style="margin-top:24px;">
+      <div class="notice"><b>Sobre estes dados —</b> os planos de governo completos só viram obrigatórios após o registro das candidaturas. As propostas abaixo vêm de discursos e entrevistas de pré-campanha.</div>
+
+      <div class="section-title"><h2>13 pré-candidatos</h2></div>
+      <div class="cand-grid">
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div></div><span class="status-pill status-lider">Lidera pesquisas</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div></div><span class="status-pill status-confirmado">Indicado por Jair Bolsonaro</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c3)">RZ</div><div><div class="cand-name">Romeu Zema</div><div class="cand-party">Novo · Ex-governador de Minas Gerais</div></div></div><span class="status-pill status-confirmado">Deixou o governo em abril</span><div class="cand-body"><p>Agenda liberal: fim do "Custo Brasil" em quatro anos e privatização de estatais federais, incluindo Petrobras, Caixa e Banco do Brasil.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">DC</div><div><div class="cand-name">Aldo Rebelo ou Joaquim Barbosa</div><div class="cand-party">DC</div></div></div><span class="status-pill status-indefinido">Disputa interna no partido</span><div class="cand-body"><p>A definição entre os dois nomes deve passar pela Justiça Eleitoral.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">AC</div><div><div class="cand-name">Augusto Cury</div><div class="cand-party">Avante</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Psiquiatra e escritor best-seller, com discurso antipolarização.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">CD</div><div><div class="cand-name">Cabo Daciolo</div><div class="cand-party">Mobiliza</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Bombeiro da reserva, pastor evangélico e ex-deputado federal pelo Rio de Janeiro.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">EC</div><div><div class="cand-name">Edmilson Costa</div><div class="cand-party">PCB</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Secretário-geral do PCB e economista, defende estatização do sistema financeiro.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">HD</div><div><div class="cand-name">Hertz Dias</div><div class="cand-party">PSTU</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Professor da rede pública, ativista do movimento negro e do hip-hop.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">RP</div><div><div class="cand-name">Rui Costa Pimenta</div><div class="cand-party">PCO</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Presidente do PCO desde 1995, figura recorrente das disputas presidenciais.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">SM</div><div><div class="cand-name">Samara Martins</div><div class="cand-party">Unidade Popular</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Dentista e vice-presidente nacional do UP, veio dos movimentos estudantis.</p></div></div>
+
+      </div>
+
+      <div class="section-title" style="margin-top:28px;"><h2>Onde os candidatos divergem</h2></div>
+      <div class="compare-scroll">
+        <table class="compare-table">
+          <thead><tr>
+            <th class="theme-col">Tema</th>
+            <th>Lula<br><span>PT</span></th>
+            <th>Flávio<br><span>PL</span></th>
+            <th>Zema<br><span>Novo</span></th>
+            <th>Caiado<br><span>PSD</span></th>
+            <th>Renan Santos<br><span>Missão</span></th>
+            <th>Aldo Rebelo / Barbosa<br><span>DC</span></th>
+            <th>Augusto Cury<br><span>Avante</span></th>
+            <th>Cabo Daciolo<br><span>Mobiliza</span></th>
+            <th>Edmilson Costa<br><span>PCB</span></th>
+            <th>Hertz Dias<br><span>PSTU</span></th>
+            <th>Rui Costa Pimenta<br><span>PCO</span></th>
+            <th>Samara Martins<br><span>UP</span></th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="theme-col">Economia</td><td>Mais investimento público</td><td>Menos impostos, menos Estado</td><td>Privatizações, Estado menor</td><td>Equilíbrio fiscal</td><td>Reforma administrativa, fusão de municípios</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Estatização do sistema financeiro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Projeto socialista</td></tr>
+            <tr><td class="theme-col">Impostos</td><td>Progressividade tributária</td><td>Tendência de redução</td><td>Simplificação e redução</td><td>Simplificação tributária</td><td>Forte corte de impostos</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Programas sociais</td><td>Ampliação</td><td>Manutenção, foco em eficiência</td><td>Mais focalizados</td><td>Continuidade com controle</td><td>Fim do reajuste automático ao salário mínimo</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Segurança</td><td>Integração União-estados</td><td>Penas mais duras</td><td>Gestão por metas</td><td>Bandeira principal</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Privatizações</td><td>Cautela, empresas estratégicas</td><td>Favorável</td><td>Bastante favorável</td><td>Favorável em alguns setores</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Contra, defende estatização</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Relações internacionais</td><td>Aproximação BRICS/América do Sul</td><td>Aproximação EUA/ocidente</td><td>Liberalismo econômico</td><td>Perfil pragmático, agro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note">Células em branco (—) indicam que o candidato ainda não detalhou publicamente uma posição nesse tema. Síntese de posicionamentos públicos, sujeita a mudança. Para o texto completo, use as fontes na aba "Fontes".</p>
+    </section>
+  </div>
+
+  <!-- COMENTÁRIOS TAB -->
+  <div class="tab-panel" id="tab-comentarios">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Comentários</h2></div>
+      <div class="comments-box">
+        <p class="comments-intro">Entre com sua conta pra deixar um comentário. Pedimos login pra manter a discussão civilizada e identificável.</p>
+        <div class="login-row">
+          <button class="login-btn" type="button">
+            <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.98A9 9 0 0 0 0 9c0 1.45.35 2.83.98 4.03z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .98 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
+            Entrar com Google
+          </button>
+          <button class="login-btn" type="button">
+            <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><rect x="0" y="2" width="8.4" height="14" fill="#0364B8"/><rect x="9" y="2" width="9" height="6.4" fill="#0F78D4"/><rect x="9" y="9" width="9" height="6.6" fill="#28A8EA"/></svg>
+            Entrar com Outlook
+          </button>
+        </div>
+        <div class="comment-form-locked"><span>🔒 Faça login para escrever um comentário</span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FONTES TAB -->
+  <div class="tab-panel" id="tab-fontes">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Fontes que alimentam o site</h2></div>
+      <div class="sources-list">
+        <a class="src-row" href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener"><div><div class="name">DivulgaCandContas — TSE</div><div class="desc">Fonte oficial dos planos de governo</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.tse.jus.br/eleicoes/eleicoes-2026" target="_blank" rel="noopener"><div><div class="name">TSE — Eleições 2026</div><div class="desc">Calendário e regras oficiais</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.jota.info/" target="_blank" rel="noopener"><div><div class="name">Jota</div><div class="desc">Comparações técnicas de propostas</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de declarações</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de espectros variados</div></div><span class="arrow">↗</span></a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 23 de agosto de 2026.</footer>
+
+  <div class="bottomnav">
+    <div class="bottomnav-inner">
+    <button class="nav-item active" data-tab="feed">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
+      Feed
+    </button>
+    <button class="nav-item" data-tab="comparar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      Comparar
+    </button>
+    <button class="nav-item" data-tab="comentarios">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-9 8.36A8.5 8.5 0 013 11.5 8.38 8.38 0 0111.5 3a8.5 8.5 0 019.5 8.5z"/></svg>
+      Comentários
+    </button>
+    <button class="nav-item" data-tab="fontes">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
+      Fontes
+    </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const articles = {
+    "debate-hoje": {
+      source: "Metrópoles", date: "hoje, 20h", url: "https://www.metropoles.com/sao-paulo/band-promove-1o-debate-presidencial-neste-domingo-veja-quem-participa",
+      title: "Primeiro debate presidencial vai ao ar hoje às 20h, na Band",
+      body: [
+        "O primeiro debate entre os candidatos à Presidência desta eleição vai ao ar hoje, domingo, às 20h, direto dos estúdios da Band em São Paulo, com transmissão simultânea pela TV Cultura, TV Gazeta e Jovem Pan.",
+        "A expectativa é que Lula e Flávio Bolsonaro não compareçam — ambos sinalizaram ausência, e a equipe de Flávio adotou a postura de só participar de debates em que o presidente também estiver presente.",
+        "Isso deve deixar o confronto concentrado entre Ronaldo Caiado, Romeu Zema, Renan Santos e Augusto Cury, os quatro nomes que confirmaram presença."
+      ]
+    },
+    "caiado-kassab": {
+      source: "Terra", date: "21 ago", url: "https://www.terra.com.br/noticias/quem-sao-os-candidatos-na-eleicao-a-presidente-em-2026,904369ef6639057ab819068600f88c2aexqm3dgb.html",
+      title: "Com Kassab de vice, Caiado mira o segundo turno contra Lula",
+      body: [
+        "Ronaldo Caiado (PSD) tem como vice em sua chapa o ex-prefeito de São Paulo Gilberto Kassab, e concentra a campanha em se apresentar como a alternativa capaz de vencer Lula num eventual segundo turno.",
+        "Ao lançar a candidatura, o ex-governador de Goiás criticou publicamente tanto o PT quanto o PL, argumentando que boa parte do eleitorado rejeita as duas opções.",
+        "Formado em medicina, Caiado, de 76 anos, deixou o União Brasil e se filiou ao PSD em março, na sua segunda tentativa à Presidência — a primeira foi em 1989."
+      ]
+    },
+    "flavio-urnas": {
+      source: "Terra", date: "21 ago", url: "https://www.terra.com.br/noticias/quem-sao-os-candidatos-na-eleicao-a-presidente-em-2026,904369ef6639057ab819068600f88c2aexqm3dgb.html",
+      title: "Flávio promete respeitar resultado das urnas",
+      body: [
+        "Em entrevista à TV Band, o senador Flávio Bolsonaro (PL) afirmou que vai acatar o resultado da eleição, independentemente de quem vença.",
+        "A declaração é lida como um contraste direto com a postura do pai, o ex-presidente Jair Bolsonaro, que contestou a derrota nas urnas em 2022."
+      ]
+    },
+    "flavio-tse": {
+      source: "Gazeta do Povo", date: "20 ago", url: "https://www.gazetadopovo.com.br/eleicoes/2026/candidatos-presidencia-comecam-campanhas-domingo-redutos-eleitorais/",
+      title: "Candidatura de Flávio é registrada oficialmente no TSE",
+      body: [
+        "A chapa de Flávio Bolsonaro (PL) para a Presidência foi formalmente registrada na Justiça Eleitoral, tendo Alfredo Gaspar como vice.",
+        "O registro confirma a candidatura dentro do prazo oficial, encerrado em 15 de agosto, e o habilita a disputar o pleito de outubro."
+      ]
+    },
+    "tv-tempo": {
+      source: "TVT News", date: "18 ago", url: "https://tvtnews.com.br/conheca-os-candidatos-a-presidencia-oficializados/",
+      title: "Lula deve ter o maior tempo de propaganda no rádio e TV",
+      body: [
+        "Com base na representatividade dos partidos na Câmara, Lula (PT) deve concentrar a maior fatia do horário eleitoral gratuito entre os presidenciáveis, com cerca de 5 minutos e 32 segundos por bloco.",
+        "Flávio Bolsonaro (PL) vem logo atrás, com aproximadamente um minuto a menos que o petista.",
+        "Os tempos definitivos só serão fechados após a análise final dos registros de candidatura pelo TSE, mas a tabela de representatividade já permite essa estimativa."
+      ]
+    },
+    "tse-11": {
+      source: "Canal Rural", date: "17 ago", url: "https://www.canalrural.com.br/politica/eleicoes/candidatos-a-presidencia-em-2026-veja-a-lista-completa-e-o-calendario-eleitoral/",
+      title: "11 candidaturas à Presidência já foram registradas",
+      body: [
+        "Até o fechamento do prazo, 11 candidaturas à Presidência da República haviam sido registradas na Justiça Eleitoral.",
+        "A partir de 16 de agosto começou oficialmente o período de propaganda eleitoral nas ruas e na internet; a propaganda gratuita no rádio e na TV vai ao ar entre 28 de agosto e 1º de outubro.",
+        "O primeiro turno está marcado para 4 de outubro, com votação das 8h às 17h no horário de Brasília."
+      ]
+    },
+    "campanha-lancamento": {
+      source: "Jornal de Brasília", date: "domingo, 16 ago", url: "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-campanha-eleitoral-comeca-no-domingo-com-atos-dos-presidenciaveis/",
+      title: "Cinco presidenciáveis lançam campanha em seus redutos políticos",
+      body: [
+        "No domingo de abertura oficial da campanha, os cinco principais nomes na disputa presidencial escolheram fazer o primeiro ato em cidades ligadas à própria trajetória política.",
+        "A escolha simbólica reforça a narrativa de origem que cada candidato quer construir logo no início da corrida eleitoral."
+      ]
+    },
+    "tse-prazo": {
+      source: "TSE — fonte oficial", date: "15 ago", url: "https://www.tse.jus.br/eleicoes/eleicoes-2026",
+      title: "TSE encerra prazo de registro de candidaturas",
+      body: [
+        "O Tribunal Superior Eleitoral fechou, em 15 de agosto, o prazo para os partidos formalizarem o registro de suas candidaturas à Presidência.",
+        "A data marcou a véspera do início oficial da propaganda eleitoral, liberada a partir do dia seguinte."
+      ]
+    },
+    "kassab-zero": {
+      source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
+      title: "Kassab avaliou que chance de Flávio vencer era nula",
+      body: [
+        "Antes de se tornar vice na chapa de Ronaldo Caiado, o presidente do PSD, Gilberto Kassab, chegou a declarar publicamente que via como nulas as chances de vitória de Flávio Bolsonaro na disputa.",
+        "A fala evidenciou a disputa também dentro do campo de centro-direita, que seguiu fragmentado entre diferentes pré-candidaturas até as convenções."
+      ]
+    },
+    "flavio-pt-boato": {
+      source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
+      title: "Flávio negou boato de filiação ao PT",
+      body: [
+        "Flávio Bolsonaro negou publicamente boatos de que teria recebido um convite para se filiar ao PT, rumor que circulou durante um desentendimento envolvendo a campanha do Missão.",
+        "O caso gerou um breve racha de bastidores entre PL e Missão, partido de Renan Santos."
+      ]
+    },
+    "renan-pl-embate": {
+      source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
+      title: "PL e Missão trocaram farpas às vésperas da campanha",
+      body: [
+        "Um desentendimento de bastidores entre o PL e o Missão, partido de Renan Santos, ganhou repercussão pouco antes do início oficial da campanha eleitoral.",
+        "O episódio reacendeu a disputa entre os dois grupos, que competem por parte do mesmo eleitorado mais à direita."
+      ]
+    },
+    "renan-largo-sf": {
+      source: "Jornal de Brasília", date: "16 ago", url: "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-campanha-eleitoral-comeca-no-domingo-com-atos-dos-presidenciaveis/",
+      title: "Missão iniciou campanha no Largo São Francisco",
+      body: [
+        "Renan Santos, do Missão, escolheu o Largo São Francisco, em São Paulo, para dar início à campanha — local onde começou sua militância como estudante.",
+        "A escolha reforça a narrativa de origem do candidato, que também foi um dos organizadores dos protestos pelo impeachment de Dilma Rousseff em 2015 e 2016."
+      ]
+    },
+    "zema-montes-claros": {
+      source: "Jornal de Brasília", date: "16 ago", url: "https://jornaldebrasilia.com.br/noticias/politica-e-poder/eleicoes-2026-campanha-eleitoral-comeca-no-domingo-com-atos-dos-presidenciaveis/",
+      title: "Zema lançou candidatura em Montes Claros",
+      body: [
+        "Romeu Zema (Novo) escolheu Montes Claros, no norte de Minas Gerais, onde começou sua carreira política, para o primeiro ato oficial de campanha.",
+        "O vice em sua chapa não esteve presente na cerimônia de lançamento.",
+        "Zema deixou o governo de Minas Gerais em abril para se dedicar à candidatura presidencial, após ter sido reeleito em 2022 com 56% dos votos."
+      ]
+    },
+    "caiado-entorno-df": {
+      source: "O Anhanguera", date: "16 ago", url: "https://www.oanhanguera.com.br/noticias/27827-lula-flavio-zema-caiado-e-renan-iniciam-campanha",
+      title: "Caiado percorreu o Entorno do DF no 1º dia de campanha",
+      body: [
+        "Em vez de concentrar esforços num único grande ato, Ronaldo Caiado optou por percorrer diversas cidades do Entorno do Distrito Federal logo no primeiro dia oficial de campanha.",
+        "A estratégia busca capitalizar a base eleitoral que o candidato já tem consolidada como governador de Goiás."
+      ]
+    },
+    "lula-vila-euclides": {
+      source: "O Anhanguera", date: "16 ago", url: "https://www.oanhanguera.com.br/noticias/27827-lula-flavio-zema-caiado-e-renan-iniciam-campanha",
+      title: "Lula abriu campanha na Vila Euclides",
+      body: [
+        "O presidente Lula (PT) deu início à campanha pela reeleição num ato na Vila Euclides, em São Bernardo do Campo — região que marcou sua ascensão política como líder sindical nas décadas de 1970 e 1980.",
+        "O evento contou com a militância do PT e de partidos aliados na coligação que sustenta sua candidatura."
+      ]
+    },
+    "lula-pec-seguranca": {
+      source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
+      title: "Após reunião com Lula, Alcolumbre liberou a PEC da Segurança",
+      body: [
+        "Depois de um encontro com o presidente Lula, o presidente do Senado, Davi Alcolumbre, liberou a pauta para votação da PEC da Segurança Pública e da proposta que extingue a escala de trabalho 6x1.",
+        "A movimentação é vista como parte da articulação do governo para avançar pautas prioritárias antes do período mais intenso da campanha eleitoral."
+      ]
+    },
+    "amcham-retaliacao": {
+      source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
+      title: "Amcham alertou para riscos de retaliação dos EUA",
+      body: [
+        "A Amcham (Câmara Americana de Comércio) alertou para riscos de retaliação comercial por parte dos Estados Unidos, tema que passa a compor o pano de fundo econômico do ano eleitoral.",
+        "A preocupação se soma a outras variáveis econômicas que devem influenciar o debate entre os candidatos nas próximas semanas."
+      ]
+    }
+  };
+
+  function openArticle(id){
+    const a = articles[id];
+    if(!a) return;
+    document.getElementById('feedList').style.display = 'none';
+    document.getElementById('verifyNote').style.display = 'none';
+    const view = document.getElementById('articleView');
+    view.innerHTML =
+      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ao feed</button>' +
+      '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
+      '<h1 class="article-title">' + a.title + '</h1>' +
+      '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>';
+    view.style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function closeArticle(){
+    document.getElementById('feedList').style.display = 'block';
+    document.getElementById('verifyNote').style.display = 'flex';
+    document.getElementById('articleView').style.display = 'none';
+    document.getElementById('articleView').innerHTML = '';
+  }
+</script>
+<script>
+  // candidate chip filter (feed tab only)
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.feed-card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.dataset.filter;
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const show = (f === 'all') ? true : (card.dataset.cand === f);
+        card.style.display = show ? 'block' : 'none';
+        if(show) visibleCount++;
+      });
+      let empty = document.getElementById('emptyState');
+      if(visibleCount === 0){
+        if(!empty){
+          empty = document.createElement('div');
+          empty.id = 'emptyState';
+          empty.className = 'empty-state';
+          document.getElementById('feedList').appendChild(empty);
+        }
+        empty.textContent = 'Ainda não temos notícia própria sobre ' + chip.textContent.trim() + ' no feed. Assim que houver, ela aparece aqui.';
+        empty.style.display = 'block';
+      } else if(empty){
+        empty.style.display = 'none';
+      }
+    });
+  });
+
+  // bottom nav tab switching
+  const navItems = document.querySelectorAll('.nav-item');
+  const panels = document.querySelectorAll('.tab-panel');
+  const chipScroll = document.getElementById('chipScroll');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navItems.forEach(n => n.classList.remove('active'));
+      item.classList.add('active');
+      const tab = item.dataset.tab;
+      panels.forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      chipScroll.style.display = (tab === 'feed') ? 'flex' : 'none';
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
