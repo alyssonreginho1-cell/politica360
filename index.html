@@ -243,6 +243,7 @@
       <div class="chip" data-filter="edmilson"><span class="dot" style="background:#5C7A8A"></span>Edmilson Costa</div>
       <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
       <div class="chip" data-filter="pimenta"><span class="dot" style="background:#5C7A8A"></span>Rui Costa Pimenta</div>
+      <div class="chip" data-filter="marcal"><span class="dot" style="background:#D94F70"></span>Pablo Marçal</div>
       <div class="chip" data-filter="samara"><span class="dot" style="background:#5C7A8A"></span>Samara Martins</div>
     </div>
   </div><!-- /topbar -->
@@ -250,10 +251,10 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">Hoje, 20h</div><div class="lbl">debate na Band</div></div>
-    <div class="e"><div class="num">28 ago</div><div class="lbl">propaganda no rádio/TV</div></div>
-    <div class="e"><div class="num">4 out</div><div class="lbl">1º turno</div></div>
-    <div class="e"><div class="num">11</div><div class="lbl">candidaturas registradas</div></div>
+    <div class="e"><div class="num">33 dias</div><div class="lbl">para o 1º turno</div></div>
+    <div class="e"><div class="num">4 out</div><div class="lbl">votação</div></div>
+    <div class="e"><div class="num">25 out</div><div class="lbl">2º turno, se houver</div></div>
+    <div class="e"><div class="num">13</div><div class="lbl">candidaturas registradas</div></div>
   </div>
 
   <!-- FEED TAB -->
@@ -266,9 +267,27 @@
 
       <div id="feedList">
 
+      <div class="feed-card" data-cand="marcal" data-id="marcal-lista-final" role="button" tabindex="0" onclick="openArticle('marcal-lista-final')" onkeypress="if(event.key=='Enter')openArticle('marcal-lista-final')">
+        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">30 ago</span></div>
+        <p class="fc-headline">Lista final da Justiça Eleitoral confirma 13 candidaturas à Presidência, incluindo a de Pablo Marçal, registrada nos últimos minutos do prazo.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jota</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="marcal" data-id="marcal-tse-liminar" role="button" tabindex="0" onclick="openArticle('marcal-tse-liminar')" onkeypress="if(event.key=='Enter')openArticle('marcal-tse-liminar')">
+        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">20 ago</span></div>
+        <p class="fc-headline">TSE proíbe Pablo Marçal de usar recursos oficiais de campanha até julgar o mérito do registro de sua candidatura.</p>
+        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="marcal" data-id="marcal-registro" role="button" tabindex="0" onclick="openArticle('marcal-registro')" onkeypress="if(event.key=='Enter')openArticle('marcal-registro')">
+        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">15 ago</span></div>
+        <p class="fc-headline">A nove minutos do fim do prazo, PRTB registra candidatura de Pablo Marçal à Presidência, com Leonardo Avalanche de vice.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
       <div class="feed-card" data-cand="all" data-id="debate-hoje" role="button" tabindex="0" onclick="openArticle('debate-hoje')" onkeypress="if(event.key=='Enter')openArticle('debate-hoje')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">TV</div><span class="fc-cand">Debate presidencial</span><span class="fc-dot"></span><span class="fc-time">hoje, 20h</span></div>
-        <p class="fc-headline">Primeiro debate presidencial vai ao ar hoje às 20h, na Band; Lula e Flávio sinalizam que não devem participar.</p>
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">TV</div><span class="fc-cand">Debate presidencial</span><span class="fc-dot"></span><span class="fc-time">23 ago</span></div>
+        <p class="fc-headline">Primeiro debate presidencial da campanha foi ao ar na Band em 23 de agosto; Lula e Flávio confirmaram ausência, como sinalizado.</p>
         <div class="fc-bottom"><span class="fc-source">● Metrópoles</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
@@ -480,7 +499,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 23 de agosto de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 1 de setembro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -507,13 +526,40 @@
 
 <script>
   const articles = {
-    "debate-hoje": {
-      source: "Metrópoles", date: "hoje, 20h", url: "https://www.metropoles.com/sao-paulo/band-promove-1o-debate-presidencial-neste-domingo-veja-quem-participa",
-      title: "Primeiro debate presidencial vai ao ar hoje às 20h, na Band",
+    "marcal-lista-final": {
+      source: "Jota", date: "30 ago", url: "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-a-presidente-da-republica-do-brasil-eleicoes-de-2026-30-agosto",
+      title: "Justiça Eleitoral confirma lista final: 13 candidaturas à Presidência",
       body: [
-        "O primeiro debate entre os candidatos à Presidência desta eleição vai ao ar hoje, domingo, às 20h, direto dos estúdios da Band em São Paulo, com transmissão simultânea pela TV Cultura, TV Gazeta e Jovem Pan.",
-        "A expectativa é que Lula e Flávio Bolsonaro não compareçam — ambos sinalizaram ausência, e a equipe de Flávio adotou a postura de só participar de debates em que o presidente também estiver presente.",
-        "Isso deve deixar o confronto concentrado entre Ronaldo Caiado, Romeu Zema, Renan Santos e Augusto Cury, os quatro nomes que confirmaram presença."
+        "A lista definitiva de candidatos à Presidência da República, divulgada pela Justiça Eleitoral, tem 13 nomes: Lula, Flávio Bolsonaro, Romeu Zema, Ronaldo Caiado, Renan Santos, Pablo Marçal, Augusto Cury, Hertz Dias, Clariana Barão, Edmilson Costa, Rui Costa Pimenta, Samara Martins e Wilson Grassi.",
+        "A entrada de Pablo Marçal chamou atenção por ter sido registrada nos últimos minutos do prazo, em meio a uma disputa judicial sobre sua elegibilidade.",
+        "Jair Bolsonaro, que cumpre pena por tentativa de golpe de Estado e está inelegível, não concorre — o campo bolsonarista é representado pelo filho, o senador Flávio Bolsonaro."
+      ]
+    },
+    "marcal-tse-liminar": {
+      source: "TSE — fonte oficial", date: "20 ago", url: "https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/tse-concede-liminar-proibindo-pablo-marcal-de-usar-recursos-oficiais-para-campanha",
+      title: "TSE proíbe Marçal de usar recursos oficiais de campanha, por ora",
+      body: [
+        "O Tribunal Superior Eleitoral concedeu liminar proibindo Pablo Marçal de promover qualquer ação como candidato ou acessar recursos oficiais de campanha, até que o mérito do registro de sua candidatura seja julgado.",
+        "A decisão, da relatora Ana Estela Aranha, também determinou que o PRTB — partido de Marçal — e as emissoras de rádio e TV sejam formalmente comunicados para cumprir a medida.",
+        "A candidatura segue sob contestação judicial por conta de condenações à inelegibilidade que Marçal enfrenta desde sua passagem pela disputa pela Prefeitura de São Paulo em 2024."
+      ]
+    },
+    "marcal-registro": {
+      source: "Gazeta do Povo", date: "15 ago", url: "https://www.gazetadopovo.com.br/eleicoes/2026/pablo-marcal-volta-ao-prtb-com-liminar-e-tenta-candidatura-a-presidencia/",
+      title: "A 9 minutos do prazo final, PRTB registra candidatura de Marçal",
+      body: [
+        "O PRTB protocolou o registro da candidatura de Pablo Marçal à Presidência a apenas nove minutos do fechamento do prazo oficial do TSE, em 15 de agosto, tendo o presidente nacional do partido, Leonardo Avalanche, como vice.",
+        "O registro só foi possível depois de uma decisão liminar que autorizou a refiliação retroativa de Marçal ao partido, com efeitos a partir de 4 de abril.",
+        "Marçal enfrenta condenações à inelegibilidade por abuso de poder político e econômico e uso indevido dos meios de comunicação, decorrentes de sua candidatura à Prefeitura de São Paulo em 2024 — por isso, sua candidatura à Presidência segue sob contestação judicial."
+      ]
+    },
+    "debate-hoje": {
+      source: "Metrópoles", date: "23 ago", url: "https://www.metropoles.com/sao-paulo/band-promove-1o-debate-presidencial-neste-domingo-veja-quem-participa",
+      title: "Primeiro debate presidencial foi ao ar em 23 de agosto, na Band",
+      body: [
+        "O primeiro debate entre os candidatos à Presidência desta eleição foi ao ar em 23 de agosto, direto dos estúdios da Band em São Paulo, com transmissão simultânea pela TV Cultura, TV Gazeta e Jovem Pan.",
+        "Como esperado, Lula e Flávio Bolsonaro não compareceram — a equipe de Flávio manteve a postura de só participar de debates em que o presidente também estivesse presente.",
+        "O confronto ficou concentrado entre Ronaldo Caiado, Romeu Zema, Renan Santos e Augusto Cury, os quatro nomes que confirmaram presença."
       ]
     },
     "caiado-kassab": {
