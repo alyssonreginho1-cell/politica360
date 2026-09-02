@@ -51,6 +51,31 @@
     display:flex;align-items:center;justify-content:center;
     font-family:'JetBrains Mono',monospace;font-weight:700;font-size:10.5px;color:var(--navy);}
   .brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:15px;letter-spacing:-.01em;color:#EAF6F5;}
+  .brand-tagline{font-size:10.5px;color:#8FB4B1;margin-top:1px;}
+  .chip.following{background:rgba(217,79,112,0.12);border-color:#D94F70;color:#F3A9BB;}
+  .chip.following.active{background:#D94F70;border-color:#D94F70;color:#fff;}
+  .follow-star{
+    background:none;border:none;cursor:pointer;font-size:15px;line-height:1;
+    color:var(--line);padding:0;margin-left:6px;
+  }
+  .follow-star.on{color:#D94F70;}
+  .trending{
+    display:flex;align-items:center;gap:8px;overflow-x:auto;
+    margin:14px 18px 0;padding-bottom:4px;scrollbar-width:none;
+  }
+  .trending::-webkit-scrollbar{display:none;}
+  .trending-label{font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;flex-shrink:0;}
+  .trending-pill{
+    flex-shrink:0;background:var(--bg-card);border:1px solid var(--line);border-radius:20px;
+    padding:6px 13px;font-size:12px;color:var(--tiffany-deep);cursor:pointer;
+    font-family:'Inter',sans-serif;white-space:nowrap;
+  }
+  .trending-pill:hover{border-color:var(--tiffany);}
+  .fc-category{
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;
+    letter-spacing:.04em;color:var(--tiffany-deep);background:var(--tiffany-tint);
+    padding:2px 7px;border-radius:10px;margin-left:6px;
+  }
   .live-pill{display:flex;align-items:center;gap:6px;
     font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--verified);
     border:1px solid rgba(63,209,204,0.35);background:rgba(63,209,204,0.08);
@@ -146,7 +171,7 @@
   /* Candidate cards (Comparar tab) */
   .cand-grid{display:flex;flex-direction:column;gap:10px;}
   .candidate{background:var(--bg-card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);}
-  .cand-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .cand-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;justify-content:space-between;}
   .cand-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
     font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);flex-shrink:0;}
   .cand-name{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;}
@@ -201,11 +226,11 @@
   .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--navy);
     border-top:1px solid var(--line);display:flex;width:100%;}
   .bottomnav-inner{display:flex;max-width:760px;margin:0 auto;width:100%;}
-  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:11px 0 9px;
-    color:#7E97A0;text-decoration:none;font-size:10px;font-weight:500;background:none;border:none;
-    font-family:'Inter',sans-serif;cursor:pointer;}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 2px 8px;
+    color:#7E97A0;text-decoration:none;font-size:9px;font-weight:500;background:none;border:none;
+    font-family:'Inter',sans-serif;cursor:pointer;white-space:nowrap;}
   .nav-item.active{color:var(--tiffany);}
-  .nav-item svg{width:20px;height:20px;}
+  .nav-item svg{width:18px;height:18px;}
 
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
@@ -226,25 +251,29 @@
     <div class="topbar-row">
       <div class="brand">
         <div class="brand-mark">360</div>
-        <div class="brand-name">Política 360º</div>
+        <div>
+          <div class="brand-name">Política 360º</div>
+          <div class="brand-tagline">Notícias, dados e fontes para entender a política brasileira</div>
+        </div>
       </div>
       <div class="live-pill">Campanha no ar</div>
     </div>
     <div class="chip-scroll" id="chipScroll">
       <div class="chip all active" data-filter="all">Todos</div>
+      <div class="chip following" data-filter="following" id="followingChip" style="display:none;">★ Seguindo</div>
       <div class="chip" data-filter="lula"><span class="dot" style="background:var(--c1)"></span>Lula</div>
       <div class="chip" data-filter="flavio"><span class="dot" style="background:var(--c2)"></span>Flávio</div>
       <div class="chip" data-filter="zema"><span class="dot" style="background:var(--c3)"></span>Zema</div>
       <div class="chip" data-filter="caiado"><span class="dot" style="background:var(--c4)"></span>Caiado</div>
       <div class="chip" data-filter="renan"><span class="dot" style="background:var(--c5)"></span>Renan Santos</div>
-      <div class="chip" data-filter="dc"><span class="dot" style="background:#5C7A8A"></span>Aldo Rebelo / Barbosa</div>
-      <div class="chip" data-filter="cury"><span class="dot" style="background:#5C7A8A"></span>Augusto Cury</div>
-      <div class="chip" data-filter="daciolo"><span class="dot" style="background:#5C7A8A"></span>Cabo Daciolo</div>
-      <div class="chip" data-filter="edmilson"><span class="dot" style="background:#5C7A8A"></span>Edmilson Costa</div>
-      <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
-      <div class="chip" data-filter="pimenta"><span class="dot" style="background:#5C7A8A"></span>Rui Costa Pimenta</div>
       <div class="chip" data-filter="marcal"><span class="dot" style="background:#D94F70"></span>Pablo Marçal</div>
+      <div class="chip" data-filter="cury"><span class="dot" style="background:#5C7A8A"></span>Augusto Cury</div>
+      <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
+      <div class="chip" data-filter="barao"><span class="dot" style="background:#5C7A8A"></span>Clariana Barão</div>
+      <div class="chip" data-filter="edmilson"><span class="dot" style="background:#5C7A8A"></span>Edmilson Costa</div>
+      <div class="chip" data-filter="pimenta"><span class="dot" style="background:#5C7A8A"></span>Rui Costa Pimenta</div>
       <div class="chip" data-filter="samara"><span class="dot" style="background:#5C7A8A"></span>Samara Martins</div>
+      <div class="chip" data-filter="grassi"><span class="dot" style="background:#5C7A8A"></span>Wilson Grassi</div>
     </div>
   </div><!-- /topbar -->
 
@@ -257,11 +286,19 @@
     <div class="e"><div class="num">13</div><div class="lbl">candidaturas registradas</div></div>
   </div>
 
+  <div class="trending" id="trendingRow">
+    <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('marcal-lista-final')">Pablo Marçal</button>
+    <button class="trending-pill" onclick="openArticle('debate-hoje')">Debate presidencial</button>
+    <button class="trending-pill" onclick="openArticle('tse-11')">Registro de candidaturas</button>
+    <button class="trending-pill" onclick="openArticle('lula-pec-seguranca')">PEC da Segurança</button>
+  </div>
+
   <!-- FEED TAB -->
   <div class="tab-panel active" id="tab-feed">
-    <section id="feed" style="margin-top:24px;">
+    <section id="feed" style="margin-top:20px;">
       <div class="section-title">
-        <h2>Últimas</h2>
+        <h2>Agora</h2>
         <div class="verified-tag">✓ toda notícia linka a fonte</div>
       </div>
 
@@ -403,32 +440,34 @@
     <section style="margin-top:24px;">
       <div class="notice"><b>Sobre estes dados —</b> os planos de governo completos só viram obrigatórios após o registro das candidaturas. As propostas abaixo vêm de discursos e entrevistas de pré-campanha.</div>
 
-      <div class="section-title"><h2>13 pré-candidatos</h2></div>
+      <div class="section-title"><h2>13 candidatos registrados</h2></div>
       <div class="cand-grid">
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div></div><span class="status-pill status-lider">Lidera pesquisas</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div><button class="follow-star" data-follow="lula" onclick="toggleFollow('lula', this)">☆</button></div><span class="status-pill status-lider">Lidera pesquisas</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div></div><span class="status-pill status-confirmado">Indicado por Jair Bolsonaro</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div><button class="follow-star" data-follow="flavio" onclick="toggleFollow('flavio', this)">☆</button></div><span class="status-pill status-confirmado">Indicado por Jair Bolsonaro</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c3)">RZ</div><div><div class="cand-name">Romeu Zema</div><div class="cand-party">Novo · Ex-governador de Minas Gerais</div></div></div><span class="status-pill status-confirmado">Deixou o governo em abril</span><div class="cand-body"><p>Agenda liberal: fim do "Custo Brasil" em quatro anos e privatização de estatais federais, incluindo Petrobras, Caixa e Banco do Brasil.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c3)">RZ</div><div><div class="cand-name">Romeu Zema</div><div class="cand-party">Novo · Ex-governador de Minas Gerais</div></div><button class="follow-star" data-follow="zema" onclick="toggleFollow('zema', this)">☆</button></div><span class="status-pill status-confirmado">Deixou o governo em abril</span><div class="cand-body"><p>Agenda liberal: fim do "Custo Brasil" em quatro anos e privatização de estatais federais, incluindo Petrobras, Caixa e Banco do Brasil.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div><button class="follow-star" data-follow="caiado" onclick="toggleFollow('caiado', this)">☆</button></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div><button class="follow-star" data-follow="renan" onclick="toggleFollow('renan', this)">☆</button></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">DC</div><div><div class="cand-name">Aldo Rebelo ou Joaquim Barbosa</div><div class="cand-party">DC</div></div></div><span class="status-pill status-indefinido">Disputa interna no partido</span><div class="cand-body"><p>A definição entre os dois nomes deve passar pela Justiça Eleitoral.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#D94F70">PM</div><div><div class="cand-name">Pablo Marçal</div><div class="cand-party">PRTB</div></div><button class="follow-star" data-follow="marcal" onclick="toggleFollow('marcal', this)">☆</button></div><span class="status-pill status-indefinido">Candidatura sob contestação judicial</span><div class="cand-body"><p>Registrou candidatura a 9 minutos do fim do prazo. TSE já proibiu uso de recursos oficiais de campanha até julgar o mérito do registro.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">AC</div><div><div class="cand-name">Augusto Cury</div><div class="cand-party">Avante</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Psiquiatra e escritor best-seller, com discurso antipolarização.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">AC</div><div><div class="cand-name">Augusto Cury</div><div class="cand-party">Avante</div></div><button class="follow-star" data-follow="cury" onclick="toggleFollow('cury', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Psiquiatra e escritor best-seller, com discurso antipolarização.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">CD</div><div><div class="cand-name">Cabo Daciolo</div><div class="cand-party">Mobiliza</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Bombeiro da reserva, pastor evangélico e ex-deputado federal pelo Rio de Janeiro.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">HD</div><div><div class="cand-name">Hertz Dias</div><div class="cand-party">PSTU</div></div><button class="follow-star" data-follow="hertz" onclick="toggleFollow('hertz', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Professor da rede pública, ativista do movimento negro e do hip-hop.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">EC</div><div><div class="cand-name">Edmilson Costa</div><div class="cand-party">PCB</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Secretário-geral do PCB e economista, defende estatização do sistema financeiro.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">CB</div><div><div class="cand-name">Clariana Barão</div><div class="cand-party">DC</div></div><button class="follow-star" data-follow="barao" onclick="toggleFollow('barao', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Representa a Democracia Cristã na disputa presidencial deste ano.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">HD</div><div><div class="cand-name">Hertz Dias</div><div class="cand-party">PSTU</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Professor da rede pública, ativista do movimento negro e do hip-hop.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">EC</div><div><div class="cand-name">Edmilson Costa</div><div class="cand-party">PCB</div></div><button class="follow-star" data-follow="edmilson" onclick="toggleFollow('edmilson', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Secretário-geral do PCB e economista, defende estatização do sistema financeiro.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">RP</div><div><div class="cand-name">Rui Costa Pimenta</div><div class="cand-party">PCO</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Presidente do PCO desde 1995, figura recorrente das disputas presidenciais.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">RP</div><div><div class="cand-name">Rui Costa Pimenta</div><div class="cand-party">PCO</div></div><button class="follow-star" data-follow="pimenta" onclick="toggleFollow('pimenta', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Presidente do PCO desde 1995, figura recorrente das disputas presidenciais.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">SM</div><div><div class="cand-name">Samara Martins</div><div class="cand-party">Unidade Popular</div></div></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Dentista e vice-presidente nacional do UP, veio dos movimentos estudantis.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">SM</div><div><div class="cand-name">Samara Martins</div><div class="cand-party">Unidade Popular</div></div><button class="follow-star" data-follow="samara" onclick="toggleFollow('samara', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Dentista e vice-presidente nacional do UP, veio dos movimentos estudantis.</p></div></div>
+
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">WG</div><div><div class="cand-name">Wilson Grassi Júnior</div><div class="cand-party">—</div></div><button class="follow-star" data-follow="grassi" onclick="toggleFollow('grassi', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Médico veterinário paulistano, disputa sua quarta eleição — ajudou a fundar o primeiro hospital público para cães e gatos de São Paulo.</p></div></div>
 
       </div>
 
@@ -485,6 +524,20 @@
     </section>
   </div>
 
+  <!-- PESQUISAS TAB -->
+  <div class="tab-panel" id="tab-pesquisas">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Pesquisas e dados</h2></div>
+      <div class="notice"><b>Por que não tem números fixos aqui —</b> pesquisas de aprovação e intenção de voto mudam a cada rodada (Datafolha, Quaest, AtlasIntel, Nexus/BTG). Qualquer número fixo neste painel ficaria desatualizado em poucas semanas. Em vez disso, estes links levam direto às fontes que atualizam isso ao vivo.</div>
+      <div class="sources-list">
+        <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de dados e declarações de campanha</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de pesquisas e indicadores eleitorais</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener"><div><div class="name">DivulgaCandContas — TSE</div><div class="desc">Dados oficiais de arrecadação e gastos de campanha</div></div><span class="arrow">↗</span></a>
+      </div>
+    </section>
+  </div>
+
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-fontes">
     <section style="margin-top:24px;">
@@ -510,6 +563,10 @@
     <button class="nav-item" data-tab="comparar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
       Comparar
+    </button>
+    <button class="nav-item" data-tab="pesquisas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-6 3 3 5-8"/></svg>
+      Pesquisas
     </button>
     <button class="nav-item" data-tab="comentarios">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-9 8.36A8.5 8.5 0 013 11.5 8.38 8.38 0 0111.5 3a8.5 8.5 0 019.5 8.5z"/></svg>
@@ -711,6 +768,75 @@
     view.style.display = 'block';
     window.scrollTo({top:0, behavior:'smooth'});
   }
+</script>
+
+<script>
+  // ---- Seguir candidatos (salvo no navegador, sem precisar de login) ----
+  const FOLLOW_KEY = 'p360-following';
+  function getFollowing(){
+    try { return JSON.parse(localStorage.getItem(FOLLOW_KEY)) || []; }
+    catch(e){ return []; }
+  }
+  function setFollowing(list){
+    try { localStorage.setItem(FOLLOW_KEY, JSON.stringify(list)); } catch(e){}
+  }
+  function toggleFollow(id, btn){
+    let list = getFollowing();
+    if(list.includes(id)){
+      list = list.filter(x => x !== id);
+      btn.textContent = '☆';
+      btn.classList.remove('on');
+    } else {
+      list.push(id);
+      btn.textContent = '★';
+      btn.classList.add('on');
+    }
+    setFollowing(list);
+    updateFollowingChip();
+  }
+  function updateFollowingChip(){
+    const list = getFollowing();
+    const chip = document.getElementById('followingChip');
+    if(list.length > 0){
+      chip.style.display = 'flex';
+      chip.textContent = '★ Seguindo (' + list.length + ')';
+    } else {
+      chip.style.display = 'none';
+    }
+  }
+  function initFollowStars(){
+    document.querySelectorAll('.follow-star').forEach(btn => {
+      const id = btn.dataset.follow;
+      if(getFollowing().includes(id)){
+        btn.textContent = '★';
+        btn.classList.add('on');
+      }
+    });
+    updateFollowingChip();
+  }
+
+  // ---- Leitor de notícia ----
+  function openArticle(id){
+    const a = articles[id];
+    if(!a) return;
+    document.getElementById('feedList').style.display = 'none';
+    document.getElementById('verifyNote').style.display = 'none';
+    const view = document.getElementById('articleView');
+    view.innerHTML =
+      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ao feed</button>' +
+      '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
+      '<h1 class="article-title">' + a.title + '</h1>' +
+      '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>';
+    view.style.display = 'block';
+    // make sure we're on the feed tab so the article is visible
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelector('.nav-item[data-tab="feed"]').classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-feed').classList.add('active');
+    document.getElementById('chipScroll').style.display = 'flex';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
 
   function closeArticle(){
     document.getElementById('feedList').style.display = 'block';
@@ -729,8 +855,12 @@
       chip.classList.add('active');
       const f = chip.dataset.filter;
       let visibleCount = 0;
+      const following = getFollowing();
       cards.forEach(card => {
-        const show = (f === 'all') ? true : (card.dataset.cand === f);
+        let show;
+        if(f === 'all') show = true;
+        else if(f === 'following') show = following.includes(card.dataset.cand);
+        else show = (card.dataset.cand === f);
         card.style.display = show ? 'block' : 'none';
         if(show) visibleCount++;
       });
@@ -742,7 +872,9 @@
           empty.className = 'empty-state';
           document.getElementById('feedList').appendChild(empty);
         }
-        empty.textContent = 'Ainda não temos notícia própria sobre ' + chip.textContent.trim() + ' no feed. Assim que houver, ela aparece aqui.';
+        empty.textContent = f === 'following'
+          ? 'Você ainda não segue nenhum candidato com notícia no feed. Toque na estrela ☆ ao lado de um nome, na aba Comparar, pra começar a seguir.'
+          : 'Ainda não temos notícia própria sobre ' + chip.textContent.trim() + ' no feed. Assim que houver, ela aparece aqui.';
         empty.style.display = 'block';
       } else if(empty){
         empty.style.display = 'none';
@@ -765,6 +897,8 @@
       window.scrollTo({top:0, behavior:'smooth'});
     });
   });
+
+  initFollowStars();
 </script>
 
 </body>
