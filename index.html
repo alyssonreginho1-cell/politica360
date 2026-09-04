@@ -216,6 +216,18 @@
   .src-row .desc{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
   .src-row .arrow{color:var(--tiffany);font-family:'JetBrains Mono',monospace;font-size:13px;}
 
+  .glossary{display:flex;flex-direction:column;gap:8px;}
+  .gloss-item{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;
+    padding:2px 15px;box-shadow:var(--shadow);}
+  .gloss-item summary{
+    padding:12px 0;font-weight:600;font-size:13.5px;color:var(--ink);cursor:pointer;
+    list-style:none;display:flex;align-items:center;justify-content:space-between;
+  }
+  .gloss-item summary::-webkit-details-marker{display:none;}
+  .gloss-item summary::after{content:"+";color:var(--tiffany);font-size:16px;font-weight:400;}
+  .gloss-item[open] summary::after{content:"–";}
+  .gloss-item p{font-size:13px;color:var(--ink-soft);margin:0 0 14px;line-height:1.6;}
+
   .notice{background:var(--tiffany-tint);border:1px solid rgba(10,186,181,0.3);border-left:3px solid var(--tiffany);
     border-radius:6px;padding:14px 16px;margin:0 0 22px;font-size:13px;color:var(--ink-soft);}
   .notice b{color:var(--tiffany);}
@@ -288,10 +300,10 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('master-moraes-vorcaro')">Caso Master-Moraes</button>
     <button class="trending-pill" onclick="openArticle('marcal-lista-final')">Pablo Marçal</button>
     <button class="trending-pill" onclick="openArticle('debate-hoje')">Debate presidencial</button>
     <button class="trending-pill" onclick="openArticle('tse-11')">Registro de candidaturas</button>
-    <button class="trending-pill" onclick="openArticle('lula-pec-seguranca')">PEC da Segurança</button>
   </div>
 
   <!-- FEED TAB -->
@@ -303,6 +315,18 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="master-moraes-vorcaro" role="button" tabindex="0" onclick="openArticle('master-moraes-vorcaro')" onkeypress="if(event.key=='Enter')openArticle('master-moraes-vorcaro')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">STF</div><span class="fc-cand">STF</span><span class="fc-dot"></span><span class="fc-time">1 set</span><span class="fc-category">STF</span></div>
+        <p class="fc-headline">Documentos do celular de Daniel Vorcaro mostram Moraes editando contrato de R$ 131 milhões do escritório da própria mulher com o banqueiro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Estadão / Poder360</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="flavio-zema-moraes-renuncia" role="button" tabindex="0" onclick="openArticle('flavio-zema-moraes-renuncia')" onkeypress="if(event.key=='Enter')openArticle('flavio-zema-moraes-renuncia')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">1 set</span><span class="fc-category">STF</span></div>
+        <p class="fc-headline">Flávio pede renúncia de Moraes e Zema defende impeachment e prisão — no mesmo dia, reportagens contestam versão do próprio Flávio sobre o caso.</p>
+        <div class="fc-bottom"><span class="fc-source">● Brasil 247 / Direito News</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="marcal" data-id="marcal-lista-final" role="button" tabindex="0" onclick="openArticle('marcal-lista-final')" onkeypress="if(event.key=='Enter')openArticle('marcal-lista-final')">
         <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">30 ago</span></div>
@@ -549,10 +573,28 @@
         <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de declarações</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de espectros variados</div></div><span class="arrow">↗</span></a>
       </div>
+
+      <div class="section-title" style="margin-top:28px;"><h2>Dicionário político</h2></div>
+      <div class="glossary">
+        <details class="gloss-item"><summary>PEC</summary><p>Proposta de Emenda à Constituição. Muda o texto da própria Constituição — por isso exige um processo mais difícil de aprovar que uma lei comum: precisa de 3/5 dos votos, em dois turnos, na Câmara e no Senado.</p></details>
+        <details class="gloss-item"><summary>PL</summary><p>Projeto de Lei. Proposta de lei comum, que só precisa de maioria simples dos presentes para ser aprovada (menos exigente que uma PEC).</p></details>
+        <details class="gloss-item"><summary>Medida Provisória (MP)</summary><p>Norma que o presidente pode editar sozinho, com força de lei imediata, em casos de relevância e urgência. Perde a validade se o Congresso não votá-la em até 120 dias.</p></details>
+        <details class="gloss-item"><summary>Quórum</summary><p>Número mínimo de parlamentares presentes (ou votando a favor) exigido para que uma sessão ou votação seja válida.</p></details>
+        <details class="gloss-item"><summary>Maioria absoluta</summary><p>Mais da metade de todos os membros de uma Casa legislativa (não só dos presentes na sessão). Na Câmara, por exemplo, são 257 dos 513 deputados.</p></details>
+        <details class="gloss-item"><summary>Maioria simples</summary><p>Mais da metade dos votos entre os parlamentares presentes numa votação, não do total da Casa.</p></details>
+        <details class="gloss-item"><summary>STF</summary><p>Supremo Tribunal Federal. A mais alta instância da Justiça brasileira, responsável por interpretar a Constituição e julgar casos como ações contra leis, autoridades com foro privilegiado e conflitos entre poderes.</p></details>
+        <details class="gloss-item"><summary>TSE</summary><p>Tribunal Superior Eleitoral. Órgão que organiza e julga tudo relacionado a eleições: registro de candidaturas, contas de campanha, propaganda eleitoral e apuração dos votos.</p></details>
+        <details class="gloss-item"><summary>Executivo</summary><p>Um dos três poderes da República — responsável por governar e aplicar as leis no dia a dia. No nível federal, é o presidente e seus ministérios.</p></details>
+        <details class="gloss-item"><summary>Legislativo</summary><p>Poder responsável por criar, discutir e votar leis. No nível federal, é o Congresso Nacional, formado pela Câmara dos Deputados e pelo Senado.</p></details>
+        <details class="gloss-item"><summary>Judiciário</summary><p>Poder responsável por interpretar as leis e julgar conflitos, garantindo que a Constituição seja respeitada. Inclui o STF e os demais tribunais do país.</p></details>
+        <details class="gloss-item"><summary>Ficha Limpa</summary><p>Lei que impede candidaturas de pessoas condenadas por certos crimes ou órgãos colegiados, mesmo sem decisão final da Justiça (o chamado "trânsito em julgado"), por um período de 8 anos após a condenação.</p></details>
+        <details class="gloss-item"><summary>Inelegibilidade</summary><p>Situação em que uma pessoa está legalmente impedida de se candidatar a um cargo público, por decisão judicial ou eleitoral, mesmo que ainda possa recorrer.</p></details>
+        <details class="gloss-item"><summary>Impulsionamento</summary><p>Pagamento feito a uma rede social ou site de busca para que um conteúdo apareça para mais pessoas do que apareceria naturalmente. Durante a campanha, só pode ser contratado por candidatos, partidos ou coligações.</p></details>
+      </div>
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 1 de setembro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 2 de setembro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -583,6 +625,25 @@
 
 <script>
   const articles = {
+    "master-moraes-vorcaro": {
+      source: "Estadão / Poder360", date: "1 set", url: "https://www.poder360.com.br/poder-eleicoes-2026/flavio-chama-moraes-de-advogado-de-vorcaro-e-pede-renuncia/",
+      title: "Documentos apreendidos com Vorcaro reacendem debate sobre contrato da mulher de Moraes",
+      body: [
+        "Documentos extraídos do celular do ex-banqueiro Daniel Vorcaro, fundador do Banco Master, indicam que o ministro do STF Alexandre de Moraes participou da edição da versão final de um contrato de R$ 131 milhões entre o escritório de sua esposa, a advogada Viviane Barci de Moraes, e o banqueiro — segundo reportagem publicada pelo Estadão em 1º de setembro.",
+        "Em mensagens do mesmo material, Vorcaro menciona buscar 'proteção' de duas pessoas identificadas pelas iniciais 'Paulo' e 'Andrei' — nomes que investigadores associam ao procurador-geral da República, Paulo Gonet, e ao diretor-geral da Polícia Federal, Andrei Rodrigues. Não há, até o momento, prova pública de que qualquer um dos dois tenha atendido a esse pedido.",
+        "A banca de advocacia da esposa do ministro afirma que o contrato foi legítimo, já que Moraes nunca julgou qualquer causa envolvendo o Banco Master, e que os serviços advocatícios foram devidamente prestados. Até a publicação desta nota, não houve decisão judicial sobre o caso — trata-se de um material sob apuração."
+      ]
+    },
+    "flavio-zema-moraes-renuncia": {
+      source: "Brasil 247 / Direito News", date: "1 set", url: "https://www.brasil247.com/brasil/tambem-implicado-no-caso-master-flavio-bolsonaro-pede-renuncia-de-moraes/",
+      title: "Flávio pede renúncia de Moraes; Zema defende impeachment e prisão",
+      body: [
+        "Ao chegar ao Senado nesta terça-feira (1º/9), o candidato Flávio Bolsonaro (PL) classificou Alexandre de Moraes como 'advogado' de Daniel Vorcaro e defendeu que o ministro renuncie ao STF, chamando o caso de algo 'muito grave' e dizendo que Moraes 'não tem a menor condição de continuar' no cargo.",
+        "Romeu Zema (Novo) foi além, defendendo em rede social o impeachment e a prisão de Moraes, e lembrou ter protocolado um pedido de impeachment contra o ministro ainda como governador de Minas Gerais, em março deste ano.",
+        "No mesmo dia, reportagem da revista piauí e um relatório do Coaf (Conselho de Controle de Atividades Financeiras) contestaram declarações do próprio Flávio, mostrando indícios de que ele teria feito afirmações falsas sobre o fim de repasses de Vorcaro para a produção do filme 'Dark Horse', biografia de seu pai, Jair Bolsonaro — o que significa que a apuração do caso também recai sobre o próprio senador, não só sobre Moraes.",
+        "Vale destacar: as falas de Flávio e Zema são posicionamentos políticos, não decisões judiciais — não há, até agora, comprovação pública de irregularidade cometida por Moraes."
+      ]
+    },
     "marcal-lista-final": {
       source: "Jota", date: "30 ago", url: "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-a-presidente-da-republica-do-brasil-eleicoes-de-2026-30-agosto",
       title: "Justiça Eleitoral confirma lista final: 13 candidaturas à Presidência",
