@@ -300,10 +300,10 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('master-moraes-vorcaro')">Caso Master-Moraes</button>
     <button class="trending-pill" onclick="openArticle('marcal-lista-final')">Pablo Marçal</button>
     <button class="trending-pill" onclick="openArticle('debate-hoje')">Debate presidencial</button>
     <button class="trending-pill" onclick="openArticle('tse-11')">Registro de candidaturas</button>
-    <button class="trending-pill" onclick="openArticle('lula-pec-seguranca')">PEC da Segurança</button>
   </div>
 
   <!-- FEED TAB -->
@@ -315,6 +315,30 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="master-moraes-vorcaro" role="button" tabindex="0" onclick="openArticle('master-moraes-vorcaro')" onkeypress="if(event.key=='Enter')openArticle('master-moraes-vorcaro')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">STF</div><span class="fc-cand">STF</span><span class="fc-dot"></span><span class="fc-time">1 set</span><span class="fc-category">STF</span></div>
+        <p class="fc-headline">Documentos do celular de Daniel Vorcaro mostram Moraes editando contrato de R$ 131 milhões do escritório da própria mulher com o banqueiro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Estadão / Poder360</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="flavio-live-advogado" role="button" tabindex="0" onclick="openArticle('flavio-live-advogado')" onkeypress="if(event.key=='Enter')openArticle('flavio-live-advogado')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">3 set</span><span class="fc-category">STF</span></div>
+        <p class="fc-headline">Em live, Flávio chama Moraes de "advogado de Vorcaro" e diz torcer para que delação do banqueiro seja homologada pela PF.</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles / Revista Oeste</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="alcolumbre-defende-moraes" role="button" tabindex="0" onclick="openArticle('alcolumbre-defende-moraes')" onkeypress="if(event.key=='Enter')openArticle('alcolumbre-defende-moraes')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">DA</div><span class="fc-cand">Davi Alcolumbre</span><span class="fc-dot"></span><span class="fc-time">2 set</span><span class="fc-category">Congresso</span></div>
+        <p class="fc-headline">Alcolumbre sai em defesa de Moraes no Senado e lembra que o próprio Flávio pediu R$ 130 milhões a Vorcaro para um filme.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="audio-dark-horse" role="button" tabindex="0" onclick="openArticle('audio-dark-horse')" onkeypress="if(event.key=='Enter')openArticle('audio-dark-horse')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 mai</span><span class="fc-category">Justiça Eleitoral</span></div>
+        <p class="fc-headline">Áudio revelado pelo The Intercept mostra Flávio pedindo R$ 134 milhões a Vorcaro para custear filme biográfico sobre Jair Bolsonaro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Pública / The Intercept Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="marcal" data-id="marcal-lista-final" role="button" tabindex="0" onclick="openArticle('marcal-lista-final')" onkeypress="if(event.key=='Enter')openArticle('marcal-lista-final')">
         <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">30 ago</span></div>
@@ -582,7 +606,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 1 de setembro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de setembro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -613,6 +637,42 @@
 
 <script>
   const articles = {
+    "master-moraes-vorcaro": {
+      source: "Estadão / Poder360", date: "1 set", url: "https://www.poder360.com.br/poder-eleicoes-2026/flavio-chama-moraes-de-advogado-de-vorcaro-e-pede-renuncia/",
+      title: "Documentos apreendidos com Vorcaro reacendem debate sobre contrato da mulher de Moraes",
+      body: [
+        "Documentos extraídos do celular do ex-banqueiro Daniel Vorcaro, fundador do Banco Master, indicam que o ministro do STF Alexandre de Moraes participou da edição da versão final de um contrato de R$ 131 milhões entre o escritório de sua esposa, a advogada Viviane Barci de Moraes, e o banqueiro — segundo reportagem publicada pelo Estadão em 1º de setembro.",
+        "Em mensagens do mesmo material, Vorcaro menciona buscar 'proteção' de duas pessoas identificadas pelas iniciais 'Paulo' e 'Andrei' — nomes que investigadores associam ao procurador-geral da República, Paulo Gonet, e ao diretor-geral da Polícia Federal, Andrei Rodrigues. Não há, até o momento, prova pública de que qualquer um dos dois tenha atendido a esse pedido.",
+        "A banca de advocacia da esposa do ministro afirma que o contrato foi legítimo, já que Moraes nunca julgou qualquer causa envolvendo o Banco Master, e que os serviços advocatícios foram devidamente prestados. Até a publicação desta nota, não houve decisão judicial sobre o caso — trata-se de um material sob apuração."
+      ]
+    },
+    "flavio-live-advogado": {
+      source: "Metrópoles / Revista Oeste", date: "3 set", url: "https://www.metropoles.com/brasil/flavio-bolsonaro-sobre-moraes-e-o-advogado-de-daniel-vorcaro",
+      title: "Em live, Flávio chama Moraes de 'advogado de Vorcaro'",
+      body: [
+        "Durante uma transmissão ao vivo na noite de 3 de setembro, o senador e candidato à Presidência Flávio Bolsonaro (PL) voltou a questionar a atuação do ministro Alexandre de Moraes no caso Banco Master, citando os serviços prestados pela advogada Viviane Barci de Moraes, esposa do ministro, ao banco de Daniel Vorcaro.",
+        "Flávio argumentou que contratar um advogado por valor alto não é problema em si, mas que é preciso justificar o trabalho prestado, e afirmou torcer para que uma eventual delação premiada de Vorcaro seja homologada pela Polícia Federal.",
+        "Até a publicação desta nota, o gabinete de Moraes não havia se manifestado sobre as falas mais recentes do senador."
+      ]
+    },
+    "alcolumbre-defende-moraes": {
+      source: "Jornal de Brasília", date: "2 set", url: "https://jornaldebrasilia.com.br/noticias/politica-e-poder/alcolumbre-sai-em-defesa-de-moraes-e-cita-envolvimento-de-flavio-bolsonaro-com-vorcaro/",
+      title: "Alcolumbre defende Moraes e cita pedido de Flávio a Vorcaro",
+      body: [
+        "Questionado no plenário do Senado sobre o acúmulo de pedidos de impeachment contra Alexandre de Moraes, o presidente da Casa, Davi Alcolumbre (União-AP), saiu em defesa do ministro do STF.",
+        "Alcolumbre comentou, sem citar nomes diretamente, que 'todo mundo esqueceu que pediram R$ 130 milhões para a mesma pessoa para fazer um filme' — uma referência ao fato de que o próprio Flávio Bolsonaro também teve conversas com Daniel Vorcaro reveladas pela imprensa, incluindo um pedido de recursos para o filme 'Dark Horse', biografia de Jair Bolsonaro.",
+        "A fala de Alcolumbre reforça que a apuração em torno do Banco Master não envolve só Moraes — o próprio senador que pede a saída do ministro também está entre os citados nas conversas com o banqueiro."
+      ]
+    },
+    "audio-dark-horse": {
+      source: "Agência Pública / The Intercept Brasil", date: "13 mai", url: "https://apublica.org/nota/flavio-bolsonaro-audio-vazado-com-vorcaro-cobra-r-134-milhoes/",
+      title: "Áudio revela Flávio cobrando R$ 134 milhões de Vorcaro para filme",
+      body: [
+        "Em 13 de maio, o The Intercept Brasil publicou uma reportagem detalhando um áudio enviado pelo senador Flávio Bolsonaro (PL) ao banqueiro Daniel Vorcaro, então dono do Banco Master, pedindo cerca de R$ 134 milhões (24 milhões de dólares) para custear a produção do filme 'Dark Horse', biografia de Jair Bolsonaro.",
+        "Os registros indicam que Vorcaro havia se comprometido a repassar esse valor para o projeto. Um dia depois da revelação, o banqueiro foi preso tentando deixar o país, acusado de fraude que resultou num rombo de R$ 47 bilhões no Fundo Garantidor de Crédito (FGC); no dia seguinte, o banco foi liquidado pelo Banco Central.",
+        "Em nota, o senador negou qualquer ilegalidade no episódio, mas admitiu o contato com Vorcaro — o que não havia feito quando questionado inicialmente pela reportagem."
+      ]
+    },
     "marcal-lista-final": {
       source: "Jota", date: "30 ago", url: "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-a-presidente-da-republica-do-brasil-eleicoes-de-2026-30-agosto",
       title: "Justiça Eleitoral confirma lista final: 13 candidaturas à Presidência",
