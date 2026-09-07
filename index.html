@@ -36,7 +36,7 @@
     font-family:'Inter',sans-serif;line-height:1.5;
     -webkit-font-smoothing:antialiased;padding-bottom:78px;
   }
-  .app{max-width:760px;margin:0 auto;}
+  .app{max-width:1160px;margin:0 auto;}
 
   .topbar{
     position:sticky;top:0;z-index:20;
@@ -44,7 +44,8 @@
     border-bottom:1px solid var(--line);padding:14px 18px 12px;
     width:100%;
   }
-  .topbar-row, .chip-scroll{max-width:760px;width:100%;margin-left:auto;margin-right:auto;}
+  .topbar-row{max-width:900px;width:100%;margin-left:auto;margin-right:auto;}
+  .chip-scroll{max-width:1160px;width:100%;margin-left:auto;margin-right:auto;}
   .topbar-row{display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:9px;}
   .brand-mark{width:34px;height:30px;border-radius:8px;background:var(--tiffany);
@@ -197,7 +198,7 @@
   .compare-note{font-size:12px;color:var(--ink-soft);margin-top:10px;}
 
   /* Comments */
-  .comments-box{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);}
+  .comments-box{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);max-width:600px;}
   .comments-intro{font-size:14px;color:var(--ink-soft);margin:0 0 18px;}
   .login-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
   .login-btn{display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid var(--line);
@@ -232,12 +233,17 @@
     border-radius:6px;padding:14px 16px;margin:0 0 22px;font-size:13px;color:var(--ink-soft);}
   .notice b{color:var(--tiffany);}
 
-  footer.note{margin:30px 18px 0;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  footer.note{
+    margin:40px 0 0;padding:18px;
+    font-size:11.5px;color:#9FC0BE;text-align:center;
+    background:var(--navy);
+    width:100vw;position:relative;left:50%;margin-left:-50vw;
+  }
 
   /* Bottom nav */
   .bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--navy);
     border-top:1px solid var(--line);display:flex;width:100%;}
-  .bottomnav-inner{display:flex;max-width:760px;margin:0 auto;width:100%;}
+  .bottomnav-inner{display:flex;max-width:900px;margin:0 auto;width:100%;}
   .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 2px 8px;
     color:#7E97A0;text-decoration:none;font-size:9px;font-weight:500;background:none;border:none;
     font-family:'Inter',sans-serif;cursor:pointer;white-space:nowrap;}
@@ -248,6 +254,26 @@
   .tab-panel.active{display:block;}
 
   @media (max-width:400px){.fc-headline{font-size:14px;}}
+
+  /* Desktop layout: use the extra width instead of leaving it empty */
+  @media (min-width:860px){
+    #feedList{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+      align-items:start;
+    }
+    #feedList .empty-state{grid-column:1 / -1;}
+    .cand-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+    .sources-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+    .glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;align-items:start;}
+    .estrip .e .lbl{font-size:10.5px;}
+  }
+  @media (min-width:1180px){
+    #feedList{grid-template-columns:repeat(3,1fr);}
+    .cand-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (min-width:860px){
+    .article-view{max-width:760px;margin:0 auto;}
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -322,10 +348,22 @@
         <div class="fc-bottom"><span class="fc-source">● Estadão / Poder360</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="flavio" data-id="flavio-zema-moraes-renuncia" role="button" tabindex="0" onclick="openArticle('flavio-zema-moraes-renuncia')" onkeypress="if(event.key=='Enter')openArticle('flavio-zema-moraes-renuncia')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">1 set</span><span class="fc-category">STF</span></div>
-        <p class="fc-headline">Flávio pede renúncia de Moraes e Zema defende impeachment e prisão — no mesmo dia, reportagens contestam versão do próprio Flávio sobre o caso.</p>
-        <div class="fc-bottom"><span class="fc-source">● Brasil 247 / Direito News</span><span class="fc-link">ler mais ↗</span></div>
+      <div class="feed-card" data-cand="flavio" data-id="flavio-live-advogado" role="button" tabindex="0" onclick="openArticle('flavio-live-advogado')" onkeypress="if(event.key=='Enter')openArticle('flavio-live-advogado')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">3 set</span><span class="fc-category">STF</span></div>
+        <p class="fc-headline">Em live, Flávio chama Moraes de "advogado de Vorcaro" e diz torcer para que delação do banqueiro seja homologada pela PF.</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles / Revista Oeste</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="alcolumbre-defende-moraes" role="button" tabindex="0" onclick="openArticle('alcolumbre-defende-moraes')" onkeypress="if(event.key=='Enter')openArticle('alcolumbre-defende-moraes')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">DA</div><span class="fc-cand">Davi Alcolumbre</span><span class="fc-dot"></span><span class="fc-time">2 set</span><span class="fc-category">Congresso</span></div>
+        <p class="fc-headline">Alcolumbre sai em defesa de Moraes no Senado e lembra que o próprio Flávio pediu R$ 130 milhões a Vorcaro para um filme.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="flavio" data-id="audio-dark-horse" role="button" tabindex="0" onclick="openArticle('audio-dark-horse')" onkeypress="if(event.key=='Enter')openArticle('audio-dark-horse')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 mai</span><span class="fc-category">Justiça Eleitoral</span></div>
+        <p class="fc-headline">Áudio revelado pelo The Intercept mostra Flávio pedindo R$ 134 milhões a Vorcaro para custear filme biográfico sobre Jair Bolsonaro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Pública / The Intercept Brasil</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="marcal" data-id="marcal-lista-final" role="button" tabindex="0" onclick="openArticle('marcal-lista-final')" onkeypress="if(event.key=='Enter')openArticle('marcal-lista-final')">
@@ -594,7 +632,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 2 de setembro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de setembro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -634,14 +672,31 @@
         "A banca de advocacia da esposa do ministro afirma que o contrato foi legítimo, já que Moraes nunca julgou qualquer causa envolvendo o Banco Master, e que os serviços advocatícios foram devidamente prestados. Até a publicação desta nota, não houve decisão judicial sobre o caso — trata-se de um material sob apuração."
       ]
     },
-    "flavio-zema-moraes-renuncia": {
-      source: "Brasil 247 / Direito News", date: "1 set", url: "https://www.brasil247.com/brasil/tambem-implicado-no-caso-master-flavio-bolsonaro-pede-renuncia-de-moraes/",
-      title: "Flávio pede renúncia de Moraes; Zema defende impeachment e prisão",
+    "flavio-live-advogado": {
+      source: "Metrópoles / Revista Oeste", date: "3 set", url: "https://www.metropoles.com/brasil/flavio-bolsonaro-sobre-moraes-e-o-advogado-de-daniel-vorcaro",
+      title: "Em live, Flávio chama Moraes de 'advogado de Vorcaro'",
       body: [
-        "Ao chegar ao Senado nesta terça-feira (1º/9), o candidato Flávio Bolsonaro (PL) classificou Alexandre de Moraes como 'advogado' de Daniel Vorcaro e defendeu que o ministro renuncie ao STF, chamando o caso de algo 'muito grave' e dizendo que Moraes 'não tem a menor condição de continuar' no cargo.",
-        "Romeu Zema (Novo) foi além, defendendo em rede social o impeachment e a prisão de Moraes, e lembrou ter protocolado um pedido de impeachment contra o ministro ainda como governador de Minas Gerais, em março deste ano.",
-        "No mesmo dia, reportagem da revista piauí e um relatório do Coaf (Conselho de Controle de Atividades Financeiras) contestaram declarações do próprio Flávio, mostrando indícios de que ele teria feito afirmações falsas sobre o fim de repasses de Vorcaro para a produção do filme 'Dark Horse', biografia de seu pai, Jair Bolsonaro — o que significa que a apuração do caso também recai sobre o próprio senador, não só sobre Moraes.",
-        "Vale destacar: as falas de Flávio e Zema são posicionamentos políticos, não decisões judiciais — não há, até agora, comprovação pública de irregularidade cometida por Moraes."
+        "Durante uma transmissão ao vivo na noite de 3 de setembro, o senador e candidato à Presidência Flávio Bolsonaro (PL) voltou a questionar a atuação do ministro Alexandre de Moraes no caso Banco Master, citando os serviços prestados pela advogada Viviane Barci de Moraes, esposa do ministro, ao banco de Daniel Vorcaro.",
+        "Flávio argumentou que contratar um advogado por valor alto não é problema em si, mas que é preciso justificar o trabalho prestado, e afirmou torcer para que uma eventual delação premiada de Vorcaro seja homologada pela Polícia Federal.",
+        "Até a publicação desta nota, o gabinete de Moraes não havia se manifestado sobre as falas mais recentes do senador."
+      ]
+    },
+    "alcolumbre-defende-moraes": {
+      source: "Jornal de Brasília", date: "2 set", url: "https://jornaldebrasilia.com.br/noticias/politica-e-poder/alcolumbre-sai-em-defesa-de-moraes-e-cita-envolvimento-de-flavio-bolsonaro-com-vorcaro/",
+      title: "Alcolumbre defende Moraes e cita pedido de Flávio a Vorcaro",
+      body: [
+        "Questionado no plenário do Senado sobre o acúmulo de pedidos de impeachment contra Alexandre de Moraes, o presidente da Casa, Davi Alcolumbre (União-AP), saiu em defesa do ministro do STF.",
+        "Alcolumbre comentou, sem citar nomes diretamente, que 'todo mundo esqueceu que pediram R$ 130 milhões para a mesma pessoa para fazer um filme' — uma referência ao fato de que o próprio Flávio Bolsonaro também teve conversas com Daniel Vorcaro reveladas pela imprensa, incluindo um pedido de recursos para o filme 'Dark Horse', biografia de Jair Bolsonaro.",
+        "A fala de Alcolumbre reforça que a apuração em torno do Banco Master não envolve só Moraes — o próprio senador que pede a saída do ministro também está entre os citados nas conversas com o banqueiro."
+      ]
+    },
+    "audio-dark-horse": {
+      source: "Agência Pública / The Intercept Brasil", date: "13 mai", url: "https://apublica.org/nota/flavio-bolsonaro-audio-vazado-com-vorcaro-cobra-r-134-milhoes/",
+      title: "Áudio revela Flávio cobrando R$ 134 milhões de Vorcaro para filme",
+      body: [
+        "Em 13 de maio, o The Intercept Brasil publicou uma reportagem detalhando um áudio enviado pelo senador Flávio Bolsonaro (PL) ao banqueiro Daniel Vorcaro, então dono do Banco Master, pedindo cerca de R$ 134 milhões (24 milhões de dólares) para custear a produção do filme 'Dark Horse', biografia de Jair Bolsonaro.",
+        "Os registros indicam que Vorcaro havia se comprometido a repassar esse valor para o projeto. Um dia depois da revelação, o banqueiro foi preso tentando deixar o país, acusado de fraude que resultou num rombo de R$ 47 bilhões no Fundo Garantidor de Crédito (FGC); no dia seguinte, o banco foi liquidado pelo Banco Central.",
+        "Em nota, o senador negou qualquer ilegalidade no episódio, mas admitiu o contato com Vorcaro — o que não havia feito quando questionado inicialmente pela reportagem."
       ]
     },
     "marcal-lista-final": {
