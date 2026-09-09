@@ -44,9 +44,14 @@
     border-bottom:1px solid var(--line);padding:14px 18px 12px;
     width:100%;
   }
-  .topbar-row{max-width:900px;width:100%;margin-left:auto;margin-right:auto;}
+  .topbar-row{width:100%;display:flex;align-items:center;justify-content:space-between;}
   .chip-scroll{max-width:1160px;width:100%;margin-left:auto;margin-right:auto;}
-  .topbar-row{display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:860px){
+    .topbar-row{max-width:none;}
+  }
+  @media (max-width:859px){
+    .topbar-row{max-width:900px;margin-left:auto;margin-right:auto;}
+  }
   .brand{display:flex;align-items:center;gap:9px;}
   .brand-mark{width:34px;height:30px;border-radius:8px;background:var(--tiffany);
     display:flex;align-items:center;justify-content:center;
@@ -80,12 +85,32 @@
   .live-pill{display:flex;align-items:center;gap:6px;
     font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--verified);
     border:1px solid rgba(63,209,204,0.35);background:rgba(63,209,204,0.08);
-    padding:5px 10px;border-radius:20px;}
+    padding:5px 10px;border-radius:20px;flex-shrink:0;}
   .live-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--verified);
     animation:pulse 1.6s infinite;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
-  .chip-scroll{display:flex;gap:8px;overflow-x:auto;margin-top:14px;padding-bottom:2px;scrollbar-width:none;}
+  /* Desktop top nav vs mobile bottom nav */
+  .topnav-desktop{display:none;}
+  .live-pill-mobile{display:flex;}
+  @media (min-width:860px){
+    .topnav-desktop{
+      display:flex;align-items:center;gap:6px;flex-shrink:0;
+    }
+    .topnav-btn{
+      font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+      color:#B9D3D1;background:none;border:none;cursor:pointer;
+      padding:12px 18px;border-radius:9px;transition:background .15s ease,color .15s ease;
+    }
+    .topnav-btn:hover{background:rgba(234,246,245,0.06);color:#fff;}
+    .topnav-btn.active{background:var(--tiffany);color:var(--navy);}
+    .live-pill-mobile{display:none;}
+    .bottomnav{display:none;}
+    body{padding-bottom:0;}
+  }
+
+  .chip-scroll{display:flex;gap:8px;overflow-x:auto;margin-top:14px;padding-bottom:2px;scrollbar-width:none;cursor:grab;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);}
+  .chip-scroll.dragging{cursor:grabbing;user-select:none;}
   .chip-scroll::-webkit-scrollbar{display:none;}
   .chip{flex:0 0 auto;display:flex;align-items:center;gap:7px;background:var(--bg-card);
     border:1px solid var(--line);padding:7px 13px 7px 7px;border-radius:20px;
@@ -294,7 +319,15 @@
           <div class="brand-tagline">Notícias, dados e fontes para entender a política brasileira</div>
         </div>
       </div>
-      <div class="live-pill">Campanha no ar</div>
+      <nav class="topnav-desktop" id="topnavDesktop">
+        <button class="topnav-btn active" data-tab="feed">Feed</button>
+        <button class="topnav-btn" data-tab="comparar">Comparar</button>
+        <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
+        <button class="topnav-btn" data-tab="comentarios">Comentários</button>
+        <button class="topnav-btn" data-tab="fontes">Fontes</button>
+        <span class="live-pill">Campanha no ar</span>
+      </nav>
+      <div class="live-pill live-pill-mobile">Campanha no ar</div>
     </div>
     <div class="chip-scroll" id="chipScroll">
       <div class="chip all active" data-filter="all">Todos</div>
@@ -318,7 +351,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">33 dias</div><div class="lbl">para o 1º turno</div></div>
+    <div class="e"><div class="num">25 dias</div><div class="lbl">para o 1º turno</div></div>
     <div class="e"><div class="num">4 out</div><div class="lbl">votação</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno, se houver</div></div>
     <div class="e"><div class="num">13</div><div class="lbl">candidaturas registradas</div></div>
@@ -326,10 +359,10 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('btg-nexus-empate')">Empate técnico no 2º turno</button>
     <button class="trending-pill" onclick="openArticle('master-moraes-vorcaro')">Caso Master-Moraes</button>
-    <button class="trending-pill" onclick="openArticle('marcal-lista-final')">Pablo Marçal</button>
+    <button class="trending-pill" onclick="openArticle('tse-prazo-marcal')">Marçal na Justiça Eleitoral</button>
     <button class="trending-pill" onclick="openArticle('debate-hoje')">Debate presidencial</button>
-    <button class="trending-pill" onclick="openArticle('tse-11')">Registro de candidaturas</button>
   </div>
 
   <!-- FEED TAB -->
@@ -341,6 +374,24 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="btg-nexus-empate" role="button" tabindex="0" onclick="openArticle('btg-nexus-empate')" onkeypress="if(event.key=='Enter')openArticle('btg-nexus-empate')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">8 set</span><span class="fc-category">Eleições</span></div>
+        <p class="fc-headline">BTG/Nexus mostra Flávio com 46% e Lula com 45% no 2º turno — empate técnico, dentro da margem de erro.</p>
+        <div class="fc-bottom"><span class="fc-source">● UOL</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="marcal" data-id="tse-prazo-marcal" role="button" tabindex="0" onclick="openArticle('tse-prazo-marcal')" onkeypress="if(event.key=='Enter')openArticle('tse-prazo-marcal')">
+        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">8 set</span><span class="fc-category">Justiça Eleitoral</span></div>
+        <p class="fc-headline">TSE tem até 14 de setembro para julgar e decidir se homologa ou barra o registro de candidatura de Marçal.</p>
+        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="quaest-indecisos" role="button" tabindex="0" onclick="openArticle('quaest-indecisos')" onkeypress="if(event.key=='Enter')openArticle('quaest-indecisos')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">7 set</span><span class="fc-category">Eleições</span></div>
+        <p class="fc-headline">Quaest mostra Lula com 36% e Flávio com 29% no 1º turno; parcela de indecisos cai de 51% para 42% com o início da campanha.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / G1</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="master-moraes-vorcaro" role="button" tabindex="0" onclick="openArticle('master-moraes-vorcaro')" onkeypress="if(event.key=='Enter')openArticle('master-moraes-vorcaro')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">STF</div><span class="fc-cand">STF</span><span class="fc-dot"></span><span class="fc-time">1 set</span><span class="fc-category">STF</span></div>
@@ -590,8 +641,37 @@
   <div class="tab-panel" id="tab-pesquisas">
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
-      <div class="notice"><b>Por que não tem números fixos aqui —</b> pesquisas de aprovação e intenção de voto mudam a cada rodada (Datafolha, Quaest, AtlasIntel, Nexus/BTG). Qualquer número fixo neste painel ficaria desatualizado em poucas semanas. Em vez disso, estes links levam direto às fontes que atualizam isso ao vivo.</div>
-      <div class="sources-list">
+      <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
+
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — cenário estimulado</h2><span class="count">Quaest, 7 set</span></div>
+      <div class="compare-scroll" style="margin-top:0;">
+        <table class="compare-table" style="min-width:0;">
+          <tbody>
+            <tr><td class="theme-col">Lula (PT)</td><td><b>36%</b></td></tr>
+            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>29%</b></td></tr>
+            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>8%</td></tr>
+            <tr><td class="theme-col">Renan Santos (Missão)</td><td>3%</td></tr>
+            <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>3%</td></tr>
+            <tr><td class="theme-col">Romeu Zema (Novo)</td><td>2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note">2.004 entrevistas, de 3 a 6 de setembro. Margem de erro de 2 pontos. Indecisos: 42% (caíram de 51% em 14 de agosto).</p>
+
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">todas de set/2026</span></div>
+      <div class="compare-scroll" style="margin-top:0;">
+        <table class="compare-table" style="min-width:0;">
+          <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
+          <tbody>
+            <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
+            <tr><td class="theme-col">Datafolha</td><td><b>46%</b></td><td>44%</td><td>3 set</td></tr>
+            <tr><td class="theme-col">PoderData/Aya</td><td>44%</td><td><b>45%</b></td><td>3 set</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note">Todos os cenários de 2º turno estão dentro da margem de erro — ou seja, é <b>empate técnico</b> em praticamente todos os institutos, não uma vitória definida de nenhum lado.</p>
+
+      <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de dados e declarações de campanha</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de pesquisas e indicadores eleitorais</div></div><span class="arrow">↗</span></a>
@@ -632,7 +712,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de setembro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 9 de setembro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -663,6 +743,33 @@
 
 <script>
   const articles = {
+    "btg-nexus-empate": {
+      source: "UOL", date: "8 set", url: "https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026",
+      title: "BTG/Nexus: Flávio 46%, Lula 45% — empate técnico no 2º turno",
+      body: [
+        "A pesquisa BTG/Nexus divulgada nesta segunda-feira (8/9) mostra Flávio Bolsonaro (PL) com 46% e Lula (PT) com 45% num cenário simulado de segundo turno — diferença dentro da margem de erro, ou seja, um empate técnico.",
+        "O resultado confirma uma tendência que já aparecia em outras pesquisas da semana: PoderData/Aya (3/9) mostrou Flávio 45% a Lula 44%, enquanto o Datafolha (3/9), na direção oposta, deu vitória técnica a Lula por 46% a 44%.",
+        "Ou seja, dependendo do instituto, o 2º turno aparece tecnicamente empatado com uma leve vantagem para um lado ou outro — nenhum candidato abre distância fora da margem de erro."
+      ]
+    },
+    "tse-prazo-marcal": {
+      source: "TSE — fonte oficial", date: "8 set", url: "https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026",
+      title: "TSE tem até 14 de setembro para julgar candidatura de Marçal",
+      body: [
+        "O Tribunal Superior Eleitoral tem prazo até 14 de setembro para julgar o registro da candidatura de Pablo Marçal (PRTB) e decidir se ela é homologada ou barrada.",
+        "Marçal foi declarado inelegível por 8 anos pela Justiça Eleitoral de São Paulo em fevereiro de 2025, por abuso de poder político e econômico e uso indevido dos meios de comunicação na disputa pela Prefeitura de São Paulo em 2024 — condenação que ainda está sob recurso.",
+        "Por isso, mesmo já tendo registrado a candidatura em agosto, Marçal segue numa posição jurídica incerta: pesquisas eleitorais como a Quaest têm simulado cenários com e sem ele, justamente por essa pendência."
+      ]
+    },
+    "quaest-indecisos": {
+      source: "Gazeta do Povo / G1", date: "7 set", url: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-presidente-setembro-2026-2/",
+      title: "Quaest: indecisos caem de 51% para 42% com início da campanha",
+      body: [
+        "A pesquisa Quaest divulgada em 7 de setembro (2.004 entrevistas, de 3 a 6/9, margem de erro de 2 pontos) mostra Lula (PT) com 36% das intenções de voto no cenário estimulado de primeiro turno, seguido por Flávio Bolsonaro (PL) com 29%.",
+        "Augusto Cury (Avante) aparece em terceiro, com 8% — deslocando-se do chamado 'segundo pelotão' e mantendo uma tendência de crescimento observada em outras pesquisas da mesma semana.",
+        "Um dado notável: a parcela de eleitores indecisos caiu de 51% em 14 de agosto para 42% agora, refletindo o efeito do início oficial da campanha eleitoral em definir posições."
+      ]
+    },
     "master-moraes-vorcaro": {
       source: "Estadão / Poder360", date: "1 set", url: "https://www.poder360.com.br/poder-eleicoes-2026/flavio-chama-moraes-de-advogado-de-vorcaro-e-pede-renuncia/",
       title: "Documentos apreendidos com Vorcaro reacendem debate sobre contrato da mulher de Moraes",
@@ -946,8 +1053,8 @@
       '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>';
     view.style.display = 'block';
     // make sure we're on the feed tab so the article is visible
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    document.querySelector('.nav-item[data-tab="feed"]').classList.add('active');
+    document.querySelectorAll('.nav-item, .topnav-btn').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('[data-tab="feed"]').forEach(n => n.classList.add('active'));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById('tab-feed').classList.add('active');
     document.getElementById('chipScroll').style.display = 'flex';
@@ -998,15 +1105,15 @@
     });
   });
 
-  // bottom nav tab switching
-  const navItems = document.querySelectorAll('.nav-item');
+  // bottom nav (mobile) + top nav (desktop) tab switching, kept in sync
+  const navItems = document.querySelectorAll('.nav-item, .topnav-btn');
   const panels = document.querySelectorAll('.tab-panel');
   const chipScroll = document.getElementById('chipScroll');
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      navItems.forEach(n => n.classList.remove('active'));
-      item.classList.add('active');
       const tab = item.dataset.tab;
+      navItems.forEach(n => n.classList.remove('active'));
+      document.querySelectorAll('[data-tab="' + tab + '"]').forEach(n => n.classList.add('active'));
       panels.forEach(p => p.classList.remove('active'));
       document.getElementById('tab-' + tab).classList.add('active');
       chipScroll.style.display = (tab === 'feed') ? 'flex' : 'none';
@@ -1015,6 +1122,38 @@
   });
 
   initFollowStars();
+
+  // Drag-to-scroll for the candidate chip row (desktop mouse users)
+  (function(){
+    const el = document.getElementById('chipScroll');
+    let isDown = false, startX, scrollLeft, moved = false;
+    el.addEventListener('mousedown', (e) => {
+      isDown = true; moved = false;
+      el.classList.add('dragging');
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+      el.classList.remove('dragging');
+    });
+    el.addEventListener('mouseleave', () => {
+      isDown = false;
+      el.classList.remove('dragging');
+    });
+    el.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = x - startX;
+      if(Math.abs(walk) > 5) moved = true;
+      el.scrollLeft = scrollLeft - walk;
+    });
+    // prevent the drag from also triggering a chip click
+    el.addEventListener('click', (e) => {
+      if(moved){ e.stopPropagation(); e.preventDefault(); moved = false; }
+    }, true);
+  })();
 </script>
 
 </body>
