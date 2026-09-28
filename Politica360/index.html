@@ -1244,6 +1244,13 @@
       return;
     }
 
+    if(typeof firebase === 'undefined'){
+      const off = () => showMsg('Não foi possível carregar o sistema de login. Verifique sua conexão, desative bloqueadores de anúncio para este site e recarregue a página.');
+      el('btnGoogle').addEventListener('click', off);
+      el('btnOutlook').addEventListener('click', off);
+      return;
+    }
+
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
