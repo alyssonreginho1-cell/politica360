@@ -278,6 +278,30 @@
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
 
+
+  /* Login e comentários */
+  .auth-msg{font-size:13px;color:#8A5E13;background:#FBEFDD;border:1px solid #E9D3A9;border-radius:9px;padding:10px 14px;margin-bottom:14px;}
+  .user-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:13.5px;font-weight:600;color:var(--ink);}
+  .user-photo{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--line);}
+  .logout-btn{margin-left:auto;background:none;border:1px solid var(--line);border-radius:20px;padding:5px 12px;
+    font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);cursor:pointer;}
+  .logout-btn:hover{border-color:var(--tiffany);color:var(--tiffany-deep);}
+  #commentForm textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 14px;
+    font-family:'Inter',sans-serif;font-size:14px;resize:vertical;color:var(--ink);background:var(--bg-card);}
+  #commentForm textarea:focus{outline:none;border-color:var(--tiffany);}
+  .cf-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
+  .cf-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);}
+  .post-btn{background:var(--tiffany);color:var(--navy);border:none;border-radius:20px;padding:9px 20px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:'Inter',sans-serif;}
+  .post-btn:disabled{opacity:.5;cursor:default;}
+  .comment-list{margin-top:22px;display:flex;flex-direction:column;gap:12px;}
+  .comment-item{border-top:1px solid var(--line);padding-top:12px;}
+  .ci-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .ci-name{font-size:13px;font-weight:600;color:var(--ink);}
+  .ci-date{font-size:11.5px;color:var(--ink-soft);}
+  .ci-text{font-size:14px;color:var(--ink);line-height:1.55;margin:0;white-space:pre-wrap;word-break:break-word;}
+  .comments-empty{font-size:13px;color:var(--ink-soft);text-align:center;padding:10px 0;}
+
   @media (max-width:400px){.fc-headline{font-size:14px;}}
 
   /* Desktop layout: use the extra width instead of leaving it empty */
@@ -374,6 +398,12 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="renan" data-id="toffoli-suspende-renan-grassi" role="button" tabindex="0" onclick="openArticle('toffoli-suspende-renan-grassi')" onkeypress="if(event.key=='Enter')openArticle('toffoli-suspende-renan-grassi')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">31 ago</span><span class="fc-category">Justiça Eleitoral</span></div>
+        <p class="fc-headline">Toffoli suspende campanha digital de Renan Santos e, horas depois, também a de Wilson Grassi, por perfis não declarados ao TSE no prazo.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / CartaCapital</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="btg-nexus-empate" role="button" tabindex="0" onclick="openArticle('btg-nexus-empate')" onkeypress="if(event.key=='Enter')openArticle('btg-nexus-empate')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">8 set</span><span class="fc-category">Eleições</span></div>
@@ -621,18 +651,29 @@
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Comentários</h2></div>
       <div class="comments-box">
-        <p class="comments-intro">Entre com sua conta pra deixar um comentário. Pedimos login pra manter a discussão civilizada e identificável.</p>
-        <div class="login-row">
-          <button class="login-btn" type="button">
+        <p class="comments-intro" id="commentsIntro">Entre com sua conta pra deixar um comentário. Pedimos login pra manter a discussão civilizada e identificável. Seu nome e foto da conta aparecem junto do comentário.</p>
+        <div class="login-row" id="loginRow">
+          <button class="login-btn" type="button" id="btnGoogle">
             <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.98A9 9 0 0 0 0 9c0 1.45.35 2.83.98 4.03z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .98 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
             Entrar com Google
           </button>
-          <button class="login-btn" type="button">
+          <button class="login-btn" type="button" id="btnOutlook">
             <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><rect x="0" y="2" width="8.4" height="14" fill="#0364B8"/><rect x="9" y="2" width="9" height="6.4" fill="#0F78D4"/><rect x="9" y="9" width="9" height="6.6" fill="#28A8EA"/></svg>
             Entrar com Outlook
           </button>
         </div>
-        <div class="comment-form-locked"><span>🔒 Faça login para escrever um comentário</span></div>
+        <div class="auth-msg" id="authMsg" style="display:none;"></div>
+        <div class="comment-form-locked" id="commentLocked"><span>🔒 Faça login para escrever um comentário</span></div>
+        <div class="user-bar" id="userBar" style="display:none;">
+          <img id="userPhoto" class="user-photo" alt="" referrerpolicy="no-referrer">
+          <span id="userName"></span>
+          <button type="button" class="logout-btn" id="btnLogout">Sair</button>
+        </div>
+        <div id="commentForm" style="display:none;">
+          <textarea id="commentText" maxlength="500" rows="3" placeholder="Escreva seu comentário (até 500 caracteres)"></textarea>
+          <div class="cf-row"><span id="commentCount" class="cf-count">0/500</span><button type="button" class="post-btn" id="btnPost">Publicar</button></div>
+        </div>
+        <div class="comment-list" id="commentList"></div>
       </div>
     </section>
   </div>
@@ -743,6 +784,16 @@
 
 <script>
   const articles = {
+    "toffoli-suspende-renan-grassi": {
+      source: "Gazeta do Povo / CartaCapital", date: "31 ago", url: "https://www.gazetadopovo.com.br/eleicoes/2026/toffoli-suspende-campanha-renan-santos-presidencia/",
+      title: "Toffoli suspende campanha digital de Renan Santos e Wilson Grassi",
+      body: [
+        "O ministro Dias Toffoli, relator do caso no TSE, restringiu em 31 de agosto a campanha de Renan Santos (Missão) na internet: a decisão impede propaganda eleitoral online, bloqueia novos repasses do Fundo Eleitoral e proíbe a participação em debates de rádio, TV e podcasts.",
+        "O motivo: perfis em redes sociais usados pela campanha foram informados ao TSE 12 dias depois do registro da candidatura — atraso que, segundo Toffoli, permitiu que essas contas continuassem sendo recomendadas pelos algoritmos das plataformas, criando vantagem indevida e dificultando a fiscalização.",
+        "Horas depois, no mesmo dia, Toffoli aplicou a mesma medida a Wilson Grassi (Democrata), pelo mesmo motivo — no caso dele, oito perfis foram informados 17 dias após o registro, um dos quais com 156 mil seguidores.",
+        "Renan Santos classificou a decisão como 'um absurdo' e sua campanha informou que entraria com um mandado de segurança para tentar reverter a suspensão. As restrições valem até o TSE decidir o mérito do caso."
+      ]
+    },
     "btg-nexus-empate": {
       source: "UOL", date: "8 set", url: "https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026",
       title: "BTG/Nexus: Flávio 46%, Lula 45% — empate técnico no 2º turno",
@@ -1156,5 +1207,167 @@
   })();
 </script>
 
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+  // =====================================================
+  // COLE AQUI o seu firebaseConfig (Console do Firebase >
+  // Configurações do projeto > Seus apps > Web).
+  // Troque cada "COLE_AQUI" pelo valor correspondente.
+  // =====================================================
+  const firebaseConfig = {
+    apiKey: "AIzaSyCTx642VKjqcWjx3V2J1RWqZVJXcG0QZgA",
+    authDomain: "politica360-24200.firebaseapp.com",
+    projectId: "politica360-24200",
+    storageBucket: "politica360-24200.firebasestorage.app",
+    messagingSenderId: "876941343864",
+    appId: "1:876941343864:web:e0d96714fdb51877f2418d"
+  };
+
+  (function(){
+    const el = (id) => document.getElementById(id);
+    const configured = !String(firebaseConfig.apiKey).startsWith("COLE");
+
+    function showMsg(text){
+      const m = el('authMsg');
+      if(!text){ m.style.display = 'none'; return; }
+      m.textContent = text;
+      m.style.display = 'block';
+    }
+
+    if(!configured){
+      const notReady = () => showMsg('O login ainda está sendo configurado. Volte em breve!');
+      el('btnGoogle').addEventListener('click', notReady);
+      el('btnOutlook').addEventListener('click', notReady);
+      return;
+    }
+
+    if(typeof firebase === 'undefined'){
+      const off = () => showMsg('Não foi possível carregar o sistema de login. Verifique sua conexão, desative bloqueadores de anúncio para este site e recarregue a página.');
+      el('btnGoogle').addEventListener('click', off);
+      el('btnOutlook').addEventListener('click', off);
+      return;
+    }
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    function login(provider){
+      showMsg('');
+      auth.signInWithPopup(provider).catch((err) => {
+        if(err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request') return;
+        if(err.code === 'auth/unauthorized-domain') showMsg('Este endereço do site ainda não foi autorizado no Firebase.');
+        else if(err.code === 'auth/popup-blocked') showMsg('Seu navegador bloqueou a janela de login. Libere pop-ups para este site e tente de novo.');
+        else if(err.code === 'auth/account-exists-with-different-credential') showMsg('Já existe uma conta com esse e-mail usando outro método de login. Tente entrar com o outro botão.');
+        else showMsg('Não foi possível entrar agora. Tente novamente em instantes.');
+      });
+    }
+
+    el('btnGoogle').addEventListener('click', () => login(new firebase.auth.GoogleAuthProvider()));
+    el('btnOutlook').addEventListener('click', () => {
+      const p = new firebase.auth.OAuthProvider('microsoft.com');
+      p.setCustomParameters({prompt: 'select_account'});
+      login(p);
+    });
+    el('btnLogout').addEventListener('click', () => auth.signOut());
+
+    auth.onAuthStateChanged((user) => {
+      const logged = !!user;
+      el('loginRow').style.display = logged ? 'none' : 'flex';
+      el('commentLocked').style.display = logged ? 'none' : 'flex';
+      el('commentsIntro').style.display = logged ? 'none' : 'block';
+      el('userBar').style.display = logged ? 'flex' : 'none';
+      el('commentForm').style.display = logged ? 'block' : 'none';
+      if(logged){
+        el('userName').textContent = user.displayName || 'Usuário';
+        const photo = user.photoURL || '';
+        el('userPhoto').style.display = photo.startsWith('https://') ? 'block' : 'none';
+        if(photo.startsWith('https://')) el('userPhoto').src = photo;
+      }
+    });
+
+    const txt = el('commentText');
+    txt.addEventListener('input', () => { el('commentCount').textContent = txt.value.length + '/500'; });
+
+    el('btnPost').addEventListener('click', () => {
+      const user = auth.currentUser;
+      const text = txt.value.trim();
+      if(!user || !text) return;
+      const btn = el('btnPost');
+      btn.disabled = true;
+      showMsg('');
+      db.collection('comments').add({
+        text: text.slice(0, 500),
+        uid: user.uid,
+        name: (user.displayName || 'Usuário').slice(0, 100),
+        photo: user.photoURL || '',
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        txt.value = '';
+        el('commentCount').textContent = '0/500';
+      }).catch((err) => {
+        showMsg(err.code === 'permission-denied'
+          ? 'Sem permissão para publicar. Confira as regras do Firestore.'
+          : 'Não foi possível publicar agora. Tente novamente.');
+      }).finally(() => { btn.disabled = false; });
+    });
+
+    function fmt(ts){
+      if(!ts || !ts.toDate) return 'agora';
+      return ts.toDate().toLocaleString('pt-BR', {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'});
+    }
+
+    db.collection('comments').orderBy('createdAt', 'desc').limit(50).onSnapshot((snap) => {
+      const list = el('commentList');
+      list.textContent = '';
+      if(snap.empty){
+        const e = document.createElement('div');
+        e.className = 'comments-empty';
+        e.textContent = 'Ainda não há comentários. Seja o primeiro!';
+        list.appendChild(e);
+        return;
+      }
+      snap.forEach((doc) => {
+        const d = doc.data();
+        const item = document.createElement('div');
+        item.className = 'comment-item';
+        const head = document.createElement('div');
+        head.className = 'ci-head';
+        if(typeof d.photo === 'string' && d.photo.startsWith('https://')){
+          const img = document.createElement('img');
+          img.className = 'user-photo';
+          img.alt = '';
+          img.referrerPolicy = 'no-referrer';
+          img.src = d.photo;
+          head.appendChild(img);
+        }
+        const name = document.createElement('span');
+        name.className = 'ci-name';
+        name.textContent = d.name || 'Usuário';
+        const date = document.createElement('span');
+        date.className = 'ci-date';
+        date.textContent = fmt(d.createdAt);
+        head.appendChild(name);
+        head.appendChild(date);
+        const body = document.createElement('p');
+        body.className = 'ci-text';
+        body.textContent = d.text || '';
+        item.appendChild(head);
+        item.appendChild(body);
+        list.appendChild(item);
+      });
+    }, () => {
+      const list = el('commentList');
+      list.textContent = '';
+      const e = document.createElement('div');
+      e.className = 'comments-empty';
+      e.textContent = 'Não foi possível carregar os comentários agora.';
+      list.appendChild(e);
+    });
+  })();
+</script>
 </body>
 </html>
