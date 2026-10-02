@@ -323,6 +323,19 @@
   @media (min-width:860px){
     .article-view{max-width:760px;margin:0 auto;}
   }
+
+  .hdr-auth{display:flex;align-items:center;flex-shrink:0;margin-left:12px;}
+  .hdr-login{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);border:none;border-radius:20px;padding:8px 14px;font:600 13px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;}
+  .hdr-login:hover{background:var(--bg-card-2);}
+  .hdr-user{display:flex;align-items:center;gap:8px;color:#EAF6F5;font-size:13px;font-weight:600;}
+  .hdr-user span{max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .hdr-photo{width:28px;height:28px;border-radius:50%;object-fit:cover;}
+  .hdr-logout{background:none;border:1px solid rgba(234,246,245,.35);color:#B9D3D1;border-radius:20px;padding:4px 10px;font-size:12px;cursor:pointer;}
+  .hdr-logout:hover{color:#fff;border-color:var(--tiffany);}
+  .auth-toast{position:fixed;top:74px;left:14px;right:14px;max-width:420px;margin-left:auto;z-index:30;box-shadow:var(--shadow-hover);}
+  .art-comments{max-width:none;margin-top:28px;}
+  .ac-title{font-family:'Fraunces',serif;font-size:18px;margin:0 0 14px;}
+  @media (max-width:859px){.live-pill-mobile{display:none;}.hdr-user span{display:none;}.hdr-login{padding:7px 11px;font-size:12px;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -347,11 +360,11 @@
         <button class="topnav-btn active" data-tab="feed">Feed</button>
         <button class="topnav-btn" data-tab="comparar">Comparar</button>
         <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
-        <button class="topnav-btn" data-tab="comentarios">Comentários</button>
         <button class="topnav-btn" data-tab="fontes">Fontes</button>
         <span class="live-pill">Campanha no ar</span>
       </nav>
       <div class="live-pill live-pill-mobile">Campanha no ar</div>
+      <div class="hdr-auth" id="hdrAuth"><button class="hdr-login" type="button" id="btnGoogle"><svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.98A9 9 0 0 0 0 9c0 1.45.35 2.83.98 4.03z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .98 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z"/></svg><span>Entrar com Google</span></button><div class="hdr-user" id="userBar" style="display:none;"><img id="userPhoto" class="hdr-photo" alt="" referrerpolicy="no-referrer"><span id="userName"></span><button type="button" class="hdr-logout" id="btnLogout">Sair</button></div></div>
     </div>
     <div class="chip-scroll" id="chipScroll">
       <div class="chip all active" data-filter="all">Todos</div>
@@ -361,7 +374,6 @@
       <div class="chip" data-filter="zema"><span class="dot" style="background:var(--c3)"></span>Zema</div>
       <div class="chip" data-filter="caiado"><span class="dot" style="background:var(--c4)"></span>Caiado</div>
       <div class="chip" data-filter="renan"><span class="dot" style="background:var(--c5)"></span>Renan Santos</div>
-      <div class="chip" data-filter="marcal"><span class="dot" style="background:#D94F70"></span>Pablo Marçal</div>
       <div class="chip" data-filter="cury"><span class="dot" style="background:#5C7A8A"></span>Augusto Cury</div>
       <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
       <div class="chip" data-filter="barao"><span class="dot" style="background:#5C7A8A"></span>Clariana Barão</div>
@@ -372,21 +384,23 @@
     </div>
   </div><!-- /topbar -->
 
+  <div class="auth-msg auth-toast" id="authMsg" style="display:none;"></div>
+
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">25 dias</div><div class="lbl">para o 1º turno</div></div>
+    <div class="e"><div class="num">2 dias</div><div class="lbl">para o 1º turno</div></div>
     <div class="e"><div class="num">4 out</div><div class="lbl">votação</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno, se houver</div></div>
-    <div class="e"><div class="num">13</div><div class="lbl">candidaturas registradas</div></div>
+    <div class="e"><div class="num">12</div><div class="lbl">candidatos na disputa</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('btg-nexus-empate')">Empate técnico no 2º turno</button>
-    <button class="trending-pill" onclick="openArticle('master-moraes-vorcaro')">Caso Master-Moraes</button>
-    <button class="trending-pill" onclick="openArticle('tse-prazo-marcal')">Marçal na Justiça Eleitoral</button>
-    <button class="trending-pill" onclick="openArticle('debate-hoje')">Debate presidencial</button>
+    <button class="trending-pill" onclick="openArticle('datafolha-1out')">Datafolha: 48% x 45%</button>
+    <button class="trending-pill" onclick="openArticle('debate-globo-cancelado')">Debate da Globo cancelado</button>
+    <button class="trending-pill" onclick="openArticle('candidatos-12')">12 candidatos na disputa</button>
+    <button class="trending-pill" onclick="openArticle('fachin-master-pf')">Caso Master</button>
   </div>
 
   <!-- FEED TAB -->
@@ -399,28 +413,40 @@
 
       <div id="feedList">
 
-      <div class="feed-card" data-cand="renan" data-id="toffoli-suspende-renan-grassi" role="button" tabindex="0" onclick="openArticle('toffoli-suspende-renan-grassi')" onkeypress="if(event.key=='Enter')openArticle('toffoli-suspende-renan-grassi')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">31 ago</span><span class="fc-category">Justiça Eleitoral</span></div>
-        <p class="fc-headline">Toffoli suspende campanha digital de Renan Santos e, horas depois, também a de Wilson Grassi, por perfis não declarados ao TSE no prazo.</p>
-        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / CartaCapital</span><span class="fc-link">ler mais ↗</span></div>
+      <div class="feed-card" data-cand="all" data-id="datafolha-1out" role="button" tabindex="0" onclick="openArticle('datafolha-1out')" onkeypress="if(event.key=='Enter')openArticle('datafolha-1out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">DF</div><span class="fc-cand">Pesquisa Datafolha</span><span class="fc-dot"></span><span class="fc-time">1 out</span></div>
+        <p class="fc-headline">Datafolha: Lula tem 42% e Flávio 38% no 1º turno; no 2º, 48% a 45%, empate técnico.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="btg-nexus-empate" role="button" tabindex="0" onclick="openArticle('btg-nexus-empate')" onkeypress="if(event.key=='Enter')openArticle('btg-nexus-empate')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">8 set</span><span class="fc-category">Eleições</span></div>
-        <p class="fc-headline">BTG/Nexus mostra Flávio com 46% e Lula com 45% no 2º turno — empate técnico, dentro da margem de erro.</p>
-        <div class="fc-bottom"><span class="fc-source">● UOL</span><span class="fc-link">ler mais ↗</span></div>
+            <div class="feed-card" data-cand="all" data-id="debate-globo-cancelado" role="button" tabindex="0" onclick="openArticle('debate-globo-cancelado')" onkeypress="if(event.key=='Enter')openArticle('debate-globo-cancelado')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">TV</div><span class="fc-cand">Debate presidencial</span><span class="fc-dot"></span><span class="fc-time">1 out</span></div>
+        <p class="fc-headline">Debate da Globo, o último antes do 1º turno, é cancelado depois de decisões judiciais; Lula e Flávio não iriam.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="marcal" data-id="tse-prazo-marcal" role="button" tabindex="0" onclick="openArticle('tse-prazo-marcal')" onkeypress="if(event.key=='Enter')openArticle('tse-prazo-marcal')">
-        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">8 set</span><span class="fc-category">Justiça Eleitoral</span></div>
-        <p class="fc-headline">TSE tem até 14 de setembro para julgar e decidir se homologa ou barra o registro de candidatura de Marçal.</p>
-        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
+      <div class="feed-card" data-cand="all" data-id="candidatos-12" role="button" tabindex="0" onclick="openArticle('candidatos-12')" onkeypress="if(event.key=='Enter')openArticle('candidatos-12')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
+        <p class="fc-headline">Disputa tem 12 candidatos ativos: Marçal teve registro negado e Avalanche desistiu.</p>
+        <div class="fc-bottom"><span class="fc-source">● TSE / Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="quaest-indecisos" role="button" tabindex="0" onclick="openArticle('quaest-indecisos')" onkeypress="if(event.key=='Enter')openArticle('quaest-indecisos')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">7 set</span><span class="fc-category">Eleições</span></div>
-        <p class="fc-headline">Quaest mostra Lula com 36% e Flávio com 29% no 1º turno; parcela de indecisos cai de 51% para 42% com o início da campanha.</p>
-        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / G1</span><span class="fc-link">ler mais ↗</span></div>
+<div class="feed-card" data-cand="all" data-id="fachin-master-pf" role="button" tabindex="0" onclick="openArticle('fachin-master-pf')" onkeypress="if(event.key=='Enter')openArticle('fachin-master-pf')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">PF</div><span class="fc-cand">Caso Master</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
+        <p class="fc-headline">Fachin pede reunião com o diretor-geral da PF sobre o envolvimento de ministros no Caso Master.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="avalanche-desiste" role="button" tabindex="0" onclick="openArticle('avalanche-desiste')" onkeypress="if(event.key=='Enter')openArticle('avalanche-desiste')">
+        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">LA</div><span class="fc-cand">PRTB</span><span class="fc-dot"></span><span class="fc-time">30 set</span></div>
+        <p class="fc-headline">Leonardo Avalanche anuncia desistência da candidatura à Presidência pelo PRTB.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="pesquisas-semana-antes" role="button" tabindex="0" onclick="openArticle('pesquisas-semana-antes')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-semana-antes')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">24 set</span></div>
+        <p class="fc-headline">A uma semana do 1º turno, Datafolha e Quaest mostram Lula e Flávio em empate técnico.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="master-moraes-vorcaro" role="button" tabindex="0" onclick="openArticle('master-moraes-vorcaro')" onkeypress="if(event.key=='Enter')openArticle('master-moraes-vorcaro')">
@@ -441,132 +467,6 @@
         <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="flavio" data-id="audio-dark-horse" role="button" tabindex="0" onclick="openArticle('audio-dark-horse')" onkeypress="if(event.key=='Enter')openArticle('audio-dark-horse')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 mai</span><span class="fc-category">Justiça Eleitoral</span></div>
-        <p class="fc-headline">Áudio revelado pelo The Intercept mostra Flávio pedindo R$ 134 milhões a Vorcaro para custear filme biográfico sobre Jair Bolsonaro.</p>
-        <div class="fc-bottom"><span class="fc-source">● Agência Pública / The Intercept Brasil</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="marcal" data-id="marcal-lista-final" role="button" tabindex="0" onclick="openArticle('marcal-lista-final')" onkeypress="if(event.key=='Enter')openArticle('marcal-lista-final')">
-        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">30 ago</span></div>
-        <p class="fc-headline">Lista final da Justiça Eleitoral confirma 13 candidaturas à Presidência, incluindo a de Pablo Marçal, registrada nos últimos minutos do prazo.</p>
-        <div class="fc-bottom"><span class="fc-source">● Jota</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="marcal" data-id="marcal-tse-liminar" role="button" tabindex="0" onclick="openArticle('marcal-tse-liminar')" onkeypress="if(event.key=='Enter')openArticle('marcal-tse-liminar')">
-        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">20 ago</span></div>
-        <p class="fc-headline">TSE proíbe Pablo Marçal de usar recursos oficiais de campanha até julgar o mérito do registro de sua candidatura.</p>
-        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="marcal" data-id="marcal-registro" role="button" tabindex="0" onclick="openArticle('marcal-registro')" onkeypress="if(event.key=='Enter')openArticle('marcal-registro')">
-        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">PM</div><span class="fc-cand">Pablo Marçal</span><span class="fc-dot"></span><span class="fc-time">15 ago</span></div>
-        <p class="fc-headline">A nove minutos do fim do prazo, PRTB registra candidatura de Pablo Marçal à Presidência, com Leonardo Avalanche de vice.</p>
-        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="debate-hoje" role="button" tabindex="0" onclick="openArticle('debate-hoje')" onkeypress="if(event.key=='Enter')openArticle('debate-hoje')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">TV</div><span class="fc-cand">Debate presidencial</span><span class="fc-dot"></span><span class="fc-time">23 ago</span></div>
-        <p class="fc-headline">Primeiro debate presidencial da campanha foi ao ar na Band em 23 de agosto; Lula e Flávio confirmaram ausência, como sinalizado.</p>
-        <div class="fc-bottom"><span class="fc-source">● Metrópoles</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="caiado" data-id="caiado-kassab" role="button" tabindex="0" onclick="openArticle('caiado-kassab')" onkeypress="if(event.key=='Enter')openArticle('caiado-kassab')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c4)">RC</div><span class="fc-cand">Ronaldo Caiado</span><span class="fc-dot"></span><span class="fc-time">21 ago</span></div>
-        <p class="fc-headline">Com Gilberto Kassab como vice, Caiado aposta em se apresentar como o único nome capaz de derrotar Lula num eventual segundo turno.</p>
-        <div class="fc-bottom"><span class="fc-source">● Terra</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="flavio" data-id="flavio-urnas" role="button" tabindex="0" onclick="openArticle('flavio-urnas')" onkeypress="if(event.key=='Enter')openArticle('flavio-urnas')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">21 ago</span></div>
-        <p class="fc-headline">Em entrevista à TV Band, Flávio afirmou que vai respeitar o resultado das urnas, diferente da postura do pai após a derrota em 2022.</p>
-        <div class="fc-bottom"><span class="fc-source">● Terra</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="flavio" data-id="flavio-tse" role="button" tabindex="0" onclick="openArticle('flavio-tse')" onkeypress="if(event.key=='Enter')openArticle('flavio-tse')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">20 ago</span></div>
-        <p class="fc-headline">Candidatura de Flávio Bolsonaro é oficialmente registrada no TSE, tendo Alfredo Gaspar como vice na chapa.</p>
-        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="tv-tempo" role="button" tabindex="0" onclick="openArticle('tv-tempo')" onkeypress="if(event.key=='Enter')openArticle('tv-tempo')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">TV</div><span class="fc-cand">Propaganda eleitoral</span><span class="fc-dot"></span><span class="fc-time">18 ago</span></div>
-        <p class="fc-headline">Lula deve ter o maior tempo de propaganda gratuita no rádio e na TV entre os presidenciáveis, cerca de 1 minuto a mais que Flávio Bolsonaro.</p>
-        <div class="fc-bottom"><span class="fc-source">● TVT News</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="tse-11" role="button" tabindex="0" onclick="openArticle('tse-11')" onkeypress="if(event.key=='Enter')openArticle('tse-11')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">17 ago</span></div>
-        <p class="fc-headline">11 candidaturas à Presidência já foram registradas oficialmente; a propaganda eleitoral gratuita no rádio e TV começa dia 28 de agosto.</p>
-        <div class="fc-bottom"><span class="fc-source">● Canal Rural</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="campanha-lancamento" role="button" tabindex="0" onclick="openArticle('campanha-lancamento')" onkeypress="if(event.key=='Enter')openArticle('campanha-lancamento')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">360</div><span class="fc-cand">Cobertura geral</span><span class="fc-dot"></span><span class="fc-time">domingo, 16 ago</span></div>
-        <p class="fc-headline">Cinco principais presidenciáveis lançam campanha oficial neste domingo, cada um em sua cidade de origem política.</p>
-        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="tse-prazo" role="button" tabindex="0" onclick="openArticle('tse-prazo')" onkeypress="if(event.key=='Enter')openArticle('tse-prazo')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">15 ago</span></div>
-        <p class="fc-headline">Prazo para os partidos formalizarem o registro das candidaturas termina hoje, véspera do início da propaganda eleitoral.</p>
-        <div class="fc-bottom"><span class="fc-source">● TSE — fonte oficial</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="flavio" data-id="kassab-zero" role="button" tabindex="0" onclick="openArticle('kassab-zero')" onkeypress="if(event.key=='Enter')openArticle('kassab-zero')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
-        <p class="fc-headline">Presidente do PSD, Gilberto Kassab, avalia publicamente que as chances de vitória de Flávio são nulas.</p>
-        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="flavio" data-id="flavio-pt-boato" role="button" tabindex="0" onclick="openArticle('flavio-pt-boato')" onkeypress="if(event.key=='Enter')openArticle('flavio-pt-boato')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">FB</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
-        <p class="fc-headline">Candidato nega boatos de que teria recebido convite para se filiar ao PT durante desentendimento com o Missão.</p>
-        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="renan" data-id="renan-pl-embate" role="button" tabindex="0" onclick="openArticle('renan-pl-embate')" onkeypress="if(event.key=='Enter')openArticle('renan-pl-embate')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
-        <p class="fc-headline">PL rebate declarações do Missão em bate-boca de bastidores às vésperas do início oficial da campanha.</p>
-        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="renan" data-id="renan-largo-sf" role="button" tabindex="0" onclick="openArticle('renan-largo-sf')" onkeypress="if(event.key=='Enter')openArticle('renan-largo-sf')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">RS</div><span class="fc-cand">Renan Santos</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
-        <p class="fc-headline">Campanha do Missão começa no Largo São Francisco, em São Paulo, onde o candidato iniciou sua militância estudantil.</p>
-        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="zema" data-id="zema-montes-claros" role="button" tabindex="0" onclick="openArticle('zema-montes-claros')" onkeypress="if(event.key=='Enter')openArticle('zema-montes-claros')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">RZ</div><span class="fc-cand">Romeu Zema</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
-        <p class="fc-headline">Zema lança candidatura em Montes Claros (MG), cidade onde começou a carreira política, sem o vice na chapa presente.</p>
-        <div class="fc-bottom"><span class="fc-source">● Jornal de Brasília</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="caiado" data-id="caiado-entorno-df" role="button" tabindex="0" onclick="openArticle('caiado-entorno-df')" onkeypress="if(event.key=='Enter')openArticle('caiado-entorno-df')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c4)">RC</div><span class="fc-cand">Ronaldo Caiado</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
-        <p class="fc-headline">Em vez de um ato único, Caiado percorre cidades do Entorno do DF no primeiro dia oficial de campanha.</p>
-        <div class="fc-bottom"><span class="fc-source">● O Anhanguera</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="lula" data-id="lula-vila-euclides" role="button" tabindex="0" onclick="openArticle('lula-vila-euclides')" onkeypress="if(event.key=='Enter')openArticle('lula-vila-euclides')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">LU</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">16 ago</span></div>
-        <p class="fc-headline">Lula abre campanha à reeleição na Vila Euclides, em São Bernardo do Campo, berço político do petista.</p>
-        <div class="fc-bottom"><span class="fc-source">● O Anhanguera</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="lula" data-id="lula-pec-seguranca" role="button" tabindex="0" onclick="openArticle('lula-pec-seguranca')" onkeypress="if(event.key=='Enter')openArticle('lula-pec-seguranca')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">LU</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
-        <p class="fc-headline">Após encontro com Lula, Alcolumbre libera pauta da PEC da Segurança e do fim da escala de trabalho 6x1.</p>
-        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="amcham-retaliacao" role="button" tabindex="0" onclick="openArticle('amcham-retaliacao')" onkeypress="if(event.key=='Enter')openArticle('amcham-retaliacao')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">EC</div><span class="fc-cand">Economia &amp; eleição</span><span class="fc-dot"></span><span class="fc-time">13 ago</span></div>
-        <p class="fc-headline">Amcham alerta para riscos de retaliação comercial dos EUA como pano de fundo do ano eleitoral.</p>
-        <div class="fc-bottom"><span class="fc-source">● Cobertura política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
       </div><!-- /feedList -->
 
       <div id="articleView" class="article-view"></div>
@@ -581,9 +481,9 @@
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
     <section style="margin-top:24px;">
-      <div class="notice"><b>Sobre estes dados —</b> os planos de governo completos só viram obrigatórios após o registro das candidaturas. As propostas abaixo vêm de discursos e entrevistas de pré-campanha.</div>
+      <div class="notice"><b>Sobre estes dados —</b> o TSE já julgou os registros: Pablo Marçal teve a candidatura negada e Leonardo Avalanche desistiu. As posições abaixo são sínteses de planos, discursos e entrevistas, e podem mudar.</div>
 
-      <div class="section-title"><h2>13 candidatos registrados</h2></div>
+      <div class="section-title"><h2>12 candidatos na disputa</h2></div>
       <div class="cand-grid">
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div><button class="follow-star" data-follow="lula" onclick="toggleFollow('lula', this)">☆</button></div><span class="status-pill status-lider">Lidera pesquisas</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
@@ -592,11 +492,9 @@
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c3)">RZ</div><div><div class="cand-name">Romeu Zema</div><div class="cand-party">Novo · Ex-governador de Minas Gerais</div></div><button class="follow-star" data-follow="zema" onclick="toggleFollow('zema', this)">☆</button></div><span class="status-pill status-confirmado">Deixou o governo em abril</span><div class="cand-body"><p>Agenda liberal: fim do "Custo Brasil" em quatro anos e privatização de estatais federais, incluindo Petrobras, Caixa e Banco do Brasil.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div><button class="follow-star" data-follow="caiado" onclick="toggleFollow('caiado', this)">☆</button></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div><button class="follow-star" data-follow="caiado" onclick="toggleFollow('caiado', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div><button class="follow-star" data-follow="renan" onclick="toggleFollow('renan', this)">☆</button></div><span class="status-pill status-confirmado">Pré-candidatura lançada</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#D94F70">PM</div><div><div class="cand-name">Pablo Marçal</div><div class="cand-party">PRTB</div></div><button class="follow-star" data-follow="marcal" onclick="toggleFollow('marcal', this)">☆</button></div><span class="status-pill status-indefinido">Candidatura sob contestação judicial</span><div class="cand-body"><p>Registrou candidatura a 9 minutos do fim do prazo. TSE já proibiu uso de recursos oficiais de campanha até julgar o mérito do registro.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div><button class="follow-star" data-follow="renan" onclick="toggleFollow('renan', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">AC</div><div><div class="cand-name">Augusto Cury</div><div class="cand-party">Avante</div></div><button class="follow-star" data-follow="cury" onclick="toggleFollow('cury', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Psiquiatra e escritor best-seller, com discurso antipolarização.</p></div></div>
 
@@ -617,64 +515,18 @@
       <div class="section-title" style="margin-top:28px;"><h2>Onde os candidatos divergem</h2></div>
       <div class="compare-scroll">
         <table class="compare-table">
-          <thead><tr>
-            <th class="theme-col">Tema</th>
-            <th>Lula<br><span>PT</span></th>
-            <th>Flávio<br><span>PL</span></th>
-            <th>Zema<br><span>Novo</span></th>
-            <th>Caiado<br><span>PSD</span></th>
-            <th>Renan Santos<br><span>Missão</span></th>
-            <th>Aldo Rebelo / Barbosa<br><span>DC</span></th>
-            <th>Augusto Cury<br><span>Avante</span></th>
-            <th>Cabo Daciolo<br><span>Mobiliza</span></th>
-            <th>Edmilson Costa<br><span>PCB</span></th>
-            <th>Hertz Dias<br><span>PSTU</span></th>
-            <th>Rui Costa Pimenta<br><span>PCO</span></th>
-            <th>Samara Martins<br><span>UP</span></th>
-          </tr></thead>
+          <thead><tr><th class="theme-col">Tema</th><th>Lula<br><span>PT</span></th><th>Flávio<br><span>PL</span></th><th>Zema<br><span>Novo</span></th><th>Caiado<br><span>PSD</span></th><th>Renan Santos<br><span>Missão</span></th><th>Clariana Barão<br><span>DC</span></th><th>Augusto Cury<br><span>Avante</span></th><th>Edmilson Costa<br><span>PCB</span></th><th>Hertz Dias<br><span>PSTU</span></th><th>Rui Costa Pimenta<br><span>PCO</span></th><th>Samara Martins<br><span>UP</span></th></tr></thead>
           <tbody>
-            <tr><td class="theme-col">Economia</td><td>Mais investimento público</td><td>Menos impostos, menos Estado</td><td>Privatizações, Estado menor</td><td>Equilíbrio fiscal</td><td>Reforma administrativa, fusão de municípios</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Estatização do sistema financeiro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Projeto socialista</td></tr>
-            <tr><td class="theme-col">Impostos</td><td>Progressividade tributária</td><td>Tendência de redução</td><td>Simplificação e redução</td><td>Simplificação tributária</td><td>Forte corte de impostos</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Programas sociais</td><td>Ampliação</td><td>Manutenção, foco em eficiência</td><td>Mais focalizados</td><td>Continuidade com controle</td><td>Fim do reajuste automático ao salário mínimo</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Segurança</td><td>Integração União-estados</td><td>Penas mais duras</td><td>Gestão por metas</td><td>Bandeira principal</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Privatizações</td><td>Cautela, empresas estratégicas</td><td>Favorável</td><td>Bastante favorável</td><td>Favorável em alguns setores</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Contra, defende estatização</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Relações internacionais</td><td>Aproximação BRICS/América do Sul</td><td>Aproximação EUA/ocidente</td><td>Liberalismo econômico</td><td>Perfil pragmático, agro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Economia</td><td>Mais investimento público</td><td>Menos impostos, menos Estado</td><td>Privatizações, Estado menor</td><td>Equilíbrio fiscal</td><td>Reforma administrativa, fusão de municípios</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Estatização do sistema financeiro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Projeto socialista</td></tr>
+            <tr><td class="theme-col">Impostos</td><td>Progressividade tributária</td><td>Tendência de redução</td><td>Simplificação e redução</td><td>Simplificação tributária</td><td>Forte corte de impostos</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Programas sociais</td><td>Ampliação</td><td>Manutenção, foco em eficiência</td><td>Mais focalizados</td><td>Continuidade com controle</td><td>Fim do reajuste automático ao salário mínimo</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Segurança</td><td>Integração União-estados</td><td>Penas mais duras</td><td>Gestão por metas</td><td>Bandeira principal</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Privatizações</td><td>Cautela, empresas estratégicas</td><td>Favorável</td><td>Bastante favorável</td><td>Favorável em alguns setores</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Contra, defende estatização</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Relações internacionais</td><td>Aproximação BRICS/América do Sul</td><td>Aproximação EUA/ocidente</td><td>Liberalismo econômico</td><td>Perfil pragmático, agro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
           </tbody>
         </table>
       </div>
       <p class="compare-note">Células em branco (—) indicam que o candidato ainda não detalhou publicamente uma posição nesse tema. Síntese de posicionamentos públicos, sujeita a mudança. Para o texto completo, use as fontes na aba "Fontes".</p>
-    </section>
-  </div>
-
-  <!-- COMENTÁRIOS TAB -->
-  <div class="tab-panel" id="tab-comentarios">
-    <section style="margin-top:24px;">
-      <div class="section-title"><h2>Comentários</h2></div>
-      <div class="comments-box">
-        <p class="comments-intro" id="commentsIntro">Entre com sua conta pra deixar um comentário. Pedimos login pra manter a discussão civilizada e identificável. Seu nome e foto da conta aparecem junto do comentário.</p>
-        <div class="login-row" id="loginRow">
-          <button class="login-btn" type="button" id="btnGoogle">
-            <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.98A9 9 0 0 0 0 9c0 1.45.35 2.83.98 4.03z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .98 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
-            Entrar com Google
-          </button>
-          <button class="login-btn" type="button" id="btnOutlook">
-            <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><rect x="0" y="2" width="8.4" height="14" fill="#0364B8"/><rect x="9" y="2" width="9" height="6.4" fill="#0F78D4"/><rect x="9" y="9" width="9" height="6.6" fill="#28A8EA"/></svg>
-            Entrar com Outlook
-          </button>
-        </div>
-        <div class="auth-msg" id="authMsg" style="display:none;"></div>
-        <div class="comment-form-locked" id="commentLocked"><span>🔒 Faça login para escrever um comentário</span></div>
-        <div class="user-bar" id="userBar" style="display:none;">
-          <img id="userPhoto" class="user-photo" alt="" referrerpolicy="no-referrer">
-          <span id="userName"></span>
-          <button type="button" class="logout-btn" id="btnLogout">Sair</button>
-        </div>
-        <div id="commentForm" style="display:none;">
-          <textarea id="commentText" maxlength="500" rows="3" placeholder="Escreva seu comentário (até 500 caracteres)"></textarea>
-          <div class="cf-row"><span id="commentCount" class="cf-count">0/500</span><button type="button" class="post-btn" id="btnPost">Publicar</button></div>
-        </div>
-        <div class="comment-list" id="commentList"></div>
-      </div>
     </section>
   </div>
 
@@ -684,28 +536,34 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — cenário estimulado</h2><span class="count">Quaest, 7 set</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — cenário estimulado</h2><span class="count">Datafolha, 1º out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <tbody>
-            <tr><td class="theme-col">Lula (PT)</td><td><b>36%</b></td></tr>
-            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>29%</b></td></tr>
-            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>8%</td></tr>
+            <tr><td class="theme-col">Lula (PT)</td><td><b>42%</b></td></tr>
+            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>38%</b></td></tr>
+            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>4%</td></tr>
             <tr><td class="theme-col">Renan Santos (Missão)</td><td>3%</td></tr>
             <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>3%</td></tr>
-            <tr><td class="theme-col">Romeu Zema (Novo)</td><td>2%</td></tr>
+            <tr><td class="theme-col">Romeu Zema (Novo)</td><td>1%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="compare-note">2.004 entrevistas, de 3 a 6 de setembro. Margem de erro de 2 pontos. Indecisos: 42% (caíram de 51% em 14 de agosto).</p>
+      <p class="compare-note">2.506 entrevistas, de 28 de setembro a 1º de outubro. Margem de erro de 2 pontos. Votos válidos: Lula 45%, Flávio 40%. Indecisos na espontânea: 13%.</p>
+      <div class="section-title" style="margin-top:24px;"><h2 style="font-size:15px;">Rodadas anteriores — 1º turno</h2><span class="count">set/2026</span></div>
+      <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead><tbody>
+        <tr><td class="theme-col">Datafolha</td><td><b>40%</b></td><td>36%</td><td>22–23 set</td></tr>
+        <tr><td class="theme-col">Quaest</td><td><b>37%</b></td><td>33%</td><td>17–20 set</td></tr>
+      </tbody></table></div>
+      <p class="compare-note">Datafolha e Quaest têm novas rodadas previstas para a véspera da votação; os números podem mudar ainda hoje e amanhã.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">todas de set/2026</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 1º out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
-            <tr><td class="theme-col">Datafolha</td><td><b>46%</b></td><td>44%</td><td>3 set</td></tr>
+            <tr><td class="theme-col">Datafolha</td><td><b>48%</b></td><td>45%</td><td>1 out</td></tr>
             <tr><td class="theme-col">PoderData/Aya</td><td>44%</td><td><b>45%</b></td><td>3 set</td></tr>
           </tbody>
         </table>
@@ -753,7 +611,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 9 de setembro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 2 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -769,10 +627,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-6 3 3 5-8"/></svg>
       Pesquisas
     </button>
-    <button class="nav-item" data-tab="comentarios">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-9 8.36A8.5 8.5 0 013 11.5 8.38 8.38 0 0111.5 3a8.5 8.5 0 019.5 8.5z"/></svg>
-      Comentários
-    </button>
     <button class="nav-item" data-tab="fontes">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
       Fontes
@@ -784,6 +638,60 @@
 
 <script>
   const articles = {
+    "debate-globo-cancelado": {
+      source: "Gazeta do Povo", date: "1 out", url: "https://www.gazetadopovo.com.br/eleicoes/2026/judiciario-interfere-regras-provoca-reviravoltas-debate-presidente-globo/",
+      title: "Debate da Globo, o último antes do 1º turno, é cancelado após decisões judiciais",
+      body: [
+        "O debate presidencial da TV Globo marcado para quinta-feira (1º), o último na TV antes do 1º turno, foi cancelado depois de uma sequência de decisões judiciais que mudou as regras e a bancada.",
+        "Lula (PT) já tinha avisado que não iria. Uma liminar da ministra Estela Aranha, do TSE, proibiu a Globo de exibir um púlpito vazio com o nome dele e de permitir perguntas direcionadas ao presidente. Pouco antes das 19h30, Flávio Bolsonaro (PL) anunciou que também não participaria, alegando censura ao evento imposta pelo TSE.",
+        "Antes disso, em 29 de setembro, o presidente do TSE, Kassio Nunes Marques, mandou incluir Romeu Zema (Novo), já que o partido tem ao menos cinco parlamentares no Congresso. Na noite de quinta, o ministro Gilmar Mendes, do STF, determinou a inclusão de Renan Santos (Missão), a pedido do Solidariedade.",
+        "Pouco depois das 20h30, a Globo cancelou a transmissão e disse em nota que as decisões de última hora geraram insegurança jurídica. Abert, ANJ e Aner divulgaram nota conjunta criticando a intervenção judicial."
+      ]
+    },
+    "candidatos-12": {
+      source: "TSE / Gazeta do Povo", date: "2 out", url: "https://www.gazetadopovo.com.br/eleicoes/2026/quem-sao-candidatos-presidente-2026/",
+      title: "Disputa presidencial tem 12 candidatos ativos; Marçal e Avalanche estão fora",
+      body: [
+        "O TSE indeferiu em 11 de setembro, por unanimidade, o registro de Pablo Marçal (PRTB), por falta de comprovação de filiação ao partido dentro do prazo legal. O PRTB registrou Leonardo Avalanche no lugar dele, e Avalanche desistiu em 30 de setembro, depois de Marçal declarar apoio a Flávio Bolsonaro.",
+        "Seguem na disputa: Lula (PT, 13), Flávio Bolsonaro (PL, 22), Ronaldo Caiado (PSD, 55), Romeu Zema (Novo, 30), Renan Santos (Missão, 14), Augusto Cury (Avante, 70), Samara Martins (UP, 80), Rui Costa Pimenta (PCO, 29), Hertz Dias (PSTU, 16), Edmilson Costa (PCB, 21), Clariana Barão (DC, 27) e Wilson Grassi (Democrata, 35).",
+        "Como a desistência de Avalanche foi perto da votação, vale conferir no site do TSE como a situação dele aparece na urna."
+      ]
+    },
+    "datafolha-1out": {
+      source: "Gazeta do Povo / Datafolha", date: "1 out", url: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/",
+      title: "Datafolha: Lula 42% e Flávio 38% no 1º turno; no 2º, 48% a 45%",
+      body: [
+        "O Datafolha divulgou na quinta-feira (1º) nova pesquisa presidencial, feita de 28 de setembro a 1º de outubro com 2.506 eleitores. A margem de erro é de 2 pontos percentuais.",
+        "No cenário estimulado com votos totais, Lula (PT) tem 42% e Flávio Bolsonaro (PL) 38%, num empate técnico. Em seguida vêm Augusto Cury (4%), Ronaldo Caiado (3%), Renan Santos (3%) e Romeu Zema (1%). Considerando só os votos válidos, Lula aparece com 45% e Flávio com 40%.",
+        "Num eventual 2º turno, Lula teria 48% contra 45% de Flávio, de novo dentro da margem de erro. Contra Cury, o placar simulado é 47% a 42%; contra Caiado, 48% a 42%; contra Zema, 49% a 40%; e contra Renan Santos, 48% a 39%.",
+        "Na pesquisa espontânea, em que os nomes não são mostrados, Lula tem 39%, Flávio 31% e os indecisos somam 13%. A pesquisa está registrada no TSE sob o número BR-08039/2026."
+      ]
+    },
+    "pesquisas-semana-antes": {
+      source: "Gazeta do Povo", date: "24 set", url: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/os-numeros-das-pesquisas-para-presidente-a-uma-semana-do-1turno/",
+      title: "A uma semana do 1º turno, Lula e Flávio seguem em empate técnico",
+      body: [
+        "Segundo levantamento da Gazeta do Povo, Datafolha, Nexus/BTG, Quaest e Real Time Big Data divulgaram pesquisas na semana anterior e todas apontaram empate técnico entre Lula e Flávio Bolsonaro.",
+        "O Datafolha (22 e 23 de setembro) mostrou Lula com 40% e Flávio com 36%. A Quaest (17 a 20 de setembro) registrou 37% a 33%. A vantagem de Lula nos dois casos fica dentro da margem de erro.",
+        "A parcela de indecisos na pesquisa espontânea variava bastante entre os institutos: 35% na Quaest, 18% no Datafolha, 11% no Real Time Big Data e 8% na Nexus/BTG."
+      ]
+    },
+    "avalanche-desiste": {
+      source: "Gazeta do Povo", date: "30 set", url: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/",
+      title: "Leonardo Avalanche (PRTB) anuncia desistência da candidatura à Presidência",
+      body: [
+        "Leonardo Avalanche, presidente nacional do PRTB, assumiu a vaga de Pablo Marçal, que teve a candidatura indeferida pelo TSE. Ele anunciou a desistência em 30 de setembro, depois de Marçal declarar apoio à candidatura de Flávio Bolsonaro (PL).",
+        "No Datafolha de 1º de outubro, Avalanche e outros quatro candidatos (Clariana Barão, Edmilson Costa, Hertz Dias e Rui Costa Pimenta) não pontuaram."
+      ]
+    },
+    "fachin-master-pf": {
+      source: "Gazeta do Povo", date: "2 out", url: "https://www.gazetadopovo.com.br/republica/fachin-pede-reuniao-com-diretor-geral-da-pf-sobre-envolvimento-de-ministros-no-caso-master/",
+      title: "Fachin pede reunião com diretor-geral da PF sobre ministros no Caso Master",
+      body: [
+        "A Gazeta do Povo noticiou nesta sexta-feira (2) que Fachin pediu uma reunião com o diretor-geral da Polícia Federal para tratar do suposto envolvimento de ministros no Caso Master.",
+        "Este painel reproduz apenas o que consta na manchete; o texto completo e os desdobramentos estão na matéria original."
+      ]
+    },
     "toffoli-suspende-renan-grassi": {
       source: "Gazeta do Povo / CartaCapital", date: "31 ago", url: "https://www.gazetadopovo.com.br/eleicoes/2026/toffoli-suspende-campanha-renan-santos-presidencia/",
       title: "Toffoli suspende campanha digital de Renan Santos e Wilson Grassi",
@@ -1027,6 +935,8 @@
     }
   };
 
+const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-title">Comentários</h2>'+'<div class="comment-form-locked" id="commentLocked"><span>🔒 Entre com o Google, no topo da página, para comentar</span></div>'+'<div id="commentForm" style="display:none;"><textarea id="commentText" maxlength="500" rows="3" placeholder="Escreva seu comentário (até 500 caracteres)"></textarea>'+'<div class="cf-row"><span id="commentCount" class="cf-count">0/500</span><button type="button" class="post-btn" id="btnPost">Publicar</button></div></div>'+'<div class="comment-list" id="commentList"></div></section>';
+
   function openArticle(id){
     const a = articles[id];
     if(!a) return;
@@ -1038,7 +948,7 @@
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>';
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + COMMENTS_HTML;
     view.style.display = 'block';
     window.scrollTo({top:0, behavior:'smooth'});
   }
@@ -1101,8 +1011,9 @@
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>';
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + COMMENTS_HTML;
     view.style.display = 'block';
+    if(window.p360OpenComments) window.p360OpenComments(id);
     // make sure we're on the feed tab so the article is visible
     document.querySelectorAll('.nav-item, .topnav-btn').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('[data-tab="feed"]').forEach(n => n.classList.add('active'));
@@ -1113,6 +1024,7 @@
   }
 
   function closeArticle(){
+    if(window.p360CloseComments) window.p360CloseComments();
     document.getElementById('feedList').style.display = 'block';
     document.getElementById('verifyNote').style.display = 'flex';
     document.getElementById('articleView').style.display = 'none';
@@ -1228,145 +1140,102 @@
 
   (function(){
     const el = (id) => document.getElementById(id);
-    const configured = !String(firebaseConfig.apiKey).startsWith("COLE");
+    const ok = !String(firebaseConfig.apiKey).startsWith("COLE") && typeof firebase !== 'undefined';
+    let auth = null, db = null, user = null, unsub = null;
 
     function showMsg(text){
       const m = el('authMsg');
       if(!text){ m.style.display = 'none'; return; }
-      m.textContent = text;
-      m.style.display = 'block';
+      m.textContent = text; m.style.display = 'block';
+      clearTimeout(showMsg.t); showMsg.t = setTimeout(() => { m.style.display = 'none'; }, 8000);
     }
+    if(ok){ firebase.initializeApp(firebaseConfig); auth = firebase.auth(); db = firebase.firestore(); }
 
-    if(!configured){
-      const notReady = () => showMsg('O login ainda está sendo configurado. Volte em breve!');
-      el('btnGoogle').addEventListener('click', notReady);
-      el('btnOutlook').addEventListener('click', notReady);
-      return;
-    }
-
-    if(typeof firebase === 'undefined'){
-      const off = () => showMsg('Não foi possível carregar o sistema de login. Verifique sua conexão, desative bloqueadores de anúncio para este site e recarregue a página.');
-      el('btnGoogle').addEventListener('click', off);
-      el('btnOutlook').addEventListener('click', off);
-      return;
-    }
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    function login(provider){
+    el('btnGoogle').addEventListener('click', () => {
+      if(!ok){ showMsg('Não foi possível carregar o sistema de login. Verifique sua conexão, desative bloqueadores de anúncio para este site e recarregue a página.'); return; }
       showMsg('');
-      auth.signInWithPopup(provider).catch((err) => {
+      auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch((err) => {
         if(err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request') return;
         if(err.code === 'auth/unauthorized-domain') showMsg('Este endereço do site ainda não foi autorizado no Firebase.');
         else if(err.code === 'auth/popup-blocked') showMsg('Seu navegador bloqueou a janela de login. Libere pop-ups para este site e tente de novo.');
-        else if(err.code === 'auth/account-exists-with-different-credential') showMsg('Já existe uma conta com esse e-mail usando outro método de login. Tente entrar com o outro botão.');
         else showMsg('Não foi possível entrar agora. Tente novamente em instantes.');
       });
-    }
-
-    el('btnGoogle').addEventListener('click', () => login(new firebase.auth.GoogleAuthProvider()));
-    el('btnOutlook').addEventListener('click', () => {
-      const p = new firebase.auth.OAuthProvider('microsoft.com');
-      p.setCustomParameters({prompt: 'select_account'});
-      login(p);
     });
-    el('btnLogout').addEventListener('click', () => auth.signOut());
+    el('btnLogout').addEventListener('click', () => { if(auth) auth.signOut(); });
 
-    auth.onAuthStateChanged((user) => {
-      const logged = !!user;
-      el('loginRow').style.display = logged ? 'none' : 'flex';
-      el('commentLocked').style.display = logged ? 'none' : 'flex';
-      el('commentsIntro').style.display = logged ? 'none' : 'block';
-      el('userBar').style.display = logged ? 'flex' : 'none';
-      el('commentForm').style.display = logged ? 'block' : 'none';
-      if(logged){
-        el('userName').textContent = user.displayName || 'Usuário';
-        const photo = user.photoURL || '';
+    function updateCommentUI(){
+      const f = el('commentForm'), l = el('commentLocked');
+      if(!f || !l) return;
+      f.style.display = user ? 'block' : 'none';
+      l.style.display = user ? 'none' : 'flex';
+    }
+    if(ok) auth.onAuthStateChanged((u) => {
+      user = u;
+      el('btnGoogle').style.display = u ? 'none' : 'inline-flex';
+      el('userBar').style.display = u ? 'flex' : 'none';
+      if(u){
+        el('userName').textContent = u.displayName || 'Usuário';
+        const photo = u.photoURL || '';
         el('userPhoto').style.display = photo.startsWith('https://') ? 'block' : 'none';
         if(photo.startsWith('https://')) el('userPhoto').src = photo;
       }
-    });
-
-    const txt = el('commentText');
-    txt.addEventListener('input', () => { el('commentCount').textContent = txt.value.length + '/500'; });
-
-    el('btnPost').addEventListener('click', () => {
-      const user = auth.currentUser;
-      const text = txt.value.trim();
-      if(!user || !text) return;
-      const btn = el('btnPost');
-      btn.disabled = true;
-      showMsg('');
-      db.collection('comments').add({
-        text: text.slice(0, 500),
-        uid: user.uid,
-        name: (user.displayName || 'Usuário').slice(0, 100),
-        photo: user.photoURL || '',
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(() => {
-        txt.value = '';
-        el('commentCount').textContent = '0/500';
-      }).catch((err) => {
-        showMsg(err.code === 'permission-denied'
-          ? 'Sem permissão para publicar. Confira as regras do Firestore.'
-          : 'Não foi possível publicar agora. Tente novamente.');
-      }).finally(() => { btn.disabled = false; });
+      updateCommentUI();
     });
 
     function fmt(ts){
       if(!ts || !ts.toDate) return 'agora';
       return ts.toDate().toLocaleString('pt-BR', {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'});
     }
-
-    db.collection('comments').orderBy('createdAt', 'desc').limit(50).onSnapshot((snap) => {
-      const list = el('commentList');
+    function note(list, text){
       list.textContent = '';
-      if(snap.empty){
-        const e = document.createElement('div');
-        e.className = 'comments-empty';
-        e.textContent = 'Ainda não há comentários. Seja o primeiro!';
-        list.appendChild(e);
-        return;
-      }
-      snap.forEach((doc) => {
-        const d = doc.data();
-        const item = document.createElement('div');
-        item.className = 'comment-item';
-        const head = document.createElement('div');
-        head.className = 'ci-head';
+      const e = document.createElement('div'); e.className = 'comments-empty'; e.textContent = text; list.appendChild(e);
+    }
+    function render(snap, list){
+      if(snap.empty){ note(list, 'Ainda não há comentários nesta notícia. Seja o primeiro!'); return; }
+      const ms = (d) => d.createdAt && d.createdAt.toMillis ? d.createdAt.toMillis() : Date.now();
+      const docs = snap.docs.map((x) => x.data()).sort((a, b) => ms(b) - ms(a));
+      list.textContent = '';
+      docs.forEach((d) => {
+        const item = document.createElement('div'); item.className = 'comment-item';
+        const head = document.createElement('div'); head.className = 'ci-head';
         if(typeof d.photo === 'string' && d.photo.startsWith('https://')){
-          const img = document.createElement('img');
-          img.className = 'user-photo';
-          img.alt = '';
-          img.referrerPolicy = 'no-referrer';
-          img.src = d.photo;
-          head.appendChild(img);
+          const img = document.createElement('img'); img.className = 'user-photo'; img.alt = '';
+          img.referrerPolicy = 'no-referrer'; img.src = d.photo; head.appendChild(img);
         }
-        const name = document.createElement('span');
-        name.className = 'ci-name';
-        name.textContent = d.name || 'Usuário';
-        const date = document.createElement('span');
-        date.className = 'ci-date';
-        date.textContent = fmt(d.createdAt);
-        head.appendChild(name);
-        head.appendChild(date);
-        const body = document.createElement('p');
-        body.className = 'ci-text';
-        body.textContent = d.text || '';
-        item.appendChild(head);
-        item.appendChild(body);
-        list.appendChild(item);
+        const name = document.createElement('span'); name.className = 'ci-name'; name.textContent = d.name || 'Usuário';
+        const date = document.createElement('span'); date.className = 'ci-date'; date.textContent = fmt(d.createdAt);
+        head.appendChild(name); head.appendChild(date);
+        const body = document.createElement('p'); body.className = 'ci-text'; body.textContent = d.text || '';
+        item.appendChild(head); item.appendChild(body); list.appendChild(item);
       });
-    }, () => {
-      const list = el('commentList');
-      list.textContent = '';
-      const e = document.createElement('div');
-      e.className = 'comments-empty';
-      e.textContent = 'Não foi possível carregar os comentários agora.';
-      list.appendChild(e);
-    });
+    }
+
+    window.p360CloseComments = function(){ if(unsub){ unsub(); unsub = null; } };
+    window.p360OpenComments = function(articleId){
+      window.p360CloseComments();
+      const list = el('commentList'), txt = el('commentText'), btn = el('btnPost');
+      if(!list) return;
+      updateCommentUI();
+      txt.addEventListener('input', () => { el('commentCount').textContent = txt.value.length + '/500'; });
+      btn.addEventListener('click', () => {
+        const text = txt.value.trim();
+        if(!user || !text || !ok) return;
+        btn.disabled = true; showMsg('');
+        db.collection('comments').add({
+          articleId: articleId,
+          text: text.slice(0, 500),
+          uid: user.uid,
+          name: (user.displayName || 'Usuário').slice(0, 100),
+          photo: user.photoURL || '',
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => { txt.value = ''; el('commentCount').textContent = '0/500'; })
+          .catch((err) => showMsg(err.code === 'permission-denied' ? 'Sem permissão para publicar. Confira as regras do Firestore.' : 'Não foi possível publicar agora. Tente novamente.'))
+          .finally(() => { btn.disabled = false; });
+      });
+      if(!ok){ note(list, 'Os comentários estão indisponíveis agora.'); return; }
+      unsub = db.collection('comments').where('articleId', '==', articleId).limit(100)
+        .onSnapshot((snap) => render(snap, list), () => note(list, 'Não foi possível carregar os comentários agora.'));
+    };
   })();
 </script>
 </body>
