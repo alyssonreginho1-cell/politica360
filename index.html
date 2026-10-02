@@ -358,6 +358,7 @@
       </div>
       <nav class="topnav-desktop" id="topnavDesktop">
         <button class="topnav-btn active" data-tab="feed">Feed</button>
+        <button class="topnav-btn" data-tab="geopolitica">Geopolítica</button>
         <button class="topnav-btn" data-tab="comparar">Comparar</button>
         <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
         <button class="topnav-btn" data-tab="fontes">Fontes</button>
@@ -369,6 +370,7 @@
     <div class="chip-scroll" id="chipScroll">
       <div class="chip all active" data-filter="all">Todos</div>
       <div class="chip following" data-filter="following" id="followingChip" style="display:none;">★ Seguindo</div>
+      <div class="chip" data-filter="geo"><span class="dot" style="background:var(--navy)"></span>Geopolítica</div>
       <div class="chip" data-filter="lula"><span class="dot" style="background:var(--c1)"></span>Lula</div>
       <div class="chip" data-filter="flavio"><span class="dot" style="background:var(--c2)"></span>Flávio</div>
       <div class="chip" data-filter="zema"><span class="dot" style="background:var(--c3)"></span>Zema</div>
@@ -400,6 +402,8 @@
     <button class="trending-pill" onclick="openArticle('datafolha-1out')">Datafolha: 48% x 45%</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-cancelado')">Debate da Globo cancelado</button>
     <button class="trending-pill" onclick="openArticle('candidatos-12')">12 candidatos na disputa</button>
+    <button class="trending-pill" onclick="openArticle('rubio-ira-delegacao')">EUA x Irã</button>
+    <button class="trending-pill" onclick="openArticle('putin-valdai')">Putin e a Ucrânia</button>
     <button class="trending-pill" onclick="openArticle('fachin-master-pf')">Caso Master</button>
   </div>
 
@@ -430,6 +434,24 @@
         <p class="fc-headline">Disputa tem 12 candidatos ativos: Marçal teve registro negado e Avalanche desistiu.</p>
         <div class="fc-bottom"><span class="fc-source">● TSE / Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
+      <div class="feed-card" data-cand="geo" data-id="rubio-ira-delegacao" role="button" tabindex="0" onclick="openArticle('rubio-ira-delegacao')" onkeypress="if(event.key=='Enter')openArticle('rubio-ira-delegacao')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">1 out</span></div>
+        <p class="fc-headline">Rubio manda delegação do Irã deixar os EUA após impasse nas negociações; Teerã nega expulsão.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / Axios</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="putin-valdai" role="button" tabindex="0" onclick="openArticle('putin-valdai')" onkeypress="if(event.key=='Enter')openArticle('putin-valdai')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">1 out</span></div>
+        <p class="fc-headline">Putin descarta cessar-fogo de ataques de longo alcance com a Ucrânia e fala em usar armas nucleares para defender Kaliningrado.</p>
+        <div class="fc-bottom"><span class="fc-source">● Al Jazeera</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="kyiv-ponte-drones" role="button" tabindex="0" onclick="openArticle('kyiv-ponte-drones')" onkeypress="if(event.key=='Enter')openArticle('kyiv-ponte-drones')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
+        <p class="fc-headline">Drones russos fecham ponte em Kiev; Zelensky pede sanções para barrar a produção dos novos drones a jato.</p>
+        <div class="fc-bottom"><span class="fc-source">● Euronews</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
 
 <div class="feed-card" data-cand="all" data-id="fachin-master-pf" role="button" tabindex="0" onclick="openArticle('fachin-master-pf')" onkeypress="if(event.key=='Enter')openArticle('fachin-master-pf')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">PF</div><span class="fc-cand">Caso Master</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
@@ -476,6 +498,22 @@
       <span>🔎</span>
       <span><b>Sem fake news, por princípio:</b> cada notícia é escrita com base numa reportagem real, com a fonte original identificada no topo do texto. Nenhuma manchete aqui é inventada.</span>
     </div>
+  </div>
+
+  <!-- GEOPOLÍTICA TAB -->
+  <div class="tab-panel" id="tab-geopolitica">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">2 out</span></div>
+      <div class="notice"><b>Como ler —</b> cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
+      <div id="geoList"></div>
+      <div class="section-title" style="margin-top:28px;"><h2>Analistas brasileiros para acompanhar</h2></div>
+      <div class="sources-list">
+        <a class="src-row" href="https://oliverstuenkel.com/en/home-en/" target="_blank" rel="noopener"><div><div class="name">Oliver Stuenkel</div><div class="desc">Professor de Relações Internacionais na FGV-SP e Senior Fellow no Carnegie; colunista do Estadão e da Foreign Policy; comentarista da GloboNews</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://cebri.org/media/documentos/arquivos/10desafiosdaPEB.pdf" target="_blank" rel="noopener"><div><div class="name">Matias Spektor</div><div class="desc">Professor de Relações Internacionais na FGV; editor do livro Desafios da Política Externa Brasileira, do CEBRI</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://cebri.org/media/documentos/arquivos/BreakingNews2060b6889d66bca.pdf" target="_blank" rel="noopener"><div><div class="name">Rubens Barbosa</div><div class="desc">Embaixador; aparece em publicações do CEBRI sobre a transição geopolítica e o lugar do Brasil</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://toppodcast.com/podcast_feeds/o-assunto/" target="_blank" rel="noopener"><div><div class="name">Guilherme Casarões</div><div class="desc">Professor da FGV-SP e coordenador do Observatório da Extrema-Direita; comentarista frequente do podcast O Assunto</div></div><span class="arrow">↗</span></a>
+      </div>
+    </section>
   </div>
 
   <!-- COMPARAR TAB -->
@@ -589,6 +627,8 @@
         <a class="src-row" href="https://www.jota.info/" target="_blank" rel="noopener"><div><div class="name">Jota</div><div class="desc">Comparações técnicas de propostas</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de declarações</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de espectros variados</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.aljazeera.com/" target="_blank" rel="noopener"><div><div class="name">Al Jazeera</div><div class="desc">Cobertura internacional (Rússia, Ucrânia, Oriente Médio)</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.euronews.com/" target="_blank" rel="noopener"><div><div class="name">Euronews</div><div class="desc">Cobertura da Europa e da guerra na Ucrânia</div></div><span class="arrow">↗</span></a>
       </div>
 
       <div class="section-title" style="margin-top:28px;"><h2>Dicionário político</h2></div>
@@ -619,6 +659,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
       Feed
     </button>
+    <button class="nav-item" data-tab="geopolitica">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+      Mundo
+    </button>
     <button class="nav-item" data-tab="comparar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
       Comparar
@@ -638,6 +682,42 @@
 
 <script>
   const articles = {
+    "rubio-ira-delegacao": {
+      source: "Gazeta do Povo / Axios", date: "1 out", url: "https://www.gazetadopovo.com.br/mundo/rubio-expulsou-delegacao-ira-eua-apos-negociacoes-nao-avancarem-diz-imprensa/",
+      title: "Rubio manda delegação do Irã deixar os EUA após impasse nas negociações",
+      body: [
+        "Segundo o Axios, o secretário de Estado Marco Rubio ordenou na segunda-feira (28) que a delegação iraniana à Assembleia Geral da ONU, incluindo o chanceler Abbas Araghchi, deixasse os Estados Unidos, depois que as negociações indiretas para encerrar a guerra entre os dois países travaram.",
+        "Araghchi embarcou de Nova York para Doha na madrugada de terça (29). Uma segunda fonte ouvida pelo Axios lembrou que ele já tinha viagem marcada para aquela noite, e a missão do Irã na ONU negou a expulsão, dizendo que a saída seguia o calendário previsto.",
+        "As conversas eram mediadas pelo Catar e tratavam do fim da guerra, da reabertura do Estreito de Ormuz e da retomada das negociações sobre o programa nuclear iraniano. A guerra começou em 28 de fevereiro, com ataques coordenados de EUA e Israel contra alvos no Irã."
+      ]
+    },
+    "putin-valdai": {
+      source: "Al Jazeera", date: "1 out", url: "https://www.aljazeera.com/news/2026/10/1/russias-putin-rules-out-ceasefire-with-ukraine-during-speech-in-moscow",
+      title: "Putin descarta cessar-fogo de ataques de longo alcance com a Ucrânia",
+      body: [
+        "Em discurso no fórum Valdai, em Moscou, na quinta-feira (1º), Vladimir Putin rejeitou a ideia de uma trégua em que a Ucrânia pararia de atacar refinarias russas e a Rússia pararia de atacar navios ucranianos.",
+        "Ele disse preferir encerrar o conflito por negociação e que quer a Ucrânia neutra depois do fim das hostilidades. Também avisou que a Rússia usaria armas nucleares, se necessário, para defender Kaliningrado.",
+        "Putin afirmou ainda que, num cenário favorável, ativos de empresas ocidentais tomados por Moscou poderiam ser devolvidos. No mês passado ele mandou confiscar bens da Nestlé, da Auchan, da ex-Leroy Merlin e da Metro."
+      ]
+    },
+    "kyiv-ponte-drones": {
+      source: "Euronews", date: "2 out", url: "https://www.euronews.com/2026/10/02/traffic-gridlocked-in-ukraines-capital-as-russian-drone-strikes-close-key-bridge",
+      title: "Ataques de drones russos fecham ponte em Kiev; Zelensky pede mais sanções",
+      body: [
+        "Ataques de drones russos fecharam uma ponte importante em Kiev, a Pivdennyi, e deixaram o trânsito da capital ucraniana parado nesta sexta-feira (2).",
+        "O presidente Volodymyr Zelensky pediu que os países apertem as sanções para impedir a fabricação dos novos drones russos a jato, mais rápidos e difíceis de interceptar, e que ele diz dependerem de componentes estrangeiros. Ele voltou a pedir interceptadores Patriot.",
+        "Zelensky também disse que a Ucrânia usou pela primeira vez em combate o míssil balístico tático FP-7, sem informar o alvo."
+      ]
+    },
+    "guerra-ira-brasil": {
+      source: "CNN Brasil / DComércio", date: "análise", url: "https://www.cnnbrasil.com.br/internacional/analise-os-ganhadores-e-os-perdedores-da-guerra-entre-eua-e-ira/",
+      title: "Guerra EUA-Israel x Irã: o que está em jogo para o Brasil",
+      body: [
+        "A guerra começou em 28 de fevereiro de 2026. Uma análise da CNN Brasil, feita dois meses depois, dizia que os combates estavam suspensos, mas que o fim definitivo ainda estava distante e que Washington seguia sem ganhos estratégicos claros. O texto citava mais de 3.600 mortos no Irã, entre eles mais de 1.700 civis, segundo o grupo Human Rights Activists in Iran.",
+        "Um artigo do DComércio avaliou o efeito sobre as exportações brasileiras: apontou risco de inflação mais alta e a ameaça americana de tarifa de 25% sobre quem negocia com o Irã, mas disse que o Brasil pode ganhar espaço, a médio e longo prazo, com a reconfiguração dos mercados de energia e alimentos.",
+        "Esta nota resume essas duas análises; não é uma cobertura do dia."
+      ]
+    },
     "debate-globo-cancelado": {
       source: "Gazeta do Povo", date: "1 out", url: "https://www.gazetadopovo.com.br/eleicoes/2026/judiciario-interfere-regras-provoca-reviravoltas-debate-presidente-globo/",
       title: "Debate da Globo, o último antes do 1º turno, é cancelado após decisões judiciais",
@@ -940,11 +1020,13 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   function openArticle(id){
     const a = articles[id];
     if(!a) return;
+    const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
+    if(fromGeo) window._fromTab = 'geopolitica'; else if(document.getElementById('tab-feed').classList.contains('active') && document.getElementById('articleView').style.display !== 'block') window._fromTab = null;
     document.getElementById('feedList').style.display = 'none';
     document.getElementById('verifyNote').style.display = 'none';
     const view = document.getElementById('articleView');
     view.innerHTML =
-      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ao feed</button>' +
+      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ' + (window._fromTab === 'geopolitica' ? 'à Geopolítica' : 'ao feed') + '</button>' +
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
@@ -1003,11 +1085,13 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   function openArticle(id){
     const a = articles[id];
     if(!a) return;
+    const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
+    if(fromGeo) window._fromTab = 'geopolitica'; else if(document.getElementById('tab-feed').classList.contains('active') && document.getElementById('articleView').style.display !== 'block') window._fromTab = null;
     document.getElementById('feedList').style.display = 'none';
     document.getElementById('verifyNote').style.display = 'none';
     const view = document.getElementById('articleView');
     view.innerHTML =
-      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ao feed</button>' +
+      '<button class="back-btn" onclick="closeArticle()">&larr; Voltar ' + (window._fromTab === 'geopolitica' ? 'à Geopolítica' : 'ao feed') + '</button>' +
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
@@ -1029,6 +1113,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     document.getElementById('verifyNote').style.display = 'flex';
     document.getElementById('articleView').style.display = 'none';
     document.getElementById('articleView').innerHTML = '';
+    if(window._fromTab){ const b = document.querySelector('.topnav-btn[data-tab="' + window._fromTab + '"]'); window._fromTab = null; if(b) b.click(); }
   }
 </script>
 <script>
@@ -1120,6 +1205,31 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 </script>
 
 
+<script>
+  (function(){
+    const ids = ['rubio-ira-delegacao','putin-valdai','kyiv-ponte-drones','guerra-ira-brasil'];
+    const box = document.getElementById('geoList');
+    ids.forEach((id) => {
+      const a = articles[id]; if(!a) return;
+      const c = document.createElement('div');
+      c.className = 'feed-card'; c.setAttribute('role','button'); c.tabIndex = 0;
+      c.addEventListener('click', () => openArticle(id));
+      c.addEventListener('keypress', (e) => { if(e.key === 'Enter') openArticle(id); });
+      const top = document.createElement('div'); top.className = 'fc-top';
+      const av = document.createElement('div'); av.className = 'fc-avatar'; av.style.background = 'var(--navy)'; av.textContent = '🌍';
+      const who = document.createElement('span'); who.className = 'fc-cand'; who.textContent = 'Geopolítica';
+      const dot = document.createElement('span'); dot.className = 'fc-dot';
+      const tm = document.createElement('span'); tm.className = 'fc-time'; tm.textContent = a.date;
+      [av,who,dot,tm].forEach((n) => top.appendChild(n));
+      const h = document.createElement('p'); h.className = 'fc-headline'; h.textContent = a.title;
+      const bt = document.createElement('div'); bt.className = 'fc-bottom';
+      const sr = document.createElement('span'); sr.className = 'fc-source'; sr.textContent = '● ' + a.source;
+      const lk = document.createElement('span'); lk.className = 'fc-link'; lk.textContent = 'ler mais ↗';
+      bt.appendChild(sr); bt.appendChild(lk);
+      c.appendChild(top); c.appendChild(h); c.appendChild(bt); box.appendChild(c);
+    });
+  })();
+</script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
