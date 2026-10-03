@@ -9,6 +9,11 @@
 <meta property="og:title" content="Política 360º — Eleições 2026">
 <meta property="og:description" content="Notícias reais e verificadas sobre os candidatos à Presidência 2026, com a fonte original sempre identificada.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://politica360.net.br/">
+<meta property="og:image" content="https://politica360.net.br/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -336,6 +341,9 @@
   .art-comments{max-width:none;margin-top:28px;}
   .ac-title{font-family:'Fraunces',serif;font-size:18px;margin:0 0 14px;}
   @media (max-width:859px){.live-pill-mobile{display:none;}.hdr-user span{display:none;}.hdr-login{padding:7px 11px;font-size:12px;}}
+  .share-btn{display:inline-flex;align-items:center;gap:6px;margin:14px 0 0 12px;background:var(--bg-card-2);color:var(--navy);border:1px solid var(--border);border-radius:20px;padding:8px 14px;font:600 13px 'Inter',sans-serif;cursor:pointer;}
+  .share-btn:hover{border-color:var(--tiffany);}
+  .share-toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;z-index:40;opacity:0;transition:opacity .25s;pointer-events:none;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -1124,7 +1132,7 @@
 
 const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-title">Comentários</h2>'+'<div class="comment-form-locked" id="commentLocked"><span>🔒 Entre com o Google, no topo da página, para comentar</span></div>'+'<div id="commentForm" style="display:none;"><textarea id="commentText" maxlength="500" rows="3" placeholder="Escreva seu comentário (até 500 caracteres)"></textarea>'+'<div class="cf-row"><span id="commentCount" class="cf-count">0/500</span><button type="button" class="post-btn" id="btnPost">Publicar</button></div></div>'+'<div class="comment-list" id="commentList"></div></section>';
 
-  function openArticle(id){
+  function openArticle(id, fromRoute){
     const a = articles[id];
     if(!a) return;
     const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
@@ -1137,7 +1145,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + COMMENTS_HTML;
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + COMMENTS_HTML;
     view.style.display = 'block';
     window.scrollTo({top:0, behavior:'smooth'});
   }
@@ -1189,7 +1197,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   }
 
   // ---- Leitor de notícia ----
-  function openArticle(id){
+  function openArticle(id, fromRoute){
     const a = articles[id];
     if(!a) return;
     const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
@@ -1202,7 +1210,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + COMMENTS_HTML;
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + COMMENTS_HTML;
     view.style.display = 'block';
     if(window.p360OpenComments) window.p360OpenComments(id);
     // make sure we're on the feed tab so the article is visible
@@ -1211,10 +1219,14 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById('tab-feed').classList.add('active');
     document.getElementById('chipScroll').style.display = 'flex';
+    document.title = a.title + ' | Política360';
+    if(!fromRoute && location.hash !== '#noticia=' + id) history.pushState(null, '', '#noticia=' + id);
     window.scrollTo({top:0, behavior:'smooth'});
   }
 
-  function closeArticle(){
+  function closeArticle(fromRoute){
+    document.title = window._baseTitle || document.title;
+    if(fromRoute !== true && /^#noticia=/.test(location.hash)) history.pushState(null, '', location.pathname + location.search);
     if(window.p360CloseComments) window.p360CloseComments();
     document.getElementById('feedList').style.display = 'block';
     document.getElementById('verifyNote').style.display = 'flex';
@@ -1454,6 +1466,40 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
         .onSnapshot((snap) => render(snap, list), () => note(list, 'Não foi possível carregar os comentários agora.'));
     };
   })();
+</script>
+<script>
+  // ---- Link próprio para cada notícia: seusite/#noticia=ID ----
+  window._baseTitle = document.title;
+  function p360Toast(text){
+    let t = document.getElementById('shareToast');
+    if(!t){
+      t = document.createElement('div'); t.id = 'shareToast'; t.className = 'share-toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = text; t.style.opacity = '1';
+    clearTimeout(p360Toast.t); p360Toast.t = setTimeout(function(){ t.style.opacity = '0'; }, 2600);
+  }
+  function articleLink(id){ return location.origin + '/noticia/' + id + '/'; }
+  function shareArticle(id){
+    const a = articles[id]; if(!a) return;
+    const url = articleLink(id);
+    if(navigator.share){
+      navigator.share({ title: a.title, text: a.title, url: url }).catch(function(){});
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ p360Toast('Link copiado!'); }, function(){ window.prompt('Copie o link:', url); });
+    } else {
+      window.prompt('Copie o link:', url);
+    }
+  }
+  function p360Route(){
+    const m = /^#noticia=([\w-]+)$/.exec(location.hash);
+    if(m && articles[m[1]]) openArticle(m[1], true);
+    else if(document.getElementById('articleView').style.display === 'block') closeArticle(true);
+  }
+  window.addEventListener('hashchange', p360Route);
+  window.addEventListener('load', p360Route);
 </script>
 </body>
 </html>
