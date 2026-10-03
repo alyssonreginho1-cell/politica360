@@ -404,6 +404,7 @@
     <button class="trending-pill" onclick="openArticle('candidatos-12')">12 candidatos na disputa</button>
     <button class="trending-pill" onclick="openArticle('rubio-ira-delegacao')">EUA x Irã</button>
     <button class="trending-pill" onclick="openArticle('putin-valdai')">Putin e a Ucrânia</button>
+    <button class="trending-pill" onclick="openArticle('hoc-europa-russia')">Professor HOC: Europa e Rússia</button>
     <button class="trending-pill" onclick="openArticle('fachin-master-pf')">Caso Master</button>
   </div>
 
@@ -459,6 +460,12 @@
         <div class="fc-bottom"><span class="fc-source">● Al Jazeera</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
+      <div class="feed-card" data-cand="geo" data-id="hoc-europa-russia" role="button" tabindex="0" onclick="openArticle('hoc-europa-russia')" onkeypress="if(event.key=='Enter')openArticle('hoc-europa-russia')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">30 set</span></div>
+        <p class="fc-headline">Professor HOC analisa se a Europa se prepara para uma guerra com a Rússia: guerra híbrida, corredor de Suwałki e o papel da Otan.</p>
+        <div class="fc-bottom"><span class="fc-source">● Professor HOC (YouTube)</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
       <div class="feed-card" data-cand="all" data-id="avalanche-desiste" role="button" tabindex="0" onclick="openArticle('avalanche-desiste')" onkeypress="if(event.key=='Enter')openArticle('avalanche-desiste')">
         <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">LA</div><span class="fc-cand">PRTB</span><span class="fc-dot"></span><span class="fc-time">30 set</span></div>
         <p class="fc-headline">Leonardo Avalanche anuncia desistência da candidatura à Presidência pelo PRTB.</p>
@@ -506,6 +513,24 @@
       <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">2 out</span></div>
       <div class="notice"><b>Como ler —</b> cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
       <div id="geoList"></div>
+      <div class="section-title" style="margin-top:28px;"><h2>Professor HOC — vídeos recentes</h2></div>
+      <div class="sources-list">
+        <a class="src-row" href="https://www.youtube.com/@ProfessorHOC" target="_blank" rel="noopener"><div><div class="name">Professor HOC — canal no YouTube</div><div class="desc">Heni Ozi Cukier, cientista político; mestre em Resolução de Conflitos pela American University e ex-deputado estadual em SP</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/watch?v=HurSuWHtT9Q" target="_blank" rel="noopener"><div><div class="name">Os EUA estão ficando sem munição (ago)</div><div class="desc">Vídeo sobre o desgaste militar dos EUA na guerra com o Irã</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://podcasts.apple.com/gw/podcast/o-maior-pesadelo-da-otan-i-professor-hoc/id1499342639?i=1000789570883" target="_blank" rel="noopener"><div><div class="name">O maior pesadelo da Otan (14 set)</div><div class="desc">Cenário de guerra em duas frentes: Rússia contra o flanco leste da Otan e China contra Taiwan</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://podcasts.apple.com/gw/podcast/a-grande-arma-chinesa-terras-raras-i-professor-hoc/id1499342639?i=1000789797695" target="_blank" rel="noopener"><div><div class="name">A grande arma chinesa: terras raras (15 set)</div><div class="desc">Como a China passou a controlar o processamento de terras raras e o lugar do Brasil nessa disputa</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://podcasts.apple.com/gw/podcast/o-sucessor-de-putin-i-professor-hoc/id1499342639?i=1000787921341" target="_blank" rel="noopener"><div><div class="name">O sucessor de Putin (4 set)</div><div class="desc">Quem poderia disputar o poder na Rússia depois de Putin</div></div><span class="arrow">↗</span></a>
+      </div>
+      <div class="section-title" style="margin-top:28px;"><h2>Outros canais de geopolítica no YouTube</h2></div>
+      <div class="notice"><b>Atenção —</b> os canais têm linhas políticas diferentes. A lista vem de uma seleção de canais publicada pelo blog Dr. Geógrafo, e este painel não avalia a qualidade nem as posições de cada um.</div>
+      <div class="sources-list">
+        <a class="src-row" href="https://www.youtube.com/c/CanaldaGeopol%C3%ADtica" target="_blank" rel="noopener"><div><div class="name">Canal da Geopolítica</div><div class="desc">Canal de análise de conflitos e política internacional</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/c/Rog%C3%A9rioAnitablian" target="_blank" rel="noopener"><div><div class="name">Rogério Anitablian</div><div class="desc">Análise de conflitos pela ótica geopolítica e diplomática</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/@ARTEDAGUERRA" target="_blank" rel="noopener"><div><div class="name">Arte da Guerra</div><div class="desc">Canal de análise de guerras e conflitos</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/c/VelhoGeneral" target="_blank" rel="noopener"><div><div class="name">Velho General (Albert Caballé)</div><div class="desc">Análise militar e dos conflitos, com um general na apresentação</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/playlist?list=PL9AEHeaYiogITbMbvWgUckBFvOGVA5dpd" target="_blank" rel="noopener"><div><div class="name">Pepe Escobar na TV 247</div><div class="desc">Programa de geopolítica com o jornalista Pepe Escobar</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://www.youtube.com/playlist?list=PL6mJOXeVZnXWhTNYlkwpGfcav4sQ8TE87" target="_blank" rel="noopener"><div><div class="name">Análise Internacional, com Rui Costa Pimenta</div><div class="desc">Programa de análise internacional. Rui Costa Pimenta é candidato à Presidência pelo PCO</div></div><span class="arrow">↗</span></a>
+      </div>
       <div class="section-title" style="margin-top:28px;"><h2>Analistas brasileiros para acompanhar</h2></div>
       <div class="sources-list">
         <a class="src-row" href="https://oliverstuenkel.com/en/home-en/" target="_blank" rel="noopener"><div><div class="name">Oliver Stuenkel</div><div class="desc">Professor de Relações Internacionais na FGV-SP e Senior Fellow no Carnegie; colunista do Estadão e da Foreign Policy; comentarista da GloboNews</div></div><span class="arrow">↗</span></a>
@@ -682,6 +707,25 @@
 
 <script>
   const articles = {
+    "hoc-europa-russia": {
+      source: "Professor HOC (YouTube)", date: "30 set", url: "https://podcasts.apple.com/gw/podcast/a-europa-est%C3%A1-se-preparando-para-uma-guerra-com/id1499342639?i=1000792392890",
+      title: "Professor HOC: a Europa está se preparando para uma guerra com a Rússia?",
+      body: [
+        "Em vídeo publicado no fim de setembro, o cientista político Heni Ozi Cukier, o Professor HOC, analisa se a guerra na Ucrânia pode se expandir para outros países da Europa.",
+        "Pela descrição do vídeo, ele examina operações de guerra híbrida atribuídas à Rússia (sabotagens, ataques cibernéticos e incursões de drones), o acordo sobre a Groenlândia, o anúncio de uma base americana na Polônia e o papel dos EUA sob Trump na segurança europeia.",
+        "Também discute o corredor de Suwałki e os possíveis objetivos de uma operação russa contra os países bálticos, como testar se os membros da Otan defenderiam uns aos outros, e como França e Alemanha reagiriam a um ataque contra um aliado.",
+        "Esta nota resume a descrição publicada do vídeo. Para a análise completa, assista ao original."
+      ]
+    },
+    "hoc-irao-vietna": {
+      source: "Professor HOC (YouTube)", date: "vídeo", url: "https://www.youtube.com/@ProfessorHOC",
+      title: "Professor HOC compara as guerras do Irã e da Ucrânia com Vietnã e Coreia",
+      body: [
+        "Em um de seus vídeos, o Professor HOC compara a guerra entre EUA, Israel e Irã e a guerra entre Rússia e Ucrânia com dois precedentes históricos: a Guerra do Vietnã e a Guerra da Coreia.",
+        "A tese, segundo a descrição do canal, é que conflitos diferentes podem ter estruturas parecidas: impasse militar, pressão interna, aliados com interesses distintos, ameaça nuclear, desgaste econômico e negociações inevitáveis. Nessa leitura, o Irã pode estar virando uma espécie de Vietnã dos EUA.",
+        "A fonte que consultei não mostra a data de publicação. Esta nota resume a descrição do vídeo, e a análise completa está no canal."
+      ]
+    },
     "rubio-ira-delegacao": {
       source: "Gazeta do Povo / Axios", date: "1 out", url: "https://www.gazetadopovo.com.br/mundo/rubio-expulsou-delegacao-ira-eua-apos-negociacoes-nao-avancarem-diz-imprensa/",
       title: "Rubio manda delegação do Irã deixar os EUA após impasse nas negociações",
@@ -1207,7 +1251,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 
 <script>
   (function(){
-    const ids = ['kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','guerra-ira-brasil'];
+    const ids = ['kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','hoc-europa-russia','hoc-irao-vietna','guerra-ira-brasil'];
     const box = document.getElementById('geoList');
     ids.forEach((id) => {
       const a = articles[id]; if(!a) return;
