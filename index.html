@@ -407,7 +407,7 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('datafolha-ultima-3out')">Última pesquisa Datafolha, hoje</button>
+    <button class="trending-pill" onclick="openArticle('datafolha-ultima-3out')">Datafolha: 45% x 42%</button>
     <button class="trending-pill" onclick="openArticle('campanha-sp-sabado')">Fim da campanha em SP</button>
     <button class="trending-pill" onclick="openArticle('datafolha-1out')">Datafolha: 48% x 45%</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-cancelado')">Debate da Globo cancelado</button>
@@ -430,8 +430,14 @@
 
       <div class="feed-card" data-cand="all" data-id="datafolha-ultima-3out" role="button" tabindex="0" onclick="openArticle('datafolha-ultima-3out')" onkeypress="if(event.key=='Enter')openArticle('datafolha-ultima-3out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">DF</div><span class="fc-cand">Pesquisa Datafolha</span><span class="fc-dot"></span><span class="fc-time">3 out</span></div>
-        <p class="fc-headline">Datafolha divulga hoje, a partir das 18h45, a última pesquisa antes do 1º turno, com 4.006 entrevistas feitas neste sábado.</p>
-        <div class="fc-bottom"><span class="fc-source">● CartaCapital</span><span class="fc-link">ler mais ↗</span></div>
+        <p class="fc-headline">Datafolha de véspera: Lula tem 45% e Flávio 42% dos votos válidos; no 2º turno, 47% a 46%, empate técnico.</p>
+        <div class="fc-bottom"><span class="fc-source">● ND Mais / Exame</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="cnt-mda-3out" role="button" tabindex="0" onclick="openArticle('cnt-mda-3out')" onkeypress="if(event.key=='Enter')openArticle('cnt-mda-3out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">MD</div><span class="fc-cand">Pesquisa CNT/MDA</span><span class="fc-dot"></span><span class="fc-time">3 out</span></div>
+        <p class="fc-headline">CNT/MDA: Lula tem 47,8% e Flávio 42,1% dos votos válidos, diferença de 5,7 pontos.</p>
+        <div class="fc-bottom"><span class="fc-source">● Exame</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="campanha-sp-sabado" role="button" tabindex="0" onclick="openArticle('campanha-sp-sabado')" onkeypress="if(event.key=='Enter')openArticle('campanha-sp-sabado')">
@@ -633,34 +639,36 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — cenário estimulado</h2><span class="count">Datafolha, 1º out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — votos válidos</h2><span class="count">Datafolha, 3 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <tbody>
-            <tr><td class="theme-col">Lula (PT)</td><td><b>42%</b></td></tr>
-            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>38%</b></td></tr>
-            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>4%</td></tr>
+            <tr><td class="theme-col">Lula (PT)</td><td><b>45%</b></td></tr>
+            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>42%</b></td></tr>
+            <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>4%</td></tr>
             <tr><td class="theme-col">Renan Santos (Missão)</td><td>3%</td></tr>
-            <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>3%</td></tr>
+            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>3%</td></tr>
             <tr><td class="theme-col">Romeu Zema (Novo)</td><td>1%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="compare-note">2.506 entrevistas, de 28 de setembro a 1º de outubro. Margem de erro de 2 pontos. Votos válidos: Lula 45%, Flávio 40%. Indecisos na espontânea: 13%.</p>
-      <div class="section-title" style="margin-top:24px;"><h2 style="font-size:15px;">Rodadas anteriores — 1º turno</h2><span class="count">set/2026</span></div>
+      <p class="compare-note">4.006 eleitores, margem de erro de 2 pontos, registro BR-01708/2026. Votos válidos excluem brancos, nulos e indecisos. Os demais candidatos não pontuaram. Na espontânea: Lula 40%, Flávio 33%, indecisos 11%.</p>
+      <div class="section-title" style="margin-top:24px;"><h2 style="font-size:15px;">Outras rodadas — votos totais, 1º turno</h2><span class="count">set–out/2026</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead><tbody>
+        <tr><td class="theme-col">CNT/MDA</td><td><b>43,1%</b></td><td>38%</td><td>30 set–2 out</td></tr>
+        <tr><td class="theme-col">Datafolha</td><td><b>42%</b></td><td>38%</td><td>1º out</td></tr>
         <tr><td class="theme-col">Datafolha</td><td><b>40%</b></td><td>36%</td><td>22–23 set</td></tr>
         <tr><td class="theme-col">Quaest</td><td><b>37%</b></td><td>33%</td><td>17–20 set</td></tr>
       </tbody></table></div>
-      <p class="compare-note">O Datafolha divulga hoje (3), a partir das 18h45, a última pesquisa antes do 1º turno, com 4.006 entrevistas feitas neste sábado. Os números novos ainda não estavam disponíveis nesta atualização e podem mudar o quadro acima.</p>
+      <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 1º out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 3 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
-            <tr><td class="theme-col">Datafolha</td><td><b>48%</b></td><td>45%</td><td>1 out</td></tr>
+            <tr><td class="theme-col">Datafolha</td><td><b>47%</b></td><td>46%</td><td>3 out</td></tr>
             <tr><td class="theme-col">PoderData/Aya</td><td>44%</td><td><b>45%</b></td><td>3 set</td></tr>
           </tbody>
         </table>
@@ -742,13 +750,22 @@
 <script>
   const articles = {
     "datafolha-ultima-3out": {
-      source: "CartaCapital", date: "3 out", url: "https://www.cartacapital.com.br/cartaexpressa/os-detalhes-da-ultima-pesquisa-datafolha-sobre-lula-x-flavio-bolsonaro-no-1o-turno/",
-      title: "Datafolha divulga hoje, a partir das 18h45, a última pesquisa antes do 1º turno",
+      source: "ND Mais / Exame", date: "3 out", url: "https://ndmais.com.br/politica/pesquisa-datafolha-lula-lidera-com-45-e-flavio-tem-42-dos-votos-validos/",
+      title: "Datafolha de véspera: Lula tem 45% e Flávio 42% dos votos válidos",
       body: [
-        "Segundo a CartaCapital, o Datafolha publica neste sábado (3), a partir das 18h45, a última pesquisa de intenção de voto para presidente antes do 1º turno, e também para os governos de SP, MG, RJ, PE, CE, PI e DF.",
-        "A sondagem nacional se baseia em 4.006 entrevistas, todas feitas no próprio sábado, com margem de erro de 2 pontos percentuais e registro BR-01708/2026.",
-        "A rodada anterior, divulgada na quinta-feira (1º), mostrou Lula com 42% e Flávio Bolsonaro com 38% no 1º turno, e 48% a 45% no 2º, empate técnico.",
-        "Os números da nova pesquisa ainda não estavam disponíveis quando esta nota foi escrita."
+        "A última pesquisa Datafolha antes do 1º turno, divulgada neste sábado (3) e encomendada pela Globo e pela Folha, mostra Lula (PT) com 45% dos votos válidos e Flávio Bolsonaro (PL) com 42%. A diferença de 3 pontos está dentro da margem de erro, de 2 pontos para mais ou para menos, e os veículos tratam como empate técnico.",
+        "Vêm depois Ronaldo Caiado (PSD), com 4%, Renan Santos (Missão) e Augusto Cury (Avante), com 3% cada, e Romeu Zema (Novo), com 1%. Os demais candidatos não pontuaram. Com esses números, nenhum dos dois primeiros chega aos mais de 50% dos votos válidos necessários para vencer no 1º turno.",
+        "Na pesquisa espontânea, Lula foi de 39% para 40% e Flávio de 31% para 33%. Os indecisos caíram de 13% para 11%.",
+        "Para um 2º turno entre os dois, o ND Mais registra Lula com 47% e Flávio com 46%, contra 48% a 45% na rodada de quinta-feira (1º), de novo um empate técnico. A pesquisa ouviu 4.006 eleitores e está registrada no TSE sob o número BR-01708/2026."
+      ]
+    },
+    "cnt-mda-3out": {
+      source: "Exame", date: "3 out", url: "https://exame.com/brasil/pesquisa-cnt-mda-para-presidente-lula-tem-478-e-flavio-421-dos-votos-validos-no-1o-turno/",
+      title: "CNT/MDA: Lula tem 47,8% e Flávio 42,1% dos votos válidos",
+      body: [
+        "A pesquisa CNT/MDA, divulgada na véspera do 1º turno, ouviu 2.007 eleitores entre 30 de setembro e 2 de outubro, com margem de erro de 2,2 pontos. Ela mostra Lula (PT) com 47,8% dos votos válidos e Flávio Bolsonaro (PL) com 42,1%, uma diferença de 5,7 pontos.",
+        "No cenário estimulado, com votos totais, Lula tem 43,1% e Flávio 38%.",
+        "Cada instituto usa metodologia própria, então vale comparar cada pesquisa com a rodada anterior do mesmo instituto e sempre olhar a margem de erro."
       ]
     },
     "campanha-sp-sabado": {
