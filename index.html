@@ -344,6 +344,20 @@
   .share-btn{display:inline-flex;align-items:center;gap:6px;margin:14px 0 0 12px;background:var(--bg-card-2);color:var(--navy);border:1px solid var(--border);border-radius:20px;padding:8px 14px;font:600 13px 'Inter',sans-serif;cursor:pointer;}
   .share-btn:hover{border-color:var(--tiffany);}
   .share-toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;z-index:40;opacity:0;transition:opacity .25s;pointer-events:none;}
+  .ap-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:400px;margin:12px auto;}
+  .ap-tile{aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 12px 'Inter',sans-serif;background:#D5DDE5;color:#0B2038;cursor:pointer;border:2px solid transparent;padding:0;line-height:1.15;}
+  .ap-tile small{font-weight:600;font-size:10px;opacity:.9;}
+  .ap-tile.sel{border-color:var(--navy);}
+  .ap-row{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:13px;}
+  .ap-row .nm{width:128px;flex-shrink:0;font-weight:600;}
+  .ap-bar{flex:1;height:14px;background:var(--bg-card-2);border-radius:7px;overflow:hidden;}
+  .ap-bar i{display:block;height:100%;border-radius:7px;}
+  .ap-row .pc{width:58px;text-align:right;font-variant-numeric:tabular-nums;}
+  .ap-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+  .ap-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0;font-size:12px;}
+  .ap-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .ap-box{background:var(--bg-card-2);border-radius:12px;padding:12px 14px;margin:12px 0;}
+  .ap-box h3{font-size:14px;margin:0 0 6px;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -367,6 +381,7 @@
       <nav class="topnav-desktop" id="topnavDesktop">
         <button class="topnav-btn active" data-tab="feed">Feed</button>
         <button class="topnav-btn" data-tab="geopolitica">Geopolítica</button>
+        <button class="topnav-btn" data-tab="apuracao">Apuração</button>
         <button class="topnav-btn" data-tab="comparar">Comparar</button>
         <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
         <button class="topnav-btn" data-tab="fontes">Fontes</button>
@@ -407,6 +422,7 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração ao vivo (dom.)</button>
     <button class="trending-pill" onclick="openArticle('datafolha-ultima-3out')">Datafolha: 45% x 42%</button>
     <button class="trending-pill" onclick="openArticle('campanha-sp-sabado')">Fim da campanha em SP</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-cancelado')">Debate da Globo cancelado</button>
@@ -580,6 +596,21 @@
     </section>
   </div>
 
+  <!-- APURAÇÃO TAB -->
+  <div class="tab-panel" id="tab-apuracao">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Apuração — 1º turno</h2><span class="count" id="apStatus">aguardando</span></div>
+      <div class="notice"><b>Dados oficiais do TSE —</b> esta aba lê os resultados direto do TSE e se atualiza a cada 60 segundos enquanto estiver aberta. A divulgação começa às 17h (Brasília) de domingo, 4 de outubro. Antes disso, tudo aparece zerado.</div>
+      <div id="apNacional"></div>
+      <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Quem lidera em cada estado</h2></div>
+      <div class="ap-grid" id="apGrid"></div>
+      <p class="compare-note" style="text-align:center;">Cada quadrado é um estado, na posição aproximada do mapa. <b>EXT</b> é o voto de brasileiros no exterior, somado. Toque num quadrado para ver o detalhe.</p>
+      <div id="apDetalhe"></div>
+      <div class="ap-legend" id="apLegenda"></div>
+      <p class="compare-note">O resultado por país no exterior não está nesta aba. Para ver país a país, use o portal oficial: <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</p>
+    </section>
+  </div>
+
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
     <section style="margin-top:24px;">
@@ -728,6 +759,10 @@
     <button class="nav-item" data-tab="geopolitica">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
       Mundo
+    </button>
+    <button class="nav-item" data-tab="apuracao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+      Apuração
     </button>
     <button class="nav-item" data-tab="comparar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
@@ -1516,6 +1551,113 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   }
   window.addEventListener('hashchange', p360Route);
   window.addEventListener('load', p360Route);
+</script>
+<script>
+  // ---------- Apuração ao vivo (TSE) ----------
+  const AP_BASE = 'https://resultados.tse.jus.br/oficial/ele2026/6257/dados/';
+  const AP_CAND = {'13':['Lula','#D7263D'],'22':['Flávio Bolsonaro','#1F5FBF'],'55':['Ronaldo Caiado','#2E9E5B'],'30':['Romeu Zema','#F28C28'],'14':['Renan Santos','#F2C200'],'70':['Augusto Cury','#8E5BD6'],'80':['Samara Martins','#B5179E'],'29':['Rui Costa Pimenta','#7A1020'],'16':['Hertz Dias','#FF6F91'],'21':['Edmilson Costa','#4A4E69'],'27':['Clariana Barão','#2A9D8F'],'35':['Wilson Grassi','#6B7280']};
+  const AP_UF = [['rr',3,0],['ap',5,0],['am',2,1],['pa',4,1],['ma',5,1],['ce',6,1],['rn',7,1],['ac',1,2],['ro',2,2],['to',4,2],['pi',5,2],['pe',6,2],['pb',7,2],['mt',3,3],['go',4,3],['ba',5,3],['se',6,3],['al',7,3],['df',4,4],['mg',5,4],['es',6,4],['ms',3,5],['sp',4,5],['rj',5,5],['pr',4,6],['sc',4,7],['rs',4,8],['zz',7,7]];
+  const apData = {};
+  let apSel = null, apLoading = false;
+
+  function apParse(j){
+    const out = {cands:[], total:0, pst:null};
+    try{
+      const cargo = (j.carg || [])[0];
+      if(!cargo) return out;
+      (cargo.agr || []).forEach(function(a){ (a.par || []).forEach(function(p){ (p.cand || []).forEach(function(c){
+        out.cands.push({n:String(c.n), nm:c.nmu || c.nm || '', v:Number(c.vap) || 0, p:parseFloat(String(c.pvapn || '0').replace(',', '.')) || 0});
+      }); }); });
+      out.total = out.cands.reduce(function(s,c){ return s + c.v; }, 0);
+      if(j.s && j.s.pstn != null) out.pst = parseFloat(String(j.s.pstn).replace(',', '.'));
+    }catch(e){}
+    out.cands.sort(function(a,b){ return b.v - a.v; });
+    return out;
+  }
+  function apInfo(n, nm){ return AP_CAND[n] || [nm || ('Nº ' + n), '#6B7280']; }
+  function apTextColor(hex){
+    const r = parseInt(hex.substr(1,2),16), g = parseInt(hex.substr(3,2),16), b = parseInt(hex.substr(5,2),16);
+    return (0.299*r + 0.587*g + 0.114*b) > 160 ? '#0B2038' : '#FFFFFF';
+  }
+  function apRows(cands, max){
+    const box = document.createElement('div');
+    cands.slice(0, max).forEach(function(c){
+      const inf = apInfo(c.n, c.nm);
+      const row = document.createElement('div'); row.className = 'ap-row';
+      const dot = document.createElement('span'); dot.className = 'ap-dot'; dot.style.background = inf[1];
+      const nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = inf[0];
+      const bar = document.createElement('span'); bar.className = 'ap-bar';
+      const fill = document.createElement('i'); fill.style.width = Math.min(100, c.p) + '%'; fill.style.background = inf[1]; bar.appendChild(fill);
+      const pc = document.createElement('span'); pc.className = 'pc'; pc.textContent = c.p.toFixed(2).replace('.', ',') + '%';
+      [dot, nm, bar, pc].forEach(function(x){ row.appendChild(x); });
+      box.appendChild(row);
+    });
+    return box;
+  }
+  function apRender(){
+    const grid = document.getElementById('apGrid');
+    grid.textContent = '';
+    AP_UF.forEach(function(u){
+      const d = apData[u[0]];
+      const t = document.createElement('button'); t.type = 'button'; t.className = 'ap-tile' + (apSel === u[0] ? ' sel' : '');
+      t.style.gridColumn = String(u[1]); t.style.gridRow = String(u[2] + 1);
+      const lab = document.createElement('span'); lab.textContent = u[0] === 'zz' ? 'EXT' : u[0].toUpperCase(); t.appendChild(lab);
+      if(d && d.total > 0){
+        const lead = d.cands[0], inf = apInfo(lead.n, lead.nm);
+        t.style.background = inf[1]; t.style.color = apTextColor(inf[1]);
+        const sm = document.createElement('small'); sm.textContent = Math.round(lead.p) + '%'; t.appendChild(sm);
+        t.title = inf[0] + ' lidera com ' + lead.p.toFixed(1).replace('.', ',') + '%';
+      } else { t.title = 'Aguardando apuração'; }
+      t.addEventListener('click', function(){ apSel = u[0]; apRender(); apDetail(); });
+      grid.appendChild(t);
+    });
+    // nacional
+    const nat = document.getElementById('apNacional'); nat.textContent = '';
+    const br = apData['br'];
+    const box = document.createElement('div'); box.className = 'ap-box';
+    const h = document.createElement('h3');
+    if(br && br.total > 0){
+      h.textContent = 'Brasil — votos válidos' + (br.pst != null ? ' (' + br.pst.toFixed(2).replace('.', ',') + '% das seções apuradas)' : '');
+      box.appendChild(h); box.appendChild(apRows(br.cands, 6));
+    } else { h.textContent = 'Brasil — aguardando os primeiros boletins de urna'; box.appendChild(h); }
+    nat.appendChild(box);
+    // legenda
+    const lg = document.getElementById('apLegenda'); lg.textContent = '';
+    Object.keys(AP_CAND).forEach(function(n){
+      const s = document.createElement('span'); const d = document.createElement('i'); d.className = 'ap-dot'; d.style.background = AP_CAND[n][1];
+      s.appendChild(d); s.appendChild(document.createTextNode(AP_CAND[n][0])); lg.appendChild(s);
+    });
+  }
+  function apDetail(){
+    const box = document.getElementById('apDetalhe'); box.textContent = '';
+    if(!apSel) return;
+    const d = apData[apSel]; const wrap = document.createElement('div'); wrap.className = 'ap-box';
+    const h = document.createElement('h3'); h.textContent = (apSel === 'zz' ? 'Exterior' : apSel.toUpperCase());
+    wrap.appendChild(h);
+    if(d && d.total > 0){ if(d.pst != null) h.textContent += ' — ' + d.pst.toFixed(2).replace('.', ',') + '% das seções'; wrap.appendChild(apRows(d.cands, 5)); }
+    else { const p = document.createElement('div'); p.textContent = 'Ainda sem votos apurados.'; wrap.appendChild(p); }
+    box.appendChild(wrap);
+  }
+  function apLoad(){
+    if(apLoading) return; apLoading = true;
+    const ufs = ['br'].concat(AP_UF.map(function(u){ return u[0]; }));
+    Promise.all(ufs.map(function(uf){
+      return fetch(AP_BASE + uf + '/' + uf + '-c0001-e006257-u.json', {cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(j){ apData[uf] = apParse(j); return true; })
+        .catch(function(){ return false; });
+    })).then(function(res){
+      const okc = res.filter(Boolean).length;
+      const st = document.getElementById('apStatus');
+      if(okc === 0){ st.textContent = 'sem conexão com o TSE'; }
+      else { const br = apData['br']; st.textContent = (br && br.total > 0) ? ('atualizado às ' + new Date().toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'})) : 'aguardando a apuração'; }
+      apRender(); apDetail(); apLoading = false;
+    });
+  }
+  apRender();
+  document.addEventListener('click', function(e){ const b = e.target.closest && e.target.closest('[data-tab="apuracao"]'); if(b) setTimeout(apLoad, 60); });
+  setInterval(function(){ const t = document.getElementById('tab-apuracao'); if(!document.hidden && t && t.classList.contains('active')) apLoad(); }, 60000);
+
 </script>
 </body>
 </html>
