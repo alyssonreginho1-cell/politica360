@@ -344,6 +344,20 @@
   .share-btn{display:inline-flex;align-items:center;gap:6px;margin:14px 0 0 12px;background:var(--bg-card-2);color:var(--navy);border:1px solid var(--border);border-radius:20px;padding:8px 14px;font:600 13px 'Inter',sans-serif;cursor:pointer;}
   .share-btn:hover{border-color:var(--tiffany);}
   .share-toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;z-index:40;opacity:0;transition:opacity .25s;pointer-events:none;}
+  .ap-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:400px;margin:12px auto;}
+  .ap-tile{aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 12px 'Inter',sans-serif;background:#D5DDE5;color:#0B2038;cursor:pointer;border:2px solid transparent;padding:0;line-height:1.15;}
+  .ap-tile small{font-weight:600;font-size:10px;opacity:.9;}
+  .ap-tile.sel{border-color:var(--navy);}
+  .ap-row{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:13px;}
+  .ap-row .nm{width:128px;flex-shrink:0;font-weight:600;}
+  .ap-bar{flex:1;height:14px;background:var(--bg-card-2);border-radius:7px;overflow:hidden;}
+  .ap-bar i{display:block;height:100%;border-radius:7px;}
+  .ap-row .pc{width:58px;text-align:right;font-variant-numeric:tabular-nums;}
+  .ap-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+  .ap-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0;font-size:12px;}
+  .ap-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .ap-box{background:var(--bg-card-2);border-radius:12px;padding:12px 14px;margin:12px 0;}
+  .ap-box h3{font-size:14px;margin:0 0 6px;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -367,6 +381,7 @@
       <nav class="topnav-desktop" id="topnavDesktop">
         <button class="topnav-btn active" data-tab="feed">Feed</button>
         <button class="topnav-btn" data-tab="geopolitica">Geopolítica</button>
+        <button class="topnav-btn" data-tab="apuracao">Apuração</button>
         <button class="topnav-btn" data-tab="comparar">Comparar</button>
         <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
         <button class="topnav-btn" data-tab="fontes">Fontes</button>
@@ -399,7 +414,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">Amanhã</div><div class="lbl">1º turno</div></div>
+    <div class="e"><div class="num">Hoje</div><div class="lbl">1º turno</div></div>
     <div class="e"><div class="num">4 out</div><div class="lbl">votação</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno, se houver</div></div>
     <div class="e"><div class="num">12</div><div class="lbl">candidatos na disputa</div></div>
@@ -407,9 +422,11 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('datafolha-ultima-3out')">Última pesquisa Datafolha, hoje</button>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração ao vivo</button>
+    <button class="trending-pill" onclick="openArticle('apuracao-parcial-4out')">Parcial: Flávio 51% x Lula 41%</button>
+    <button class="trending-pill" onclick="openArticle('apuracao-exterior-4out')">Exterior: Lula em 27 países</button>
+    <button class="trending-pill" onclick="openArticle('datafolha-ultima-3out')">Datafolha: 45% x 42%</button>
     <button class="trending-pill" onclick="openArticle('campanha-sp-sabado')">Fim da campanha em SP</button>
-    <button class="trending-pill" onclick="openArticle('datafolha-1out')">Datafolha: 48% x 45%</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-cancelado')">Debate da Globo cancelado</button>
     <button class="trending-pill" onclick="openArticle('candidatos-12')">12 candidatos na disputa</button>
     <button class="trending-pill" onclick="openArticle('rubio-ira-delegacao')">EUA x Irã</button>
@@ -428,10 +445,34 @@
 
       <div id="feedList">
 
+      <div class="feed-card" data-cand="all" data-id="apuracao-parcial-4out" role="button" tabindex="0" onclick="openArticle('apuracao-parcial-4out')" onkeypress="if(event.key=='Enter')openArticle('apuracao-parcial-4out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">AP</div><span class="fc-cand">Apuração ao vivo</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
+        <p class="fc-headline">Apuração parcial: Flávio tem 51,09% e Lula 40,71% dos votos válidos às 18h08; números ainda mudam.</p>
+        <div class="fc-bottom"><span class="fc-source">● InfoMoney / BR104</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="apuracao-exterior-4out" role="button" tabindex="0" onclick="openArticle('apuracao-exterior-4out')" onkeypress="if(event.key=='Enter')openArticle('apuracao-exterior-4out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Voto no exterior</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
+        <p class="fc-headline">Exterior: Lula vence em 27 países e soma 53.746 votos contra 40.914 de Flávio.</p>
+        <div class="fc-bottom"><span class="fc-source">● Congresso em Foco</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
       <div class="feed-card" data-cand="all" data-id="datafolha-ultima-3out" role="button" tabindex="0" onclick="openArticle('datafolha-ultima-3out')" onkeypress="if(event.key=='Enter')openArticle('datafolha-ultima-3out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">DF</div><span class="fc-cand">Pesquisa Datafolha</span><span class="fc-dot"></span><span class="fc-time">3 out</span></div>
-        <p class="fc-headline">Datafolha divulga hoje, a partir das 18h45, a última pesquisa antes do 1º turno, com 4.006 entrevistas feitas neste sábado.</p>
-        <div class="fc-bottom"><span class="fc-source">● CartaCapital</span><span class="fc-link">ler mais ↗</span></div>
+        <p class="fc-headline">Datafolha de véspera: Lula tem 45% e Flávio 42% dos votos válidos; no 2º turno, 47% a 46%, empate técnico.</p>
+        <div class="fc-bottom"><span class="fc-source">● ND Mais / Exame</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="quaest-final-3out" role="button" tabindex="0" onclick="openArticle('quaest-final-3out')" onkeypress="if(event.key=='Enter')openArticle('quaest-final-3out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">QU</div><span class="fc-cand">Pesquisa Quaest</span><span class="fc-dot"></span><span class="fc-time">3 out</span></div>
+        <p class="fc-headline">Quaest de véspera: Lula tem 46% e Flávio 45% dos votos válidos.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="cnt-mda-3out" role="button" tabindex="0" onclick="openArticle('cnt-mda-3out')" onkeypress="if(event.key=='Enter')openArticle('cnt-mda-3out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">MD</div><span class="fc-cand">Pesquisa CNT/MDA</span><span class="fc-dot"></span><span class="fc-time">3 out</span></div>
+        <p class="fc-headline">CNT/MDA: Lula tem 47,8% e Flávio 42,1% dos votos válidos, diferença de 5,7 pontos.</p>
+        <div class="fc-bottom"><span class="fc-source">● Exame</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="campanha-sp-sabado" role="button" tabindex="0" onclick="openArticle('campanha-sp-sabado')" onkeypress="if(event.key=='Enter')openArticle('campanha-sp-sabado')">
@@ -575,6 +616,23 @@
     </section>
   </div>
 
+  <!-- APURAÇÃO TAB -->
+  <div class="tab-panel" id="tab-apuracao">
+    <section style="margin-top:24px;">
+      <div class="section-title"><h2>Apuração — 1º turno</h2><span class="count" id="apStatus">aguardando</span></div>
+      <div class="notice"><b>Dados oficiais do TSE —</b> esta aba tenta ler os resultados direto do TSE e se atualiza a cada 60 segundos enquanto estiver aberta. A divulgação começou às 17h (Brasília) deste domingo, 4 de outubro. Se os números não carregarem no seu navegador, aparece a última leitura de imprensa, com o horário, e o link do portal oficial.</div>
+      <div id="apNacional"></div>
+      <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Quem lidera em cada estado</h2></div>
+      <div class="ap-grid" id="apGrid"></div>
+      <p class="compare-note" style="text-align:center;">Cada quadrado é um estado, na posição aproximada do mapa. <b>EXT</b> é o voto de brasileiros no exterior, somado. Toque num quadrado para ver o detalhe.</p>
+      <div id="apDetalhe"></div>
+      <div class="ap-legend" id="apLegenda"></div>
+      <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Exterior — país por país</h2><span class="count">leitura de imprensa, 4 out</span></div>
+      <div id="apExt"></div>
+      <p class="compare-note">A lista de países acima é parcial. Para ver todos os países, use o portal oficial: <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</p>
+    </section>
+  </div>
+
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
     <section style="margin-top:24px;">
@@ -605,7 +663,7 @@
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">SM</div><div><div class="cand-name">Samara Martins</div><div class="cand-party">Unidade Popular</div></div><button class="follow-star" data-follow="samara" onclick="toggleFollow('samara', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Dentista e vice-presidente nacional do UP, veio dos movimentos estudantis.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">WG</div><div><div class="cand-name">Wilson Grassi Júnior</div><div class="cand-party">—</div></div><button class="follow-star" data-follow="grassi" onclick="toggleFollow('grassi', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Médico veterinário paulistano, disputa sua quarta eleição — ajudou a fundar o primeiro hospital público para cães e gatos de São Paulo.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">WG</div><div><div class="cand-name">Wilson Grassi Júnior</div><div class="cand-party">Democrata</div></div><button class="follow-star" data-follow="grassi" onclick="toggleFollow('grassi', this)">☆</button></div><span class="status-pill status-confirmado">Candidatura registrada</span><div class="cand-body"><p>Médico veterinário paulistano, disputa sua quarta eleição — ajudou a fundar o primeiro hospital público para cães e gatos de São Paulo.</p></div></div>
 
       </div>
 
@@ -633,34 +691,36 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — cenário estimulado</h2><span class="count">Datafolha, 1º out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">1º turno — votos válidos</h2><span class="count">Datafolha, 3 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <tbody>
-            <tr><td class="theme-col">Lula (PT)</td><td><b>42%</b></td></tr>
-            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>38%</b></td></tr>
-            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>4%</td></tr>
+            <tr><td class="theme-col">Lula (PT)</td><td><b>45%</b></td></tr>
+            <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>42%</b></td></tr>
+            <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>4%</td></tr>
             <tr><td class="theme-col">Renan Santos (Missão)</td><td>3%</td></tr>
-            <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>3%</td></tr>
+            <tr><td class="theme-col">Augusto Cury (Avante)</td><td>3%</td></tr>
             <tr><td class="theme-col">Romeu Zema (Novo)</td><td>1%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="compare-note">2.506 entrevistas, de 28 de setembro a 1º de outubro. Margem de erro de 2 pontos. Votos válidos: Lula 45%, Flávio 40%. Indecisos na espontânea: 13%.</p>
-      <div class="section-title" style="margin-top:24px;"><h2 style="font-size:15px;">Rodadas anteriores — 1º turno</h2><span class="count">set/2026</span></div>
+      <p class="compare-note">4.006 eleitores, margem de erro de 2 pontos, registro BR-01708/2026. Votos válidos excluem brancos, nulos e indecisos. Os demais candidatos não pontuaram. Na espontânea: Lula 40%, Flávio 33%, indecisos 11%. A Quaest de véspera (3 out), em votos válidos, deu Lula 46% e Flávio 45%.</p>
+      <div class="section-title" style="margin-top:24px;"><h2 style="font-size:15px;">Outras rodadas — votos totais, 1º turno</h2><span class="count">set–out/2026</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead><tbody>
+        <tr><td class="theme-col">CNT/MDA</td><td><b>43,1%</b></td><td>38%</td><td>30 set–2 out</td></tr>
+        <tr><td class="theme-col">Datafolha</td><td><b>42%</b></td><td>38%</td><td>1º out</td></tr>
         <tr><td class="theme-col">Datafolha</td><td><b>40%</b></td><td>36%</td><td>22–23 set</td></tr>
         <tr><td class="theme-col">Quaest</td><td><b>37%</b></td><td>33%</td><td>17–20 set</td></tr>
       </tbody></table></div>
-      <p class="compare-note">O Datafolha divulga hoje (3), a partir das 18h45, a última pesquisa antes do 1º turno, com 4.006 entrevistas feitas neste sábado. Os números novos ainda não estavam disponíveis nesta atualização e podem mudar o quadro acima.</p>
+      <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 1º out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 3 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
-            <tr><td class="theme-col">Datafolha</td><td><b>48%</b></td><td>45%</td><td>1 out</td></tr>
+            <tr><td class="theme-col">Datafolha</td><td><b>47%</b></td><td>46%</td><td>3 out</td></tr>
             <tr><td class="theme-col">PoderData/Aya</td><td>44%</td><td><b>45%</b></td><td>3 set</td></tr>
           </tbody>
         </table>
@@ -710,7 +770,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 3 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -721,6 +781,10 @@
     <button class="nav-item" data-tab="geopolitica">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
       Mundo
+    </button>
+    <button class="nav-item" data-tab="apuracao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+      Apuração
     </button>
     <button class="nav-item" data-tab="comparar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
@@ -741,14 +805,51 @@
 
 <script>
   const articles = {
-    "datafolha-ultima-3out": {
-      source: "CartaCapital", date: "3 out", url: "https://www.cartacapital.com.br/cartaexpressa/os-detalhes-da-ultima-pesquisa-datafolha-sobre-lula-x-flavio-bolsonaro-no-1o-turno/",
-      title: "Datafolha divulga hoje, a partir das 18h45, a última pesquisa antes do 1º turno",
+    "apuracao-parcial-4out": {
+      source: "InfoMoney / BR104", date: "4 out", url: "https://www.infomoney.com.br/politica/com-1008-das-urnas-apuradas-flavio-lidera-com-5096-contra-4078-de-lula/",
+      title: "Apuração parcial: Flávio tem 51,09% e Lula 40,71% dos votos válidos",
       body: [
-        "Segundo a CartaCapital, o Datafolha publica neste sábado (3), a partir das 18h45, a última pesquisa de intenção de voto para presidente antes do 1º turno, e também para os governos de SP, MG, RJ, PE, CE, PI e DF.",
-        "A sondagem nacional se baseia em 4.006 entrevistas, todas feitas no próprio sábado, com margem de erro de 2 pontos percentuais e registro BR-01708/2026.",
-        "A rodada anterior, divulgada na quinta-feira (1º), mostrou Lula com 42% e Flávio Bolsonaro com 38% no 1º turno, e 48% a 45% no 2º, empate técnico.",
-        "Os números da nova pesquisa ainda não estavam disponíveis quando esta nota foi escrita."
+        "Com a apuração do 1º turno em andamento neste domingo (4), Flávio Bolsonaro (PL) aparece na frente em votos válidos. Às 18h08, segundo o portal BR104, ele somava 51,09% (7.369.884 votos), contra 40,71% de Lula (PT), com 5.872.874 votos.",
+        "Pouco antes, com 10,08% das seções apuradas, o InfoMoney registrava Flávio com 50,96% e Lula com 40,78%. O InfoMoney observa que a apuração está mais adiantada em estados onde Flávio lidera do que naqueles onde Lula está na frente, o que pode mudar o quadro conforme as urnas restantes forem somadas.",
+        "Em 2022, segundo a imprensa da época, Lula só assumiu a liderança do 1º turno quando mais de 70% dos votos já estavam contados.",
+        "Se ninguém passar de 50% dos votos válidos no total, os dois mais votados disputam o 2º turno em 25 de outubro. Estes números são parciais; o resultado oficial está no site do TSE."
+      ]
+    },
+    "apuracao-exterior-4out": {
+      source: "Congresso em Foco", date: "4 out", url: "https://www.congressoemfoco.com.br/noticia/122947/primeiras-urnas-fecham-no-exterior-lula-lidera-em-5-de-6-paises",
+      title: "Exterior: Lula vence em 27 países e soma 53.746 votos contra 40.914 de Flávio",
+      body: [
+        "Segundo o Congresso em Foco, com 36 países de votação concluída no exterior, Lula (PT) soma 53.746 votos, contra 40.914 de Flávio Bolsonaro (PL). A reportagem aponta Lula vencedor em 27 países.",
+        "Lula venceu, entre outros, na China (56,63%), em Singapura (54,60%), na Hungria (71,18%), na Estônia (74,74%), na Palestina (93,09%) e no Chipre (42,11%).",
+        "Flávio venceu no Catar (48,45%), em Moçambique (52,8%), em Taiwan (48,86%) e na Tailândia (50%), países com poucos eleitores.",
+        "Os votos do exterior já entram na soma nacional da apuração. Os dados são parciais e continuam mudando."
+      ]
+    },
+    "quaest-final-3out": {
+      source: "CNN Brasil", date: "3 out", url: "https://www.cnnbrasil.com.br/eleicoes/quaest-lula-tem-46-dos-votos-validos-no-1o-turno-flavio-45/",
+      title: "Quaest de véspera: Lula 46% e Flávio 45% dos votos válidos",
+      body: [
+        "Segundo a pesquisa Quaest divulgada no sábado (3), Lula (PT) tem 46% dos votos válidos no 1º turno e Flávio Bolsonaro (PL) tem 45%.",
+        "A CNN Brasil lembra que votos válidos são os dados diretamente a um candidato, sem contar brancos e nulos, e que a apuração do TSE também usa esse critério."
+      ]
+    },
+    "datafolha-ultima-3out": {
+      source: "ND Mais / Exame", date: "3 out", url: "https://ndmais.com.br/politica/pesquisa-datafolha-lula-lidera-com-45-e-flavio-tem-42-dos-votos-validos/",
+      title: "Datafolha de véspera: Lula tem 45% e Flávio 42% dos votos válidos",
+      body: [
+        "A última pesquisa Datafolha antes do 1º turno, divulgada neste sábado (3) e encomendada pela Globo e pela Folha, mostra Lula (PT) com 45% dos votos válidos e Flávio Bolsonaro (PL) com 42%. A diferença de 3 pontos está dentro da margem de erro, de 2 pontos para mais ou para menos, e os veículos tratam como empate técnico.",
+        "Vêm depois Ronaldo Caiado (PSD), com 4%, Renan Santos (Missão) e Augusto Cury (Avante), com 3% cada, e Romeu Zema (Novo), com 1%. Os demais candidatos não pontuaram. Com esses números, nenhum dos dois primeiros chega aos mais de 50% dos votos válidos necessários para vencer no 1º turno.",
+        "Na pesquisa espontânea, Lula foi de 39% para 40% e Flávio de 31% para 33%. Os indecisos caíram de 13% para 11%.",
+        "Para um 2º turno entre os dois, o ND Mais registra Lula com 47% e Flávio com 46%, contra 48% a 45% na rodada de quinta-feira (1º), de novo um empate técnico. A pesquisa ouviu 4.006 eleitores e está registrada no TSE sob o número BR-01708/2026."
+      ]
+    },
+    "cnt-mda-3out": {
+      source: "Exame", date: "3 out", url: "https://exame.com/brasil/pesquisa-cnt-mda-para-presidente-lula-tem-478-e-flavio-421-dos-votos-validos-no-1o-turno/",
+      title: "CNT/MDA: Lula tem 47,8% e Flávio 42,1% dos votos válidos",
+      body: [
+        "A pesquisa CNT/MDA, divulgada na véspera do 1º turno, ouviu 2.007 eleitores entre 30 de setembro e 2 de outubro, com margem de erro de 2,2 pontos. Ela mostra Lula (PT) com 47,8% dos votos válidos e Flávio Bolsonaro (PL) com 42,1%, uma diferença de 5,7 pontos.",
+        "No cenário estimulado, com votos totais, Lula tem 43,1% e Flávio 38%.",
+        "Cada instituto usa metodologia própria, então vale comparar cada pesquisa com a rodada anterior do mesmo instituto e sempre olhar a margem de erro."
       ]
     },
     "campanha-sp-sabado": {
@@ -1500,6 +1601,136 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   }
   window.addEventListener('hashchange', p360Route);
   window.addEventListener('load', p360Route);
+</script>
+<script>
+  // ---------- Apuração ao vivo (TSE) ----------
+  const AP_BASE = 'https://resultados.tse.jus.br/oficial/ele2026/6257/dados/';
+  const AP_CAND = {'13':['Lula','#D7263D'],'22':['Flávio Bolsonaro','#1F5FBF'],'55':['Ronaldo Caiado','#2E9E5B'],'30':['Romeu Zema','#F28C28'],'14':['Renan Santos','#F2C200'],'70':['Augusto Cury','#8E5BD6'],'80':['Samara Martins','#B5179E'],'29':['Rui Costa Pimenta','#7A1020'],'16':['Hertz Dias','#FF6F91'],'21':['Edmilson Costa','#4A4E69'],'27':['Clariana Barão','#2A9D8F'],'35':['Wilson Grassi','#6B7280']};
+  const AP_UF = [['rr',3,0],['ap',5,0],['am',2,1],['pa',4,1],['ma',5,1],['ce',6,1],['rn',7,1],['ac',1,2],['ro',2,2],['to',4,2],['pi',5,2],['pe',6,2],['pb',7,2],['mt',3,3],['go',4,3],['ba',5,3],['se',6,3],['al',7,3],['df',4,4],['mg',5,4],['es',6,4],['ms',3,5],['sp',4,5],['rj',5,5],['pr',4,6],['sc',4,7],['rs',4,8],['zz',7,7]];
+  const AP_SNAP = {hora:'18h08', fonte:'BR104', cands:[{n:'22',nm:'',p:51.09},{n:'13',nm:'',p:40.71}]};
+  const AP_EXT = [['Hungria','13',71.18],['Estônia','13',74.74],['Palestina','13',93.09],['China','13',56.63],['Singapura','13',54.60],['Chipre','13',42.11],['Catar','22',48.45],['Moçambique','22',52.8],['Taiwan','22',48.86],['Tailândia','22',50]];
+  const apData = {};
+  let apSel = null, apLoading = false;
+
+  function apParse(j){
+    const out = {cands:[], total:0, pst:null};
+    try{
+      const cargo = (j.carg || [])[0];
+      if(!cargo) return out;
+      (cargo.agr || []).forEach(function(a){ (a.par || []).forEach(function(p){ (p.cand || []).forEach(function(c){
+        out.cands.push({n:String(c.n), nm:c.nmu || c.nm || '', v:Number(c.vap) || 0, p:parseFloat(String(c.pvapn || '0').replace(',', '.')) || 0});
+      }); }); });
+      out.total = out.cands.reduce(function(s,c){ return s + c.v; }, 0);
+      if(j.s && j.s.pstn != null) out.pst = parseFloat(String(j.s.pstn).replace(',', '.'));
+    }catch(e){}
+    out.cands.sort(function(a,b){ return b.v - a.v; });
+    return out;
+  }
+  function apInfo(n, nm){ return AP_CAND[n] || [nm || ('Nº ' + n), '#6B7280']; }
+  function apTextColor(hex){
+    const r = parseInt(hex.substr(1,2),16), g = parseInt(hex.substr(3,2),16), b = parseInt(hex.substr(5,2),16);
+    return (0.299*r + 0.587*g + 0.114*b) > 160 ? '#0B2038' : '#FFFFFF';
+  }
+  function apRows(cands, max){
+    const box = document.createElement('div');
+    cands.slice(0, max).forEach(function(c){
+      const inf = apInfo(c.n, c.nm);
+      const row = document.createElement('div'); row.className = 'ap-row';
+      const dot = document.createElement('span'); dot.className = 'ap-dot'; dot.style.background = inf[1];
+      const nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = inf[0];
+      const bar = document.createElement('span'); bar.className = 'ap-bar';
+      const fill = document.createElement('i'); fill.style.width = Math.min(100, c.p) + '%'; fill.style.background = inf[1]; bar.appendChild(fill);
+      const pc = document.createElement('span'); pc.className = 'pc'; pc.textContent = c.p.toFixed(2).replace('.', ',') + '%';
+      [dot, nm, bar, pc].forEach(function(x){ row.appendChild(x); });
+      box.appendChild(row);
+    });
+    return box;
+  }
+  function apRender(){
+    const grid = document.getElementById('apGrid');
+    grid.textContent = '';
+    AP_UF.forEach(function(u){
+      const d = apData[u[0]];
+      const t = document.createElement('button'); t.type = 'button'; t.className = 'ap-tile' + (apSel === u[0] ? ' sel' : '');
+      t.style.gridColumn = String(u[1]); t.style.gridRow = String(u[2] + 1);
+      const lab = document.createElement('span'); lab.textContent = u[0] === 'zz' ? 'EXT' : u[0].toUpperCase(); t.appendChild(lab);
+      if(d && d.total > 0){
+        const lead = d.cands[0], inf = apInfo(lead.n, lead.nm);
+        t.style.background = inf[1]; t.style.color = apTextColor(inf[1]);
+        const sm = document.createElement('small'); sm.textContent = Math.round(lead.p) + '%'; t.appendChild(sm);
+        t.title = inf[0] + ' lidera com ' + lead.p.toFixed(1).replace('.', ',') + '%';
+      } else { t.title = 'Aguardando apuração'; }
+      t.addEventListener('click', function(){ apSel = u[0]; apRender(); apDetail(); });
+      grid.appendChild(t);
+    });
+    // nacional
+    const nat = document.getElementById('apNacional'); nat.textContent = '';
+    const br = apData['br'];
+    const box = document.createElement('div'); box.className = 'ap-box';
+    const h = document.createElement('h3');
+    if(br && br.total > 0){
+      h.textContent = 'Brasil — votos válidos' + (br.pst != null ? ' (' + br.pst.toFixed(2).replace('.', ',') + '% das seções apuradas)' : '');
+      box.appendChild(h); box.appendChild(apRows(br.cands, 6));
+    } else {
+      h.textContent = 'Brasil — última leitura de imprensa (' + AP_SNAP.hora + ')'; box.appendChild(h);
+      box.appendChild(apRows(AP_SNAP.cands, 2));
+      const nt = document.createElement('div'); nt.className = 'compare-note'; nt.style.margin = '6px 0 0';
+      nt.textContent = 'Fonte: ' + AP_SNAP.fonte + '. Parcial, em votos válidos. Os números ao vivo do TSE não carregaram neste navegador: veja em resultados.tse.jus.br.';
+      box.appendChild(nt);
+    }
+    nat.appendChild(box);
+    // legenda
+    const lg = document.getElementById('apLegenda'); lg.textContent = '';
+    Object.keys(AP_CAND).forEach(function(n){
+      const s = document.createElement('span'); const d = document.createElement('i'); d.className = 'ap-dot'; d.style.background = AP_CAND[n][1];
+      s.appendChild(d); s.appendChild(document.createTextNode(AP_CAND[n][0])); lg.appendChild(s);
+    });
+  }
+  function apDetail(){
+    const box = document.getElementById('apDetalhe'); box.textContent = '';
+    if(!apSel) return;
+    const d = apData[apSel]; const wrap = document.createElement('div'); wrap.className = 'ap-box';
+    const h = document.createElement('h3'); h.textContent = (apSel === 'zz' ? 'Exterior' : apSel.toUpperCase());
+    wrap.appendChild(h);
+    if(d && d.total > 0){ if(d.pst != null) h.textContent += ' — ' + d.pst.toFixed(2).replace('.', ',') + '% das seções'; wrap.appendChild(apRows(d.cands, 5)); }
+    else { const p = document.createElement('div'); p.textContent = 'Ainda sem votos apurados.'; wrap.appendChild(p); }
+    box.appendChild(wrap);
+  }
+  function apLoad(){
+    if(apLoading) return; apLoading = true;
+    const ufs = ['br'].concat(AP_UF.map(function(u){ return u[0]; }));
+    Promise.all(ufs.map(function(uf){
+      return fetch(AP_BASE + uf + '/' + uf + '-c0001-e006257-u.json', {cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(j){ apData[uf] = apParse(j); return true; })
+        .catch(function(){ return false; });
+    })).then(function(res){
+      const okc = res.filter(Boolean).length;
+      const st = document.getElementById('apStatus');
+      if(okc === 0){ st.textContent = 'sem conexão com o TSE'; }
+      else { const br = apData['br']; st.textContent = (br && br.total > 0) ? ('atualizado às ' + new Date().toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'})) : 'aguardando a apuração'; }
+      apRender(); apDetail(); apLoading = false;
+    });
+  }
+  (function(){
+    const ext = document.getElementById('apExt'); if(!ext) return;
+    AP_EXT.forEach(function(r){
+      const inf = apInfo(r[1]); const row = document.createElement('div'); row.className = 'ap-row';
+      const dot = document.createElement('span'); dot.className = 'ap-dot'; dot.style.background = inf[1];
+      const nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = r[0];
+      const bar = document.createElement('span'); bar.className = 'ap-bar'; const f = document.createElement('i'); f.style.width = r[2] + '%'; f.style.background = inf[1]; bar.appendChild(f);
+      const pc = document.createElement('span'); pc.className = 'pc'; pc.textContent = inf[0].split(' ')[0] + ' ' + String(r[2]).replace('.', ',') + '%';
+      pc.style.width = '96px';
+      [dot, nm, bar, pc].forEach(function(x){ row.appendChild(x); }); ext.appendChild(row);
+    });
+    const n = document.createElement('p'); n.className = 'compare-note';
+    n.textContent = 'Lula vence em 27 países, e com 36 países concluídos soma 53.746 votos contra 40.914 de Flávio (Congresso em Foco). A lista acima traz só alguns países, e os dados continuam mudando.';
+    ext.appendChild(n);
+  })();
+  apRender();
+  document.addEventListener('click', function(e){ const b = e.target.closest && e.target.closest('[data-tab="apuracao"]'); if(b) setTimeout(apLoad, 60); });
+  setInterval(function(){ const t = document.getElementById('tab-apuracao'); if(!document.hidden && t && t.classList.contains('active')) apLoad(); }, 60000);
+
 </script>
 </body>
 </html>
