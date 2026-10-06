@@ -415,20 +415,20 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">21 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">20 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
-    <div class="e"><div class="num">47,2%</div><div class="lbl">Flávio, 1º turno</div></div>
-    <div class="e"><div class="num">44,9%</div><div class="lbl">Lula, 1º turno</div></div>
+    <div class="e"><div class="num">47,0%</div><div class="lbl">Flávio, 1º turno</div></div>
+    <div class="e"><div class="num">45,2%</div><div class="lbl">Lula, 1º turno</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
     <button class="trending-pill" onclick="openArticle('apuracao-parcial-4out')">2º turno: Flávio x Lula</button>
+    <button class="trending-pill" onclick="openArticle('reacoes-flavio-lula')">Reações ao resultado</button>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
+    <button class="trending-pill" onclick="openArticle('terceiro-quarto-lugar')">Terceira via sem apoio</button>
     <button class="trending-pill" onclick="openArticle('urnas-vs-pesquisas')">Urnas x pesquisas</button>
-    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Resultado por estado</button>
-    <button class="trending-pill" onclick="openArticle('apuracao-exterior-4out')">Exterior: Lula em 27 países</button>
     <button class="trending-pill" onclick="openArticle('rubio-ira-delegacao')">EUA x Irã</button>
-    <button class="trending-pill" onclick="openArticle('putin-valdai')">Putin e a Ucrânia</button>
   </div>
 
   <!-- FEED TAB -->
@@ -442,27 +442,33 @@
       <div id="feedList">
 
       <div class="feed-card" data-cand="all" data-id="apuracao-parcial-4out" role="button" tabindex="0" onclick="openArticle('apuracao-parcial-4out')" onkeypress="if(event.key=='Enter')openArticle('apuracao-parcial-4out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">1T</div><span class="fc-cand">Resultado do 1º turno</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
-        <p class="fc-headline">Flávio e Lula vão ao 2º turno, em 25 de outubro: Flávio tem 47,24% e Lula 44,91% dos votos válidos, com 98,67% das seções.</p>
-        <div class="fc-bottom"><span class="fc-source">● Forbes Brasil / TSE</span><span class="fc-link">ler mais ↗</span></div>
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">1T</div><span class="fc-cand">Resultado do 1º turno</span><span class="fc-dot"></span><span class="fc-time">5 out</span></div>
+        <p class="fc-headline">TSE encerra o 1º turno: Flávio 47,03% e Lula 45,16%, diferença de 1,87 ponto. O 2º turno é em 25 de outubro.</p>
+        <div class="fc-bottom"><span class="fc-source">● CartaCapital / TSE</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="reacoes-flavio-lula" role="button" tabindex="0" onclick="openArticle('reacoes-flavio-lula')" onkeypress="if(event.key=='Enter')openArticle('reacoes-flavio-lula')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">2T</div><span class="fc-cand">Reações</span><span class="fc-dot"></span><span class="fc-time">5 out</span></div>
+        <p class="fc-headline">Flávio fala em fim da era do PT; a campanha de Lula aposta em virada no 2º turno.</p>
+        <div class="fc-bottom"><span class="fc-source">● Observador / Terra</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="estados-parciais-4out" role="button" tabindex="0" onclick="openArticle('estados-parciais-4out')" onkeypress="if(event.key=='Enter')openArticle('estados-parciais-4out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">UF</div><span class="fc-cand">Mapa por estado</span><span class="fc-dot"></span><span class="fc-time">5 out</span></div>
+        <p class="fc-headline">Flávio vence em 14 estados e no DF; Lula, em 12, com todo o Nordeste.</p>
+        <div class="fc-bottom"><span class="fc-source">● Congresso em Foco / CartaCapital</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="terceiro-quarto-lugar" role="button" tabindex="0" onclick="openArticle('terceiro-quarto-lugar')" onkeypress="if(event.key=='Enter')openArticle('terceiro-quarto-lugar')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">3V</div><span class="fc-cand">Terceira via</span><span class="fc-dot"></span><span class="fc-time">5 out</span></div>
+        <p class="fc-headline">Terceira via soma 7,79%, o menor índice desde 2006; Cury, Renan e Caiado não declaram apoio.</p>
+        <div class="fc-bottom"><span class="fc-source">● BBC News Brasil (via O Povo)</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="urnas-vs-pesquisas" role="button" tabindex="0" onclick="openArticle('urnas-vs-pesquisas')" onkeypress="if(event.key=='Enter')openArticle('urnas-vs-pesquisas')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">VS</div><span class="fc-cand">Pesquisas x urnas</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
-        <p class="fc-headline">Flávio supera Lula nas urnas, acima do que mostravam as pesquisas de véspera.</p>
+        <p class="fc-headline">Flávio supera Lula nas urnas por 1,87 ponto, acima do que mostravam as pesquisas de véspera.</p>
         <div class="fc-bottom"><span class="fc-source">● InfoMoney</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="terceiro-quarto-lugar" role="button" tabindex="0" onclick="openArticle('terceiro-quarto-lugar')" onkeypress="if(event.key=='Enter')openArticle('terceiro-quarto-lugar')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">3º</div><span class="fc-cand">Demais candidatos</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
-        <p class="fc-headline">Cury (2,91%), Renan Santos (2,27%) e Caiado (2,21%) ficam fora do 2º turno.</p>
-        <div class="fc-bottom"><span class="fc-source">● Bloomberg Línea</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="estados-parciais-4out" role="button" tabindex="0" onclick="openArticle('estados-parciais-4out')" onkeypress="if(event.key=='Enter')openArticle('estados-parciais-4out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">UF</div><span class="fc-cand">Por estado</span><span class="fc-dot"></span><span class="fc-time">4 out</span></div>
-        <p class="fc-headline">Flávio lidera em GO, MT, SC, MS, RR e MG; Lula, em PE, em leituras parciais da apuração.</p>
-        <div class="fc-bottom"><span class="fc-source">● Bloomberg Línea</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="apuracao-exterior-4out" role="button" tabindex="0" onclick="openArticle('apuracao-exterior-4out')" onkeypress="if(event.key=='Enter')openArticle('apuracao-exterior-4out')">
@@ -634,12 +640,12 @@
   <div class="tab-panel" id="tab-apuracao">
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Apuração — 1º turno</h2><span class="count" id="apStatus">aguardando</span></div>
-      <div class="notice"><b>1º turno encerrado —</b> Flávio Bolsonaro e Lula vão ao 2º turno, em 25 de outubro. Esta aba tenta ler o resultado direto do TSE. Se não carregar no seu navegador, aparece a última leitura de imprensa, com a fonte, e o link do portal oficial.</div>
+      <div class="notice"><b>1º turno encerrado —</b> Flávio Bolsonaro e Lula vão ao 2º turno, em 25 de outubro. O mapa abaixo mostra quem foi o mais votado em cada estado, segundo a imprensa. Esta aba também tenta ler o resultado direto do TSE.</div>
       <div id="apNacional"></div>
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Quem lidera em cada estado</h2></div>
       <div class="ap-grid" id="apGrid"></div>
       <p class="compare-note" style="text-align:center;">Cada quadrado é um estado, na posição aproximada do mapa. <b>EXT</b> é o voto de brasileiros no exterior, somado. Toque num quadrado para ver o detalhe.</p>
-      <p class="compare-note" id="apPollNote" style="display:none;text-align:center;"><b>Cor cheia</b> = quem liderava na leitura de imprensa da apuração (GO, MT, SC, MS, RR, MG, PE e exterior), em leituras parciais. <b>Borda tracejada ("pesq.")</b> = ainda sem resultado achado: mostra quem lidera nas pesquisas estaduais e <b>não é resultado</b>. Cinza = sem dado (AM, TO, AP e ES). O resultado final por estado está em resultados.tse.jus.br.</p>
+      <p class="compare-note" id="apPollNote" style="display:none;text-align:center;"><b>Cor</b> = candidato mais votado no estado no 1º turno (Lula: 12 estados; Flávio: 14 estados e o DF). EXT é o exterior, em leitura parcial de imprensa. Os percentuais por estado vêm de CartaCapital, Congresso em Foco e Poder360 e podem ter pequenos ajustes. O resultado oficial está em resultados.tse.jus.br.</p>
       <div id="apDetalhe"></div>
       <div class="ap-legend" id="apLegenda"></div>
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Exterior — país por país</h2><span class="count">leitura de imprensa, 4 out</span></div>
@@ -706,15 +712,14 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">98,67% das seções</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">100% das seções</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>Votos válidos</th></tr></thead><tbody>
-        <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,24%</b></td></tr>
-        <tr><td class="theme-col">Lula (PT)</td><td><b>44,91%</b></td></tr>
-        <tr><td class="theme-col">Augusto Cury (Avante)</td><td>2,91%</td></tr>
-        <tr><td class="theme-col">Renan Santos (Missão)</td><td>2,27%</td></tr>
-        <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td>2,21%</td></tr>
+        <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,03%</b></td></tr>
+        <tr><td class="theme-col">Lula (PT)</td><td><b>45,16%</b></td></tr>
+        <tr><td class="theme-col">Augusto Cury (Avante)</td><td>2,89%</td></tr>
+        <tr><td class="theme-col">Renan Santos (Missão)</td><td>2,24%</td></tr>
       </tbody></table></div>
-      <p class="compare-note">Fontes: Forbes Brasil e Bloomberg Línea, com dados do TSE. Os números podem ter pequenos ajustes até 100% das seções. As pesquisas de véspera, abaixo, traziam Lula um pouco à frente; a apuração mostrou o contrário.</p>
+      <p class="compare-note">Fonte: CartaCapital, com dados do TSE (100% das seções, 56.104.503 votos de Flávio e 53.879.538 de Lula). As pesquisas de véspera, abaixo, traziam Lula um pouco à frente; a apuração mostrou o contrário.</p>
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Última pesquisa antes da votação — votos válidos</h2><span class="count">Datafolha, 3 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
@@ -794,7 +799,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de outubro de 2026, à noite.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 5 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -829,23 +834,33 @@
 
 <script>
   const articles = {
-    "terceiro-quarto-lugar": {
-      source: "Bloomberg Línea", date: "4 out", url: "https://bloomberglinea.com.br/brasil/ao-vivo-brasil-vai-as-urnas-para-eleger-presidente-governadores-e-congresso",
-      title: "Cury, Renan Santos e Caiado ficam entre 2% e 3% dos votos válidos",
+    "reacoes-flavio-lula": {
+      source: "Observador / Terra", date: "5 out", url: "https://www.terra.com.br/noticias/eleicoes/flavio-bolsonaro-reverte-vantagem-de-lula-em-mg-e-vence-em-mais-13-estados-alem-do-df-e-lula-ganha-em-12-veja-divisao-do-brasil,dadace079a0f4259f55810438f368b7eb93kqa95.html",
+      title: "Flávio fala em fim da era do PT; campanha de Lula aposta em virada no 2º turno",
       body: [
-        "Segundo a Bloomberg Línea, com o resultado praticamente fechado, Augusto Cury (Avante) ficou em 3º lugar, com 2,91% dos votos válidos (3.346.196 votos).",
-        "Em seguida vieram Renan Santos (Missão), com 2,27% (2.609.503 votos), e Ronaldo Caiado (PSD), com 2,21% (2.544.677 votos).",
-        "Com Flávio e Lula no 2º turno, os demais candidatos estão fora da disputa presidencial."
+        "Segundo o Observador, Flávio Bolsonaro comemorou o resultado dizendo que o Brasil quer mudança e que quase 56 milhões de eleitores deram um voto de confiança. Lula disse que é muito bom no mata-mata.",
+        "O governador de São Paulo, Tarcísio de Freitas, afirmou que o estado será decisivo para eleger Flávio. Ele próprio venceu Fernando Haddad no 1º turno em SP, segundo o Terra.",
+        "O Terra descreve o clima na equipe de Lula como de surpresa e tristeza, com a campanha apostando na virada. Em Minas Gerais, Cleitinho (Republicanos), que apoia Flávio, superou Patrus Ananias (PT) para o governo.",
+        "Os governadores petistas Jerônimo Rodrigues (BA) e Rafael Fonteles (PI) foram eleitos já no 1º turno."
+      ]
+    },
+    "terceiro-quarto-lugar": {
+      source: "BBC News Brasil (via O Povo)", date: "5 out", url: "https://www.opovo.com.br/agencia/bbc/2026/10/05/lula-x-flavio-no-2-turno-para-onde-vao-os-votos-de-cury-renan-e-caiado.html",
+      title: "Terceira via soma 7,79%, o menor índice desde 2006; Cury, Renan e Caiado não declaram apoio",
+      body: [
+        "Segundo a BBC News Brasil, os candidatos de terceira via somaram 7,79% dos votos válidos, o menor percentual desde 2006.",
+        "Depois do resultado, Augusto Cury, Renan Santos e Ronaldo Caiado não declararam apoio a nenhum dos dois finalistas. Romeu Zema disse que fará campanha contra o PT, sem declarar apoio específico a Flávio.",
+        "As últimas pesquisas antes do 1º turno indicavam que Flávio levaria mais votos desse grupo. Entre eleitores de Renan, 60% iam para Flávio e 11% para Lula; entre os de Caiado, 43% e 19%; entre os de Cury, 34% e 23%. Uma parte grande dizia que votaria em branco, anularia ou não iria votar."
       ]
     },
     "estados-parciais-4out": {
-      source: "Bloomberg Línea", date: "4 out", url: "https://bloomberglinea.com.br/brasil/ao-vivo-brasil-vai-as-urnas-para-eleger-presidente-governadores-e-congresso",
-      title: "Estados: Flávio lidera em GO, MT, SC, MS, RR e MG; Lula, em PE (leituras parciais)",
+      source: "Congresso em Foco / CartaCapital", date: "5 out", url: "https://www.congressoemfoco.com.br/noticia/122894/flavio-vence-em-quatro-regioes-lula-domina-nordeste",
+      title: "Flávio vence em 14 estados e no DF; Lula, em 12, com todo o Nordeste",
       body: [
-        "A Bloomberg Línea acompanhou a apuração por estado. Estas são leituras parciais, de momentos diferentes da noite, e não o resultado final de cada estado.",
-        "Flávio liderava em Goiás (54% a 30,6%, com 91% das seções), Mato Grosso (64,4% a 29,3%, com um quarto das seções), Santa Catarina (66,4% a 25,2%, com 84%), Mato Grosso do Sul (60,2% a 32,5%, com 36%), Roraima (71,4% a 22,5%, com 98%) e Minas Gerais (49,4% a 41,7%, com 31%).",
-        "Lula liderava em Pernambuco, com 62,1% contra 32,3% de Flávio, com 55% das seções apuradas.",
-        "O resultado final por estado está no portal do TSE."
+        "No resultado final do 1º turno, Flávio Bolsonaro (PL) foi o mais votado em 14 estados e no Distrito Federal, e Lula (PT) em 12 estados, segundo a CartaCapital e o Congresso em Foco. Há pequenas diferenças de contagem entre veículos, porque o Amapá teve empate virtual.",
+        "Flávio venceu em todos os estados do Sul, do Sudeste e do Centro-Oeste, além de Acre, Rondônia, Roraima e Tocantins. Em São Paulo teve 51,93% contra 38,20% de Lula; no Rio, 53,01% a 39,41%; em Minas, 48,24% a 43,33%; e no Paraná, 59,91% a 31,2%.",
+        "Lula venceu nos nove estados do Nordeste e no Amazonas, no Amapá e no Pará. Na Bahia teve 66,17% contra 28,53% de Flávio. Minas Gerais e Tocantins mudaram de lado em relação ao 1º turno de 2022.",
+        "O mapa da aba Apuração reflete essa divisão. Os números por estado podem ter pequenos ajustes nas fontes."
       ]
     },
     "urnas-vs-pesquisas": {
@@ -853,18 +868,17 @@
       title: "Flávio supera Lula nas urnas, acima do que mostravam as pesquisas",
       body: [
         "Segundo a cobertura ao vivo do InfoMoney, o resultado do 1º turno confirmou os dois candidatos no 2º turno, mas inverteu a ordem que a maior parte dos institutos registrava antes da abertura das urnas.",
-        "A última pesquisa Datafolha, em votos válidos, dava Lula 45% e Flávio 42%, e a Quaest, 46% a 45%. Na apuração, Flávio aparece à frente de Lula por cerca de 2 a 3 pontos.",
+        "A última pesquisa Datafolha, em votos válidos, dava Lula 45% e Flávio 42%, e a Quaest, 46% a 45%. Na apuração final, Flávio ficou à frente de Lula por 1,87 ponto (47,03% a 45,16%).",
         "O InfoMoney discute possíveis explicações para a diferença. Este painel não avalia os motivos: as pesquisas têm margem de erro, medem intenção de voto antes da votação e podem diferir do resultado."
       ]
     },
     "apuracao-parcial-4out": {
-      source: "Forbes Brasil / TSE", date: "4 out", url: "https://forbes.com.br/geral/2026/10/eleicao-presidencial-segundo-turno-lula-flavio-2026/",
-      title: "Flávio e Lula vão ao 2º turno: Flávio tem 47,24% e Lula 44,91% dos votos válidos",
+      source: "CartaCapital / TSE", date: "5 out", url: "https://cartacapital.com.br/politica/tse-encerra-apuracao-do-1o-turno",
+      title: "TSE encerra o 1º turno: Flávio tem 47,03% e Lula 45,16%; 2º turno é em 25 de outubro",
       body: [
-        "O TSE confirmou na noite de domingo (4) que Flávio Bolsonaro (PL) e Lula (PT) disputam o 2º turno da eleição presidencial em 25 de outubro. Nenhum candidato passou de 50% dos votos válidos.",
-        "Com 98,67% das seções totalizadas, segundo a Forbes Brasil, Flávio aparece em 1º lugar com 47,24% (55.667.750 votos) e Lula em 2º com 44,91% (52.913.725 votos).",
-        "A ordem é inversa à das últimas pesquisas, que traziam Lula um pouco à frente (Datafolha, 45% a 42% em votos válidos; Quaest, 46% a 45%).",
-        "Os percentuais mudaram ao longo da noite conforme as seções entravam e podem ter pequenos ajustes até 100%. Vale conferir o número final no portal do TSE."
+        "O TSE concluiu na madrugada de segunda-feira (5) a totalização do 1º turno. Flávio Bolsonaro (PL) terminou em 1º lugar, com 47,03% dos votos válidos (56.104.503 votos), e Lula (PT) em 2º, com 45,16% (53.879.538 votos). A diferença é de 1,87 ponto percentual.",
+        "Em seguida vieram Augusto Cury (Avante), com 2,89% (3.448.569 votos), e Renan Santos (Missão), com 2,24% (2.675.887 votos).",
+        "Nenhum candidato passou de 50% dos votos válidos, e Flávio e Lula disputam o 2º turno em 25 de outubro. Segundo o Terra, foram 119.300.788 votos válidos."
       ]
     },
     "apuracao-exterior-4out": {
@@ -1660,12 +1674,14 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   const AP_BASE = 'https://resultados.tse.jus.br/oficial/ele2026/6257/dados/';
   const AP_CAND = {'13':['Lula','#D7263D'],'22':['Flávio Bolsonaro','#1F5FBF'],'55':['Ronaldo Caiado','#2E9E5B'],'30':['Romeu Zema','#F28C28'],'14':['Renan Santos','#F2C200'],'70':['Augusto Cury','#8E5BD6'],'80':['Samara Martins','#B5179E'],'29':['Rui Costa Pimenta','#7A1020'],'16':['Hertz Dias','#FF6F91'],'21':['Edmilson Costa','#4A4E69'],'27':['Clariana Barão','#2A9D8F'],'35':['Wilson Grassi','#6B7280']};
   const AP_UF = [['rr',3,0],['ap',5,0],['am',2,1],['pa',4,1],['ma',5,1],['ce',6,1],['rn',7,1],['ac',1,2],['ro',2,2],['to',4,2],['pi',5,2],['pe',6,2],['pb',7,2],['mt',3,3],['go',4,3],['ba',5,3],['se',6,3],['al',7,3],['df',4,4],['mg',5,4],['es',6,4],['ms',3,5],['sp',4,5],['rj',5,5],['pr',4,6],['sc',4,7],['rs',4,8],['zz',7,7]];
-  const AP_SNAP = {hora:'98,67% das seções', fonte:'Forbes Brasil e Bloomberg Línea', cands:[{n:'22',nm:'',p:47.24},{n:'13',nm:'',p:44.91},{n:'70',nm:'',p:2.91},{n:'14',nm:'',p:2.27},{n:'55',nm:'',p:2.21}]};
+  const AP_SNAP = {hora:'100% das seções', fonte:'CartaCapital / TSE', cands:[{n:'22',nm:'',p:47.03},{n:'13',nm:'',p:45.16},{n:'70',nm:'',p:2.89},{n:'14',nm:'',p:2.24}]};
   const AP_EXT = [['Alemanha','13',72.1],['Hungria','13',71.18],['Estônia','13',74.74],['Palestina','13',93.09],['China','13',56.63],['Singapura','13',54.60],['Chipre','13',42.11],['Catar','22',48.45],['Moçambique','22',52.8],['Taiwan','22',48.86],['Tailândia','22',50]];
   // Cor de reserva, enquanto o TSE não carrega: quem lidera nas pesquisas estaduais (Quaest, Datafolha e consolidações da imprensa). NÃO é apuração.
-  const AP_POLL = {al:'13',ba:'13',ce:'13',ma:'13',pb:'13',pe:'13',pi:'13',rn:'13',se:'13',pa:'13',ac:'22',ro:'22',pr:'22',rs:'22',sp:'22',rj:'22',df:'22'};
+  const AP_POLL = {};
   // Exterior, segundo a imprensa (Congresso em Foco): Lula soma mais votos no total.
-  const AP_PRESS = {zz:['13','Lula lidera no exterior: 53.746 x 40.914 votos (Congresso em Foco)'],go:['22','GO: Flávio 54% x Lula 30,6% (91% das seções)'],mt:['22','MT: Flávio 64,4% x Lula 29,3% (25% das seções)'],sc:['22','SC: Flávio 66,4% x Lula 25,2% (84% das seções)'],ms:['22','MS: Flávio 60,2% x Lula 32,5% (36% das seções)'],rr:['22','RR: Flávio 71,4% x Lula 22,5% (98% das seções)'],mg:['22','MG: Flávio 49,4% x Lula 41,7% (31% das seções)'],pe:['13','PE: Lula 62,1% x Flávio 32,3% (55% das seções)']};
+  const AP_PRESS = {zz:['13','Exterior: Lula somava mais votos (parcial, Congresso em Foco)'],
+    al:['13','AL: Lula 54,73% x Flávio 40,45%'],ba:['13','BA: Lula 66,17% x Flávio 28,53%'],ce:['13','CE: Lula na frente'],ma:['13','MA: Lula na frente'],pb:['13','PB: Lula na frente'],pe:['13','PE: Lula na frente'],pi:['13','PI: Lula na frente'],rn:['13','RN: Lula 59,75% x Flávio 34,77%'],se:['13','SE: Lula na frente'],am:['13','AM: Lula, por 3,23 pontos'],ap:['13','AP: empate virtual, com Lula à frente'],pa:['13','PA: Lula, por 5,41 pontos'],
+    ac:['22','AC: Flávio na frente'],ro:['22','RO: Flávio na frente'],rr:['22','RR: Flávio na frente'],to:['22','TO: Flávio, por 7,02 pontos'],mt:['22','MT: Flávio na frente'],ms:['22','MS: Flávio 59,21%'],go:['22','GO: Flávio na frente'],df:['22','DF: Flávio na frente'],sp:['22','SP: Flávio 51,93% x Lula 38,20%'],pr:['22','PR: Flávio 59,91% x Lula 31,2%'],sc:['22','SC: Flávio 66,65%'],rs:['22','RS: Flávio 55,64%'],es:['22','ES: Flávio na frente'],rj:['22','RJ: Flávio 53,01% x Lula 39,41%'],mg:['22','MG: Flávio 48,24% x Lula 43,33%']};
   const apData = {};
   let apSel = null, apLoading = false;
 
@@ -1739,9 +1755,9 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
       box.appendChild(h); box.appendChild(apRows(br.cands, 6));
     } else {
       h.textContent = 'Brasil — leitura de imprensa (' + AP_SNAP.hora + ')'; box.appendChild(h);
-      box.appendChild(apRows(AP_SNAP.cands, 5));
+      box.appendChild(apRows(AP_SNAP.cands, 4));
       const nt = document.createElement('div'); nt.className = 'compare-note'; nt.style.margin = '6px 0 0';
-      nt.textContent = 'Fonte: ' + AP_SNAP.fonte + '. Parcial, em votos válidos. Os números ao vivo do TSE não carregaram neste navegador: veja em resultados.tse.jus.br.';
+      nt.textContent = 'Fonte: ' + AP_SNAP.fonte + '. Resultado final, em votos válidos. A leitura ao vivo do TSE não carregou neste navegador: veja em resultados.tse.jus.br.';
       box.appendChild(nt);
     }
     nat.appendChild(box);
