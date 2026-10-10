@@ -397,16 +397,6 @@
       <div class="chip" data-filter="geo"><span class="dot" style="background:var(--navy)"></span>Geopolítica</div>
       <div class="chip" data-filter="lula"><span class="dot" style="background:var(--c1)"></span>Lula</div>
       <div class="chip" data-filter="flavio"><span class="dot" style="background:var(--c2)"></span>Flávio</div>
-      <div class="chip" data-filter="zema"><span class="dot" style="background:var(--c3)"></span>Zema</div>
-      <div class="chip" data-filter="caiado"><span class="dot" style="background:var(--c4)"></span>Caiado</div>
-      <div class="chip" data-filter="renan"><span class="dot" style="background:var(--c5)"></span>Renan Santos</div>
-      <div class="chip" data-filter="cury"><span class="dot" style="background:#5C7A8A"></span>Augusto Cury</div>
-      <div class="chip" data-filter="hertz"><span class="dot" style="background:#5C7A8A"></span>Hertz Dias</div>
-      <div class="chip" data-filter="barao"><span class="dot" style="background:#5C7A8A"></span>Clariana Barão</div>
-      <div class="chip" data-filter="edmilson"><span class="dot" style="background:#5C7A8A"></span>Edmilson Costa</div>
-      <div class="chip" data-filter="pimenta"><span class="dot" style="background:#5C7A8A"></span>Rui Costa Pimenta</div>
-      <div class="chip" data-filter="samara"><span class="dot" style="background:#5C7A8A"></span>Samara Martins</div>
-      <div class="chip" data-filter="grassi"><span class="dot" style="background:#5C7A8A"></span>Wilson Grassi</div>
     </div>
   </div><!-- /topbar -->
 
@@ -415,21 +405,21 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">20 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">16 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
-    <div class="e"><div class="num">47,0%</div><div class="lbl">Flávio, 1º turno</div></div>
-    <div class="e"><div class="num">45,2%</div><div class="lbl">Lula, 1º turno</div></div>
+    <div class="e"><div class="num">52%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
+    <div class="e"><div class="num">48%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('apuracao-parcial-4out')">2º turno: Flávio x Lula</button>
-    <button class="trending-pill" onclick="openArticle('reacoes-flavio-lula')">Reações ao resultado</button>
+    <button class="trending-pill" onclick="openArticle('datafolha-2turno-8out')">Datafolha 2º turno</button>
+    <button class="trending-pill" onclick="openArticle('poderdata-2turno-8out')">PoderData 53 x 47</button>
+    <button class="trending-pill" onclick="openArticle('apoios-2turno')">Quem apoia quem</button>
+    <button class="trending-pill" onclick="openArticle('horario-eleitoral-2turno')">Horário eleitoral e debate</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
-    <button class="trending-pill" onclick="openArticle('terceiro-quarto-lugar')">Terceira via sem apoio</button>
-    <button class="trending-pill" onclick="openArticle('urnas-vs-pesquisas')">Urnas x pesquisas</button>
-    <button class="trending-pill" onclick="openArticle('rubio-ira-delegacao')">EUA x Irã</button>
-  </div>
+    <button class="trending-pill" onclick="openArticle('ira-resposta-ormuz-8out')">EUA x Irã</button>
+    </div>
 
   <!-- FEED TAB -->
   <div class="tab-panel active" id="tab-feed">
@@ -440,6 +430,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="datafolha-2turno-8out" role="button" tabindex="0" onclick="openArticle('datafolha-2turno-8out')" onkeypress="if(event.key=='Enter')openArticle('datafolha-2turno-8out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">DF</div><span class="fc-cand">Pesquisa Datafolha</span><span class="fc-dot"></span><span class="fc-time">8 out</span></div>
+        <p class="fc-headline">Datafolha: Flávio tem 49% e Lula 45% no 2º turno; em votos válidos, 52% a 48%.</p>
+        <div class="fc-bottom"><span class="fc-source">● A Crítica de Campo Grande / Datafolha</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="poderdata-2turno-8out" role="button" tabindex="0" onclick="openArticle('poderdata-2turno-8out')" onkeypress="if(event.key=='Enter')openArticle('poderdata-2turno-8out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">PD</div><span class="fc-cand">Pesquisa PoderData/Aya</span><span class="fc-dot"></span><span class="fc-time">8 out</span></div>
+        <p class="fc-headline">PoderData/Aya: Flávio abre 53% a 47% em votos válidos, vantagem de 6 pontos além da margem de erro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="apoios-2turno" role="button" tabindex="0" onclick="openArticle('apoios-2turno')" onkeypress="if(event.key=='Enter')openArticle('apoios-2turno')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">2T</div><span class="fc-cand">Apoios no 2º turno</span><span class="fc-dot"></span><span class="fc-time">8 out</span></div>
+        <p class="fc-headline">Zema, Caiado e Cury declaram apoio a Flávio; Renan Santos fica neutro e libera seus eleitores.</p>
+        <div class="fc-bottom"><span class="fc-source">● A Crítica de Campo Grande / Agência Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="horario-eleitoral-2turno" role="button" tabindex="0" onclick="openArticle('horario-eleitoral-2turno')" onkeypress="if(event.key=='Enter')openArticle('horario-eleitoral-2turno')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">TV</div><span class="fc-cand">Campanha</span><span class="fc-dot"></span><span class="fc-time">9 out</span></div>
+        <p class="fc-headline">Horário eleitoral do 2º turno volta ao rádio e à TV, até 23 de outubro; Globo marca debate para o dia 23.</p>
+        <div class="fc-bottom"><span class="fc-source">● A Crítica de Campo Grande</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="ira-resposta-ormuz-8out" role="button" tabindex="0" onclick="openArticle('ira-resposta-ormuz-8out')" onkeypress="if(event.key=='Enter')openArticle('ira-resposta-ormuz-8out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">8 out</span></div>
+        <p class="fc-headline">Irã diz que ainda analisa a resposta dos EUA sobre a reabertura de Ormuz; Trump diz que não atacará antes das eleições de meio de mandato.</p>
+        <div class="fc-bottom"><span class="fc-source">● SBT News / InfoMoney</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="apuracao-parcial-4out" role="button" tabindex="0" onclick="openArticle('apuracao-parcial-4out')" onkeypress="if(event.key=='Enter')openArticle('apuracao-parcial-4out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">1T</div><span class="fc-cand">Resultado do 1º turno</span><span class="fc-dot"></span><span class="fc-time">5 out</span></div>
@@ -513,12 +533,6 @@
         <div class="fc-bottom"><span class="fc-source">● Resumo diário (Marco Coutinho)</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="candidatos-12" role="button" tabindex="0" onclick="openArticle('candidatos-12')" onkeypress="if(event.key=='Enter')openArticle('candidatos-12')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c5)">TSE</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
-        <p class="fc-headline">Disputa tem 12 candidatos ativos: Marçal teve registro negado e Avalanche desistiu.</p>
-        <div class="fc-bottom"><span class="fc-source">● TSE / Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
       <div class="feed-card" data-cand="geo" data-id="kyiv-ponte-drones" role="button" tabindex="0" onclick="openArticle('kyiv-ponte-drones')" onkeypress="if(event.key=='Enter')openArticle('kyiv-ponte-drones')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">2 out</span></div>
         <p class="fc-headline">Drones russos fecham ponte em Kiev; Zelensky pede sanções para barrar a produção dos novos drones a jato.</p>
@@ -561,12 +575,6 @@
         <div class="fc-bottom"><span class="fc-source">● Professor HOC (YouTube)</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="avalanche-desiste" role="button" tabindex="0" onclick="openArticle('avalanche-desiste')" onkeypress="if(event.key=='Enter')openArticle('avalanche-desiste')">
-        <div class="fc-top"><div class="fc-avatar" style="background:#D94F70">LA</div><span class="fc-cand">PRTB</span><span class="fc-dot"></span><span class="fc-time">30 set</span></div>
-        <p class="fc-headline">Leonardo Avalanche anuncia desistência da candidatura à Presidência pelo PRTB.</p>
-        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
       <div class="feed-card" data-cand="all" data-id="pesquisas-semana-antes" role="button" tabindex="0" onclick="openArticle('pesquisas-semana-antes')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-semana-antes')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">PQ</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">24 set</span></div>
         <p class="fc-headline">A uma semana do 1º turno, Datafolha e Quaest mostram Lula e Flávio em empate técnico.</p>
@@ -605,7 +613,7 @@
   <!-- GEOPOLÍTICA TAB -->
   <div class="tab-panel" id="tab-geopolitica">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">3 out</span></div>
+      <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">9 out</span></div>
       <div class="notice"><b>Como ler —</b> cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
       <div id="geoList"></div>
       <div class="section-title" style="margin-top:28px;"><h2>Professor HOC — vídeos recentes</h2></div>
@@ -657,48 +665,37 @@
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
     <section style="margin-top:24px;">
-      <div class="notice"><b>Sobre estes dados —</b> o 1º turno terminou em 4 de outubro: Flávio Bolsonaro e Lula disputam o 2º turno em 25 de outubro, e os outros dez candidatos ficaram de fora. As posições abaixo são sínteses de planos, discursos e entrevistas feitas antes da votação, e podem mudar.</div>
+      <div class="notice"><b>Sobre estes dados —</b> o 1º turno terminou em 4 de outubro: Flávio Bolsonaro e Lula disputam o 2º turno em 25 de outubro. Os outros dez candidatos ficaram de fora e saíram desta aba. As posições abaixo são sínteses de planos, discursos e entrevistas, e podem mudar.</div>
 
-      <div class="section-title"><h2>Os 12 candidatos do 1º turno</h2></div>
+      <div class="section-title"><h2>Os 2 candidatos do 2º turno</h2></div>
       <div class="cand-grid">
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div><button class="follow-star" data-follow="lula" onclick="toggleFollow('lula', this)">☆</button></div><span class="status-pill status-confirmado">Vai ao 2º turno</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
 
         <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div><button class="follow-star" data-follow="flavio" onclick="toggleFollow('flavio', this)">☆</button></div><span class="status-pill status-confirmado">Vai ao 2º turno</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c3)">RZ</div><div><div class="cand-name">Romeu Zema</div><div class="cand-party">Novo · Ex-governador de Minas Gerais</div></div><button class="follow-star" data-follow="zema" onclick="toggleFollow('zema', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Agenda liberal: fim do "Custo Brasil" em quatro anos e privatização de estatais federais, incluindo Petrobras, Caixa e Banco do Brasil.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c4)">RC</div><div><div class="cand-name">Ronaldo Caiado</div><div class="cand-party">PSD · Ex-governador de Goiás</div></div><button class="follow-star" data-follow="caiado" onclick="toggleFollow('caiado', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Aposta na aprovação de sua gestão em Goiás e discurso de oposição ao governo atual.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c5)">RS</div><div><div class="cand-name">Renan Santos</div><div class="cand-party">Missão</div></div><button class="follow-star" data-follow="renan" onclick="toggleFollow('renan', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Um dos fundadores dos protestos pelo impeachment de Dilma. Defende fusão de municípios inviáveis e Previdência por capitalização.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">AC</div><div><div class="cand-name">Augusto Cury</div><div class="cand-party">Avante</div></div><button class="follow-star" data-follow="cury" onclick="toggleFollow('cury', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Psiquiatra e escritor best-seller, com discurso antipolarização.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">HD</div><div><div class="cand-name">Hertz Dias</div><div class="cand-party">PSTU</div></div><button class="follow-star" data-follow="hertz" onclick="toggleFollow('hertz', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Professor da rede pública, ativista do movimento negro e do hip-hop.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">CB</div><div><div class="cand-name">Clariana Barão</div><div class="cand-party">DC</div></div><button class="follow-star" data-follow="barao" onclick="toggleFollow('barao', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Representa a Democracia Cristã na disputa presidencial deste ano.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">EC</div><div><div class="cand-name">Edmilson Costa</div><div class="cand-party">PCB</div></div><button class="follow-star" data-follow="edmilson" onclick="toggleFollow('edmilson', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Secretário-geral do PCB e economista, defende estatização do sistema financeiro.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">RP</div><div><div class="cand-name">Rui Costa Pimenta</div><div class="cand-party">PCO</div></div><button class="follow-star" data-follow="pimenta" onclick="toggleFollow('pimenta', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Presidente do PCO desde 1995, figura recorrente das disputas presidenciais.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">SM</div><div><div class="cand-name">Samara Martins</div><div class="cand-party">Unidade Popular</div></div><button class="follow-star" data-follow="samara" onclick="toggleFollow('samara', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Dentista e vice-presidente nacional do UP, veio dos movimentos estudantis.</p></div></div>
-
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:#5C7A8A">WG</div><div><div class="cand-name">Wilson Grassi Júnior</div><div class="cand-party">Democrata</div></div><button class="follow-star" data-follow="grassi" onclick="toggleFollow('grassi', this)">☆</button></div><span class="status-pill status-confirmado">Fora do 2º turno</span><div class="cand-body"><p>Médico veterinário paulistano, disputa sua quarta eleição — ajudou a fundar o primeiro hospital público para cães e gatos de São Paulo.</p></div></div>
-
       </div>
 
-      <div class="section-title" style="margin-top:28px;"><h2>Onde os candidatos divergem</h2></div>
+      <div class="section-title" style="margin-top:28px;"><h2>Apoios dos candidatos eliminados</h2><span class="count">até 8 out</span></div>
+      <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato (1º turno)</th><th>Posição no 2º turno</th></tr></thead><tbody>
+        <tr><td class="theme-col">Romeu Zema (Novo)</td><td><b>Apoia Flávio</b></td></tr>
+        <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td><b>Apoia Flávio</b> (evento em Goiânia, 6 out); o PSD liberou os diretórios estaduais</td></tr>
+        <tr><td class="theme-col">Augusto Cury (Avante)</td><td><b>Apoia Flávio</b> (8 out), sem adesão irrestrita</td></tr>
+        <tr><td class="theme-col">Renan Santos (Missão)</td><td>Neutro; libera os eleitores</td></tr>
+      </tbody></table></div>
+      <p class="compare-note">Fontes: A Crítica de Campo Grande e Agência Brasil. O PSDB não declarou apoio nacional e liberou os filiados. Até agora Lula não anunciou apoio entre os eliminados com mais votos.</p>
+
+      <div class="section-title" style="margin-top:28px;"><h2>Onde Lula e Flávio divergem</h2></div>
       <div class="compare-scroll">
         <table class="compare-table">
-          <thead><tr><th class="theme-col">Tema</th><th>Lula<br><span>PT</span></th><th>Flávio<br><span>PL</span></th><th>Zema<br><span>Novo</span></th><th>Caiado<br><span>PSD</span></th><th>Renan Santos<br><span>Missão</span></th><th>Clariana Barão<br><span>DC</span></th><th>Augusto Cury<br><span>Avante</span></th><th>Edmilson Costa<br><span>PCB</span></th><th>Hertz Dias<br><span>PSTU</span></th><th>Rui Costa Pimenta<br><span>PCO</span></th><th>Samara Martins<br><span>UP</span></th></tr></thead>
+          <thead><tr><th class="theme-col">Tema</th><th>Lula<br><span>PT</span></th><th>Flávio<br><span>PL</span></th></tr></thead>
           <tbody>
-            <tr><td class="theme-col">Economia</td><td>Mais investimento público</td><td>Menos impostos, menos Estado</td><td>Privatizações, Estado menor</td><td>Equilíbrio fiscal</td><td>Reforma administrativa, fusão de municípios</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Estatização do sistema financeiro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Projeto socialista</td></tr>
-            <tr><td class="theme-col">Impostos</td><td>Progressividade tributária</td><td>Tendência de redução</td><td>Simplificação e redução</td><td>Simplificação tributária</td><td>Forte corte de impostos</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Programas sociais</td><td>Ampliação</td><td>Manutenção, foco em eficiência</td><td>Mais focalizados</td><td>Continuidade com controle</td><td>Fim do reajuste automático ao salário mínimo</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Segurança</td><td>Integração União-estados</td><td>Penas mais duras</td><td>Gestão por metas</td><td>Bandeira principal</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Privatizações</td><td>Cautela, empresas estratégicas</td><td>Favorável</td><td>Bastante favorável</td><td>Favorável em alguns setores</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td>Contra, defende estatização</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
-            <tr><td class="theme-col">Relações internacionais</td><td>Aproximação BRICS/América do Sul</td><td>Aproximação EUA/ocidente</td><td>Liberalismo econômico</td><td>Perfil pragmático, agro</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td><td class="empty-cell">—</td></tr>
+            <tr><td class="theme-col">Economia</td><td>Mais investimento público</td><td>Menos impostos, menos Estado</td></tr>
+            <tr><td class="theme-col">Impostos</td><td>Progressividade tributária</td><td>Tendência de redução</td></tr>
+            <tr><td class="theme-col">Programas sociais</td><td>Ampliação</td><td>Manutenção, foco em eficiência</td></tr>
+            <tr><td class="theme-col">Segurança</td><td>Integração União-estados</td><td>Penas mais duras</td></tr>
+            <tr><td class="theme-col">Privatizações</td><td>Cautela, empresas estratégicas</td><td>Favorável</td></tr>
+            <tr><td class="theme-col">Relações internacionais</td><td>Aproximação BRICS/América do Sul</td><td>Aproximação EUA/ocidente</td></tr>
           </tbody>
         </table>
       </div>
@@ -712,6 +709,12 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 8 out</span></div>
+      <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Datafolha</td><td>48%</td><td><b>52%</b></td><td>6–8 out</td></tr>
+        <tr><td class="theme-col">PoderData/Aya</td><td>47%</td><td><b>53%</b></td><td>5–7 out</td></tr>
+      </tbody></table></div>
+      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%.</p>
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">100% das seções</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>Votos válidos</th></tr></thead><tbody>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,03%</b></td></tr>
@@ -743,18 +746,19 @@
       </tbody></table></div>
       <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">início de set a 3 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 8 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Datafolha</td><td>45%</td><td><b>49%</b></td><td>8 out</td></tr>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
             <tr><td class="theme-col">Datafolha</td><td><b>47%</b></td><td>46%</td><td>3 out</td></tr>
             <tr><td class="theme-col">PoderData/Aya</td><td>44%</td><td><b>45%</b></td><td>3 set</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Todos os cenários de 2º turno estão dentro da margem de erro — ou seja, é <b>empate técnico</b> em praticamente todos os institutos, não uma vitória definida de nenhum lado.</p>
+      <p class="compare-note">Antes do 1º turno, os cenários estavam dentro da margem de erro. Depois da votação, o Datafolha mostra empate técnico no limite da margem, e o PoderData/Aya mostra Flávio à frente além dela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -775,6 +779,7 @@
         <a class="src-row" href="https://www.jota.info/" target="_blank" rel="noopener"><div><div class="name">Jota</div><div class="desc">Comparações técnicas de propostas</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.aosfatos.org/" target="_blank" rel="noopener"><div><div class="name">Aos Fatos</div><div class="desc">Checagem de declarações</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.poder360.com.br/" target="_blank" rel="noopener"><div><div class="name">Poder360</div><div class="desc">Cobertura de espectros variados</div></div><span class="arrow">↗</span></a>
+        <a class="src-row" href="https://agenciabrasil.ebc.com.br/" target="_blank" rel="noopener"><div><div class="name">Agência Brasil</div><div class="desc">Agência pública de notícias, com cobertura das eleições</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.aljazeera.com/" target="_blank" rel="noopener"><div><div class="name">Al Jazeera</div><div class="desc">Cobertura internacional (Rússia, Ucrânia, Oriente Médio)</div></div><span class="arrow">↗</span></a>
         <a class="src-row" href="https://www.euronews.com/" target="_blank" rel="noopener"><div><div class="name">Euronews</div><div class="desc">Cobertura da Europa e da guerra na Ucrânia</div></div><span class="arrow">↗</span></a>
       </div>
@@ -799,7 +804,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 5 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 9 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -834,6 +839,52 @@
 
 <script>
   const articles = {
+    "datafolha-2turno-8out": {
+      source: "A Crítica de Campo Grande / Datafolha", date: "8 out", url: "https://acritica.net/eleicoes-2026/datafolha-aponta-flavio-com-49-e-lula-com-45-no-segundo-turno/",
+      title: "Datafolha: Flávio tem 49% e Lula 45% no 2º turno; em votos válidos, 52% a 48%",
+      body: [
+        "Segundo a A Crítica de Campo Grande, o Datafolha divulgado em 8 de outubro mostra Flávio Bolsonaro com 49% e Lula com 45% no 2º turno. Com a margem de 2 pontos, o instituto os trata como tecnicamente empatados no limite da margem de erro. Brancos e nulos somam 5% e indecisos, 1%.",
+        "Em votos válidos, que excluem brancos, nulos e indecisos, o placar é de 52% para Flávio e 48% para Lula. É a primeira pesquisa do instituto depois do 1º turno; na véspera, Lula tinha 47% e Flávio 46% em votos totais.",
+        "Entre quem votou em Cury, Renan, Caiado ou Zema no 1º turno, 46% dizem que agora escolherão Flávio, 32% escolherão Lula e 15% pretendem votar em branco ou anular. A rejeição é de 46% para Lula e 43% para Flávio.",
+        "Foram 2.520 entrevistas entre 6 e 8 de outubro, com registro BR-02949/2026 no TSE. Sobre o governo, 48% aprovam a atuação pessoal de Lula e 48% reprovam."
+      ]
+    },
+    "poderdata-2turno-8out": {
+      source: "Poder360 / PoderData", date: "8 out", url: "https://www.poder360.com.br/poderdata/flavio-tem-53-contra-47-de-lula-no-2o-turno-diz-pesquisa-poderdata-aya/",
+      title: "PoderData/Aya: Flávio abre 53% a 47% em votos válidos no 2º turno",
+      body: [
+        "Segundo o Poder360, a pesquisa PoderData/Aya feita de 5 a 7 de outubro mostra Flávio com 53% dos votos válidos contra 47% de Lula. A diferença de 6 pontos supera a margem de 1,8 ponto, e a rodada anterior mostrava empate.",
+        "Para 54% dos entrevistados, Flávio tem mais chance de vencer; 37% apostam em Lula. Lula segue na frente entre as mulheres (50% a 42%), e Flávio vai melhor no Sul, no Sudeste e no Centro-Oeste.",
+        "A rejeição de Flávio recuou para 43% e a de Lula ficou em 46%. Sobre o governo, 50% desaprovam e 44% aprovam. Foram 3.000 entrevistas por telefone em 705 municípios, com registro BR-08134/2026."
+      ]
+    },
+    "apoios-2turno": {
+      source: "A Crítica de Campo Grande / Agência Brasil", date: "8 out", url: "https://acritica.net/eleicoes-2026/caiado-zema-e-cury-apoiam-flavio-no-2o-turno-renan-santos-libera-eleitores/",
+      title: "Zema, Caiado e Cury declaram apoio a Flávio; Renan Santos fica neutro",
+      body: [
+        "Segundo a A Crítica de Campo Grande, Romeu Zema foi o primeiro a anunciar apoio a Flávio, um dia depois do 1º turno, dizendo que o objetivo é derrotar Lula e o PT.",
+        "Ronaldo Caiado formalizou o apoio em 6 de outubro, em Goiânia. Flávio prometeu ampliar recursos para Goiás e adotar aspectos do modelo de segurança pública de Caiado. A Agência Brasil informa que o PSD liberou os diretórios estaduais para decidirem.",
+        "Augusto Cury confirmou o apoio em 8 de outubro, depois de conversar com Flávio, e disse que não é uma adesão irrestrita. Renan Santos mantém neutralidade e libera os eleitores. O PSDB não declarou apoio nacional e liberou os filiados.",
+        "O mesmo texto informa que Lula, até agora, não fechou apoio entre os quatro eliminados mais votados."
+      ]
+    },
+    "horario-eleitoral-2turno": {
+      source: "A Crítica de Campo Grande", date: "9 out", url: "https://acritica.net/eleicoes-2026/propaganda-eleitoral-volta-ao-radio-e-a-tv-nesta-sexta-para-o-segundo-turno/",
+      title: "Horário eleitoral do 2º turno volta ao rádio e à TV; debate da Globo é no dia 23",
+      body: [
+        "Segundo a A Crítica de Campo Grande, a propaganda eleitoral gratuita do 2º turno volta ao rádio e à televisão em 9 de outubro e vai até 23 de outubro, com cinco minutos para cada candidato por bloco.",
+        "O mesmo veículo noticia que a Globo marcou um debate entre Lula e Flávio para sexta-feira, 23 de outubro, dois dias antes da votação."
+      ]
+    },
+    "ira-resposta-ormuz-8out": {
+      source: "SBT News / InfoMoney", date: "8 out", url: "https://sbtnews.sbt.com.br/noticia/mundo/ira-analisa-resposta-dos-eua-sobre-reabertura-de-ormuz",
+      title: "Irã analisa resposta dos EUA sobre Ormuz; Trump diz que não atacará antes das eleições de meio de mandato",
+      body: [
+        "Segundo o SBT News, o chanceler iraniano Abbas Araqchi disse em 8 de outubro que o país ainda analisa a resposta dos EUA à proposta de Teerã para reabrir o Estreito de Ormuz. A Casa Branca pressiona o Irã a reduzir o enriquecimento de urânio e abrir mão do estoque enriquecido.",
+        "A mesma matéria cita fontes de segurança marítima ouvidas pela Reuters, segundo as quais os ataques a petroleiros em Ormuz atingiram, na semana passada, o nível mais alto desde o início da guerra.",
+        "A InfoMoney relata que Trump chamou as conversas de produtivas e disse que os EUA não atacarão o Irã antes das eleições de meio de mandato, enquanto o bloqueio permanecer em vigor. O Irã diz que responderá em alguns dias."
+      ]
+    },
     "reacoes-flavio-lula": {
       source: "Observador / Terra", date: "5 out", url: "https://www.terra.com.br/noticias/eleicoes/flavio-bolsonaro-reverte-vantagem-de-lula-em-mg-e-vence-em-mais-13-estados-alem-do-df-e-lula-ganha-em-12-veja-divisao-do-brasil,dadace079a0f4259f55810438f368b7eb93kqa95.html",
       title: "Flávio fala em fim da era do PT; campanha de Lula aposta em virada no 2º turno",
@@ -1494,7 +1545,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 
 <script>
   (function(){
-    const ids = ['ormuz-petroleiros','kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','hoc-europa-russia','hoc-irao-vietna','guerra-ira-brasil'];
+    const ids = ['ira-resposta-ormuz-8out','ormuz-petroleiros','kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','hoc-europa-russia','hoc-irao-vietna','guerra-ira-brasil'];
     const box = document.getElementById('geoList');
     ids.forEach((id) => {
       const a = articles[id]; if(!a) return;
