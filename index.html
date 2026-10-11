@@ -405,7 +405,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">16 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">15 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">52%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">48%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -413,12 +413,12 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('atlas-2turno-9out')">Atlas: Flávio 51,1%</button>
+    <button class="trending-pill" onclick="openArticle('vox-2turno-9out')">Vox: empate técnico</button>
     <button class="trending-pill" onclick="openArticle('datafolha-2turno-8out')">Datafolha 2º turno</button>
-    <button class="trending-pill" onclick="openArticle('poderdata-2turno-8out')">PoderData 53 x 47</button>
+    <button class="trending-pill" onclick="openArticle('lula-natal-10out')">Lula em Natal</button>
     <button class="trending-pill" onclick="openArticle('apoios-2turno')">Quem apoia quem</button>
-    <button class="trending-pill" onclick="openArticle('horario-eleitoral-2turno')">Horário eleitoral e debate</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
-    <button class="trending-pill" onclick="openArticle('ira-resposta-ormuz-8out')">EUA x Irã</button>
     </div>
 
   <!-- FEED TAB -->
@@ -430,6 +430,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="lula-natal-10out" role="button" tabindex="0" onclick="openArticle('lula-natal-10out')" onkeypress="if(event.key=='Enter')openArticle('lula-natal-10out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">L</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">10 out</span></div>
+        <p class="fc-headline">Em Natal, Lula desafia Flávio a detalhar de onde cortaria centenas de bilhões em gastos.</p>
+        <div class="fc-bottom"><span class="fc-source">● O Antagonista</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-madureira-10out" role="button" tabindex="0" onclick="openArticle('flavio-madureira-10out')" onkeypress="if(event.key=='Enter')openArticle('flavio-madureira-10out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">F</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">10 out</span></div>
+        <p class="fc-headline">Flávio vai a culto no Rio com Douglas Ruas e diz que o Brasil vive uma "guerra espiritual".</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="atlas-2turno-9out" role="button" tabindex="0" onclick="openArticle('atlas-2turno-9out')" onkeypress="if(event.key=='Enter')openArticle('atlas-2turno-9out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">AT</div><span class="fc-cand">Pesquisa Atlas/Bloomberg</span><span class="fc-dot"></span><span class="fc-time">9 out</span></div>
+        <p class="fc-headline">Atlas/Bloomberg: Flávio tem 51,1% e Lula 45,7% no 2º turno.</p>
+        <div class="fc-bottom"><span class="fc-source">● Forbes Brasil / Atlas</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="vox-2turno-9out" role="button" tabindex="0" onclick="openArticle('vox-2turno-9out')" onkeypress="if(event.key=='Enter')openArticle('vox-2turno-9out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">VX</div><span class="fc-cand">Pesquisa Vox Brasil</span><span class="fc-dot"></span><span class="fc-time">9 out</span></div>
+        <p class="fc-headline">Vox Brasil: Lula tem 44,2% e Flávio 42,7% no 2º turno, empate técnico.</p>
+        <div class="fc-bottom"><span class="fc-source">● CartaCapital / Vox Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="china-flavio-10out" role="button" tabindex="0" onclick="openArticle('china-flavio-10out')" onkeypress="if(event.key=='Enter')openArticle('china-flavio-10out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">10 out</span></div>
+        <p class="fc-headline">China monitora "falas e práticas" de Flávio para decidir como será a relação com o Brasil.</p>
+        <div class="fc-bottom"><span class="fc-source">● Itatiaia / CNN Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="datafolha-2turno-8out" role="button" tabindex="0" onclick="openArticle('datafolha-2turno-8out')" onkeypress="if(event.key=='Enter')openArticle('datafolha-2turno-8out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">DF</div><span class="fc-cand">Pesquisa Datafolha</span><span class="fc-dot"></span><span class="fc-time">8 out</span></div>
@@ -613,7 +643,7 @@
   <!-- GEOPOLÍTICA TAB -->
   <div class="tab-panel" id="tab-geopolitica">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">9 out</span></div>
+      <div class="section-title"><h2>Geopolítica — o mundo agora</h2><span class="count">10 out</span></div>
       <div class="notice"><b>Como ler —</b> cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
       <div id="geoList"></div>
       <div class="section-title" style="margin-top:28px;"><h2>Professor HOC — vídeos recentes</h2></div>
@@ -751,6 +781,8 @@
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Atlas/Bloomberg</td><td>46%</td><td><b>51%</b></td><td>9 out</td></tr>
+            <tr><td class="theme-col">Vox Brasil</td><td><b>44%</b></td><td>43%</td><td>9 out</td></tr>
             <tr><td class="theme-col">Datafolha</td><td>45%</td><td><b>49%</b></td><td>8 out</td></tr>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>46%</b></td><td>8 set</td></tr>
             <tr><td class="theme-col">Datafolha</td><td><b>47%</b></td><td>46%</td><td>3 out</td></tr>
@@ -758,7 +790,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Antes do 1º turno, os cenários estavam dentro da margem de erro. Depois da votação, o Datafolha mostra empate técnico no limite da margem, e o PoderData/Aya mostra Flávio à frente além dela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados divergem: Atlas/Bloomberg (51,1% a 45,7%) e PoderData/Aya (53% a 47% em válidos) mostram Flávio à frente além da margem; o Datafolha mostra vantagem no limite da margem; a Vox Brasil (44,2% a 42,7%, margem de 2,15 pontos, 2.100 entrevistas presenciais, 5 a 7 de out) mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -804,7 +836,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 9 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 10 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -839,6 +871,46 @@
 
 <script>
   const articles = {
+    "atlas-2turno-9out": {
+      source: "Forbes Brasil / Atlas", date: "9 out", url: "https://forbes.com.br/geral/2026/10/flavio-tem-511-e-lula-457-das-intencoes-de-voto-no-2o-turno-mostra-atlas/",
+      title: "Atlas/Bloomberg: Flávio tem 51,1% e Lula 45,7% no 2º turno",
+      body: [
+        "Segundo a Forbes Brasil, a pesquisa Atlas/Bloomberg divulgada em 9 de outubro mostra Flávio Bolsonaro com 51,1% das intenções de voto no 2º turno e Lula com 45,7%.",
+        "Na pesquisa anterior do instituto, o quadro era de empate técnico: Flávio tinha 47,4% e Lula, 47,6%. Agora a soma de indecisos, brancos e nulos caiu para 3,2%, ante 5,0%."
+      ]
+    },
+    "vox-2turno-9out": {
+      source: "CartaCapital / Vox Brasil", date: "9 out", url: "https://www.cartacapital.com.br/politica/vox-brasil-lula-tem-442-no-2o-turno-contra-427-de-flavio-bolsonaro/",
+      title: "Vox Brasil: Lula tem 44,2% e Flávio 42,7% no 2º turno",
+      body: [
+        "Segundo a CartaCapital, a primeira pesquisa de 2º turno da Vox Brasil mostra Lula com 44,2% e Flávio Bolsonaro com 42,7%. Com margem de 2,15 pontos, a diferença é um empate técnico.",
+        "Brancos e nulos somam 3,4%, e 9,7% não sabem ou não opinaram. Foram 2.100 entrevistas presenciais entre 5 e 7 de outubro, e 76,2% dos eleitores se dizem totalmente decididos."
+      ]
+    },
+    "lula-natal-10out": {
+      source: "O Antagonista", date: "10 out", url: "https://oantagonista.com.br/brasil/eles-sempre-cortam-dos-pobres-diz-lula-sobre-plano-de-flavio/",
+      title: "Em Natal, Lula desafia Flávio a detalhar cortes de gastos",
+      body: [
+        "Segundo O Antagonista, Lula participou em 10 de outubro, em Natal (RN), do primeiro ato de campanha no Nordeste neste 2º turno.",
+        "Ele questionou de onde Flávio Bolsonaro pretende tirar centenas de bilhões de reais em gastos públicos e desafiou o adversário a detalhar a proposta de ajuste fiscal. Lula disse que os cortes costumam recair sobre os mais pobres."
+      ]
+    },
+    "flavio-madureira-10out": {
+      source: "Metrópoles", date: "10 out", url: "https://metropoles.com/brasil/flavio-vai-a-culto-com-douglas-ruas-e-fala-em-guerra-espiritual-no-brasil",
+      title: "Flávio vai a culto no Rio com Douglas Ruas e fala em “guerra espiritual”",
+      body: [
+        "Segundo o Metrópoles, Flávio Bolsonaro participou em 10 de outubro, no Rio de Janeiro, da celebração do centenário da Assembleia de Deus Madureira, ao lado do governador eleito Douglas Ruas.",
+        "Na ocasião, o candidato afirmou que o Brasil passa por uma \"guerra espiritual\". A matéria lembra que a igreja apoiou Jair Bolsonaro em 2018 e 2022."
+      ]
+    },
+    "china-flavio-10out": {
+      source: "Itatiaia / CNN Brasil", date: "10 out", url: "https://www.itatiaia.com.br/politica/china-avalia-relacao-brasil-flavio-bolsonaro/",
+      title: "China monitora “falas e práticas” de Flávio para decidir a relação com o Brasil",
+      body: [
+        "Segundo o blog de Daniel Rittner, da CNN Brasil, citado pela Itatiaia, o governo chinês acompanha as falas e práticas de Flávio Bolsonaro para avaliar a relação com o Brasil em caso de vitória. Há apreensão em Pequim com uma possível postura pró-EUA, mas autoridades veem Flávio como mais pragmático que Jair Bolsonaro.",
+        "Os pontos de atenção seriam minerais críticos e inteligência artificial. O programa de Flávio prevê retomar a adesão do Brasil à OCDE e não menciona o Brics. A Bloomberg Linea registra que ele diz que trabalhará com EUA e China e quer aderir ao Escudo das Américas, iniciativa de segurança liderada pelos EUA."
+      ]
+    },
     "datafolha-2turno-8out": {
       source: "A Crítica de Campo Grande / Datafolha", date: "8 out", url: "https://acritica.net/eleicoes-2026/datafolha-aponta-flavio-com-49-e-lula-com-45-no-segundo-turno/",
       title: "Datafolha: Flávio tem 49% e Lula 45% no 2º turno; em votos válidos, 52% a 48%",
@@ -1545,7 +1617,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 
 <script>
   (function(){
-    const ids = ['ira-resposta-ormuz-8out','ormuz-petroleiros','kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','hoc-europa-russia','hoc-irao-vietna','guerra-ira-brasil'];
+    const ids = ['china-flavio-10out','ira-resposta-ormuz-8out','ormuz-petroleiros','kyiv-ponte-drones','rubio-ira-delegacao','putin-valdai','hoc-europa-russia','hoc-irao-vietna','guerra-ira-brasil'];
     const box = document.getElementById('geoList');
     ids.forEach((id) => {
       const a = articles[id]; if(!a) return;
