@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Política 360º — Eleições 2026</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2214%22%20fill=%22%230B2038%22/%3E%3Ccircle%20cx=%2232%22%20cy=%2232%22%20r=%2221%22%20fill=%22none%22%20stroke=%22%230ABAB5%22%20stroke-width=%226%22/%3E%3Ctext%20x=%2232%22%20y=%2243%22%20text-anchor=%22middle%22%20font-family=%22Arial,Helvetica,sans-serif%22%20font-weight=%22700%22%20font-size=%2230%22%20fill=%22%23fff%22%3EP%3C/text%3E%3Ccircle%20cx=%2251%22%20cy=%2213%22%20r=%225%22%20fill=%22%23D9A441%22/%3E%3C/svg%3E">
 <meta name="description" content="Política 360º: acompanhe os candidatos à Presidência 2026 com notícias reais, escritas com a fonte original identificada, comparação de propostas e fontes neutras como TSE, Aos Fatos e Jota.">
 <meta name="keywords" content="política 360, eleições 2026, candidatos presidência, checagem de fatos, TSE, propostas dos candidatos">
 <meta property="og:title" content="Política 360º — Eleições 2026">
@@ -405,7 +406,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">15 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">13 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">52%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">48%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -413,11 +414,11 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('datatrends-2turno-11out')">DataTrends: 53,1% x 46,9%</button>
+    <button class="trending-pill" onclick="openArticle('partidos-apoio-flavio')">Centrão com Flávio</button>
+    <button class="trending-pill" onclick="openArticle('agenda-pesquisas-14-15out')">Quaest e Datafolha</button>
     <button class="trending-pill" onclick="openArticle('atlas-2turno-9out')">Atlas: Flávio 51,1%</button>
     <button class="trending-pill" onclick="openArticle('vox-2turno-9out')">Vox: empate técnico</button>
-    <button class="trending-pill" onclick="openArticle('datafolha-2turno-8out')">Datafolha 2º turno</button>
-    <button class="trending-pill" onclick="openArticle('lula-natal-10out')">Lula em Natal</button>
-    <button class="trending-pill" onclick="openArticle('apoios-2turno')">Quem apoia quem</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
     </div>
 
@@ -430,6 +431,24 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-14-15out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-14-15out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-14-15out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">12 out</span></div>
+        <p class="fc-headline">Quaest divulga nova pesquisa nacional de 2º turno na quarta (14) e o Datafolha, na quinta (15).</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="datatrends-2turno-11out" role="button" tabindex="0" onclick="openArticle('datatrends-2turno-11out')" onkeypress="if(event.key=='Enter')openArticle('datatrends-2turno-11out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">DT</div><span class="fc-cand">Pesquisa DataTrends</span><span class="fc-dot"></span><span class="fc-time">11 out</span></div>
+        <p class="fc-headline">DataTrends: Flávio tem 53,1% e Lula 46,9% dos votos válidos no 2º turno.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="partidos-apoio-flavio" role="button" tabindex="0" onclick="openArticle('partidos-apoio-flavio')" onkeypress="if(event.key=='Enter')openArticle('partidos-apoio-flavio')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🤝</div><span class="fc-cand">Apoios no 2º turno</span><span class="fc-dot"></span><span class="fc-time">7 out</span></div>
+        <p class="fc-headline">PP, União Brasil e Republicanos oficializam apoio a Flávio; o Novo já havia aderido.</p>
+        <div class="fc-bottom"><span class="fc-source">● Correio da Manhã / Folha de Pernambuco</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="lula-natal-10out" role="button" tabindex="0" onclick="openArticle('lula-natal-10out')" onkeypress="if(event.key=='Enter')openArticle('lula-natal-10out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">L</div><span class="fc-cand">Lula</span><span class="fc-dot"></span><span class="fc-time">10 out</span></div>
@@ -712,8 +731,9 @@
         <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td><b>Apoia Flávio</b> (evento em Goiânia, 6 out); o PSD liberou os diretórios estaduais</td></tr>
         <tr><td class="theme-col">Augusto Cury (Avante)</td><td><b>Apoia Flávio</b> (8 out), sem adesão irrestrita</td></tr>
         <tr><td class="theme-col">Renan Santos (Missão)</td><td>Neutro; libera os eleitores</td></tr>
+        <tr><td class="theme-col">Partidos: PP, União Brasil, Republicanos, Novo</td><td><b>Apoiam Flávio</b> (PP e União Brasil por unanimidade, 6–7 out; Republicanos respeita particularidades locais na Paraíba e em Pernambuco)</td></tr>
       </tbody></table></div>
-      <p class="compare-note">Fontes: A Crítica de Campo Grande e Agência Brasil. O PSDB não declarou apoio nacional e liberou os filiados. Até agora Lula não anunciou apoio entre os eliminados com mais votos.</p>
+      <p class="compare-note">Fontes: A Crítica de Campo Grande, Agência Brasil, Correio da Manhã e Folha de Pernambuco. O PSDB não declarou apoio nacional e liberou os filiados. Até agora Lula não anunciou apoio entre os eliminados com mais votos.</p>
 
       <div class="section-title" style="margin-top:28px;"><h2>Onde Lula e Flávio divergem</h2></div>
       <div class="compare-scroll">
@@ -741,10 +761,11 @@
 
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 8 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">DataTrends</td><td>47%</td><td><b>53%</b></td><td>7–9 out</td></tr>
         <tr><td class="theme-col">Datafolha</td><td>48%</td><td><b>52%</b></td><td>6–8 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>47%</td><td><b>53%</b></td><td>5–7 out</td></tr>
       </tbody></table></div>
-      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%.</p>
+      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%. O DataTrends (7 a 9 de out) é o levantamento do próprio Poder360 e confirmou o PoderData/Aya. Próximas rodadas nacionais: Quaest em 14 de outubro e Datafolha em 15 de outubro.</p>
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">100% das seções</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>Votos válidos</th></tr></thead><tbody>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,03%</b></td></tr>
@@ -836,7 +857,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 10 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 12 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -871,6 +892,31 @@
 
 <script>
   const articles = {
+    "agenda-pesquisas-14-15out": {
+      source: "Metrópoles", date: "12 out", url: "https://metropoles.com/brasil/veja-datas-das-proximas-pesquisas-sobre-lula-x-flavio-bolsonaro-no-2-turno",
+      title: "Quaest sai na quarta (14) e Datafolha na quinta (15)",
+      body: [
+        "Segundo o Metrópoles, as próximas pesquisas nacionais de 2º turno já têm data: a Quaest será divulgada na quarta-feira, 14 de outubro, e o Datafolha, na quinta-feira, 15.",
+        "Será a segunda rodada do Datafolha desde o 1º turno. Na primeira, divulgada em 8 de outubro, Flávio tinha 49% e Lula 45%."
+      ]
+    },
+    "datatrends-2turno-11out": {
+      source: "Poder360 / DataTrends", date: "11 out", url: "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-531-e-lula-tem-469-em-votos-validos-diz-datatrends/",
+      title: "DataTrends: Flávio tem 53,1% e Lula 46,9% dos votos válidos",
+      body: [
+        "Segundo o Poder360, o levantamento do DataTrends divulgado em 11 de outubro mostra Flávio Bolsonaro com 53,1% dos votos válidos no 2º turno e Lula com 46,9%.",
+        "O estudo foi feito de 7 a 9 de outubro e, de acordo com o próprio veículo, confirma o resultado do PoderData/Aya divulgado em 8 de outubro (53% a 47%)."
+      ]
+    },
+    "partidos-apoio-flavio": {
+      source: "Correio da Manhã / Folha de Pernambuco", date: "7 out", url: "https://www.correiodamanha.com.br/politica/2026/10/325049-pp-e-uniao-brasil-oficializam-apoio-a-flavio-bolsonaro-no-2-turno.html",
+      title: "PP, União Brasil e Republicanos oficializam apoio a Flávio",
+      body: [
+        "Segundo o Correio da Manhã, PP e União Brasil oficializaram em 6 de outubro o apoio a Flávio Bolsonaro no 2º turno, em decisão unânime, segundo a senadora Tereza Cristina. No 1º turno, os dois partidos haviam mantido neutralidade formal.",
+        "De acordo com a Folha de Pernambuco, o Republicanos também decidiu apoiar Flávio em 7 de outubro. O presidente do partido, Marcos Pereira, disse que respeita as particularidades locais na Paraíba e em Pernambuco. Com isso, o partido se soma a União Brasil, PP e Novo.",
+        "Antes da decisão, reportagens apontavam resistência de diretórios do Nordeste, que defendiam apoio a Lula."
+      ]
+    },
     "atlas-2turno-9out": {
       source: "Forbes Brasil / Atlas", date: "9 out", url: "https://forbes.com.br/geral/2026/10/flavio-tem-511-e-lula-457-das-intencoes-de-voto-no-2o-turno-mostra-atlas/",
       title: "Atlas/Bloomberg: Flávio tem 51,1% e Lula 45,7% no 2º turno",
