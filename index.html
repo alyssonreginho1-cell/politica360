@@ -407,19 +407,19 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">11 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">10 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
-    <div class="e"><div class="num">51%</div><div class="lbl">Flávio, PoderData (válidos)</div></div>
-    <div class="e"><div class="num">49%</div><div class="lbl">Lula, PoderData (válidos)</div></div>
+    <div class="e"><div class="num">51%</div><div class="lbl">Flávio, Quaest (válidos)</div></div>
+    <div class="e"><div class="num">49%</div><div class="lbl">Lula, Quaest (válidos)</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('agenda-pesquisas-14-15out')">Quaest hoje, Datafolha amanhã</button>
+    <button class="trending-pill" onclick="openArticle('quaest-2turno-14out')">Quaest: 51 x 49</button>
+    <button class="trending-pill" onclick="openArticle('agenda-pesquisas-14-15out')">Datafolha hoje</button>
+    <button class="trending-pill" onclick="openArticle('escala-6x1-senado-14out')">Fim da escala 6x1</button>
     <button class="trending-pill" onclick="openArticle('btg-nexus-2turno-13out')">BTG/Nexus: 52 x 48</button>
     <button class="trending-pill" onclick="openArticle('poderdata-2turno-13out')">PoderData: 51 x 49</button>
-    <button class="trending-pill" onclick="openArticle('futura-2turno-13out')">Futura: Flávio 50%</button>
-    <button class="trending-pill" onclick="openArticle('visita-jair-moraes-13out')">Visita a Jair</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
     </div>
 
@@ -433,10 +433,22 @@
 
       <div id="feedList">
 
+      <div class="feed-card" data-cand="all" data-id="quaest-2turno-14out" role="button" tabindex="0" onclick="openArticle('quaest-2turno-14out')" onkeypress="if(event.key=='Enter')openArticle('quaest-2turno-14out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">QU</div><span class="fc-cand">Pesquisa Quaest</span><span class="fc-dot"></span><span class="fc-time">14 out</span></div>
+        <p class="fc-headline">Quaest: Flávio tem 46% e Lula 44% no 2º turno; em votos válidos, 51% a 49%.</p>
+        <div class="fc-bottom"><span class="fc-source">● O Povo / Quaest</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="escala-6x1-senado-14out" role="button" tabindex="0" onclick="openArticle('escala-6x1-senado-14out')" onkeypress="if(event.key=='Enter')openArticle('escala-6x1-senado-14out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">⚖️</div><span class="fc-cand">Congresso</span><span class="fc-dot"></span><span class="fc-time">14 out</span></div>
+        <p class="fc-headline">Senado aprova por 75 a 1 a PEC que acaba com a escala 6x1 e reduz a jornada para 40 horas, sem corte de salário.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Exame</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
       <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-14-15out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-14-15out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-14-15out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">14 out</span></div>
-        <p class="fc-headline">Quaest divulga hoje (14), às 18h, a primeira pesquisa nacional do 2º turno; o Datafolha sai amanhã (15).</p>
-        <div class="fc-bottom"><span class="fc-source">● Metrópoles / O Povo</span><span class="fc-link">ler mais ↗</span></div>
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">15 out</span></div>
+        <p class="fc-headline">Datafolha divulga hoje (15), a partir das 18h30, a segunda pesquisa nacional do 2º turno.</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles / Diário do Nordeste</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="btg-nexus-2turno-13out" role="button" tabindex="0" onclick="openArticle('btg-nexus-2turno-13out')" onkeypress="if(event.key=='Enter')openArticle('btg-nexus-2turno-13out')">
@@ -802,8 +814,9 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 14 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 15 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Quaest</td><td>49%</td><td><b>51%</b></td><td>10–13 out</td></tr>
         <tr><td class="theme-col">BTG/Nexus</td><td>48%</td><td><b>52%</b></td><td>10–12 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>49%</td><td><b>51%</b></td><td>10–12 out</td></tr>
         <tr><td class="theme-col">Futura</td><td>48%</td><td><b>52%</b></td><td>7–10 out</td></tr>
@@ -811,7 +824,7 @@
         <tr><td class="theme-col">Datafolha</td><td>48%</td><td><b>52%</b></td><td>6–8 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>47%</td><td><b>53%</b></td><td>5–7 out</td></tr>
       </tbody></table></div>
-      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%. O DataTrends (7 a 9 de out) é o levantamento do próprio Poder360 e confirmou o PoderData/Aya. Próximas rodadas nacionais: Quaest em 14 de outubro, às 18h, e Datafolha em 15 de outubro. O PoderData/Aya teve duas rodadas depois do 1º turno: 53% a 47% (5 a 7 de out) e 51% a 49% (10 a 12 de out).</p>
+      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%. O DataTrends (7 a 9 de out) é o levantamento do próprio Poder360 e confirmou o PoderData/Aya. O Datafolha divulga nova rodada em 15 de outubro, a partir das 18h30, com campo de 13 a 15 de outubro. O PoderData/Aya teve duas rodadas depois do 1º turno: 53% a 47% (5 a 7 de out) e 51% a 49% (10 a 12 de out).</p>
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">100% das seções</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>Votos válidos</th></tr></thead><tbody>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,03%</b></td></tr>
@@ -843,11 +856,12 @@
       </tbody></table></div>
       <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 14 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 15 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Quaest</td><td>44%</td><td><b>46%</b></td><td>14 out</td></tr>
             <tr><td class="theme-col">BTG/Nexus</td><td>45%</td><td><b>48%</b></td><td>13 out</td></tr>
             <tr><td class="theme-col">Futura</td><td>47%</td><td><b>50%</b></td><td>13 out</td></tr>
             <tr><td class="theme-col">Atlas/Bloomberg</td><td>46%</td><td><b>51%</b></td><td>9 out</td></tr>
@@ -859,7 +873,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -905,7 +919,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 14 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 15 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -940,6 +954,24 @@
 
 <script>
   const articles = {
+    "quaest-2turno-14out": {
+      source: "O Povo / Quaest", date: "14 out", url: "https://mais.opovo.com.br/jornal/politica/2026/10/15/pesquisa-quaest-mostra-flavio-bolsonaro-com-51-e-lula-com-49-no-2-turno-em-votos-validos.html",
+      title: "Quaest: Flávio tem 46% e Lula 44% no 2º turno; em votos válidos, 51% a 49%",
+      body: [
+        "Segundo O Povo, a primeira pesquisa Quaest do 2º turno, divulgada em 14 de outubro, mostra Flávio Bolsonaro com 46% e Lula com 44% das intenções de voto. Em votos válidos, é 51% a 49%, empate técnico dentro da margem de 2 pontos. A pesquisa foi encomendada pela TV Globo e pelo jornal O Globo.",
+        "Entre os entrevistados, 9% dizem que votarão em branco ou nulo e 1% está indeciso. A rejeição é de 54% para Flávio e 53% para Lula. Na rodada anterior, de 3 de outubro, Flávio tinha 44% e Lula 42%.",
+        "Foram 2.154 entrevistas com eleitores de 16 anos ou mais, de 10 a 13 de outubro, com registro BR-08729/2026 no TSE."
+      ]
+    },
+    "escala-6x1-senado-14out": {
+      source: "CNN Brasil / Exame", date: "14 out", url: "https://www.cnnbrasil.com.br/politica/senado-aprova-fim-da-escala-6x1/",
+      title: "Senado aprova PEC que acaba com a escala 6x1",
+      body: [
+        "Segundo a CNN Brasil, o Senado aprovou em 14 de outubro, por 75 votos a 1 e em dois turnos, a PEC que acaba com a escala 6x1 e reduz a jornada semanal de 44 para 40 horas, sem redução de salário. O texto estava parado no Senado desde maio, depois de passar pela Câmara, e agora vai à promulgação.",
+        "A transição é de 14 meses, em duas etapas: 60 dias depois da promulgação a jornada cai de 44 para 42 horas, e 12 meses depois, para 40 horas. A garantia de dois dias de descanso remunerado também passa a valer 60 dias depois da promulgação, segundo a CNN Brasil e a Exame.",
+        "A Agenda do Poder lembra que, em pesquisa anterior, o Datafolha mostrou 71% de apoio dos brasileiros ao fim da escala 6x1. A aprovação ocorreu a 11 dias do 2º turno e entrou no debate da reta final da campanha."
+      ]
+    },
     "btg-nexus-2turno-13out": {
       source: "Metrópoles / BTG Pactual", date: "13 out", url: "https://www.metropoles.com/brasil/btg-nexus-a-12-dias-do-2o-turno-flavio-tem-52-e-lula-48",
       title: "BTG/Nexus: Flávio tem 52% e Lula 48% em votos válidos",
@@ -1001,12 +1033,11 @@
       ]
     },
     "agenda-pesquisas-14-15out": {
-      source: "Metrópoles / O Povo", date: "14 out", url: "https://www.metropoles.com/brasil/lula-x-flavio-quaest-divulga-nesta-quarta-14-10-1a-pesquisa-do-2o-turno",
-      title: "Quaest divulga hoje (14) a primeira pesquisa nacional do 2º turno; Datafolha sai amanhã (15)",
+      source: "Metrópoles / Diário do Nordeste", date: "15 out", url: "https://www.metropoles.com/brasil/lula-x-flavio-datafolha-divulga-nova-pesquisa-de-2o-turno-hoje-15-10",
+      title: "Datafolha divulga hoje (15) a segunda pesquisa nacional do 2º turno",
       body: [
-        "Segundo o Metrópoles, a Quaest divulga em 14 de outubro a primeira pesquisa nacional do 2º turno, encomendada pela TV Globo e pelo jornal O Globo. O jornal O Povo informa que os números saem a partir das 18h.",
-        "Foram 2.154 entrevistas presenciais com eleitores de 16 anos ou mais, de 10 a 13 de outubro, com margem de 2 pontos e registro BR-08729/2026 no TSE. Além da intenção de voto, o levantamento pergunta sobre rejeição, propostas dos dois candidatos e avaliação do governo.",
-        "O Datafolha divulga nova rodada em 15 de outubro, com 2.520 entrevistas feitas de 13 a 15 de outubro. Na rodada anterior, divulgada em 8 de outubro, Flávio tinha 49% e Lula 45%, ou 52% a 48% em votos válidos."
+        "Segundo o Metrópoles, o Datafolha divulga em 15 de outubro uma nova pesquisa de intenção de voto para o 2º turno, encomendada pela Globo e pela Folha de S.Paulo. A divulgação está prevista a partir das 18h30, segundo o Diário do Nordeste.",
+        "Serão 2.520 entrevistas presenciais com eleitores de 16 anos ou mais, de 13 a 15 de outubro, com margem de 2 pontos e registro BR-00466/2026. Na rodada anterior, divulgada em 8 de outubro, Flávio tinha 49% e Lula 45%, ou 52% a 48% em votos válidos."
       ]
     },
     "datatrends-2turno-11out": {
