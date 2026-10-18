@@ -408,7 +408,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">8 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">7 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">51%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">49%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -416,12 +416,11 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band amanhã</button>
-    <button class="trending-pill" onclick="openArticle('richarlison-ilha-17out')">Caso Richarlison</button>
+    <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band hoje</button>
+    <button class="trending-pill" onclick="openArticle('pesquisas-7dias-18out')">11 de 13 pesquisas</button>
+    <button class="trending-pill" onclick="openArticle('luchsinger-cnn-17out')">Caso Luchsinger</button>
+    <button class="trending-pill" onclick="openArticle('agenda-pesquisas-19-22out')">Pesquisas da semana</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar e Ibovespa</button>
-    <button class="trending-pill" onclick="openArticle('mei-teto-perdao-senado-15out')">Teto do MEI</button>
-    <button class="trending-pill" onclick="openArticle('kassio-master-impedimento-16out')">Kassio e o caso Master</button>
-    <button class="trending-pill" onclick="openArticle('ipespe-2turno-17out')">Ipespe: 51,2 x 48,8</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
     </div>
 
@@ -434,6 +433,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="pesquisas-7dias-18out" role="button" tabindex="0" onclick="openArticle('pesquisas-7dias-18out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-7dias-18out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
+        <p class="fc-headline">A 7 dias do 2º turno, Flávio lidera numericamente em 11 de 13 pesquisas; PoderData empata em 50% e Vox dá 51% a 49% para Lula.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="debate-band-18out" role="button" tabindex="0" onclick="openArticle('debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('debate-band-18out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
+        <p class="fc-headline">Primeiro debate do 2º turno é hoje (domingo, 18), às 20h, na Band, com 30 minutos de confronto direto no primeiro bloco.</p>
+        <div class="fc-bottom"><span class="fc-source">● Band / O Povo / Brasil 247</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="luchsinger-cnn-17out" role="button" tabindex="0" onclick="openArticle('luchsinger-cnn-17out')" onkeypress="if(event.key=='Enter')openArticle('luchsinger-cnn-17out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">🎙️</div><span class="fc-cand">Caso Luchsinger</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
+        <p class="fc-headline">Lobista investigada pela PF diz à CNN que Lulinha se reuniu com ministros e que quer fazer delação; Lula diz desconhecer os fatos.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Poder360 / Money Times</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-salvador-17out" role="button" tabindex="0" onclick="openArticle('flavio-salvador-17out')" onkeypress="if(event.key=='Enter')openArticle('flavio-salvador-17out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📍</div><span class="fc-cand">Flávio Bolsonaro</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
+        <p class="fc-headline">Flávio recebe título de Cidadão de Salvador depois de o TJ-BA derrubar a liminar que suspendia a cerimônia.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / Folha do Estado da Bahia</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-19-22out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-19-22out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-19-22out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
+        <p class="fc-headline">Última semana: AtlasIntel sai na segunda (19), Real Time Big Data na terça (20), Quaest e Palver na quarta (21), PoderData e Datafolha na quinta (22).</p>
+        <div class="fc-bottom"><span class="fc-source">● Diário do Pará</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="mercado-semana-16out" role="button" tabindex="0" onclick="openArticle('mercado-semana-16out')" onkeypress="if(event.key=='Enter')openArticle('mercado-semana-16out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📈</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">16 out</span></div>
@@ -465,12 +494,6 @@
         <div class="fc-bottom"><span class="fc-source">● Agência Senado</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="bahia-titulo-alcolumbre-stf-17out" role="button" tabindex="0" onclick="openArticle('bahia-titulo-alcolumbre-stf-17out')" onkeypress="if(event.key=='Enter')openArticle('bahia-titulo-alcolumbre-stf-17out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📰</div><span class="fc-cand">Bastidores</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Justiça da Bahia proíbe Câmara de Salvador de dar título de cidadão a Flávio; Alcolumbre negocia idade mínima para o STF.</p>
-        <div class="fc-bottom"><span class="fc-source">● Folha do Estado da Bahia</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
       <div class="feed-card" data-cand="all" data-id="ucrania-ataques-16out" role="button" tabindex="0" onclick="openArticle('ucrania-ataques-16out')" onkeypress="if(event.key=='Enter')openArticle('ucrania-ataques-16out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">16 out</span></div>
         <p class="fc-headline">Rússia ataca nove regiões da Ucrânia; Zelensky critica acordo do diesel de Trump com Moscou na cúpula da UE.</p>
@@ -487,12 +510,6 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">IP</div><span class="fc-cand">Pesquisa Ipespe/Abrapel</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
         <p class="fc-headline">Ipespe/Abrapel: Flávio tem 48% e Lula 46%; em votos válidos, 51,2% a 48,8%, e a diferença cai de 5,4 para 2,4 pontos.</p>
         <div class="fc-bottom"><span class="fc-source">● Metrópoles / Transmissão Política</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="debate-band-18out" role="button" tabindex="0" onclick="openArticle('debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('debate-band-18out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Primeiro debate do 2º turno é amanhã (18), às 20h, na Band; Lula se prepara em Brasília e Flávio faz atos em Vitória e Salvador.</p>
-        <div class="fc-bottom"><span class="fc-source">● O Povo / Exame / Times Brasil</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="globo-entrevistas-15-16out" role="button" tabindex="0" onclick="openArticle('globo-entrevistas-15-16out')" onkeypress="if(event.key=='Enter')openArticle('globo-entrevistas-15-16out')">
@@ -894,21 +911,28 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 17 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 18 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Vox Brasil</td><td><b>51%</b></td><td>49%</td><td>15–17 out</td></tr>
+        <tr><td class="theme-col">Gerp</td><td>48%</td><td><b>52%</b></td><td>14–16 out</td></tr>
+        <tr><td class="theme-col">Futura</td><td>49%</td><td><b>51%</b></td><td>14–15 out</td></tr>
+        <tr><td class="theme-col">PoderData/Aya</td><td>50%</td><td>50%</td><td>13–15 out</td></tr>
+        <tr><td class="theme-col">CNT/MDA</td><td>49,5%</td><td><b>50,5%</b></td><td>13–15 out</td></tr>
+        <tr><td class="theme-col">Indexa/Broadcast</td><td>49%</td><td><b>51%</b></td><td>13–14 out</td></tr>
         <tr><td class="theme-col">Ipespe/Abrapel</td><td>49%</td><td><b>51%</b></td><td>13–15 out</td></tr>
         <tr><td class="theme-col">Veritá</td><td>49%</td><td><b>51%</b></td><td>12–16 out</td></tr>
-        <tr><td class="theme-col">Datafolha</td><td>49%</td><td><b>51%</b></td><td>13–15 out</td></tr>
+        <tr><td class="theme-col">Datafolha</td><td>49%</td><td><b>51%</b></td><td>13–14 out</td></tr>
         <tr><td class="theme-col">Quaest</td><td>49%</td><td><b>51%</b></td><td>10–13 out</td></tr>
+        <tr><td class="theme-col">Palver</td><td>49,5%</td><td><b>50,5%</b></td><td>10–13 out</td></tr>
         <tr><td class="theme-col">BTG/Nexus</td><td>48%</td><td><b>52%</b></td><td>10–12 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>49%</td><td><b>51%</b></td><td>10–12 out</td></tr>
-        <tr><td class="theme-col">Futura</td><td>48%</td><td><b>52%</b></td><td>7–10 out</td></tr>
+        
         <tr><td class="theme-col">DataTrends</td><td>47%</td><td><b>53%</b></td><td>7–9 out</td></tr>
         <tr><td class="theme-col">AtlasIntel/Bloomberg</td><td>47%</td><td><b>53%</b></td><td>3–8 out</td></tr>
         <tr><td class="theme-col">Datafolha</td><td>48%</td><td><b>52%</b></td><td>6–8 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>47%</td><td><b>53%</b></td><td>5–7 out</td></tr>
       </tbody></table></div>
-      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%. O DataTrends (7 a 9 de out) é o levantamento do próprio Poder360 e confirmou o PoderData/Aya. O Datafolha de 15 de outubro (13 a 15 de out, 2.520 entrevistas presenciais, margem de 2 pontos, registro BR-00466/2026) mostra Flávio com 47% e Lula com 45% nos votos totais, e 51% a 49% nos válidos. A diferença caiu de 4 para 2 pontos em uma semana, e a rodada tem 6% de brancos e nulos e 2% de indecisos. O AtlasIntel/Bloomberg (3 a 8 de out, 5.026 entrevistas, margem de 1 ponto) dava 52,8% a 47,2% para Flávio. O Ipespe/Abrapel (13 a 15 de out, 1.500 entrevistas por telefone, margem de 2,6 pontos, registro BR-00223/2026) mostra 51,2% a 48,8% em válidos, diferença de 2,4 pontos contra 5,4 na rodada de 10 de outubro, com rejeição de 47% para cada candidato. O Veritá (12 a 16 de out, 15.554 entrevistas, margem de 1 ponto) mostra 51,1% a 48,9%, em pesquisa feita por iniciativa do próprio instituto. O PoderData/Aya teve duas rodadas depois do 1º turno: 53% a 47% (5 a 7 de out) e 51% a 49% (10 a 12 de out).</p>
+      <p class="compare-note">Datafolha: 2.520 entrevistas, margem de 2 pontos, registro BR-02949/2026. Em votos totais, Flávio 49% e Lula 45%, empate técnico no limite da margem. PoderData/Aya: 3.000 entrevistas, margem de 1,8 ponto, registro BR-08134/2026, com vantagem de 6 pontos para Flávio. Rejeição no Datafolha: Lula 46%, Flávio 43%. O DataTrends (7 a 9 de out) é o levantamento do próprio Poder360 e confirmou o PoderData/Aya. O Datafolha de 15 de outubro (13 a 14 de out, 2.520 entrevistas presenciais, margem de 2 pontos, registro BR-00466/2026) mostra Flávio com 47% e Lula com 45% nos votos totais, e 51% a 49% nos válidos. A diferença caiu de 4 para 2 pontos em uma semana, e a rodada tem 6% de brancos e nulos e 2% de indecisos. O AtlasIntel/Bloomberg (3 a 8 de out, 5.026 entrevistas, margem de 1 ponto) dava 52,8% a 47,2% para Flávio. O Ipespe/Abrapel (13 a 15 de out, 1.500 entrevistas por telefone, margem de 2,6 pontos, registro BR-00223/2026) mostra 51,2% a 48,8% em válidos, diferença de 2,4 pontos contra 5,4 na rodada de 10 de outubro, com rejeição de 47% para cada candidato. O Veritá (12 a 16 de out, 15.554 entrevistas, margem de 1 ponto) mostra 51,1% a 48,9%, em pesquisa feita por iniciativa do próprio instituto. O PoderData/Aya teve duas rodadas depois do 1º turno: 53% a 47% (5 a 7 de out) e 51% a 49% (10 a 12 de out).</p>
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Resultado do 1º turno — TSE</h2><span class="count">100% das seções</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>Votos válidos</th></tr></thead><tbody>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td><b>47,03%</b></td></tr>
@@ -959,7 +983,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam, mas as rodadas mais recentes (Datafolha, Quaest, PoderData) mostram empate técnico. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam. O Poder360 compilou 13 pesquisas: Flávio está numericamente à frente em 11, o PoderData/Aya (13 a 15 de out) mostra empate em 50% e a Vox Brasil (15 a 17 de out) dá 51% a 49% para Lula. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -1039,7 +1063,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 17 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 18 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1078,6 +1102,50 @@
 
 <script>
   const articles = {
+    "pesquisas-7dias-18out": {
+      source: "Poder360", date: "18 out", url: "https://www.poder360.com.br/poder-eleicoes-2026/saiba-como-estao-lula-e-flavio-nas-pesquisas-a-7-dias-do-2o-turno/",
+      title: "A 7 dias do 2º turno, Flávio lidera numericamente em 11 de 13 pesquisas",
+      body: [
+        "Segundo o Poder360, que reuniu 13 pesquisas nacionais com entrevistas feitas de 3 a 17 de outubro, Flávio Bolsonaro está numericamente à frente de Lula em 11 delas, Lula lidera em uma e há um empate. Em votos válidos, a maior diferença é de 4 pontos a favor de Flávio, no BTG/Nexus e no Gerp (52% a 48%).",
+        "A rodada mais recente do PoderData/Aya (13 a 15 de outubro) mostra empate numérico, com 50% para cada um. O Datafolha e o Indexa/Broadcast dão 51% a 49% para Flávio, a CNT/MDA dá 50,5% a 49,5%, a Futura 50,8% a 49,2%, a Palver 50,5% a 49,5% e a Quaest 51,1% a 48,9%. AtlasIntel (52,8%), Ipespe/Abrapel (51,2%) e DataTrends (53,1%) também mostram vantagem de Flávio.",
+        "A Vox Brasil, divulgada em 18 de outubro (15 a 17 de out, 2.100 entrevistas, margem de 2,15 pontos), é a única com Lula numericamente à frente: 51% a 49% em votos válidos. O Poder360 lembra que as pesquisas têm métodos e períodos diferentes e que não formam uma série única nem projetam o resultado."
+      ]
+    },
+    "debate-band-18out": {
+      source: "Band / O Povo / Brasil 247", date: "18 out", url: "https://www.band.com.br/politica/eleicoes/qual-o-horario-do-debate-na-band-entre-flavio-e-lula",
+      title: "Primeiro debate do 2º turno é hoje (18), às 20h, na Band",
+      body: [
+        "Segundo a Band, o debate entre Lula e Flávio Bolsonaro será no domingo, 18 de outubro, às 20h, nos estúdios da emissora, em São Paulo. No primeiro bloco, os âncoras fazem uma pergunta a cada candidato e começa o confronto direto, com os dois livres no estúdio por 30 minutos. O segundo bloco começa com uma pergunta de cada âncora, seguida da dinâmica em que um candidato pergunta diretamente ao outro.",
+        "O Povo informa que Flávio, que havia dito em 13 de outubro que não iria, confirmou presença depois de Lula anunciar que compareceria mesmo sem o adversário. A O Povo também lembra que a escala 6x1 deve ser um dos temas: Lula defende o fim da escala como tema central, e Flávio, que votou a favor da PEC, defende uma alternativa baseada em remuneração por hora trabalhada.",
+        "Segundo o Brasil 247, que cita orientações das campanhas, Lula deve destacar entregas do governo e propostas para um novo mandato, enquanto Flávio deve concentrar-se em segurança pública, saúde e economia, incluindo a redução da maioridade penal. O debate seguinte é o da TV Globo, em 23 de outubro."
+      ]
+    },
+    "luchsinger-cnn-17out": {
+      source: "CNN Brasil / Poder360 / Money Times", date: "17 out", url: "https://www.cnnbrasil.com.br/politica/luchsinger-diz-a-cnn-que-lulinha-sentou-inumeras-vezes-com-ministros/",
+      title: "Luchsinger diz à CNN que Lulinha se reuniu com ministros e quer fazer delação",
+      body: [
+        "Segundo a CNN Brasil, a empresária e lobista Roberta Luchsinger, investigada pela Polícia Federal por suposto tráfico de influência com Fábio Luís Lula da Silva, o Lulinha, disse em entrevista na noite de 17 de outubro que ele se reuniu “inúmeras vezes” com ministros do governo do pai, inclusive viajando à casa do ministro Camilo Santana, no Ceará. Para ela, Lula mente ao dizer que o filho nunca esteve com integrantes do alto escalão.",
+        "Ela afirmou que quer firmar um acordo de delação premiada, que não poupará ninguém e que Lulinha ajudou a ECB, empresa do grupo português Mota-Engil, a fechar contratos com o governo federal, segundo a CNN. Luchsinger disse ainda que recebe ameaças de morte e que já apoiou Lula publicamente. Lula a chamou de “pilantra” em entrevista à Globo, em 27 de agosto.",
+        "O outro lado: em nota, a equipe de comunicação de Lula diz que ele “desconhece inteiramente os fatos relatados” por ela, que jamais teve interlocução com a lobista, nunca recebeu suas demandas e não tem conhecimento de supostas tratativas. As afirmações de Luchsinger são acusações ainda não comprovadas."
+      ]
+    },
+    "flavio-salvador-17out": {
+      source: "Poder360 / Folha do Estado da Bahia", date: "17 out", url: "https://www.poder360.com.br/poder-eleicoes-2026/flavio-realiza-ato-na-bahia-e-recebe-titulo-de-cidadao-de-salvador/",
+      title: "Flávio recebe título de Cidadão de Salvador depois de TJ-BA derrubar liminar",
+      body: [
+        "Segundo o Poder360, Flávio Bolsonaro recebeu em 17 de outubro o Título de Cidadão de Salvador, em cerimônia no Farol da Barra, depois de um ato de campanha no mesmo local. A cerimônia havia sido suspensa por decisão judicial na véspera, mas o Tribunal de Justiça da Bahia derrubou a liminar.",
+        "Estiveram com ele ACM Neto, Tarcísio de Freitas, Nikolas Ferreira, João Roma, o prefeito Bruno Reis e o deputado federal eleito Lucas Pavanato. Em discurso, Flávio disse que, no governo dele, fará “de tudo pro pobre ficar rico”. O Poder360 lembra que a Bahia é um reduto de Lula, que teve 66,17% dos votos válidos no estado no 1º turno, contra 28,53% de Flávio.",
+        "Segundo o resumo diário do Folha do Estado da Bahia, Davi Alcolumbre negocia a criação de idade mínima de 55 ou 60 anos para indicações ao Supremo, caso Flávio vença a eleição."
+      ]
+    },
+    "agenda-pesquisas-19-22out": {
+      source: "Diário do Pará", date: "17 out", url: "https://diariodopara.com.br/eleicoes-2026/lula-e-flavio-bolsonaro-veja-as-proximas-pesquisas-para-presidente/",
+      title: "Pesquisas da última semana: veja as datas de divulgação",
+      body: [
+        "Segundo o Diário do Pará, sete pesquisas registradas na Justiça Eleitoral devem ser divulgadas entre segunda (19) e quinta-feira (22) da semana que antecede o 2º turno.",
+        "O calendário: AtlasIntel na segunda, 19 de outubro (5.000 entrevistas, com coleta de 13 a 18 de outubro); Real Time Big Data na terça, 20 (2.000, coleta de 15 a 19); Quaest e Palver na quarta, 21 (2.154 e 5.000); PoderData e Datafolha na quinta, 22 (4.000 e duas pesquisas do Datafolha, de 2.520 e 910 entrevistados)."
+      ]
+    },
     "mercado-semana-16out": {
       source: "Metrópoles / Finance News", date: "16 out", url: "https://www.metropoles.com/brasil/bolsa-fecha-em-alta-de-044-e-dolar-cai-apos-tres-altas-seguidas",
       title: "Ibovespa sobe 0,54% na sexta, mas cai 1,74% na semana; dólar fecha a R$ 5,07",
@@ -1121,14 +1189,6 @@
         "Se alguma emenda for aprovada, o texto volta à Câmara, onde já havia passado. A CCJ concluiu a análise da PEC em 14 de outubro. O senador Randolfe Rodrigues disse que a votação pode ser retomada na semana seguinte, e o líder da oposição, Rogerio Marinho (PL-RN), questionou a decisão."
       ]
     },
-    "bahia-titulo-alcolumbre-stf-17out": {
-      source: "Folha do Estado da Bahia", date: "17 out", url: "https://www.jornalfolhadoestado.com/blogs/ponto-e-virgula/ponto-e-virgula-17-10/",
-      title: "Justiça da Bahia barra título a Flávio; Alcolumbre negocia idade mínima para o STF",
-      body: [
-        "Segundo o resumo diário do Folha do Estado da Bahia, a Justiça da Bahia proibiu a Câmara Municipal de Salvador de realizar em 17 de outubro a cerimônia de entrega do título de cidadão soteropolitano a Flávio Bolsonaro. O texto não detalha os motivos da decisão.",
-        "O mesmo resumo diz que Davi Alcolumbre negocia a criação de idade mínima de 55 ou 60 anos para indicações ao Supremo, caso Flávio vença a eleição."
-      ]
-    },
     "ucrania-ataques-16out": {
       source: "Euronews", date: "16 out", url: "https://www.euronews.com/2026/10/16/russia-strikes-nine-ukrainian-regions-as-strain-grows-between-zelenskyy-and-trump",
       title: "Rússia ataca nove regiões da Ucrânia; Zelensky critica acordo do diesel de Trump",
@@ -1154,15 +1214,6 @@
         "Segundo o Metrópoles, a pesquisa Ipespe/Abrapel divulgada em 17 de outubro mostra empate técnico no 2º turno: Flávio Bolsonaro tem 48% e Lula 46% nos votos totais, com 3% de brancos e nulos e 3% de indecisos. Em votos válidos, é 51,2% a 48,8%.",
         "De acordo com a Transmissão Política, a diferença caiu de 5,4 para 2,4 pontos em relação à rodada de 10 de outubro, quando Flávio tinha 52,7% e Lula 47,3%. A rejeição é de 47% para cada candidato, segundo o Mixvale.",
         "Foram 1.500 entrevistas por telefone, de 13 a 15 de outubro, com recursos do próprio instituto e registro BR-00223/2026 no TSE."
-      ]
-    },
-    "debate-band-18out": {
-      source: "O Povo / Exame / Times Brasil", date: "17 out", url: "https://www.opovo.com.br/noticias/politica/eleicoes/2026/10/17/lula-e-flavio-no-2-turno-saiba-se-tem-debate-presidencial-neste-sabado-17.html",
-      title: "Primeiro debate do 2º turno é amanhã (18), às 20h, na Band",
-      body: [
-        "Segundo O Povo, o primeiro debate entre Lula e Flávio Bolsonaro no 2º turno será no domingo, 18 de outubro, às 20h, nos estúdios da Band, em São Paulo, com transmissão na TV e nas plataformas do grupo. Não há debate neste sábado.",
-        "A Exame informa que Flávio, que havia dito que não iria, voltou atrás em 14 de outubro e confirmou presença por vídeo no X. O formato prevê declarações de abertura e finais, perguntas de jornalistas e dois blocos de confronto direto. O debate seguinte é o da TV Globo, em 23 de outubro.",
-        "Segundo o Times Brasil, Lula passa o sábado em Brasília, preparando-se para o debate, sem atos públicos. Flávio participa do \"Bloco do 22\" em Vitória (ES), às 10h, e de um ato em Salvador (BA), às 16h."
       ]
     },
     "globo-entrevistas-15-16out": {
@@ -1198,7 +1249,7 @@
       body: [
         "Segundo a CNN Brasil, o Datafolha divulgado em 15 de outubro mostra Flávio Bolsonaro com 51% dos votos válidos no 2º turno e Lula com 49%. Na rodada de 8 de outubro, era 52% a 48%.",
         "Nos votos totais, Flávio tem 47% (eram 49%) e Lula, 45% (estável). Brancos e nulos somam 6% (eram 5%) e os indecisos, 2% (era 1%). O instituto trata os dois como tecnicamente empatados, dentro da margem.",
-        "Foram 2.520 entrevistas presenciais com eleitores de 16 anos ou mais, de 13 a 15 de outubro, com margem de 2 pontos, 95% de confiança e registro BR-00466/2026."
+        "Foram 2.520 entrevistas presenciais com eleitores de 16 anos ou mais, de 13 a 14 de outubro, com margem de 2 pontos, 95% de confiança e registro BR-00466/2026."
       ]
     },
     "ira-escalada-15out": {
