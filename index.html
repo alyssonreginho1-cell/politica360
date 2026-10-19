@@ -420,12 +420,12 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band hoje</button>
+    <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band</button>
+    <button class="trending-pill" onclick="openArticle('checagem-debate-band-18out')">Checagem do debate</button>
     <button class="trending-pill" onclick="openArticle('pesquisas-7dias-18out')">11 de 13 pesquisas</button>
     <button class="trending-pill" onclick="openArticle('luchsinger-cnn-17out')">Caso Luchsinger</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar e Ibovespa</button>
-    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Mapa por estado</button>
     </div>
 
   <!-- FEED TAB -->
@@ -438,16 +438,22 @@
 
       <div id="feedList">
 
+      <div class="feed-card" data-cand="all" data-id="debate-band-18out" role="button" tabindex="0" onclick="openArticle('debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('debate-band-18out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate na Band</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
+        <p class="fc-headline">Debate na Band: Lula e Flávio trocam acusações sobre Master, Dark Horse e Luchsinger; segurança, saúde e tarifas dominam os blocos.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jovem Pan / Ric / A Crítica / Congresso em Foco</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="checagem-debate-band-18out" role="button" tabindex="0" onclick="openArticle('checagem-debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('checagem-debate-band-18out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🔎</div><span class="fc-cand">Checagem do debate</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
+        <p class="fc-headline">Checagem do debate: agências apontam falas verdadeiras, enganosas e sem contexto nos dois lados; Lupa não achou provas de encontro Lula-Vorcaro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Aos Fatos / Estadão Verifica / Lupa</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
       <div class="feed-card" data-cand="all" data-id="pesquisas-7dias-18out" role="button" tabindex="0" onclick="openArticle('pesquisas-7dias-18out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-7dias-18out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
         <p class="fc-headline">A 7 dias do 2º turno, Flávio lidera numericamente em 11 de 13 pesquisas; PoderData empata em 50% e Vox dá 51% a 49% para Lula.</p>
         <div class="fc-bottom"><span class="fc-source">● Poder360</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="debate-band-18out" role="button" tabindex="0" onclick="openArticle('debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('debate-band-18out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
-        <p class="fc-headline">Primeiro debate do 2º turno é hoje (domingo, 18), às 20h, na Band, com 30 minutos de confronto direto no primeiro bloco.</p>
-        <div class="fc-bottom"><span class="fc-source">● Band / O Povo / Brasil 247</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="luchsinger-cnn-17out" role="button" tabindex="0" onclick="openArticle('luchsinger-cnn-17out')" onkeypress="if(event.key=='Enter')openArticle('luchsinger-cnn-17out')">
@@ -1107,6 +1113,27 @@
 
 <script>
   const articles = {
+    "debate-band-18out": {
+      source: "Jovem Pan / Ric / A Crítica de Campo Grande / Congresso em Foco", date: "18 out", url: "https://jovempan.com.br/politica/debate-band-jovem-pan-lula-e-flavio-travam-confronto-com-troca-de-acusacoes-pessoais/",
+      title: "Debate na Band: Lula e Flávio trocam acusações sobre Master, Dark Horse e Luchsinger",
+      body: [
+        "Segundo a Ric, o debate promovido pela Band em 18 de outubro teve três blocos, com perguntas dos apresentadores Adriana Araújo e Eduardo Oinegue e confrontos diretos entre os candidatos. A corrupção foi o principal ponto de embate, e apenas um direito de resposta foi concedido, a Flávio, no primeiro bloco.",
+        "Segurança pública abriu o debate. A Crítica de Campo Grande informa que Flávio prometeu manter chefes de facção presos por até 80 anos e Lula repetiu a promessa de criar o Ministério da Segurança. Os dois também divergiram sobre as saídas temporárias de presos, e Lula citou que mais de 1 milhão de armas e 1,1 bilhão de munições foram liberados no governo Jair Bolsonaro.",
+        "O caso Master dominou parte do confronto. Segundo o Congresso em Foco, Lula cobrou explicações de Flávio sobre o financiamento do filme Dark Horse, enquanto o senador questionou o presidente sobre uma reunião com Daniel Vorcaro no Planalto. Lula respondeu que Vorcaro foi preso em sua gestão e que o negócio dele cresceu no governo Bolsonaro, e Flávio disse que a prisão foi determinada pelo ministro André Mendonça, do STF. Flávio também citou a lobista Roberta Luchsinger, e Lula disse que seu filho abriu conta e telefone para serem investigados.",
+        "Na economia, Flávio acusou Lula de ampliar gastos públicos e elevar os juros, apontados por ele como causas do endividamento das famílias. Sobre as relações com os EUA, Lula acusou a família Bolsonaro de submissão a Washington e de pressionar por tarifas, e Flávio negou e disse que viajou aos EUA para defender produtos brasileiros. Na saúde, Flávio fez uma autocrítica sobre o governo do pai, e Lula o chamou de “malandro carioca”, segundo A Crítica.",
+        "A Jovem Pan registra ainda a troca de acusações pessoais e o momento em que Flávio exibiu a palavra “corrupto” escrita na mão. O próximo debate é o da TV Globo, em 23 de outubro."
+      ]
+    },
+    "checagem-debate-band-18out": {
+      source: "Aos Fatos / Estadão Verifica / Lupa", date: "18 out", url: "https://www.aosfatos.org/noticias/checamos-lula-flavio-bolsonaro-debate-band/",
+      title: "Checagem do debate da Band: o que as agências verificaram",
+      body: [
+        "O Aos Fatos checou as falas em tempo real. Entre as de Flávio, classificou como falsas a de que a criminalidade explodiu no país, a de que 73% dos presos votaram em Lula, a de que condenados do Mensalão integram o governo e a de que Lula foi aos EUA defender organizações criminosas. Também apontou que os registros de roubo de celular diminuíram no governo Lula, ao contrário do que o senador sugeriu.",
+        "Entre as de Lula, o Aos Fatos confirmou que, em 2009, Flávio foi o único deputado estadual do Rio a votar contra a ampliação da licença-maternidade, e que o senador tem o mesmo salário do presidente, e que a agência contou 43 mentiras dele até setembro. O Brasil 247, ao divulgar o placar da agência, informa que Lula teve 16 falas verdadeiras, cinco “não é bem assim” e duas falsas, e que Flávio teve duas verdadeiras, entre elas a de que o governo deixa dívida de R$ 11 trilhões.",
+        "O Estadão Verifica classificou falas dos dois lados, de verdadeiras a falsas. Entre as de Flávio com ressalvas, estão as sobre a Lei Antifacção, os gastos com viagens de Lula e Janja, o irmão do presidente no sindicato investigado por fraudes no INSS e a suposta tentativa de restaurar as saidinhas.",
+        "A Lupa verificou que não há, até agora, comprovantes de pagamentos nem provas de que Lula e Vorcaro tenham se reunido para tratar do assunto citado em um áudio. A própria Veja, que publicou o áudio, ressalva que não há prova do encontro. Vale lembrar que a checagem avalia afirmações, e não o desempenho dos candidatos."
+      ]
+    },
     "ue-cupula-sancoes-16out": {
       source: "Conselho Europeu / Times Brasil / BM&C", date: "16 out", url: "https://www.consilium.europa.eu/en/meetings/european-council/2026/10/15-16/",
       title: "Cúpula da UE reafirma apoio à Ucrânia e prepara 22º pacote de sanções à Rússia",
@@ -1192,15 +1219,6 @@
         "Segundo o Poder360, que reuniu 13 pesquisas nacionais com entrevistas feitas de 3 a 17 de outubro, Flávio Bolsonaro está numericamente à frente de Lula em 11 delas, Lula lidera em uma e há um empate. Em votos válidos, a maior diferença é de 4 pontos a favor de Flávio, no BTG/Nexus e no Gerp (52% a 48%).",
         "A rodada mais recente do PoderData/Aya (13 a 15 de outubro) mostra empate numérico, com 50% para cada um. O Datafolha e o Indexa/Broadcast dão 51% a 49% para Flávio, a CNT/MDA dá 50,5% a 49,5%, a Futura 50,8% a 49,2%, a Palver 50,5% a 49,5% e a Quaest 51,1% a 48,9%. AtlasIntel (52,8%), Ipespe/Abrapel (51,2%) e DataTrends (53,1%) também mostram vantagem de Flávio.",
         "A Vox Brasil, divulgada em 18 de outubro (15 a 17 de out, 2.100 entrevistas, margem de 2,15 pontos), é a única com Lula numericamente à frente: 51% a 49% em votos válidos. O Poder360 lembra que as pesquisas têm métodos e períodos diferentes e que não formam uma série única nem projetam o resultado."
-      ]
-    },
-    "debate-band-18out": {
-      source: "Band / O Povo / Brasil 247", date: "18 out", url: "https://www.band.com.br/politica/eleicoes/qual-o-horario-do-debate-na-band-entre-flavio-e-lula",
-      title: "Primeiro debate do 2º turno é hoje (18), às 20h, na Band",
-      body: [
-        "Segundo a Band, o debate entre Lula e Flávio Bolsonaro será no domingo, 18 de outubro, às 20h, nos estúdios da emissora, em São Paulo. No primeiro bloco, os âncoras fazem uma pergunta a cada candidato e começa o confronto direto, com os dois livres no estúdio por 30 minutos. O segundo bloco começa com uma pergunta de cada âncora, seguida da dinâmica em que um candidato pergunta diretamente ao outro.",
-        "O Povo informa que Flávio, que havia dito em 13 de outubro que não iria, confirmou presença depois de Lula anunciar que compareceria mesmo sem o adversário. A O Povo também lembra que a escala 6x1 deve ser um dos temas: Lula defende o fim da escala como tema central, e Flávio, que votou a favor da PEC, defende uma alternativa baseada em remuneração por hora trabalhada.",
-        "Segundo o Brasil 247, que cita orientações das campanhas, Lula deve destacar entregas do governo e propostas para um novo mandato, enquanto Flávio deve concentrar-se em segurança pública, saúde e economia, incluindo a redução da maioridade penal. O debate seguinte é o da TV Globo, em 23 de outubro."
       ]
     },
     "luchsinger-cnn-17out": {
