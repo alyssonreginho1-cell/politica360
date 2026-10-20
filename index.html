@@ -2000,7 +2000,7 @@
 
 const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-title">Comentários</h2>'+'<div class="comment-form-locked" id="commentLocked"><span>🔒 Entre com o Google, no topo da página, para comentar</span></div>'+'<div id="commentForm" style="display:none;"><textarea id="commentText" maxlength="500" rows="3" placeholder="Escreva seu comentário (até 500 caracteres)"></textarea>'+'<div class="cf-row"><span id="commentCount" class="cf-count">0/500</span><button type="button" class="post-btn" id="btnPost">Publicar</button></div></div>'+'<div class="comment-list" id="commentList"></div></section>';
 
-  function openArticle(id, fromRoute){
+  function showArticle(id, fromRoute){
     const a = articles[id];
     if(!a) return;
     const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
@@ -2065,7 +2065,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   }
 
   // ---- Leitor de notícia ----
-  function openArticle(id, fromRoute){
+  function showArticle(id, fromRoute){
     const a = articles[id];
     if(!a) return;
     const fromGeo = document.getElementById('tab-geopolitica').classList.contains('active');
@@ -2377,6 +2377,15 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     t.textContent = text; t.style.opacity = '1';
     clearTimeout(p360Toast.t); p360Toast.t = setTimeout(function(){ t.style.opacity = '0'; }, 2600);
   }
+  // Clique em qualquer notícia (feed, Geopolítica, atalhos): abre em uma nova aba do navegador
+  function openArticle(id, fromRoute){
+    if(fromRoute === true){ showArticle(id, true); return; }
+    if(!articles[id]) return;
+    var url = location.href.split('#')[0] + '#noticia=' + id;
+    var w = window.open(url, '_blank');
+    if(w){ try{ w.opener = null; }catch(e){} }
+    else { showArticle(id); }  // se o navegador bloquear a nova aba, abre aqui mesmo
+  }
   function articleLink(id){ return location.origin + '/noticia/' + id + '/'; }
   function shareArticle(id){
     const a = articles[id]; if(!a) return;
@@ -2393,7 +2402,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   }
   function p360Route(){
     const m = /^#noticia=([\w-]+)$/.exec(location.hash);
-    if(m && articles[m[1]]) openArticle(m[1], true);
+    if(m && articles[m[1]]) showArticle(m[1], true);
     else if(document.getElementById('articleView').style.display === 'block') closeArticle(true);
   }
   window.addEventListener('hashchange', p360Route);
