@@ -200,6 +200,18 @@
   .fc-bottom{display:flex;align-items:center;justify-content:space-between;}
   .fc-source{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--tiffany-deep);}
   .fc-link{font-size:11px;color:var(--ink-soft);}
+  .fc-bottom{align-items:center;}
+  .fc-bottom .fc-link{margin-left:auto;}
+  .fc-newtab{margin-left:10px;font:600 11px 'Inter',sans-serif;color:var(--navy);background:transparent;border:1px solid var(--border);border-radius:14px;padding:3px 9px;cursor:pointer;white-space:nowrap;}
+  .fc-newtab:hover{border-color:var(--tiffany);color:var(--tiffany);}
+  .fc-link{white-space:nowrap;}
+  @media (max-width:560px){
+    .fc-bottom{flex-wrap:wrap;gap:8px 10px;}
+    .fc-bottom .fc-source{flex:1 1 100%;}
+    .fc-bottom .fc-link{margin-left:0;}
+    .fc-newtab{margin-left:auto;}
+  }
+
 
   .verify-note{display:flex;gap:10px;background:var(--bg-card);border:1px dashed var(--line);
     border-radius:12px;padding:14px 16px;margin:20px 18px 0;font-size:12.5px;color:var(--ink-soft);}
@@ -412,7 +424,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">7 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">5 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">51%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">49%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -420,12 +432,12 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('pesquisas-19out')">Pesquisas da semana</button>
+    <button class="trending-pill" onclick="openArticle('realtime-2turno-20out')">Real Time: 52 x 48</button>
+    <button class="trending-pill" onclick="openArticle('lula-sbt-19out')">Lula no SBT</button>
     <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band</button>
-    <button class="trending-pill" onclick="openArticle('checagem-debate-band-18out')">Checagem do debate</button>
-    <button class="trending-pill" onclick="openArticle('pesquisas-7dias-18out')">11 de 13 pesquisas</button>
-    <button class="trending-pill" onclick="openArticle('luchsinger-cnn-17out')">Caso Luchsinger</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
-    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar e Ibovespa</button>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
 
   <!-- FEED TAB -->
@@ -437,6 +449,30 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="pesquisas-19out" role="button" tabindex="0" onclick="openArticle('pesquisas-19out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-19out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">19 out</span></div>
+        <p class="fc-headline">Atlas, PoderData, Futura e BTG/Nexus: Flávio segue à frente em votos válidos, com diferença de 0,6 a 4 pontos; Lula sobe no Atlas.</p>
+        <div class="fc-bottom"><span class="fc-source">● CartaCapital / Gazeta do Povo / Exame</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="realtime-2turno-20out" role="button" tabindex="0" onclick="openArticle('realtime-2turno-20out')" onkeypress="if(event.key=='Enter')openArticle('realtime-2turno-20out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">RT</div><span class="fc-cand">Pesquisa Real Time Big Data</span><span class="fc-dot"></span><span class="fc-time">20 out</span></div>
+        <p class="fc-headline">Real Time Big Data: Flávio tem 52% e Lula 48% dos votos válidos no 2º turno; na estimulada, 48% a 45%.</p>
+        <div class="fc-bottom"><span class="fc-source">● SBT News / Gazeta do Povo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="lula-sbt-19out" role="button" tabindex="0" onclick="openArticle('lula-sbt-19out')" onkeypress="if(event.key=='Enter')openArticle('lula-sbt-19out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🎙️</div><span class="fc-cand">Lula no SBT</span><span class="fc-dot"></span><span class="fc-time">19 out</span></div>
+        <p class="fc-headline">Lula diz no SBT que autorizará quebra dos próprios sigilos e desafia Flávio a fazer o mesmo; SBT convidou Flávio para quarta (21).</p>
+        <div class="fc-bottom"><span class="fc-source">● Congresso em Foco / SBT News</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="focus-19out" role="button" tabindex="0" onclick="openArticle('focus-19out')" onkeypress="if(event.key=='Enter')openArticle('focus-19out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📈</div><span class="fc-cand">Boletim Focus</span><span class="fc-dot"></span><span class="fc-time">19 out</span></div>
+        <p class="fc-headline">Focus: IPCA de 2026 fica em 5,22%, acima do teto da meta; PIB cai para 1,83% e Selic projetada segue em 13,25%.</p>
+        <div class="fc-bottom"><span class="fc-source">● InfoMoney / Banco Central</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="debate-band-18out" role="button" tabindex="0" onclick="openArticle('debate-band-18out')" onkeypress="if(event.key=='Enter')openArticle('debate-band-18out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate na Band</span><span class="fc-dot"></span><span class="fc-time">18 out</span></div>
@@ -470,7 +506,7 @@
 
       <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-19-22out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-19-22out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-19-22out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Última semana: AtlasIntel sai na segunda (19), Real Time Big Data na terça (20), Quaest e Palver na quarta (21), PoderData e Datafolha na quinta (22).</p>
+        <p class="fc-headline">Última semana: Atlas e Real Time Big Data já saíram; Quaest e Palver saem na quarta (21), PoderData e Datafolha na quinta (22).</p>
         <div class="fc-bottom"><span class="fc-source">● Diário do Pará</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
@@ -824,7 +860,7 @@
   <!-- GEOPOLÍTICA TAB -->
   <div class="tab-panel" id="tab-geopolitica">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Geopolítica — todos os continentes</h2><span class="count">18 out</span></div>
+      <div class="section-title"><h2>Geopolítica — todos os continentes</h2><span class="count">20 out</span></div>
       <div class="notice"><b>Como ler —</b> use os botões para filtrar por região. Cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
       <div class="geo-filter" id="geoFilter" role="tablist" aria-label="Filtrar por região"></div>
       <div id="geoList"></div>
@@ -922,8 +958,13 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 18 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 20 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Real Time Big Data</td><td>48%</td><td><b>52%</b></td><td>15–19 out</td></tr>
+        <tr><td class="theme-col">PoderData/Aya</td><td>48%</td><td><b>52%</b></td><td>16–18 out</td></tr>
+        <tr><td class="theme-col">AtlasIntel</td><td>48,9%</td><td><b>51,1%</b></td><td>13–18 out</td></tr>
+        <tr><td class="theme-col">BTG/Nexus</td><td>49,7%</td><td><b>50,3%</b></td><td>16–18 out</td></tr>
+        <tr><td class="theme-col">Futura</td><td>49,6%</td><td><b>50,4%</b></td><td>pub. 19 out</td></tr>
         <tr><td class="theme-col">Vox Brasil</td><td><b>51%</b></td><td>49%</td><td>15–17 out</td></tr>
         <tr><td class="theme-col">Gerp</td><td>48%</td><td><b>52%</b></td><td>14–16 out</td></tr>
         <tr><td class="theme-col">Futura</td><td>49%</td><td><b>51%</b></td><td>14–15 out</td></tr>
@@ -975,11 +1016,13 @@
       </tbody></table></div>
       <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 17 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 20 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Real Time Big Data</td><td>45%</td><td><b>48%</b></td><td>20 out</td></tr>
+            <tr><td class="theme-col">AtlasIntel</td><td>47,6%</td><td><b>49,8%</b></td><td>19 out</td></tr>
             <tr><td class="theme-col">Ipespe/Abrapel</td><td>46%</td><td><b>48%</b></td><td>17 out</td></tr>
             <tr><td class="theme-col">Datafolha</td><td>45%</td><td><b>47%</b></td><td>15 out</td></tr>
             <tr><td class="theme-col">Quaest</td><td>44%</td><td><b>46%</b></td><td>14 out</td></tr>
@@ -994,7 +1037,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam. O Poder360 compilou 13 pesquisas: Flávio está numericamente à frente em 11, o PoderData/Aya (13 a 15 de out) mostra empate em 50% e a Vox Brasil (15 a 17 de out) dá 51% a 49% para Lula. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam. Nas rodadas de 19 e 20 de outubro, Flávio aparece à frente em votos válidos em todas: PoderData/Aya e Real Time Big Data com 52% a 48%, AtlasIntel com 51,1% a 48,9% (Lula subiu em relação à rodada anterior), Futura com 50,4% a 49,6% e BTG/Nexus com 50,3% a 49,7%. A Vox Brasil (15 a 17 de out) segue como a única com Lula à frente. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -1028,15 +1071,15 @@
       </tbody></table></div>
       <p class="compare-note">Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
-      <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Boletim Focus — expectativas do mercado</h2><span class="count">13 out</span></div>
-      <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Projeção para o fim de 2026</th><th>Agora</th><th>Semana anterior</th></tr></thead><tbody>
-        <tr><td class="theme-col">Inflação (IPCA)</td><td><b>5,22%</b></td><td>5,01%</td></tr>
-        <tr><td class="theme-col">Selic</td><td><b>13,25%</b></td><td>13,50%</td></tr>
-        <tr><td class="theme-col">PIB</td><td><b>1,85%</b></td><td>1,85%</td></tr>
-        <tr><td class="theme-col">Dólar</td><td><b>R$ 5,14</b></td><td>—</td></tr>
+      <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Boletim Focus — expectativas do mercado</h2><span class="count">19 out</span></div>
+      <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Projeção para o fim de 2026</th><th>19 out</th><th>13 out</th></tr></thead><tbody>
+        <tr><td class="theme-col">Inflação (IPCA)</td><td><b>5,22%</b></td><td>5,22%</td></tr>
+        <tr><td class="theme-col">Selic</td><td><b>13,25%</b></td><td>13,25%</td></tr>
+        <tr><td class="theme-col">PIB</td><td><b>1,83%</b></td><td>1,85%</td></tr>
+        <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
-      <p class="compare-note">A projeção de inflação subiu pela quarta semana seguida e está acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,30% e Selic de 12%. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, BPMoney, Poder360 e DGABC.</p>
+      <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 16 de outubro, o último que consegui confirmar.</p>
     </section>
   </div>
 
@@ -1074,7 +1117,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 18 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 20 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1113,6 +1156,75 @@
 
 <script>
   const articles = {
+    "pesquisas-19out": {
+      source: "CartaCapital / Gazeta do Povo / Exame", date: "19 out", url: "https://www.cartacapital.com.br/politica/lula-sobe-mas-flavio-segue-a-frente-no-2o-turno-indica-atlasintel/",
+      title: "Pesquisas de 19 e 20 de outubro: Flávio segue à frente, com diferença de 0,6 a 4 pontos",
+      body: [
+        "Segundo a CartaCapital, o AtlasIntel divulgado em 19 de outubro mostra Flávio Bolsonaro com 49,8% e Lula com 47,6% nos votos totais, e 51,1% a 48,9% em válidos. Lula subiu em relação à rodada anterior do instituto. Foram 4.998 entrevistas digitais, de 13 a 18 de outubro, com registro BR-02418/2026, e a coleta é anterior ao debate da Band.",
+        "A rodada do PoderData/Aya (16 a 18 de outubro) mostra 52% a 48% para Flávio em votos válidos, contra 50% a 50% na rodada de 13 a 15 de outubro. O BTG/Nexus (16 a 18 de outubro) tem 50,3% a 49,7%, em empate técnico, e a Futura, 50,4% a 49,6%.",
+        "Nenhuma dessas pesquisas capta por inteiro o efeito do debate da Band, e as próximas, previstas para 21 e 22 de outubro, já terão coleta posterior ao confronto."
+      ]
+    },
+    "realtime-2turno-20out": {
+      source: "SBT News / Gazeta do Povo", date: "20 out", url: "https://sbtnews.sbt.com.br/noticia/eleicoes/real-time-flavio-tem-52-dos-votos-validos-lula-48",
+      title: "Real Time Big Data: Flávio tem 52% e Lula 48% dos votos válidos",
+      body: [
+        "Segundo o SBT News, a pesquisa Real Time Big Data divulgada em 20 de outubro mostra Flávio Bolsonaro com 52% dos votos válidos no 2º turno e Lula com 48%. No voto estimulado, são 48% para Flávio e 45% para Lula; no espontâneo, 47% a 44%.",
+        "De acordo com a Gazeta do Povo, foram 2.000 entrevistas por telefone, de 15 a 19 de outubro, com registro BR-02952/2026 no TSE. É uma das primeiras rodadas com parte da coleta feita depois do debate da Band."
+      ]
+    },
+    "lula-sbt-19out": {
+      source: "Congresso em Foco / SBT News", date: "19 out", url: "https://www.congressoemfoco.com.br/noticia/123404/quebra-de-sigilo-emendas-e-seguranca-veja-destaques-de-lula-no-sbt",
+      title: "Lula no SBT: quebra de sigilo, emendas, segurança e reforma do Judiciário",
+      body: [
+        "Segundo o Congresso em Foco, Lula foi entrevistado em 19 de outubro no SBT Brasil e disse esperar vencer no 1º turno, mas negou ter subestimado Flávio. Ele afirmou que trabalha para recuperar apoio no Sul, vencer em Minas Gerais e reduzir a vantagem de Flávio em São Paulo.",
+        "Lula voltou a desafiar Flávio a autorizar a quebra dos sigilos bancário e telefônico dos dois candidatos e de seus familiares, e disse que ele e a família preparam procurações para entregar ao STF e ao TSE. O SBT News informa que ele vai oficializar a intenção na Justiça. Flávio não confirmou, no debate da Band, se aceitaria.",
+        "Na segurança, Lula defendeu reduzir a maioridade penal para 16 anos em crimes hediondos, manter as saídas temporárias de presos com bom comportamento, criar o Ministério da Segurança Pública depois da aprovação da PEC e dobrar os efetivos da PF e da PRF. Defendeu ainda mandato para ministros do STF e disse que usará emendas parlamentares para financiar ônibus de graça nos fins de semana, que o deputado Jilmar Tatto estima custar R$ 16 bilhões por ano.",
+        "Sobre as medidas econômicas recentes, como o reajuste do Bolsa Família e o perdão de dívidas de MEIs, Lula negou finalidade eleitoral. O SBT convidou Flávio para uma sabatina na quarta-feira, 21, mas ele ainda não havia confirmado."
+      ]
+    },
+    "focus-19out": {
+      source: "InfoMoney / Banco Central", date: "19 out", url: "https://www.infomoney.com.br/economia/boletim-focus-projecoes-19102026/",
+      title: "Focus: IPCA de 2026 fica em 5,22%, PIB cai para 1,83% e Selic segue em 13,25%",
+      body: [
+        "Segundo o InfoMoney, o Boletim Focus de 19 de outubro manteve em 5,22% a projeção do IPCA de 2026, acima do teto da meta, de 4,5%, e reduziu de 1,85% para 1,83% a do PIB. A previsão do dólar ao fim de 2026 caiu de R$ 5,15 para R$ 5,13, e a da Selic ficou em 13,25%.",
+        "Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%, esta última pela 18ª semana seguida. A Selic atual é de 13,75%, depois do corte do Copom em setembro."
+      ]
+    },
+    "ormuz-minas-20out": {
+      source: "Observador / Euronews", date: "20 out", url: "https://observador.pt/liveblogs/trump-admite-reunir-se-com-putin-e-xi-jinping-sem-zelensky-para-acabar-com-a-guerra-na-ucrania/",
+      title: "Ormuz: novos petroleiros atingidos por minas; Irã pede reunião de emergência da ONU",
+      body: [
+        "Segundo o Observador, o Irã disse em 20 de outubro que dois petroleiros foram atingidos por minas no Estreito de Ormuz e que derrubou um drone americano sobre a região. Teerã também pediu reunião de emergência do Conselho de Segurança da ONU por causa da ameaça de uso da “mãe de todas as bombas”.",
+        "Um resumo de geopolítica de 19 de outubro registra que um terceiro petroleiro pegou fogo depois de atingir uma mina, e que o Irã mantém a oferta de reabrir o estreito em sete dias e anunciou um “novo plano operacional” se os EUA retomarem os ataques. Países do Golfo cobraram diálogo entre Washington e Teerã, segundo a Brasil 247."
+      ]
+    },
+    "ucrania-trilateral-20out": {
+      source: "Euronews / Observador", date: "20 out", url: "https://pt.euronews.com/2026/10/19/putin-quer-cimeira-sobre-ucrania-com-trump-e-xi-mas-recusa-negociacoes-com-zelenskyy",
+      title: "Ucrânia: Putin quer cúpula com Trump e Xi; enviado de Trump vai à Rússia",
+      body: [
+        "Segundo a Euronews, Putin propôs, em telefonema com Trump em 9 de outubro, uma cúpula sobre a Ucrânia com Trump e Xi Jinping, mas recusa negociar diretamente com Zelensky. Da conversa saiu também um acordo polêmico sobre exportações de diesel russo. Em 16 de outubro, Trump suspendeu novas sanções e tarifas contra a Rússia e países que comercializam com ela, poucos dias antes de entrarem em vigor.",
+        "O Observador informa que o enviado Steve Witkoff vai a São Petersburgo em 21 de outubro para propor um encontro entre Zelensky, Putin e Trump, segundo o Politico. Na noite de 20 de outubro, a Rússia lançou 165 drones contra a Ucrânia, e a Força Aérea ucraniana diz ter interceptado 115. Zelensky disse estar pronto para negociar e quer uma reunião trilateral."
+      ]
+    },
+    "franca-protestos-19out": {
+      source: "O Povo / Portal Terra da Luz", date: "19 out", url: "https://www.opovo.com.br/noticias/mundo/2026/10/20/franca-impoe-toques-de-recolher-apos-violencia-em-protestos.html",
+      title: "França impõe toques de recolher depois de protestos violentos",
+      body: [
+        "Segundo O Povo, o governo francês pediu em 19 de outubro que autoridades locais imponham toques de recolher, depois de protestos contra o aumento do custo de vida que terminaram em violência no fim de semana. Em Paris, a polícia anunciou toque de recolher na Praça da República e em Les Halles.",
+        "O primeiro-ministro Sébastien Lecornu não descartou declarar estado de emergência. Macron criticou a atuação das forças de segurança, mas rejeitou a saída do ministro do Interior. A maioria das manifestações foi pacífica, mas grupos violentos entraram em confronto com a polícia, saquearam lojas e incendiaram prédios.",
+        "O Portal Terra da Luz informa que os protestos tiveram também a educação como pauta, que houve mortos e feridos e que mais de 2 mil pessoas foram presas. O número de mortos e de presos não foi confirmado nas outras fontes que consultei."
+      ]
+    },
+    "mundo-19out": {
+      source: "Euronews", date: "19 out", url: "https://www.euronews.com/news/international",
+      title: "Mundo em 19 de outubro: Trump apoia Netanyahu, PMA corta ajuda em Gaza e protestos “No Kings” nos EUA",
+      body: [
+        "Segundo a Euronews, Trump declarou apoio à reeleição do primeiro-ministro de Israel, Benjamin Netanyahu, em 19 de outubro. O apoio tardio vem quando as estratégias dos dois sobre Irã e Gaza divergem, e Trump avisou que os EUA podem não “fazer esse trabalho” se Israel trocar de líder.",
+        "O Programa Mundial de Alimentos estima que 500 mil pessoas deixarão de receber ajuda alimentar em Gaza. As famílias que mantiverem o auxílio receberão rações e dinheiro menores, embora dois terços da população do território ainda precisem de ajuda para sobreviver.",
+        "Também em 19 de outubro, a Euronews registrou milhares de pessoas em atos do movimento “No Kings” contra Trump em todo o país. A Brasil 247 informa, sem detalhar o instituto, que a aprovação de Trump chegou a mínimas históricas a duas semanas das eleições de meio de mandato."
+      ]
+    },
     "debate-band-18out": {
       source: "Jovem Pan / Ric / A Crítica de Campo Grande / Congresso em Foco", date: "18 out", url: "https://jovempan.com.br/politica/debate-band-jovem-pan-lula-e-flavio-travam-confronto-com-troca-de-acusacoes-pessoais/",
       title: "Debate na Band: Lula e Flávio trocam acusações sobre Master, Dark Horse e Luchsinger",
@@ -2013,7 +2125,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + COMMENTS_HTML;
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="openArticleNewTab(this.dataset.id)">↗ Abrir em nova guia</button>' + COMMENTS_HTML;
     view.style.display = 'block';
     window.scrollTo({top:0, behavior:'smooth'});
   }
@@ -2078,7 +2190,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
       '<div class="article-header"><span class="article-source">' + a.source + '</span><span class="article-date">' + a.date + '</span></div>' +
       '<h1 class="article-title">' + a.title + '</h1>' +
       '<div class="article-body">' + a.body.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</div>' +
-      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + COMMENTS_HTML;
+      '<a class="article-original-link" href="' + a.url + '" target="_blank" rel="noopener">Ver matéria original na fonte &#8599;</a>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="shareArticle(this.dataset.id)">🔗 Copiar link desta notícia</button>' + '<button type="button" class="share-btn" data-id="' + id + '" onclick="openArticleNewTab(this.dataset.id)">↗ Abrir em nova guia</button>' + COMMENTS_HTML;
     view.style.display = 'block';
     if(window.p360OpenComments) window.p360OpenComments(id);
     // make sure we're on the feed tab so the article is visible
@@ -2195,8 +2307,9 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
   (function(){
     const GEO = [
-      ['ucrania-ataques-16out','Europa'],['ue-cupula-sancoes-16out','Europa'],
-      ['ira-petroleiro-mina-17out','Oriente Médio'],['houthis-arabia-saudita-17out','Oriente Médio'],
+      ['ucrania-trilateral-20out','Europa'],['franca-protestos-19out','Europa'],['ucrania-ataques-16out','Europa'],['ue-cupula-sancoes-16out','Europa'],
+      ['ormuz-minas-20out','Oriente Médio'],['ira-petroleiro-mina-17out','Oriente Médio'],['houthis-arabia-saudita-17out','Oriente Médio'],
+      ['mundo-19out','Global'],
       ['etiopia-tigre-16out','África'],['rdc-ebola-belgica-17out','África'],['sahel-sudao-16out','África'],
       ['taiwan-china-14out','Ásia'],['china-flavio-10out','Ásia'],
       ['trump-eleicao-brasil-7out','Américas'],['midterms-agenda-externa-16out','Américas'],
@@ -2214,7 +2327,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     function card(id, region){
       const a = articles[id];
       const c = document.createElement('div');
-      c.className = 'feed-card'; c.setAttribute('role','button'); c.tabIndex = 0;
+      c.className = 'feed-card'; c.dataset.id = id; c.setAttribute('role','button'); c.tabIndex = 0;
       c.addEventListener('click', () => openArticle(id));
       c.addEventListener('keypress', (e) => { if(e.key === 'Enter') openArticle(id); });
       const top = document.createElement('div'); top.className = 'fc-top';
@@ -2234,6 +2347,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     function render(){
       box.textContent = '';
       GEO.filter((x) => current === 'Todos' || x[1] === current).forEach((x) => box.appendChild(card(x[0], x[1])));
+      if(window.p360AddNewTabButtons) window.p360AddNewTabButtons(box);
       Array.prototype.forEach.call(bar.children, (b) => b.classList.toggle('active', b.dataset.r === current));
     }
     REGIONS.forEach((r) => {
@@ -2377,15 +2491,43 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     t.textContent = text; t.style.opacity = '1';
     clearTimeout(p360Toast.t); p360Toast.t = setTimeout(function(){ t.style.opacity = '0'; }, 2600);
   }
-  // Clique em qualquer notícia (feed, Geopolítica, atalhos): abre em uma nova aba do navegador
-  function openArticle(id, fromRoute){
-    if(fromRoute === true){ showArticle(id, true); return; }
+  // Clique normal: lê a notícia no próprio site. A nova guia é uma opção (botão ↗ ou Ctrl/Cmd+clique).
+  function openArticle(id, fromRoute){ showArticle(id, fromRoute); }
+  function openArticleNewTab(id){
     if(!articles[id]) return;
     var url = location.href.split('#')[0] + '#noticia=' + id;
     var w = window.open(url, '_blank');
     if(w){ try{ w.opener = null; }catch(e){} }
-    else { showArticle(id); }  // se o navegador bloquear a nova aba, abre aqui mesmo
   }
+  // Ctrl/Cmd+clique ou clique do meio num cartão: abre em nova guia
+  function p360CardId(el){
+    var c = el.closest && el.closest('.feed-card');
+    return c ? (c.dataset.id || null) : null;
+  }
+  document.addEventListener('click', function(e){
+    if(!(e.ctrlKey || e.metaKey)) return;
+    var id = p360CardId(e.target); if(!id) return;
+    e.preventDefault(); e.stopPropagation(); openArticleNewTab(id);
+  }, true);
+  document.addEventListener('auxclick', function(e){
+    if(e.button !== 1) return;
+    var id = p360CardId(e.target); if(!id) return;
+    e.preventDefault(); openArticleNewTab(id);
+  }, true);
+  // botão "↗ nova guia" em cada cartão
+  function p360AddNewTabButtons(root){
+    (root || document).querySelectorAll('.feed-card[data-id]').forEach(function(c){
+      if(c.querySelector('.fc-newtab')) return;
+      var bt = c.querySelector('.fc-bottom'); if(!bt) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'fc-newtab'; b.title = 'Abrir em nova guia'; b.setAttribute('aria-label','Abrir em nova guia');
+      b.textContent = '↗ nova guia';
+      b.addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); openArticleNewTab(c.dataset.id); });
+      b.addEventListener('keypress', function(e){ e.stopPropagation(); });
+      bt.appendChild(b);
+    });
+  }
+  window.addEventListener('load', function(){ p360AddNewTabButtons(); });
   function articleLink(id){ return location.origin + '/noticia/' + id + '/'; }
   function shareArticle(id){
     const a = articles[id]; if(!a) return;
