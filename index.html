@@ -424,7 +424,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">5 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">4 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">51%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">49%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -432,10 +432,10 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('quaest-2turno-21out')">Quaest: 45 x 44</button>
+    <button class="trending-pill" onclick="openArticle('sigilos-21out')">Disputa pelos sigilos</button>
+    <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo (23)</button>
     <button class="trending-pill" onclick="openArticle('pesquisas-19out')">Pesquisas da semana</button>
-    <button class="trending-pill" onclick="openArticle('realtime-2turno-20out')">Real Time: 52 x 48</button>
-    <button class="trending-pill" onclick="openArticle('lula-sbt-19out')">Lula no SBT</button>
-    <button class="trending-pill" onclick="openArticle('debate-band-18out')">Debate na Band</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -449,6 +449,30 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="quaest-2turno-21out" role="button" tabindex="0" onclick="openArticle('quaest-2turno-21out')" onkeypress="if(event.key=='Enter')openArticle('quaest-2turno-21out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">QU</div><span class="fc-cand">Pesquisa Quaest</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
+        <p class="fc-headline">Quaest: Flávio tem 45% e Lula 44% no 2º turno, empate técnico; a rejeição de Lula cai de 53% para 47% e a de Flávio, de 54% para 52%.</p>
+        <div class="fc-bottom"><span class="fc-source">● InfoMoney / Exame / Quaest</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="sigilos-21out" role="button" tabindex="0" onclick="openArticle('sigilos-21out')" onkeypress="if(event.key=='Enter')openArticle('sigilos-21out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">🔓</div><span class="fc-cand">Sigilos</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
+        <p class="fc-headline">Flávio aceita abrir sigilos com 19 condições, e a campanha de Lula diz aceitar todas; resposta de Lula será protocolada no TSE na quinta (22), às 11h.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Brasil / Metrópoles / Terra</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="gerp-2turno-21out" role="button" tabindex="0" onclick="openArticle('gerp-2turno-21out')" onkeypress="if(event.key=='Enter')openArticle('gerp-2turno-21out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">GE</div><span class="fc-cand">Pesquisa Gerp</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
+        <p class="fc-headline">Gerp: Flávio tem 53% e Lula 47% dos votos válidos no 2º turno, contra 52% a 48% na rodada anterior.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Gerp</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="debate-globo-23out" role="button" tabindex="0" onclick="openArticle('debate-globo-23out')" onkeypress="if(event.key=='Enter')openArticle('debate-globo-23out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
+        <p class="fc-headline">Debate da Globo é sexta (23), às 21h20, com mediação de César Tralli; campanhas assinaram as regras e confirmaram presença.</p>
+        <div class="fc-bottom"><span class="fc-source">● Exame / Folha / UOL</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="pesquisas-19out" role="button" tabindex="0" onclick="openArticle('pesquisas-19out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-19out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">19 out</span></div>
@@ -506,7 +530,7 @@
 
       <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-19-22out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-19-22out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-19-22out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Última semana: Atlas e Real Time Big Data já saíram; Quaest e Palver saem na quarta (21), PoderData e Datafolha na quinta (22).</p>
+        <p class="fc-headline">Última semana: Atlas, Real Time Big Data, Quaest e Gerp já saíram; PoderData e Datafolha saem na quinta (22).</p>
         <div class="fc-bottom"><span class="fc-source">● Diário do Pará</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
@@ -958,8 +982,10 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 20 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 21 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Gerp</td><td>47%</td><td><b>53%</b></td><td>19–21 out</td></tr>
+        <tr><td class="theme-col">Quaest*</td><td>49%</td><td><b>51%</b></td><td>17–20 out</td></tr>
         <tr><td class="theme-col">Real Time Big Data</td><td>48%</td><td><b>52%</b></td><td>15–19 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>48%</td><td><b>52%</b></td><td>16–18 out</td></tr>
         <tr><td class="theme-col">AtlasIntel</td><td>48,9%</td><td><b>51,1%</b></td><td>13–18 out</td></tr>
@@ -1016,11 +1042,12 @@
       </tbody></table></div>
       <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 20 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 21 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Quaest</td><td>44%</td><td><b>45%</b></td><td>21 out</td></tr>
             <tr><td class="theme-col">Real Time Big Data</td><td>45%</td><td><b>48%</b></td><td>20 out</td></tr>
             <tr><td class="theme-col">AtlasIntel</td><td>47,6%</td><td><b>49,8%</b></td><td>19 out</td></tr>
             <tr><td class="theme-col">Ipespe/Abrapel</td><td>46%</td><td><b>48%</b></td><td>17 out</td></tr>
@@ -1037,7 +1064,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam. Nas rodadas de 19 e 20 de outubro, Flávio aparece à frente em votos válidos em todas: PoderData/Aya e Real Time Big Data com 52% a 48%, AtlasIntel com 51,1% a 48,9% (Lula subiu em relação à rodada anterior), Futura com 50,4% a 49,6% e BTG/Nexus com 50,3% a 49,7%. A Vox Brasil (15 a 17 de out) segue como a única com Lula à frente. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam. Nas rodadas de 19 a 21 de outubro, Flávio aparece à frente em votos válidos em todas: Gerp com 53% a 47%, PoderData/Aya e Real Time Big Data com 52% a 48%, AtlasIntel com 51,1% a 48,9%, Futura com 50,4% a 49,6% e BTG/Nexus com 50,3% a 49,7%. A Quaest (17 a 20 de out, 2.154 entrevistas, margem de 2 pontos, registro BR-08535/2026) mostra 45% a 44% nos votos totais, empate técnico. A Vox Brasil (15 a 17 de out) segue como a única com Lula à frente. *Nas matérias que li, a Quaest não informou os votos válidos, e o 49% a 51% é cálculo próprio a partir dos votos totais. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -1117,7 +1144,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 20 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 21 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1156,6 +1183,41 @@
 
 <script>
   const articles = {
+    "quaest-2turno-21out": {
+      source: "InfoMoney / Exame / Sem Pauta News", date: "21 out", url: "https://www.infomoney.com.br/politica/quaest-no-segundo-turno-flavio-bolsonaro-tem-45-e-lula-44/",
+      title: "Quaest: Flávio 45% e Lula 44%; rejeição de Lula cai de 53% para 47%",
+      body: [
+        "Segundo o InfoMoney, a pesquisa Quaest divulgada em 21 de outubro, a primeira depois do debate da Band, mostra Flávio Bolsonaro com 45% e Lula com 44% no 2º turno, empate técnico. Brancos e nulos somam 9% e os indecisos, 2%. Na rodada de 14 de outubro, Flávio tinha 46% e Lula 44%.",
+        "A rejeição de Lula caiu de 53% para 47%, a maior oscilação entre pesquisas da Quaest nesta eleição, e a de Flávio foi de 54% para 52%. Segundo o Sem Pauta News, 44% dos entrevistados temem a volta da família Bolsonaro ao poder e 42% temem mais um mandato de Lula.",
+        "A Exame informa que, entre os eleitores de Augusto Cury no 1º turno, Lula tem 48% e Flávio 33%. Entre os de Ronaldo Caiado, Flávio tem 57% e Lula 21%, e entre os de Renan Santos, 51% a 25% para Flávio. Foram 2.154 entrevistas, de 17 a 20 de outubro, com margem de 2 pontos e registro BR-08535/2026, encomendadas pela Globo."
+      ]
+    },
+    "sigilos-21out": {
+      source: "Agência Brasil / Metrópoles / Terra / Times Brasil", date: "21 out", url: "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/lula-aceita-proposta-de-flavio-para-quebra-de-sigilo-bancario",
+      title: "Disputa pelos sigilos: Flávio impõe condições e campanha de Lula diz aceitá-las",
+      body: [
+        "Segundo o Terra, Flávio Bolsonaro respondeu em 21 de outubro, ao ministro André Mendonça no TSE, ao desafio de Lula no debate da Band para abrirem os sigilos. Ele condicionou a abertura dos próprios sigilos dos últimos 20 anos à quebra de dados de assessores de Lula, entre eles o ex-chefe de gabinete Marco Aurélio Santana Ribeiro, o Marcola, de empresas dos filhos do presidente, do Instituto Lula e de gastos oficiais, como o cartão corporativo.",
+        "A Agência Brasil informa que Flávio também exigiu que Lula torne públicos os registros de entrada da empresária Roberta Luchsinger no Palácio do Planalto e quebre os sigilos de José Ferreira da Silva, o Frei Chico, irmão do presidente. O Times Brasil registra que ele falou em Guarulhos e que as condições somam 19 itens.",
+        "À tarde, o senador Camilo Santana, coordenador político da campanha de Lula, disse que o presidente “não se opõe a absolutamente nada” do que Flávio propôs, desde que ele também abra os seus. A campanha petista vai protocolar a resposta no TSE na quinta-feira, 22, às 11h, e dá o mesmo prazo para Flávio. O Brasil 247 informa que Lula já havia apresentado ao TSE uma petição autorizando a divulgação de seus sigilos bancário, fiscal e eletrônico."
+      ]
+    },
+    "gerp-2turno-21out": {
+      source: "CNN Brasil / Gerp", date: "21 out", url: "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-53-dos-votos-validos-no-2o-turno-lula-47-2/",
+      title: "Gerp: Flávio tem 53% e Lula 47% dos votos válidos no 2º turno",
+      body: [
+        "Segundo a CNN Brasil, a pesquisa do instituto Gerp divulgada em 21 de outubro mostra Flávio Bolsonaro com 53% dos votos válidos no 2º turno e Lula com 47%. Na rodada anterior, era 52% a 48%.",
+        "Foram 2.400 entrevistas com eleitores de todo o país, de 19 a 21 de outubro, com margem de erro de 2 pontos para mais ou para menos."
+      ]
+    },
+    "debate-globo-23out": {
+      source: "Exame / Folha de S.Paulo / UOL", date: "21 out", url: "https://exame.com/brasil/debate-da-globo-entre-lula-e-flavio-bolsonaro-veja-data-horario-regras-e-como-assistir/",
+      title: "Debate da Globo é sexta (23), às 21h20: veja regras e como assistir",
+      body: [
+        "Segundo a Exame, a Globo realiza em 23 de outubro, às 21h20, o último debate do 2º turno, dois dias antes da votação. O encontro será nos Estúdios Globo, no Rio de Janeiro, com mediação de César Tralli, e transmitido pela TV Globo, GloboNews e g1.",
+        "As campanhas assinaram as regras e confirmaram presença. A Folha de S.Paulo informa que o debate tem três blocos e que, no segundo, cada candidato escolhe seis entre dez temas definidos pela produção. A equipe de Lula sugeriu checagem em tempo real das falas, e as regras podem receber ajustes até sexta.",
+        "O governador Tarcísio de Freitas disse em ato de campanha que Lula estaria “arrumando desculpa” para não ir, e o UOL informou que a campanha do presidente afirma que ele participará."
+      ]
+    },
     "pesquisas-19out": {
       source: "CartaCapital / Gazeta do Povo / Exame", date: "19 out", url: "https://www.cartacapital.com.br/politica/lula-sobe-mas-flavio-segue-a-frente-no-2o-turno-indica-atlasintel/",
       title: "Pesquisas de 19 e 20 de outubro: Flávio segue à frente, com diferença de 0,6 a 4 pontos",
@@ -1200,11 +1262,12 @@
       ]
     },
     "ucrania-trilateral-20out": {
-      source: "Euronews / Observador", date: "20 out", url: "https://pt.euronews.com/2026/10/19/putin-quer-cimeira-sobre-ucrania-com-trump-e-xi-mas-recusa-negociacoes-com-zelenskyy",
-      title: "Ucrânia: Putin quer cúpula com Trump e Xi; enviado de Trump vai à Rússia",
+      source: "Euronews / Observador / Money Times", date: "21 out", url: "https://observador.pt/2026/10/21/witkoff-destaca-reunioes-construtivas-com-zelensky-putin-e-lideres-europeus-reuniao-trilateral-pode-acontecer-nos-emirados/",
+      title: "Ucrânia: Putin aceita reunião trilateral proposta por Witkoff",
       body: [
-        "Segundo a Euronews, Putin propôs, em telefonema com Trump em 9 de outubro, uma cúpula sobre a Ucrânia com Trump e Xi Jinping, mas recusa negociar diretamente com Zelensky. Da conversa saiu também um acordo polêmico sobre exportações de diesel russo. Em 16 de outubro, Trump suspendeu novas sanções e tarifas contra a Rússia e países que comercializam com ela, poucos dias antes de entrarem em vigor.",
-        "O Observador informa que o enviado Steve Witkoff vai a São Petersburgo em 21 de outubro para propor um encontro entre Zelensky, Putin e Trump, segundo o Politico. Na noite de 20 de outubro, a Rússia lançou 165 drones contra a Ucrânia, e a Força Aérea ucraniana diz ter interceptado 115. Zelensky disse estar pronto para negociar e quer uma reunião trilateral."
+        "Segundo o Observador, o enviado de Trump, Steve Witkoff, propôs em 21 de outubro, no Palácio Constantino, em São Petersburgo, uma reunião trilateral com Putin e Zelensky, e o Kremlin disse à Reuters que Putin aceitou. Witkoff afirmou ter tido reuniões “construtivas” com Zelensky, Putin e líderes europeus, e que as negociações continuam em nível técnico entre Washington, Kiev e Moscou. O encontro pode ocorrer nos Emirados Árabes.",
+        "De acordo com o presidente da Finlândia, Alexander Stubb, o enviado apresentaria um plano de cessar-fogo parcial com três eixos: parar os ataques à infraestrutura de energia, uma moratória de combates no Mar Negro para retomar as exportações de grãos e conversas políticas. A TASS informa que Putin e Witkoff também falaram de um possível encontro entre Putin, Xi Jinping e Trump, a ser preparado pela China durante a cúpula da APEC, em novembro.",
+        "A Euronews lembra que Putin propôs a cúpula com Trump e Xi em telefonema de 9 de outubro, mas recusava negociar diretamente com Zelensky, e que Trump suspendeu em 16 de outubro novas sanções e tarifas contra a Rússia. Na noite de 20 de outubro, a Rússia lançou 165 drones contra a Ucrânia, e 115 foram interceptados. O Money Times informa que o petróleo fechou sem direção única em 21 de outubro, entre o avanço das negociações e os ataques a navios em Ormuz."
       ]
     },
     "franca-protestos-19out": {
