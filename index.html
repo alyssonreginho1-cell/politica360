@@ -424,18 +424,18 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">4 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">3 dias</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
-    <div class="e"><div class="num">51%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
-    <div class="e"><div class="num">49%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
+    <div class="e"><div class="num">50%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
+    <div class="e"><div class="num">50%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('quaest-2turno-21out')">Quaest: 45 x 44</button>
-    <button class="trending-pill" onclick="openArticle('sigilos-21out')">Disputa pelos sigilos</button>
+    <button class="trending-pill" onclick="openArticle('pesquisas-22out')">Datafolha: 50 x 50</button>
+    <button class="trending-pill" onclick="openArticle('sigilos-22out')">Disputa pelos sigilos</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo (23)</button>
-    <button class="trending-pill" onclick="openArticle('pesquisas-19out')">Pesquisas da semana</button>
+    <button class="trending-pill" onclick="openArticle('piaui-lancha-21out')">Reportagens da piauí</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -449,6 +449,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="pesquisas-22out" role="button" tabindex="0" onclick="openArticle('pesquisas-22out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-22out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">22 out</span></div>
+        <p class="fc-headline">Datafolha: Flávio e Lula empatam em 50% dos votos válidos a 3 dias do 2º turno; PoderData/Aya dá 51% a 49% para Flávio e Palver, 50% a 48%.</p>
+        <div class="fc-bottom"><span class="fc-source">● Datafolha / Poder360 / CNN Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="sigilos-22out" role="button" tabindex="0" onclick="openArticle('sigilos-22out')" onkeypress="if(event.key=='Enter')openArticle('sigilos-22out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">🔓</div><span class="fc-cand">Sigilos</span><span class="fc-dot"></span><span class="fc-time">22 out</span></div>
+        <p class="fc-headline">Campanha de Lula protocola no TSE aceite das 19 condições de Flávio; Mendonça diz que o TSE não cabe decidir a divulgação e Lula recorre.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / Gazeta do Povo / O Tempo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="dia-candidatos-22out" role="button" tabindex="0" onclick="openArticle('dia-candidatos-22out')" onkeypress="if(event.key=='Enter')openArticle('dia-candidatos-22out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📍</div><span class="fc-cand">Campanha</span><span class="fc-dot"></span><span class="fc-time">22 out</span></div>
+        <p class="fc-headline">Sem atos públicos: Flávio visita Jair Bolsonaro e cancela live; Lula faz live com André Janones; os dois se preparam para o debate da Globo.</p>
+        <div class="fc-bottom"><span class="fc-source">● Times Brasil / Agência Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="piaui-lancha-21out" role="button" tabindex="0" onclick="openArticle('piaui-lancha-21out')" onkeypress="if(event.key=='Enter')openArticle('piaui-lancha-21out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">📰</div><span class="fc-cand">Revista piauí</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
+        <p class="fc-headline">Piauí relata que Flávio participou de passeio de lancha com lobistas da Covaxin e garotas de programa em 2020 e ganhou um Rolex; ele não havia comentado.</p>
+        <div class="fc-bottom"><span class="fc-source">● Terra / Gazeta do Paraná / Brasil de Fato</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="piaui-bet-20out" role="button" tabindex="0" onclick="openArticle('piaui-bet-20out')" onkeypress="if(event.key=='Enter')openArticle('piaui-bet-20out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">📰</div><span class="fc-cand">Revista piauí</span><span class="fc-dot"></span><span class="fc-time">20 out</span></div>
+        <p class="fc-headline">Piauí: documentos ligam Flávio à Best Bet; ele consta como “usuário master” de conta da Alcazar, e ele e o amigo Willer Tomaz negam sociedade.</p>
+        <div class="fc-bottom"><span class="fc-source">● Notícias ao Minuto / Agenda do Poder</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="quaest-2turno-21out" role="button" tabindex="0" onclick="openArticle('quaest-2turno-21out')" onkeypress="if(event.key=='Enter')openArticle('quaest-2turno-21out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">QU</div><span class="fc-cand">Pesquisa Quaest</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
@@ -530,7 +560,7 @@
 
       <div class="feed-card" data-cand="all" data-id="agenda-pesquisas-19-22out" role="button" tabindex="0" onclick="openArticle('agenda-pesquisas-19-22out')" onkeypress="if(event.key=='Enter')openArticle('agenda-pesquisas-19-22out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📅</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Última semana: Atlas, Real Time Big Data, Quaest e Gerp já saíram; PoderData e Datafolha saem na quinta (22).</p>
+        <p class="fc-headline">Última semana: todas as pesquisas previstas já saíram; o Datafolha e o PoderData de quinta (22) são as últimas antes do debate da Globo.</p>
         <div class="fc-bottom"><span class="fc-source">● Diário do Pará</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
@@ -982,8 +1012,10 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 21 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 22 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Datafolha</td><td>50%</td><td>50%</td><td>20–22 out</td></tr>
+        <tr><td class="theme-col">PoderData/Aya</td><td>49%</td><td><b>51%</b></td><td>19–21 out</td></tr>
         <tr><td class="theme-col">Gerp</td><td>47%</td><td><b>53%</b></td><td>19–21 out</td></tr>
         <tr><td class="theme-col">Quaest*</td><td>49%</td><td><b>51%</b></td><td>17–20 out</td></tr>
         <tr><td class="theme-col">Real Time Big Data</td><td>48%</td><td><b>52%</b></td><td>15–19 out</td></tr>
@@ -1042,11 +1074,13 @@
       </tbody></table></div>
       <p class="compare-note">A tabela principal usa votos válidos e esta usa votos totais, por isso os números daqui são menores. Não compare as duas direto. Em votos válidos, o CNT/MDA mostra Lula com 47,8% e Flávio com 42,1%.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 21 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2 style="font-size:15px;">2º turno — Lula x Flávio, por instituto</h2><span class="count">votos totais, set a 22 out</span></div>
       <div class="compare-scroll" style="margin-top:0;">
         <table class="compare-table" style="min-width:0;">
           <thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Data</th></tr></thead>
           <tbody>
+            <tr><td class="theme-col">Datafolha</td><td>46%</td><td><b>47%</b></td><td>22 out</td></tr>
+            <tr><td class="theme-col">Palver</td><td>48%</td><td><b>50%</b></td><td>22 out</td></tr>
             <tr><td class="theme-col">Quaest</td><td>44%</td><td><b>45%</b></td><td>21 out</td></tr>
             <tr><td class="theme-col">Real Time Big Data</td><td>45%</td><td><b>48%</b></td><td>20 out</td></tr>
             <tr><td class="theme-col">AtlasIntel</td><td>47,6%</td><td><b>49,8%</b></td><td>19 out</td></tr>
@@ -1064,7 +1098,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam. Nas rodadas de 19 a 21 de outubro, Flávio aparece à frente em votos válidos em todas: Gerp com 53% a 47%, PoderData/Aya e Real Time Big Data com 52% a 48%, AtlasIntel com 51,1% a 48,9%, Futura com 50,4% a 49,6% e BTG/Nexus com 50,3% a 49,7%. A Quaest (17 a 20 de out, 2.154 entrevistas, margem de 2 pontos, registro BR-08535/2026) mostra 45% a 44% nos votos totais, empate técnico. A Vox Brasil (15 a 17 de out) segue como a única com Lula à frente. *Nas matérias que li, a Quaest não informou os votos válidos, e o 49% a 51% é cálculo próprio a partir dos votos totais. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam, mas as últimas rodadas apontam disputa apertada. O Datafolha de 22 de outubro (20 a 22 de out, 2.520 entrevistas, registro BR-09709/2026) mostra empate em 50% nos votos válidos e 47% a 46% para Flávio nos votos totais; o PoderData/Aya (19 a 21 de out) tem 51% a 49% para Flávio, e a Palver, 50% a 48%. Gerp (53% a 47%), Real Time Big Data (52% a 48%), AtlasIntel (51,1% a 48,9%), Futura (50,4% a 49,6%) e BTG/Nexus (50,3% a 49,7%) tinham Flávio à frente nas rodadas anteriores, e a Quaest (45% a 44%) mostra empate técnico. A Vox Brasil (15 a 17 de out) é a única com Lula à frente. *Nas matérias que li, a Quaest não informou os votos válidos, e o 49% a 51% é cálculo próprio a partir dos votos totais. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -1144,7 +1178,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 21 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 22 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1183,6 +1217,51 @@
 
 <script>
   const articles = {
+    "pesquisas-22out": {
+      source: "CNN Brasil / Portal de Prefeitura / Poder360", date: "22 out", url: "https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-e-lula-empatam-em-50-de-votos-validos-no-2o-turno/",
+      title: "Datafolha: Flávio e Lula empatam com 50% dos votos válidos a 3 dias do 2º turno",
+      body: [
+        "Segundo a CNN Brasil, o Datafolha divulgado em 22 de outubro mostra Flávio Bolsonaro e Lula empatados com 50% dos votos válidos. Na rodada de 15 de outubro, era 51% a 49% para Flávio. Nos votos totais, Flávio tem 47% e Lula 46%, contra 47% a 45% na rodada anterior, e a vantagem passou de 2 pontos para 1, dentro da margem. Brancos, nulos e nenhum dos candidatos foram de 6% para 5%.",
+        "A pesquisa foi contratada pela Folha de S.Paulo e pela Globo, com 2.520 entrevistas presenciais, de 20 a 22 de outubro, margem de 2 pontos e registro BR-09709/2026. Segundo o Portal de Prefeitura, a coleta ocorreu depois da promulgação do fim da escala 6x1, em 16 de outubro, e do debate da Band, em 18 de outubro.",
+        "O Poder360 informa que o PoderData/Aya, feito com recursos próprios do grupo, de 19 a 21 de outubro, mostra Flávio com 51% e Lula com 49% dos votos válidos, empate técnico. A rodada de 16 a 18 de outubro tinha 52% a 48%. A Palver, segundo o Portal Temponovo, mantém Flávio com 50% e Lula com 48%."
+      ]
+    },
+    "sigilos-22out": {
+      source: "Poder360 / Gazeta do Povo / O Tempo / Brasil de Fato", date: "22 out", url: "https://www.poder360.com.br/poder-eleicoes-2026/campanha-de-lula-protocola-no-tse-resposta-a-flavio-sobre-quebra-de-sigilos/",
+      title: "Sigilos: campanha de Lula protocola resposta no TSE, e Mendonça diz que a Corte não decide a divulgação",
+      body: [
+        "Segundo o Poder360, representantes da campanha de Lula, entre eles Camilo Santana, Edinho Silva e Guilherme Boulos, protocolaram no TSE em 22 de outubro um documento em que aceitam integralmente as 19 exigências de Flávio Bolsonaro para a abertura dos sigilos. A campanha disse que Flávio tinha até as 23h59 do mesmo dia para apresentar seus documentos e o acusou de criar “empecilhos”.",
+        "O Tempo informa que Lula juntou procurações fiscais, bancárias e telefônicas do filho Fábio Luís, da primeira-dama Janja e de Marco Aurélio Santana Ribeiro, entre outros, e que os candidatos pediram que o TSE requisitasse os dados às fontes oficiais e os divulgasse ao mesmo tempo.",
+        "À noite, segundo a Gazeta do Povo, o ministro André Mendonça, vice-presidente do TSE, disse que não cabe à Corte decidir sobre a divulgação e que cada candidato pode abrir os próprios sigilos sem decisão judicial. Pela decisão, a revelação voluntária não substitui nem impede a apuração dos órgãos de investigação. O Brasil de Fato e O Tempo registram que a campanha de Lula recorreu da decisão.",
+        "Não encontrei, até o fechamento, confirmação de que Flávio tenha divulgado seus dados até o prazo estabelecido pela campanha de Lula."
+      ]
+    },
+    "dia-candidatos-22out": {
+      source: "Times Brasil / Agência Brasil / Metrópoles", date: "22 out", url: "https://timesbrasil.com.br/brasil/decisao-2026-flavio-visita-jair-bolsonaro-lula-faz-live-e-campanhas-fecham-acordo-no-tse-sobre-sigilos-veja-o-dia-dos-candidatos/",
+      title: "Dia dos candidatos: sem atos públicos, Flávio visita o pai e Lula faz live",
+      body: [
+        "Segundo o Times Brasil, Lula e Flávio Bolsonaro passaram 22 de outubro sem atos públicos, enquanto as campanhas protagonizavam nova movimentação no TSE sobre os sigilos. Flávio ficou em Brasília, visitou Jair Bolsonaro e cancelou a “Tradicional Live de Quinta”, marcada para as 19h.",
+        "A Agência Brasil informa que Lula gravou propaganda eleitoral durante o dia e, às 19h, fez uma live no canal do deputado André Janones. As duas campanhas dedicaram o dia à preparação para o debate da TV Globo, marcado para sexta-feira, 23, às 21h20."
+      ]
+    },
+    "piaui-lancha-21out": {
+      source: "Terra / Gazeta do Paraná / Brasil de Fato / Diário de Pernambuco", date: "21 out", url: "https://www.terra.com.br/noticias/eleicoes/flavio-bolsonaro-fez-festa-em-lancha-com-garotas-de-programa-diz-revista,de4ef2b24b5da00aa939005befe452aauh6ajpu1.html",
+      title: "Piauí relata passeio de lancha de Flávio com lobistas da Covaxin",
+      body: [
+        "Segundo o Terra, a revista piauí publicou em 21 de outubro a reportagem “Uma tarde no lago”, que afirma que Flávio Bolsonaro participou, em 17 de julho de 2020, de um passeio de lancha no Lago Paranoá, em Brasília, organizado por empresários da Precisa Medicamentos, que tentavam vender a vacina Covaxin ao governo de Jair Bolsonaro. Segundo a revista, os empresários Danilo Trento e Francisco Maximiano levaram três garotas de programa de São Paulo, e Flávio desceu à cabine com uma delas.",
+        "A piauí afirma ainda que Trento tirou do próprio pulso um relógio Rolex e o colocou no braço de Flávio ao fim do passeio. A revista diz ter ouvido uma pessoa que esteve na lancha, dois pilotos, um ex-deputado, três assessores parlamentares e uma garota de programa. Segundo o Brasil de Fato, três meses depois Flávio abriu caminho para que Maximiano fosse recebido pelo então presidente do BNDES, Gustavo Montezano, e o Diário de Pernambuco lembra que em 2021 ele defendeu a Precisa na CPI da Covid.",
+        "O que ainda não está provado: a Gazeta do Paraná destaca que documentos da CPI da Covid, da CGU e do TCU mostram irregularidades na negociação da Covaxin, mas não comprovam participação de Flávio nas fraudes. As informações sobre as garotas de programa, o Rolex e os detalhes do passeio são atribuídas à revista. Até a repercussão da reportagem, em 22 de outubro, Flávio não havia feito manifestação pública específica. Em episódio anterior, ele publicou vídeo admitindo “amigos em comum” com Maximiano e negando “relação comercial ou financeira” com ele."
+      ]
+    },
+    "piaui-bet-20out": {
+      source: "Notícias ao Minuto / Agenda do Poder / Brasil 247", date: "20 out", url: "https://www.noticiasaominuto.com.br/politica/2422338/flavio-bolsonaro-e-dono-de-bet-entenda-o-que-a-pf-investiga",
+      title: "Piauí liga Flávio à casa de apostas Best Bet; ele nega sociedade",
+      body: [
+        "Segundo o Notícias ao Minuto, a reportagem “A bet de Flávio Bolsonaro”, publicada pela piauí em 20 de outubro, levanta a suspeita de que Flávio Bolsonaro tenha sido sócio oculto da Best Bet, casa de apostas ligada ao advogado Willer Tomaz, amigo pessoal do senador. A piauí diz que documentos encontrados pela Polícia Federal no material eletrônico de Tomaz mostram Flávio cadastrado como “usuário master” de uma conta da Alcazar Holdings no Santander, ao lado do próprio Tomaz.",
+        "De acordo com a Agenda do Poder, a Alcazar mantinha conexões com a Cathedral Holdings, sediada na Ilha da Madeira, que controlava a Best Bet no Brasil. A casa de apostas, autorizada pela Loterj, funcionou entre 2023 e 2025. O Brasil 247 informa que as duas holdings dividiam o mesmo proprietário, administrador e endereço em Funchal.",
+        "O outro lado: o Notícias ao Minuto ressalta que não há comprovação de que Flávio seja proprietário da Best Bet e que o cadastro bancário, por si só, não prova que ele fosse dono da Alcazar. O senador e a defesa de Tomaz negam qualquer relação financeira irregular, e os advogados negam que Flávio tivesse poderes sobre as contas das empresas. A piauí diz ter procurado o candidato, que não respondeu a perguntas específicas. Tomaz afirmou que a revista já responde judicialmente por informações falsas."
+      ]
+    },
     "quaest-2turno-21out": {
       source: "InfoMoney / Exame / Sem Pauta News", date: "21 out", url: "https://www.infomoney.com.br/politica/quaest-no-segundo-turno-flavio-bolsonaro-tem-45-e-lula-44/",
       title: "Quaest: Flávio 45% e Lula 44%; rejeição de Lula cai de 53% para 47%",
