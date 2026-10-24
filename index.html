@@ -277,6 +277,34 @@
   .gloss-item[open] summary::after{content:"–";}
   .gloss-item p{font-size:13px;color:var(--ink-soft);margin:0 0 14px;line-height:1.6;}
 
+  .quiz-box{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;margin:6px 0 24px;}
+  .quiz-box h3{font-family:'Fraunces',serif;font-size:20px;margin:0 0 6px;color:var(--navy);}
+  .quiz-box p{margin:0 0 10px;line-height:1.5;}
+  .quiz-progress{font:600 12px 'Inter',sans-serif;color:var(--ink-soft);margin-bottom:8px;}
+  .quiz-bar-track{height:6px;border-radius:6px;background:rgba(10,186,181,.18);margin-bottom:16px;overflow:hidden;}
+  .quiz-bar-fill{height:100%;background:var(--tiffany);width:0;transition:width .25s;}
+  .quiz-statement{font-size:18px;line-height:1.45;margin:0 0 18px;color:var(--navy);}
+  .quiz-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .quiz-btn{font:600 14px 'Inter',sans-serif;padding:11px 18px;border-radius:24px;cursor:pointer;border:1px solid var(--border);background:var(--bg-card-2);color:var(--navy);}
+  .quiz-btn:hover{border-color:var(--tiffany);}
+  .quiz-btn.primary{background:var(--tiffany);border-color:var(--tiffany);}
+  .quiz-result-row{margin:12px 0;}
+  .quiz-result-row .lab{display:flex;justify-content:space-between;font-weight:600;margin-bottom:4px;}
+  .quiz-meter{height:14px;border-radius:8px;background:rgba(10,186,181,.15);overflow:hidden;}
+  .quiz-meter span{display:block;height:100%;background:var(--tiffany);}
+  .quiz-area{font:700 11px 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--tiffany);margin-bottom:6px;}
+  .quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+  @media (max-width:640px){.quiz-opts{grid-template-columns:1fr;}}
+  .quiz-opt{text-align:left;font:500 15px/1.45 'Inter',sans-serif;color:var(--navy);padding:14px 16px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg-card-2);cursor:pointer;}
+  .quiz-opt:hover{border-color:var(--tiffany);}
+  .quiz-opt b{display:block;font-size:12px;margin-bottom:6px;color:var(--tiffany);}
+  .quiz-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+  .quiz-table th,.quiz-table td{text-align:left;padding:8px 6px;border-top:1px solid var(--border);vertical-align:top;}
+  .quiz-note{font-size:12px;color:var(--ink-soft);margin-top:10px;line-height:1.5;}
+  .quiz-list{margin:14px 0 0;padding:0;list-style:none;}
+  .quiz-list li{padding:12px 0;border-top:1px solid var(--border);font-size:14px;line-height:1.45;}
+  .quiz-who{display:inline-block;font:600 11px 'Inter',sans-serif;padding:2px 9px;border-radius:12px;background:var(--tiffany-tint);margin-right:6px;}
+  .quiz-src a,.quiz-src button{font-size:12px;margin-right:10px;color:var(--navy);text-decoration:underline;background:none;border:0;padding:0;cursor:pointer;font-family:inherit;}
   .notice{background:var(--tiffany-tint);border:1px solid rgba(10,186,181,0.3);border-left:3px solid var(--tiffany);
     border-radius:6px;padding:14px 16px;margin:0 0 22px;font-size:13px;color:var(--ink-soft);}
   .notice b{color:var(--tiffany);}
@@ -435,7 +463,7 @@
     <button class="trending-pill" onclick="openArticle('pesquisas-24out')">Pesquisas de véspera</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo</button>
     <button class="trending-pill" onclick="openArticle('checagem-debate-globo-23out')">Checagem do debate</button>
-    <button class="trending-pill" onclick="openArticle('sigilos-23out')">Disputa pelos sigilos</button>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=comparar]').click();setTimeout(function(){var q=document.getElementById('quizSection');if(q)q.scrollIntoView({behavior:'smooth'});},200)">Ainda indeciso? Teste por áreas</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -984,6 +1012,11 @@
 
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
+    <section id="quizSection" style="margin-top:24px;">
+      <div class="section-title"><h2>Ainda indeciso? Teste por áreas</h2><span class="count">7 áreas</span></div>
+      <div class="quiz-box" id="quizBox"></div>
+    </section>
+
     <section style="margin-top:24px;">
       <div class="notice"><b>Sobre estes dados —</b> o 1º turno terminou em 4 de outubro: Flávio Bolsonaro e Lula disputam o 2º turno em 25 de outubro. Os outros dez candidatos ficaram de fora e saíram desta aba. As posições abaixo são sínteses de planos, discursos e entrevistas, e podem mudar.</div>
 
@@ -1006,7 +1039,7 @@
       </tbody></table></div>
       <p class="compare-note">Fontes: A Crítica de Campo Grande, Agência Brasil, Correio da Manhã e Folha de Pernambuco. O PSDB não declarou apoio nacional e liberou os filiados. Até agora Lula não anunciou apoio entre os eliminados com mais votos.</p>
 
-      <div class="section-title" style="margin-top:28px;"><h2>Onde Lula e Flávio divergem</h2></div>
+      <div class="section-title" id="cmpDiverge" style="margin-top:28px;"><h2>Onde Lula e Flávio divergem</h2></div>
       <div class="compare-scroll">
         <table class="compare-table">
           <thead><tr><th class="theme-col">Tema</th><th>Lula<br><span>PT</span></th><th>Flávio<br><span>PL</span></th></tr></thead>
@@ -2885,6 +2918,154 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   document.addEventListener('click', function(e){ const b = e.target.closest && e.target.closest('[data-tab="apuracao"]'); if(b) setTimeout(apLoad, 60); });
   setInterval(function(){ const t = document.getElementById('tab-apuracao'); if(!document.hidden && t && t.classList.contains('active')) apLoad(); }, 60000);
 
+</script>
+<script>
+(function(){
+  var CG = 'https://www.congressoemfoco.com.br/noticia/123404/quebra-de-sigilo-emendas-e-seguranca-veja-destaques-de-lula-no-sbt';
+  var AG = 'https://www.agazeta.com.br/mundo/flavio-bolsonaro-na-globo-o-que-disse-o-candidato-a-presidencia-na-2-entrevista-a-emissora-1026';
+  var TAB = ['Síntese na tabela da aba Comparar (sem fonte individual)', 'scroll:cmpDiverge'];
+  var AREAS = [
+    {a:'Economia', q:'Como o governo deve estimular a economia?',
+     Lula:{t:'Aumentar o investimento público em obras e infraestrutura e ampliar o apoio a pequenos negócios, como o novo teto e o perdão de dívidas do MEI.', src:[['Reuters (via Investing.com)','https://br.investing.com/news/politics-news/senado-aprova-perdao-de-dividas-e-aumento-do-limite-para-enquadramento-no-mei-2093343'], TAB]},
+     Flavio:{t:'Reduzir o tamanho do Estado e os gastos, com um ajuste de cerca de R$ 200 bilhões que preserve aposentadorias, salário mínimo, saúde, educação e programas sociais.', src:[['Notícia no Política 360º','#globo-entrevistas-15-16out'],['A Gazeta',AG], TAB]}},
+    {a:'Impostos', q:'Qual deve ser a direção da carga tributária?',
+     Lula:{t:'Cobrar proporcionalmente mais de quem tem renda maior (progressividade tributária) e usar a arrecadação para investir.', src:[TAB]},
+     Flavio:{t:'Tender à redução de impostos, com menos Estado.', src:[TAB]}},
+    {a:'Programas sociais', q:'Qual deve ser a postura sobre os programas sociais?',
+     Lula:{t:'Ampliar os programas sociais e os benefícios, como o Bolsa Família, mesmo que isso exija mais gastos.', src:[['Congresso em Foco',CG], TAB]},
+     Flavio:{t:'Manter os programas existentes, como o Bolsa Família, com foco em eficiência e controle dos gastos.', src:[['Metro News','https://metronews.com.br/debate-entre-lula-e-flavio-bolsonaro-gera-troca-de-acusacoes-e-propostas'], TAB]}},
+    {a:'Segurança pública', q:'Qual caminho para reduzir a criminalidade?',
+     Lula:{t:'Integrar União e estados: criar o Ministério da Segurança Pública e dobrar os efetivos da Polícia Federal e da Polícia Rodoviária Federal.', src:[['Congresso em Foco',CG], TAB]},
+     Flavio:{t:'Endurecer penas e usar a força: manter chefes de facção presos por até 80 anos e usar tropas de elite da Marinha e do Exército contra o narcotráfico.', src:[['Notícia no Política 360º (debate da Band)','#debate-band-18out'],['A Gazeta',AG], TAB]}},
+    {a:'Privatizações', q:'Qual deve ser a postura sobre as empresas estatais?',
+     Lula:{t:'Agir com cautela e manter sob controle público as empresas consideradas estratégicas.', src:[TAB]},
+     Flavio:{t:'Ser favorável a privatizações.', src:[TAB]}},
+    {a:'Relações internacionais', q:'Com quem o Brasil deve priorizar a aproximação?',
+     Lula:{t:'Priorizar a aproximação com os BRICS e a América do Sul, mantendo diálogo com várias potências.', src:[['Notícia no Política 360º','#midterms-agenda-externa-16out'], TAB]},
+     Flavio:{t:'Priorizar a aproximação com os EUA e o Ocidente: aderir ao Escudo das Américas e retomar o processo de adesão à OCDE.', src:[['Notícia no Política 360º','#china-flavio-10out'],['Itatiaia','https://www.itatiaia.com.br/politica/china-avalia-relacao-brasil-flavio-bolsonaro/'], TAB]}},
+    {a:'Instituições e política', q:'Qual reforma institucional você acha mais importante?',
+     Lula:{t:'Criar mandato fixo para ministros do Supremo Tribunal Federal e fazer uma reforma do Judiciário.', src:[['Congresso em Foco',CG],['CartaCapital','https://www.cartacapital.com.br/politica/agenda-dos-candidatos-lula-promulga-fim-da-escala-6x1-flavio-bolsonaro-vai-a-globo/']]},
+     Flavio:{t:'Acabar com a reeleição para presidente, com mandato único, e estender a proibição a parentes até o terceiro grau.', src:[['A Gazeta',AG]]}}
+  ];
+  var WLAB = {1:'Pouco importante', 2:'Importante', 3:'Muito importante'};
+  var box = document.getElementById('quizBox');
+  if(!box) return;
+  var pos = 0, state = [];
+  function el(tag, cls, txt){ var n = document.createElement(tag); if(cls) n.className = cls; if(txt != null) n.textContent = txt; return n; }
+  function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function note(txt, extra){ var n = el('p', 'quiz-note', txt); if(extra) n.style.cssText = extra; return n; }
+  function intro(){
+    box.textContent = '';
+    box.appendChild(el('h3', null, 'Esqueça os nomes. Compare as ideias, área por área.'));
+    box.appendChild(el('p', null, 'São 7 áreas de governo, as mesmas da tabela de propostas deste site. Em cada uma, você vê duas abordagens sem saber de quem é cada uma, escolhe a que prefere e diz o quanto aquela área pesa na sua decisão.'));
+    box.appendChild(el('p', null, 'No fim, o resultado mostra a afinidade com cada candidato, com os pesos que você deu, e o detalhamento por área, com as fontes.'));
+    var b = el('button', 'quiz-btn primary', 'Começar →'); b.type = 'button'; b.addEventListener('click', start);
+    box.appendChild(b);
+    box.appendChild(note('Atenção: é um exercício de reflexão, não uma recomendação de voto. O teste compara só uma proposta por área, tirada de reportagens ou da síntese da tabela, e não avalia custo, viabilidade, histórico de governo, integridade ou o que cada candidato fará de fato. Leia os planos completos antes de decidir.', 'margin-top:14px;'));
+  }
+  function start(){
+    state = shuffle(AREAS.map(function(x, i){ return i; })).map(function(i){ return {i:i, flip:Math.random() < 0.5, c:null, w:null}; });
+    state.sort(function(x, y){ return x.i - y.i; });
+    pos = 0; ask();
+  }
+  function head(){
+    var a = AREAS[state[pos].i];
+    box.appendChild(el('div', 'quiz-progress', 'Área ' + (pos + 1) + ' de ' + AREAS.length));
+    var tr = el('div', 'quiz-bar-track'); var fl = el('div', 'quiz-bar-fill'); fl.style.width = (pos / AREAS.length * 100) + '%'; tr.appendChild(fl); box.appendChild(tr);
+    box.appendChild(el('div', 'quiz-area', a.a));
+    box.appendChild(el('p', 'quiz-statement', a.q));
+    return a;
+  }
+  function ask(){
+    box.textContent = '';
+    var st = state[pos], a = head();
+    var names = st.flip ? ['Flavio', 'Lula'] : ['Lula', 'Flavio'];
+    var opts = el('div', 'quiz-opts');
+    names.forEach(function(n, idx){
+      var b = el('button', 'quiz-opt'); b.type = 'button';
+      b.appendChild(el('b', null, 'Abordagem ' + (idx === 0 ? 'A' : 'B')));
+      b.appendChild(document.createTextNode(a[n].t));
+      b.addEventListener('click', function(){ st.c = n === 'Flavio' ? 'Flávio' : 'Lula'; weigh(); });
+      opts.appendChild(b);
+    });
+    box.appendChild(opts);
+    var row = el('div', 'quiz-btns');
+    var none = el('button', 'quiz-btn', 'Nenhuma / não sei'); none.type = 'button';
+    none.addEventListener('click', function(){ st.c = null; st.w = null; next(); });
+    row.appendChild(none); box.appendChild(row);
+  }
+  function weigh(){
+    box.textContent = '';
+    var st = state[pos], a = head();
+    box.appendChild(el('p', null, 'Quanto esta área pesa na sua decisão de voto?'));
+    var row = el('div', 'quiz-btns');
+    [1, 2, 3].forEach(function(w){
+      var b = el('button', 'quiz-btn' + (w === 2 ? ' primary' : ''), WLAB[w]); b.type = 'button';
+      b.addEventListener('click', function(){ st.w = w; next(); });
+      row.appendChild(b);
+    });
+    box.appendChild(row);
+    var back = el('button', 'quiz-btn', '← Voltar'); back.type = 'button'; back.style.marginTop = '12px'; back.addEventListener('click', ask); box.appendChild(back);
+  }
+  function next(){ pos++; if(pos < AREAS.length) ask(); else done(); }
+  function openSrc(u){
+    if(u.indexOf('scroll:') === 0){ var t = document.getElementById(u.slice(7)); if(t){ t.scrollIntoView({behavior:'smooth'}); } return; }
+    if(u.charAt(0) === '#'){ if(window.openArticleNewTab) window.openArticleNewTab(u.slice(1)); return; }
+    window.open(u, '_blank', 'noopener');
+  }
+  function done(){
+    box.textContent = '';
+    box.appendChild(el('h3', null, 'Seu resultado'));
+    var sum = {'Lula':0, 'Flávio':0}, tot = 0, nAns = 0, simple = {'Lula':0, 'Flávio':0};
+    state.forEach(function(st){ if(st.c){ sum[st.c] += st.w; tot += st.w; nAns++; simple[st.c]++; } });
+    if(!tot){
+      box.appendChild(el('p', null, 'Você não escolheu nenhuma abordagem, então não há resultado. Tente de novo ou leia os planos completos dos dois candidatos.'));
+    } else {
+      ['Lula', 'Flávio'].forEach(function(name){
+        var pct = Math.round(sum[name] / tot * 100);
+        var row = el('div', 'quiz-result-row');
+        var lab = el('div', 'lab'); lab.appendChild(el('span', null, name)); lab.appendChild(el('span', null, pct + '%'));
+        var m = el('div', 'quiz-meter'); var sp = el('span'); sp.style.width = pct + '%'; m.appendChild(sp);
+        row.appendChild(lab); row.appendChild(m); box.appendChild(row);
+      });
+      box.appendChild(note('Afinidade ponderada: cada área que você escolheu conta com o peso que você deu (1 a 3). Em número de áreas, você ficou com Lula em ' + simple['Lula'] + ' e com Flávio em ' + simple['Flávio'] + ', de ' + nAns + ' respondidas. Áreas marcadas "nenhuma / não sei" ficam de fora.'));
+    }
+    box.appendChild(el('h3', null, 'Detalhe por área')).style.marginTop = '18px';
+    var tbl = el('table', 'quiz-table');
+    var thead = el('thead'); var hr = el('tr');
+    ['Área', 'Sua escolha', 'Peso'].forEach(function(h){ hr.appendChild(el('th', null, h)); }); thead.appendChild(hr); tbl.appendChild(thead);
+    var tb = el('tbody');
+    state.forEach(function(st){
+      var a = AREAS[st.i], tr = el('tr');
+      tr.appendChild(el('td', null, a.a));
+      tr.appendChild(el('td', null, st.c || 'Nenhuma / não sei'));
+      tr.appendChild(el('td', null, st.w ? WLAB[st.w] : '—'));
+      tb.appendChild(tr);
+    });
+    tbl.appendChild(tb); box.appendChild(tbl);
+    box.appendChild(el('h3', null, 'Quem defendeu o quê')).style.marginTop = '18px';
+    var ul = el('ul', 'quiz-list');
+    state.forEach(function(st){
+      var a = AREAS[st.i];
+      var li = el('li'); li.appendChild(el('strong', null, a.a + ' — ' + a.q));
+      ['Lula', 'Flavio'].forEach(function(n){
+        var d = el('div'); d.style.marginTop = '8px';
+        var who = n === 'Flavio' ? 'Flávio' : 'Lula';
+        var w = el('span', 'quiz-who', who + (st.c === who ? ' · sua escolha' : '')); d.appendChild(w);
+        d.appendChild(document.createTextNode(a[n].t));
+        var sr = el('div', 'quiz-src'); sr.appendChild(document.createTextNode('Fonte: '));
+        a[n].src.forEach(function(x){ var b = document.createElement('button'); b.type = 'button'; b.textContent = x[0]; b.addEventListener('click', function(){ openSrc(x[1]); }); sr.appendChild(b); });
+        d.appendChild(sr); li.appendChild(d);
+      });
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    box.appendChild(note('Como ler: nas áreas Impostos e Privatizações, e em parte de Economia e Programas sociais, o texto vem da síntese da tabela de propostas deste site, que reúne planos, discursos e entrevistas, e não de uma declaração específica. Confira os planos de governo registrados no TSE antes de decidir.'));
+    var again = el('button', 'quiz-btn primary', 'Refazer o teste'); again.type = 'button'; again.style.marginTop = '14px'; again.addEventListener('click', start);
+    box.appendChild(again);
+  }
+  intro();
+})();
 </script>
 </body>
 </html>
