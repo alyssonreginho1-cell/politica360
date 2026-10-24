@@ -424,7 +424,7 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">3 dias</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">1 dia</div><div class="lbl">para o 2º turno</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
     <div class="e"><div class="num">50%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
     <div class="e"><div class="num">50%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
@@ -432,10 +432,10 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('pesquisas-22out')">Datafolha: 50 x 50</button>
-    <button class="trending-pill" onclick="openArticle('sigilos-22out')">Disputa pelos sigilos</button>
-    <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo (23)</button>
-    <button class="trending-pill" onclick="openArticle('piaui-lancha-21out')">Reportagens da piauí</button>
+    <button class="trending-pill" onclick="openArticle('pesquisas-24out')">Pesquisas de véspera</button>
+    <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo</button>
+    <button class="trending-pill" onclick="openArticle('checagem-debate-globo-23out')">Checagem do debate</button>
+    <button class="trending-pill" onclick="openArticle('sigilos-23out')">Disputa pelos sigilos</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -449,6 +449,30 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="pesquisas-24out" role="button" tabindex="0" onclick="openArticle('pesquisas-24out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-24out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas de véspera</span><span class="fc-dot"></span><span class="fc-time">24 out</span></div>
+        <p class="fc-headline">Véspera: 11 institutos divulgam pesquisas hoje, com Datafolha às 18h45 e AtlasIntel às 18h; Vox dá Lula 50,6% e Indexa, Flávio 50,3% nos válidos.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / Brasil de Fato / Correio Braziliense</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="debate-globo-23out" role="button" tabindex="0" onclick="openArticle('debate-globo-23out')" onkeypress="if(event.key=='Enter')openArticle('debate-globo-23out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate na Globo</span><span class="fc-dot"></span><span class="fc-time">23 out</span></div>
+        <p class="fc-headline">Debate da Globo: “nove dedos”, “miliciano”, licença-maternidade, Bolsa Família e ilha de Richarlison marcam o último confronto antes da votação.</p>
+        <div class="fc-bottom"><span class="fc-source">● Metrópoles / Terra / CNN Brasil / Times Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="checagem-debate-globo-23out" role="button" tabindex="0" onclick="openArticle('checagem-debate-globo-23out')" onkeypress="if(event.key=='Enter')openArticle('checagem-debate-globo-23out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🔎</div><span class="fc-cand">Checagem do debate</span><span class="fc-dot"></span><span class="fc-time">23 out</span></div>
+        <p class="fc-headline">Aos Fatos checa o debate da Globo: confirma falas de Lula sobre obras paradas e mercados, e aponta distorções de Flávio sobre celulares e impostos.</p>
+        <div class="fc-bottom"><span class="fc-source">● Aos Fatos</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="sigilos-23out" role="button" tabindex="0" onclick="openArticle('sigilos-23out')" onkeypress="if(event.key=='Enter')openArticle('sigilos-23out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c3)">🔓</div><span class="fc-cand">Sigilos</span><span class="fc-dot"></span><span class="fc-time">23 out</span></div>
+        <p class="fc-headline">Flávio envia autorizações ao TSE na madrugada de sexta; campanha de Lula diz que perdeu o prazo e omitiu dados, e a de Flávio cobra o cartão corporativo.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / Congresso em Foco / Rede98</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="pesquisas-22out" role="button" tabindex="0" onclick="openArticle('pesquisas-22out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-22out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas</span><span class="fc-dot"></span><span class="fc-time">22 out</span></div>
@@ -496,12 +520,6 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">GE</div><span class="fc-cand">Pesquisa Gerp</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
         <p class="fc-headline">Gerp: Flávio tem 53% e Lula 47% dos votos válidos no 2º turno, contra 52% a 48% na rodada anterior.</p>
         <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Gerp</span><span class="fc-link">ler mais ↗</span></div>
-      </div>
-
-      <div class="feed-card" data-cand="all" data-id="debate-globo-23out" role="button" tabindex="0" onclick="openArticle('debate-globo-23out')" onkeypress="if(event.key=='Enter')openArticle('debate-globo-23out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📺</div><span class="fc-cand">Debate</span><span class="fc-dot"></span><span class="fc-time">21 out</span></div>
-        <p class="fc-headline">Debate da Globo é sexta (23), às 21h20, com mediação de César Tralli; campanhas assinaram as regras e confirmaram presença.</p>
-        <div class="fc-bottom"><span class="fc-source">● Exame / Folha / UOL</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="pesquisas-19out" role="button" tabindex="0" onclick="openArticle('pesquisas-19out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-19out')">
@@ -1012,8 +1030,11 @@
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
-      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 22 out</span></div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 24 out</span></div>
       <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto</th><th>Lula</th><th>Flávio</th><th>Campo</th></tr></thead><tbody>
+        <tr><td class="theme-col">Vox Brasil</td><td><b>50,6%</b></td><td>49,4%</td><td>até 23 out</td></tr>
+        <tr><td class="theme-col">Indexa/Broadcast</td><td>49,7%</td><td><b>50,3%</b></td><td>pub. 22 out</td></tr>
+        <tr><td class="theme-col">Veritá</td><td>49,3%</td><td><b>50,7%</b></td><td>pub. 21 out</td></tr>
         <tr><td class="theme-col">Datafolha</td><td>50%</td><td>50%</td><td>20–22 out</td></tr>
         <tr><td class="theme-col">PoderData/Aya</td><td>49%</td><td><b>51%</b></td><td>19–21 out</td></tr>
         <tr><td class="theme-col">Gerp</td><td>47%</td><td><b>53%</b></td><td>19–21 out</td></tr>
@@ -1098,7 +1119,7 @@
           </tbody>
         </table>
       </div>
-      <p class="compare-note">Depois do 1º turno, os resultados variam, mas as últimas rodadas apontam disputa apertada. O Datafolha de 22 de outubro (20 a 22 de out, 2.520 entrevistas, registro BR-09709/2026) mostra empate em 50% nos votos válidos e 47% a 46% para Flávio nos votos totais; o PoderData/Aya (19 a 21 de out) tem 51% a 49% para Flávio, e a Palver, 50% a 48%. Gerp (53% a 47%), Real Time Big Data (52% a 48%), AtlasIntel (51,1% a 48,9%), Futura (50,4% a 49,6%) e BTG/Nexus (50,3% a 49,7%) tinham Flávio à frente nas rodadas anteriores, e a Quaest (45% a 44%) mostra empate técnico. A Vox Brasil (15 a 17 de out) é a única com Lula à frente. *Nas matérias que li, a Quaest não informou os votos válidos, e o 49% a 51% é cálculo próprio a partir dos votos totais. Na maioria, as diferenças ficam dentro da margem de erro. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
+      <p class="compare-note">Depois do 1º turno, os resultados variam, mas as últimas rodadas apontam disputa apertada. O Datafolha de 22 de outubro (20 a 22 de out, 2.520 entrevistas, registro BR-09709/2026) mostra empate em 50% nos votos válidos e 47% a 46% para Flávio nos votos totais; o PoderData/Aya (19 a 21 de out) tem 51% a 49% para Flávio, e a Palver, 50% a 48%. Gerp (53% a 47%), Real Time Big Data (52% a 48%), AtlasIntel (51,1% a 48,9%), Futura (50,4% a 49,6%) e BTG/Nexus (50,3% a 49,7%) tinham Flávio à frente nas rodadas anteriores, e a Quaest (45% a 44%) mostra empate técnico. A Vox Brasil (15 a 17 de out) é a única com Lula à frente. *Nas matérias que li, a Quaest não informou os votos válidos, e o 49% a 51% é cálculo próprio a partir dos votos totais. Na maioria, as diferenças ficam dentro da margem de erro. Na véspera (24 de out), os institutos divulgam as últimas rodadas, e a Vox Brasil (50,6% a 49,4%) e a Indexa/Broadcast (50,3% a 49,7%) mantêm o quadro de empate técnico. A rodada mais recente do PoderData/Aya (10 a 12 de out, 3.000 entrevistas, margem de 1,8 ponto) reduziu a diferença de 6 para 2 pontos em votos válidos, o que o coloca em empate técnico. A Futura (7 a 10 de out, 2.000 entrevistas, margem de 2,2 pontos) mostra Flávio com 51,8% dos válidos, no limite da margem. O BTG/Nexus (10 a 12 de out, 2.002 entrevistas, margem de 2 pontos) mostra 52% a 48% para Flávio em válidos. A Quaest (10 a 13 de out, 2.154 entrevistas presenciais, margem de 2 pontos, registro BR-08729/2026) mostra 51% a 49% em válidos, empate técnico. Nela, 54% rejeitam Flávio e 53% rejeitam Lula, e 9% dizem que votarão em branco ou nulo. Atlas/Bloomberg e a primeira rodada do PoderData davam vantagem maior a Flávio; a Vox Brasil mostra Lula numericamente à frente, em empate técnico. Os números foram arredondados na tabela. Pesquisa é retrato do momento, não previsão.</p>
 
       <div class="sources-list" style="margin-top:24px;">
         <a class="src-row" href="https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026" target="_blank" rel="noopener"><div><div class="name">Wikipédia — histórico de pesquisas</div><div class="desc">Todas as rodadas, por instituto, em ordem cronológica</div></div><span class="arrow">↗</span></a>
@@ -1178,7 +1199,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 22 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 24 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1217,6 +1238,43 @@
 
 <script>
   const articles = {
+    "pesquisas-24out": {
+      source: "Metrópoles / Brasil de Fato / Correio Braziliense / Poder360", date: "24 out", url: "https://www.brasildefato.com.br/2026/10/23/datafolha-atlasintel-quaest-quando-saem-as-ultimas-pesquisas-do-segundo-turno-das-eleicoes/",
+      title: "Véspera do 2º turno: 11 institutos divulgam pesquisas neste sábado",
+      body: [
+        "Segundo o Brasil de Fato, pelo menos onze pesquisas devem ser divulgadas em 24 de outubro, na véspera da votação. O Datafolha prevê 4.050 entrevistas, feitas nos dias 23 e 24, com registro BR-09540/2026 e divulgação por volta das 18h45. A AtlasIntel prevê 5.000 entrevistas, de 18 a 23 de outubro, e divulgação por volta das 18h.",
+        "A Quaest prevê 3.702 entrevistas, de 23 a 24 de outubro, com margem de 2 pontos e registro BR-09158/2026. A Exame informa que Phoenix & Associados, CNT/MDA, Futura, Palver, Nexus, Veritá, França e Colectta também divulgam levantamentos no sábado. O Metrópoles registra que a Paraná Pesquisas e a Nexus estão entre as previstas.",
+        "Entre as mais recentes, a Vox Brasil mostra Lula com 50,6% e Flávio com 49,4% dos votos válidos. A Indexa/Broadcast mostra Flávio com 50,3% e Lula com 49,7% (45,2% a 44,1% nos votos totais), e a Veritá, de 21 de outubro, tem 50,7% a 49,3%. O Correio Braziliense lembra que, em 2022, a pesquisa de véspera do Datafolha indicou Lula com 52% dos válidos, e ele venceu por 50,90% a 49,10%."
+      ]
+    },
+    "debate-globo-23out": {
+      source: "Metrópoles / Terra / CNN Brasil / Times Brasil / Metro News", date: "23 out", url: "https://www.metropoles.com/brasil/debate-globo-lula-flavio-bolsonaro",
+      title: "Debate da Globo: troca de acusações e embate de propostas no último confronto",
+      body: [
+        "Segundo o Metrópoles, Lula e Flávio Bolsonaro se enfrentaram em 23 de outubro, por quase 2h30, no último debate da eleição, nos Estúdios Globo, no Rio, com mediação de César Tralli. O Times Brasil informa que o debate começou às 21h39, e a Globo adotou a regra “anti-deboche” e não fez checagem ao vivo. O candidato sem a palavra não podia circular pelo cenário nos três primeiros blocos. Nos blocos de temas livres, as acusações de corrupção ocuparam mais espaço.",
+        "O momento que mais repercutiu foi quando Flávio disse que Lula “dá com uma mão e tira com os nove dedos”. O Metrópoles registra que Lula respondeu, no bloco seguinte, que não permitiria “que um miliciano me chame de nove dedos”. A CNN Brasil informa que Flávio pediu desculpas, dizendo “se eu te ofendi, eu te peço desculpas”, e perguntou se Lula também pediria desculpas por problemas sociais de seu governo. Parte da reação nas redes acusou Flávio de capacitismo.",
+        "O Metro News relata que Lula questionou o voto de Flávio, quando deputado estadual, contra a ampliação da licença-maternidade, e que Flávio admitiu: “eu estava errado”. Lula também cobrou explicações pelo uso do termo “bolsa-farelo” para o Bolsa Família em postagens apagadas, e Flávio prometeu manter e ampliar o programa. A Terra registra ainda uma gafe de Flávio ao responder à mãe de uma menina morta no Rio.",
+        "No quarto bloco, a CNN Brasil informa que Lula cobrou explicações sobre a acusação de Richarlison sobre a ilha em Angra dos Reis, e o debate tratou também do caso Master, de Lulinha e de Vorcaro. O O Tempo informa que Lula chamou Flávio de “miliciano” ao entrar nos estúdios, e Flávio rejeitou a acusação."
+      ]
+    },
+    "checagem-debate-globo-23out": {
+      source: "Aos Fatos", date: "23 out", url: "https://www.aosfatos.org/noticias/checamos-flavio-bolsonaro-lula-debate-globo/",
+      title: "Checamos Flávio Bolsonaro e Lula no debate da Globo",
+      body: [
+        "O Aos Fatos checou as falas do debate da Globo. Entre as de Flávio, a agência aponta que ele repetiu uma desinformação ao dizer que Lula defendeu ladrões de celular, e que, ao falar em 30 novos impostos criados por Lula, omitiu que o número inclui tipos de tributação como a reoneração da folha, e não só impostos. Também confirmou que Flávio de fato usou a expressão “bolsa farelo” e integra a defesa do policial militar acusado de matar a menina Ana Clara, de 5 anos, no Rio.",
+        "Sobre a ilha de Richarlison, a agência diz que é verdade que a disputa entre Willer Tomaz e o jogador já transitou em julgado, e que não é possível afirmar que o dinheiro do Master para o filme “Dark Horse” não tinha origem em desvio de recursos públicos. Sobre a ligação de Flávio com milicianos, afirma que há evidências, embora ele não seja investigado por envolvimento com esses grupos.",
+        "Entre as falas de Lula confirmadas: o Brasil alcançou 700 novos mercados para produtos agropecuários, e mais de 5.600 obras da educação estavam paradas no início de 2023. A agência confirma ainda que Jair Bolsonaro disseminou a desinformação de que vacinas poderiam transformar pessoas em gays ou jacarés, e que a fala de Lula sobre Flávio estar num barco quando 1.100 pessoas morriam de Covid se refere à reportagem da piauí, cujas informações são atribuídas à revista."
+      ]
+    },
+    "sigilos-23out": {
+      source: "Gazeta do Povo / Congresso em Foco / Rede98 / Jornal GGN", date: "23 out", url: "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-abre-sigilos-tse-cobra-lula-gastos-cartao-corporativo/",
+      title: "Sigilos: Flávio envia autorizações ao TSE na madrugada de sexta, e campanha de Lula diz que o prazo foi perdido",
+      body: [
+        "Segundo a Gazeta do Povo, Flávio Bolsonaro enviou ao TSE, em 23 de outubro, as autorizações para divulgar seus dados bancários e telefônicos, em resposta ao desafio de Lula, e cobrou do presidente os gastos do cartão corporativo e os registros de visitas ao gabinete presidencial. A campanha de Flávio afirma que entregou os documentos.",
+        "O Congresso em Foco e a Rede98 informam que o senador Camilo Santana, da campanha de Lula, acusou Flávio de “fugir” do desafio: segundo ele, o acordo previa a entrega até 23h59 de 22 de outubro, e a manifestação de Flávio foi protocolada às 0h17 de sexta. O Jornal GGN informa que a campanha de Lula afirma que os documentos entregues omitiram sigilos pessoais de Flávio, uma conta conjunta e a abertura do sigilo de Eduardo Bolsonaro. Nos textos que li, a campanha de Flávio não havia respondido a essas acusações.",
+        "Segundo a Revista Fórum, a campanha de Lula também recorreu da decisão do ministro André Mendonça, que afirmou que o TSE não decide sobre a divulgação, e pediu a inclusão da Alcazar no acordo. O Metrópoles registra que Mendonça disse aos dois candidatos que o TSE não fiscaliza o desafio feito no debate."
+      ]
+    },
     "pesquisas-22out": {
       source: "CNN Brasil / Portal de Prefeitura / Poder360", date: "22 out", url: "https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-e-lula-empatam-em-50-de-votos-validos-no-2o-turno/",
       title: "Datafolha: Flávio e Lula empatam com 50% dos votos válidos a 3 dias do 2º turno",
@@ -1286,15 +1344,6 @@
       body: [
         "Segundo a CNN Brasil, a pesquisa do instituto Gerp divulgada em 21 de outubro mostra Flávio Bolsonaro com 53% dos votos válidos no 2º turno e Lula com 47%. Na rodada anterior, era 52% a 48%.",
         "Foram 2.400 entrevistas com eleitores de todo o país, de 19 a 21 de outubro, com margem de erro de 2 pontos para mais ou para menos."
-      ]
-    },
-    "debate-globo-23out": {
-      source: "Exame / Folha de S.Paulo / UOL", date: "21 out", url: "https://exame.com/brasil/debate-da-globo-entre-lula-e-flavio-bolsonaro-veja-data-horario-regras-e-como-assistir/",
-      title: "Debate da Globo é sexta (23), às 21h20: veja regras e como assistir",
-      body: [
-        "Segundo a Exame, a Globo realiza em 23 de outubro, às 21h20, o último debate do 2º turno, dois dias antes da votação. O encontro será nos Estúdios Globo, no Rio de Janeiro, com mediação de César Tralli, e transmitido pela TV Globo, GloboNews e g1.",
-        "As campanhas assinaram as regras e confirmaram presença. A Folha de S.Paulo informa que o debate tem três blocos e que, no segundo, cada candidato escolhe seis entre dez temas definidos pela produção. A equipe de Lula sugeriu checagem em tempo real das falas, e as regras podem receber ajustes até sexta.",
-        "O governador Tarcísio de Freitas disse em ato de campanha que Lula estaria “arrumando desculpa” para não ir, e o UOL informou que a campanha do presidente afirma que ele participará."
       ]
     },
     "pesquisas-19out": {
