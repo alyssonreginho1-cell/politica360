@@ -439,17 +439,17 @@
 
   <div class="estrip">
     <div class="e"><div class="num">Lula</div><div class="lbl">reeleito presidente</div></div>
-    <div class="e"><div class="num">51,76%</div><div class="lbl">Lula, votos válidos</div></div>
-    <div class="e"><div class="num">48,24%</div><div class="lbl">Flávio, votos válidos</div></div>
-    <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
+    <div class="e"><div class="num">51,79%</div><div class="lbl">Lula, votos válidos</div></div>
+    <div class="e"><div class="num">48,21%</div><div class="lbl">Flávio, votos válidos</div></div>
+    <div class="e"><div class="num">25 out</div><div class="lbl">2º turno concluído</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('resultado-2turno-25out')">Resultado do 2º turno</button>
+    <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
-    <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo</button>
-    <button class="trending-pill" onclick="openArticle('checagem-debate-globo-23out')">Checagem do debate</button>
+    <button class="trending-pill" onclick="openArticle('tse-balanco-26out')">Balanço do TSE</button>
+    <button class="trending-pill" onclick="openArticle('flavio-contesta-26out')">Contestação do resultado</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -463,6 +463,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="lula-reeleito-26out" role="button" tabindex="0" onclick="openArticle('lula-reeleito-26out')" onkeypress="if(event.key=='Enter')openArticle('lula-reeleito-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">🗳️</div><span class="fc-cand">Resultado oficial</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Lula é reeleito presidente e inicia preparação para o quarto mandato; resultado foi confirmado após o segundo turno de 25 de outubro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Gov / Agência Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-contesta-26out" role="button" tabindex="0" onclick="openArticle('flavio-contesta-26out')" onkeypress="if(event.key=='Enter')openArticle('flavio-contesta-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">⚖️</div><span class="fc-cand">Contestação eleitoral</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Flávio Bolsonaro contesta o resultado e anuncia pedido de anulação; acompanhe a cobertura e as informações oficiais sobre a manifestação.</p>
+        <div class="fc-bottom"><span class="fc-source">● Senado Notícias</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="tse-balanco-26out" role="button" tabindex="0" onclick="openArticle('tse-balanco-26out')" onkeypress="if(event.key=='Enter')openArticle('tse-balanco-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">🏛️</div><span class="fc-cand">Justiça Eleitoral</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Presidente do TSE confirma a reeleição de Lula e faz balanço do pleito; a Justiça Eleitoral também afirmou que a votação ocorreu com segurança.</p>
+        <div class="fc-bottom"><span class="fc-source">● Senado Notícias</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="congresso-pacificacao-26out" role="button" tabindex="0" onclick="openArticle('congresso-pacificacao-26out')" onkeypress="if(event.key=='Enter')openArticle('congresso-pacificacao-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">🤝</div><span class="fc-cand">Congresso Nacional</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Após o resultado das urnas, o presidente do Senado, Davi Alcolumbre, defende pacificação política e respeito ao resultado eleitoral.</p>
+        <div class="fc-bottom"><span class="fc-source">● Senado Notícias</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="desafios-novo-mandato-26out" role="button" tabindex="0" onclick="openArticle('desafios-novo-mandato-26out')" onkeypress="if(event.key=='Enter')openArticle('desafios-novo-mandato-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📌</div><span class="fc-cand">Próximo governo</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Com a eleição concluída, a articulação com o Congresso e a formação da equipe do novo mandato entram no centro do debate político.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Folha de S.Paulo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="resultado-2turno-25out" role="button" tabindex="0" onclick="openArticle('resultado-2turno-25out')" onkeypress="if(event.key=='Enter')openArticle('resultado-2turno-25out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
@@ -988,10 +1018,10 @@
   <div class="tab-panel" id="tab-apuracao">
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Apuração — 2º turno</h2><span class="count">25 out, 99,85% das seções</span></div>
-      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,76% dos votos válidos contra 48,24% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
+      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>1º turno (4 out)</th><th>2º turno (25 out)</th></tr></thead><tbody>
-        <tr><td class="theme-col">Lula (PT)</td><td>45,16%</td><td><b>51,76%</b> · eleito</td></tr>
-        <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td>47,03%</td><td>48,24%</td></tr>
+        <tr><td class="theme-col">Lula (PT)</td><td>45,16%</td><td><b>51,79%</b> · eleito</td></tr>
+        <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td>47,03%</td><td>48,21%</td></tr>
       </tbody></table></div>
       <p class="compare-note">Percentuais em votos válidos. Fontes: Plural e Mix Vale, com dados do TSE; 1º turno, Folha de Pernambuco e Estadão Conteúdo (100% das seções).</p>
 
@@ -1269,11 +1299,16 @@
 
 <script>
   const articles = {
+    "lula-reeleito-26out": { source: "Agência Gov / Agência Brasil", date: "26 out", url: "https://agenciagov.ebc.com.br/noticias/202610/lula-e-reeleito-presidente-do-brasil-201cfato-historico-que-devo-ao-povo-brasileiro201d", title: "Lula é reeleito presidente e inicia preparação para o quarto mandato; resultado foi confirmado após o segundo turno de 25 de outubro.", body: ["A Agência Gov informou em 26 de outubro que Luiz Inácio Lula da Silva foi reeleito presidente no segundo turno realizado em 25 de outubro. Segundo a publicação, Lula recebeu 64.256.232 votos e será a primeira pessoa eleita quatro vezes para a Presidência da República.", "Consulte a publicação original para os dados completos e eventuais atualizações oficiais."] },
+    "flavio-contesta-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/destaques/eleicoes-2026/pagina/1", title: "Flávio Bolsonaro contesta o resultado e anuncia pedido de anulação; acompanhe a cobertura e as informações oficiais sobre a manifestação.", body: ["O Senado Notícias listou em sua cobertura das Eleições 2026, em 26 de outubro, a notícia de que Flávio Bolsonaro contestou o resultado e anunciou um pedido de anulação.", "A existência de uma contestação não significa que o resultado tenha sido anulado. Consulte a cobertura da fonte e os comunicados oficiais da Justiça Eleitoral para acompanhar eventuais decisões."] },
+    "tse-balanco-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/temas/politica/pagina/1", title: "Presidente do TSE confirma a reeleição de Lula e faz balanço do pleito; a Justiça Eleitoral também afirmou que a votação ocorreu com segurança.", body: ["A cobertura de política do Senado Notícias informou que o presidente do Tribunal Superior Eleitoral confirmou a reeleição de Lula e fez um balanço do pleito. A mesma página listou uma declaração do presidente do TSE de que a eleição ocorreu com segurança.", "Para acompanhar os desdobramentos e consultar as informações da Justiça Eleitoral, acesse a página da fonte original."] },
+    "congresso-pacificacao-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/temas/politica/pagina/1", title: "Após o resultado das urnas, o presidente do Senado, Davi Alcolumbre, defende pacificação política e respeito ao resultado eleitoral.", body: ["Segundo a cobertura do Senado Notícias, Davi Alcolumbre afirmou que o Congresso atuará pela pacificação após as eleições e pediu respeito ao resultado das urnas.", "A articulação entre Executivo e Legislativo será um dos temas políticos acompanhados nos próximos dias. Consulte a fonte original para ler a reportagem completa."] },
+    "desafios-novo-mandato-26out": { source: "CNN Brasil / Folha de S.Paulo", date: "26 out", url: "https://www.cnnbrasil.com.br/eleicoes/", title: "Com a eleição concluída, a articulação com o Congresso e a formação da equipe do novo mandato entram no centro do debate político.", body: ["Com a eleição concluída, as notícias políticas destacam a composição do Congresso, as negociações entre partidos e as escolhas para o próximo mandato presidencial.", "Este resumo é contextual e não confirma nomes cotados para cargos como decisões definitivas. Acompanhe as reportagens originais para distinguir anúncios oficiais de avaliações e especulações."] },
     "resultado-2turno-25out": {
       source: "Plural / Bloomberg Línea / Mix Vale / Exame", date: "25 out", url: "https://www.plural.jor.br/curitiba/apuracao-segundo-turno-2026-lula-eleito-vai-e-vem/",
       title: "Lula é reeleito presidente após virada no fim da apuração do 2º turno",
       body: [
-        "Segundo o Plural, Luiz Inácio Lula da Silva (PT) foi eleito presidente da República em 25 de outubro, com 51,76% dos votos válidos, contra 48,24% de Flávio Bolsonaro (PL). Os números são de uma apuração com 99,85% das seções totalizadas pelo TSE, então podem ter pequenos ajustes até o fechamento. O Mix Vale informa que Lula passou de 58 milhões de votos e que os votos restantes, concentrados na Bahia, em Sergipe, em Pernambuco e no Ceará, não mudariam o resultado.",
+        "Segundo o Plural, Luiz Inácio Lula da Silva (PT) foi eleito presidente da República em 25 de outubro, com 51,79% dos votos válidos, contra 48,21% de Flávio Bolsonaro (PL). Os números são de uma apuração com 99,85% das seções totalizadas pelo TSE, então podem ter pequenos ajustes até o fechamento. O Mix Vale informa que Lula passou de 58 milhões de votos e que os votos restantes, concentrados na Bahia, em Sergipe, em Pernambuco e no Ceará, não mudariam o resultado.",
         "O 2º turno começou com Flávio como favorito pelos números do 1º turno, quando ele teve 47,03% e Lula, 45,16%. O Plural descreve uma noite de vai e vem na contagem, e o Mix Vale registra que Flávio chegou a aparecer na frente no começo da apuração, até Lula assumir a liderança e ampliar a vantagem. Segundo o Mix Vale, Lula somou quase 4,9 milhões de votos a mais do que no 1º turno. Será o quarto mandato do petista, e Geraldo Alckmin (PSB) segue como vice-presidente.",
         "A Exame informa que o TSE prorrogou a votação até as 19h em todo o país, depois de pedidos das campanhas e de relatos de redução na frota de ônibus em algumas cidades. A Bloomberg Línea registra que presidentes de países vizinhos parabenizaram Lula pela reeleição. O resultado oficial e a proclamação do eleito estão em resultados.tse.jus.br."
       ]
@@ -1901,7 +1936,7 @@
       title: "Flávio vence em 14 estados e no DF; Lula, em 12, com todo o Nordeste",
       body: [
         "No resultado final do 1º turno, Flávio Bolsonaro (PL) foi o mais votado em 14 estados e no Distrito Federal, e Lula (PT) em 12 estados, segundo a CartaCapital e o Congresso em Foco. Há pequenas diferenças de contagem entre veículos, porque o Amapá teve empate virtual.",
-        "Flávio venceu em todos os estados do Sul, do Sudeste e do Centro-Oeste, além de Acre, Rondônia, Roraima e Tocantins. Em São Paulo teve 51,93% contra 38,20% de Lula; no Rio, 53,01% a 39,41%; em Minas, 48,24% a 43,33%; e no Paraná, 59,91% a 31,2%.",
+        "Flávio venceu em todos os estados do Sul, do Sudeste e do Centro-Oeste, além de Acre, Rondônia, Roraima e Tocantins. Em São Paulo teve 51,93% contra 38,20% de Lula; no Rio, 53,01% a 39,41%; em Minas, 48,21% a 43,33%; e no Paraná, 59,91% a 31,2%.",
         "Lula venceu nos nove estados do Nordeste e no Amazonas, no Amapá e no Pará. Na Bahia teve 66,17% contra 28,53% de Flávio. Minas Gerais e Tocantins mudaram de lado em relação ao 1º turno de 2022.",
         "O mapa da aba Apuração reflete essa divisão. Os números por estado podem ter pequenos ajustes nas fontes."
       ]
@@ -2793,7 +2828,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   // Exterior, segundo a imprensa (Congresso em Foco): Lula soma mais votos no total.
   const AP_PRESS = {zz:['13','Exterior: Lula somava mais votos (parcial, Congresso em Foco)'],
     al:['13','AL: Lula 54,73% x Flávio 40,45%'],ba:['13','BA: Lula 66,17% x Flávio 28,53%'],ce:['13','CE: Lula na frente'],ma:['13','MA: Lula na frente'],pb:['13','PB: Lula na frente'],pe:['13','PE: Lula na frente'],pi:['13','PI: Lula na frente'],rn:['13','RN: Lula 59,75% x Flávio 34,77%'],se:['13','SE: Lula na frente'],am:['13','AM: Lula, por 3,23 pontos'],ap:['13','AP: empate virtual, com Lula à frente'],pa:['13','PA: Lula, por 5,41 pontos'],
-    ac:['22','AC: Flávio na frente'],ro:['22','RO: Flávio na frente'],rr:['22','RR: Flávio na frente'],to:['22','TO: Flávio, por 7,02 pontos'],mt:['22','MT: Flávio na frente'],ms:['22','MS: Flávio 59,21%'],go:['22','GO: Flávio na frente'],df:['22','DF: Flávio na frente'],sp:['22','SP: Flávio 51,93% x Lula 38,20%'],pr:['22','PR: Flávio 59,91% x Lula 31,2%'],sc:['22','SC: Flávio 66,65%'],rs:['22','RS: Flávio 55,64%'],es:['22','ES: Flávio na frente'],rj:['22','RJ: Flávio 53,01% x Lula 39,41%'],mg:['22','MG: Flávio 48,24% x Lula 43,33%']};
+    ac:['22','AC: Flávio na frente'],ro:['22','RO: Flávio na frente'],rr:['22','RR: Flávio na frente'],to:['22','TO: Flávio, por 7,02 pontos'],mt:['22','MT: Flávio na frente'],ms:['22','MS: Flávio 59,21%'],go:['22','GO: Flávio na frente'],df:['22','DF: Flávio na frente'],sp:['22','SP: Flávio 51,93% x Lula 38,20%'],pr:['22','PR: Flávio 59,91% x Lula 31,2%'],sc:['22','SC: Flávio 66,65%'],rs:['22','RS: Flávio 55,64%'],es:['22','ES: Flávio na frente'],rj:['22','RJ: Flávio 53,01% x Lula 39,41%'],mg:['22','MG: Flávio 48,21% x Lula 43,33%']};
   const apData = {};
   let apSel = null, apLoading = false;
 
