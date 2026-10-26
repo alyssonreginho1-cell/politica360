@@ -419,10 +419,9 @@
         <button class="topnav-btn" data-tab="pesquisas">Pesquisas</button>
         <button class="topnav-btn" data-tab="mercado">Mercado</button>
         <button class="topnav-btn" data-tab="fontes">Fontes</button>
-        <a class="topnav-link" href="/decida/">Decida seu voto</a>
-        <span class="live-pill">Campanha no ar</span>
+        <span class="live-pill">Eleição encerrada</span>
       </nav>
-      <div class="live-pill live-pill-mobile">Campanha no ar</div>
+      <div class="live-pill live-pill-mobile">Eleição encerrada</div>
       <div class="hdr-auth" id="hdrAuth"><button class="hdr-login" type="button" id="btnGoogle"><svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.98A9 9 0 0 0 0 9c0 1.45.35 2.83.98 4.03z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .98 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z"/></svg><span>Entrar com Google</span></button><div class="hdr-user" id="userBar" style="display:none;"><img id="userPhoto" class="hdr-photo" alt="" referrerpolicy="no-referrer"><span id="userName"></span><button type="button" class="hdr-logout" id="btnLogout">Sair</button></div></div>
     </div>
     <div class="chip-scroll" id="chipScroll">
@@ -439,29 +438,24 @@
   <div class="app">
 
   <div class="estrip">
-    <div class="e"><div class="num">1 dia</div><div class="lbl">para o 2º turno</div></div>
+    <div class="e"><div class="num">Lula</div><div class="lbl">reeleito presidente</div></div>
+    <div class="e"><div class="num">51,76%</div><div class="lbl">Lula, votos válidos</div></div>
+    <div class="e"><div class="num">48,24%</div><div class="lbl">Flávio, votos válidos</div></div>
     <div class="e"><div class="num">25 out</div><div class="lbl">2º turno</div></div>
-    <div class="e"><div class="num">50%</div><div class="lbl">Flávio, Datafolha (válidos)</div></div>
-    <div class="e"><div class="num">50%</div><div class="lbl">Lula, Datafolha (válidos)</div></div>
   </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('pesquisas-24out')">Pesquisas de véspera</button>
+    <button class="trending-pill" onclick="openArticle('resultado-2turno-25out')">Resultado do 2º turno</button>
+    <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
     <button class="trending-pill" onclick="openArticle('debate-globo-23out')">Debate da Globo</button>
     <button class="trending-pill" onclick="openArticle('checagem-debate-globo-23out')">Checagem do debate</button>
-    <button class="trending-pill" onclick="location.href='/decida/'">Ainda indeciso? Compare as propostas</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
 
   <!-- FEED TAB -->
   <div class="tab-panel active" id="tab-feed">
-    <a class="decida-banner" href="/decida/">
-      <div><b>Ainda indeciso? Compare as propostas por tema</b><span>70 perguntas em 10 temas, sem saber de quem é cada proposta, com fonte em cada uma.</span></div>
-      <em>Fazer o teste →</em>
-    </a>
-
     <section id="feed" style="margin-top:20px;">
       <div class="section-title">
         <h2>Agora</h2>
@@ -469,6 +463,12 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="resultado-2turno-25out" role="button" tabindex="0" onclick="openArticle('resultado-2turno-25out')" onkeypress="if(event.key=='Enter')openArticle('resultado-2turno-25out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
+        <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
+        <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="pesquisas-24out" role="button" tabindex="0" onclick="openArticle('pesquisas-24out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-24out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">📊</div><span class="fc-cand">Pesquisas de véspera</span><span class="fc-dot"></span><span class="fc-time">24 out</span></div>
@@ -987,7 +987,15 @@
   <!-- APURAÇÃO TAB -->
   <div class="tab-panel" id="tab-apuracao">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Apuração — 1º turno</h2><span class="count" id="apStatus">aguardando</span></div>
+      <div class="section-title"><h2>Apuração — 2º turno</h2><span class="count">25 out, 99,85% das seções</span></div>
+      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,76% dos votos válidos contra 48,24% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
+      <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>1º turno (4 out)</th><th>2º turno (25 out)</th></tr></thead><tbody>
+        <tr><td class="theme-col">Lula (PT)</td><td>45,16%</td><td><b>51,76%</b> · eleito</td></tr>
+        <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td>47,03%</td><td>48,24%</td></tr>
+      </tbody></table></div>
+      <p class="compare-note">Percentuais em votos válidos. Fontes: Plural e Mix Vale, com dados do TSE; 1º turno, Folha de Pernambuco e Estadão Conteúdo (100% das seções).</p>
+
+      <div class="section-title" style="margin-top:28px;"><h2>Apuração — 1º turno</h2><span class="count" id="apStatus">aguardando</span></div>
       <div class="notice"><b>1º turno encerrado —</b> Flávio Bolsonaro e Lula vão ao 2º turno, em 25 de outubro. O mapa abaixo mostra quem foi o mais votado em cada estado, segundo a imprensa. Esta aba também tenta ler o resultado direto do TSE.</div>
       <div id="apNacional"></div>
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Quem lidera em cada estado</h2></div>
@@ -1261,6 +1269,15 @@
 
 <script>
   const articles = {
+    "resultado-2turno-25out": {
+      source: "Plural / Bloomberg Línea / Mix Vale / Exame", date: "25 out", url: "https://www.plural.jor.br/curitiba/apuracao-segundo-turno-2026-lula-eleito-vai-e-vem/",
+      title: "Lula é reeleito presidente após virada no fim da apuração do 2º turno",
+      body: [
+        "Segundo o Plural, Luiz Inácio Lula da Silva (PT) foi eleito presidente da República em 25 de outubro, com 51,76% dos votos válidos, contra 48,24% de Flávio Bolsonaro (PL). Os números são de uma apuração com 99,85% das seções totalizadas pelo TSE, então podem ter pequenos ajustes até o fechamento. O Mix Vale informa que Lula passou de 58 milhões de votos e que os votos restantes, concentrados na Bahia, em Sergipe, em Pernambuco e no Ceará, não mudariam o resultado.",
+        "O 2º turno começou com Flávio como favorito pelos números do 1º turno, quando ele teve 47,03% e Lula, 45,16%. O Plural descreve uma noite de vai e vem na contagem, e o Mix Vale registra que Flávio chegou a aparecer na frente no começo da apuração, até Lula assumir a liderança e ampliar a vantagem. Segundo o Mix Vale, Lula somou quase 4,9 milhões de votos a mais do que no 1º turno. Será o quarto mandato do petista, e Geraldo Alckmin (PSB) segue como vice-presidente.",
+        "A Exame informa que o TSE prorrogou a votação até as 19h em todo o país, depois de pedidos das campanhas e de relatos de redução na frota de ônibus em algumas cidades. A Bloomberg Línea registra que presidentes de países vizinhos parabenizaram Lula pela reeleição. O resultado oficial e a proclamação do eleito estão em resultados.tse.jus.br."
+      ]
+    },
     "pesquisas-24out": {
       source: "Metrópoles / Brasil de Fato / Correio Braziliense / Poder360", date: "24 out", url: "https://www.brasildefato.com.br/2026/10/23/datafolha-atlasintel-quaest-quando-saem-as-ultimas-pesquisas-do-segundo-turno-das-eleicoes/",
       title: "Véspera do 2º turno: 11 institutos divulgam pesquisas neste sábado",
