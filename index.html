@@ -446,10 +446,11 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('mercado-crash-26out')">Bolsa cai 13,9%, dólar a R$ 5,40</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
     <button class="trending-pill" onclick="openArticle('tse-balanco-26out')">Balanço do TSE</button>
-    <button class="trending-pill" onclick="openArticle('flavio-contesta-26out')">Contestação do resultado</button>
+    <button class="trending-pill" onclick="openArticle('flavio-cassacao-26out')">Flávio e a cassação da chapa</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=geopolitica]').click()">Mundo por continente</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=mercado]').click()">Dólar, Ibovespa e Focus</button>
     </div>
@@ -463,6 +464,30 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="resultado-2turno-25out" role="button" tabindex="0" onclick="openArticle('resultado-2turno-25out')" onkeypress="if(event.key=='Enter')openArticle('resultado-2turno-25out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
+        <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
+        <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="mercado-crash-26out" role="button" tabindex="0" onclick="openArticle('mercado-crash-26out')" onkeypress="if(event.key=='Enter')openArticle('mercado-crash-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Bolsa despenca 13,88% e dólar sobe 8,21%, a R$ 5,403, no primeiro pregão após a reeleição de Lula; a B3 acionou o circuit breaker pela primeira vez desde 2020.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / NeoFeed / Money Times</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-cassacao-26out" role="button" tabindex="0" onclick="openArticle('flavio-cassacao-26out')" onkeypress="if(event.key=='Enter')openArticle('flavio-cassacao-26out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">⚖️</div><span class="fc-cand">Contestação eleitoral</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
+        <p class="fc-headline">Flávio muda de rota: diz que vai pedir ao TSE a cassação da chapa Lula-Alckmin, enquanto o PL reconhece o resultado e cobra esclarecimentos.</p>
+        <div class="fc-bottom"><span class="fc-source">● BBC News Brasil (via Jornal Passaporte)</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="economia-desafios-27out" role="button" tabindex="0" onclick="openArticle('economia-desafios-27out')" onkeypress="if(event.key=='Enter')openArticle('economia-desafios-27out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📌</div><span class="fc-cand">Próximo governo</span><span class="fc-dot"></span><span class="fc-time">27 out</span></div>
+        <p class="fc-headline">Lula inicia o quarto mandato com dívida bruta de 82,9% do PIB; analistas dizem que o mercado vai cobrar um sinal fiscal claro.</p>
+        <div class="fc-bottom"><span class="fc-source">● Gazeta do Povo / Banco Central / IFI</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="lula-reeleito-26out" role="button" tabindex="0" onclick="openArticle('lula-reeleito-26out')" onkeypress="if(event.key=='Enter')openArticle('lula-reeleito-26out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">🗳️</div><span class="fc-cand">Resultado oficial</span><span class="fc-dot"></span><span class="fc-time">26 out</span></div>
@@ -494,10 +519,10 @@
         <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Folha de S.Paulo</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
-      <div class="feed-card" data-cand="all" data-id="resultado-2turno-25out" role="button" tabindex="0" onclick="openArticle('resultado-2turno-25out')" onkeypress="if(event.key=='Enter')openArticle('resultado-2turno-25out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
-        <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
-        <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      <div class="feed-card" data-cand="all" data-id="rep-mundo-25out" role="button" tabindex="0" onclick="openArticle('rep-mundo-25out')" onkeypress="if(event.key=='Enter')openArticle('rep-mundo-25out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Repercussão mundial</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
+        <p class="fc-headline">Imprensa do mundo vê virada inédita de Lula e freio à direita na América Latina; Flávio diz que não aceita o resultado.</p>
+        <div class="fc-bottom"><span class="fc-source">● InfoMoney / Correio Braziliense</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="pesquisas-24out" role="button" tabindex="0" onclick="openArticle('pesquisas-24out')" onkeypress="if(event.key=='Enter')openArticle('pesquisas-24out')">
@@ -982,7 +1007,7 @@
   <!-- GEOPOLÍTICA TAB -->
   <div class="tab-panel" id="tab-geopolitica">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Geopolítica — todos os continentes</h2><span class="count">20 out</span></div>
+      <div class="section-title"><h2>Geopolítica — todos os continentes</h2><span class="count">26 out</span></div>
       <div class="notice"><b>Como ler —</b> use os botões para filtrar por região. Cada notícia vem de uma reportagem com a fonte identificada. Os analistas brasileiros abaixo são referências na área, e os links levam ao trabalho deles. Este painel não atribui falas novas a ninguém.</div>
       <div class="geo-filter" id="geoFilter" role="tablist" aria-label="Filtrar por região"></div>
       <div id="geoList"></div>
@@ -1018,7 +1043,7 @@
   <div class="tab-panel" id="tab-apuracao">
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Apuração — 2º turno</h2><span class="count">25 out, 99,85% das seções</span></div>
-      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
+      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. Flávio Bolsonaro disse que não aceita o resultado e vai contestá-lo na Justiça; o presidente do TSE, Kassio Nunes Marques, reconheceu a vitória de Lula. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>1º turno (4 out)</th><th>2º turno (25 out)</th></tr></thead><tbody>
         <tr><td class="theme-col">Lula (PT)</td><td>45,16%</td><td><b>51,79%</b> · eleito</td></tr>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td>47,03%</td><td>48,21%</td></tr>
@@ -1194,14 +1219,14 @@
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-mercado">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Mercado e economia</h2><span class="count">fechamento de 16 out</span></div>
+      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 26 out</span></div>
       <div class="notice"><b>Dados de fechamento —</b> cotações mudam todos os dias, e o painel mostra o último pregão informado pelas fontes. É informação, não recomendação de investimento.</div>
 
       <div class="estrip" style="margin-top:14px;">
-        <div class="e"><div class="num">R$ 5,073</div><div class="lbl">dólar comercial · −0,28% no dia</div></div>
-        <div class="e"><div class="num">205.430</div><div class="lbl">Ibovespa · +0,54% no dia</div></div>
-        <div class="e"><div class="num">+1,75%</div><div class="lbl">dólar na semana</div></div>
-        <div class="e"><div class="num">−1,74%</div><div class="lbl">Ibovespa na semana</div></div>
+        <div class="e"><div class="num">R$ 5,403</div><div class="lbl">dólar comercial · +8,21% no dia</div></div>
+        <div class="e"><div class="num">176.608</div><div class="lbl">Ibovespa · −13,88% no dia</div></div>
+        <div class="e"><div class="num">R$ 5,60</div><div class="lbl">máxima do dólar no dia</div></div>
+        <div class="e"><div class="num">15,25%</div><div class="lbl">DI jan/2029 (máx. do dia)</div></div>
       </div>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Bolsa e dólar desde o 1º turno</h2></div>
@@ -1210,9 +1235,11 @@
         <tr><td class="theme-col">5 out</td><td>209 mil+ (recorde)</td><td>≈ R$ 4,95</td></tr>
         <tr><td class="theme-col">8 out</td><td>209.067</td><td>R$ 4,985</td></tr>
         <tr><td class="theme-col">15 out</td><td>204.324 (−1,06%)</td><td>≈ R$ 5,09</td></tr>
-        <tr><td class="theme-col">16 out</td><td><b>205.430 (+0,54%)</b></td><td><b>R$ 5,073 (−0,28%)</b></td></tr>
+        <tr><td class="theme-col">16 out</td><td>205.430 (+0,54%)</td><td>R$ 5,073 (−0,28%)</td></tr>
+        <tr><td class="theme-col">23 out (véspera do 2º turno)</td><td>205.083 (+0,47%)</td><td>R$ 4,993 (−0,92%)</td></tr>
+        <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td><b>176.608 (−13,88%)</b></td><td><b>R$ 5,403 (+8,21%)</b></td></tr>
       </tbody></table></div>
-      <p class="compare-note">Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
+      <p class="compare-note"><b>26 de outubro:</b> a B3 acionou o circuit breaker pela primeira vez desde março de 2020, o dólar teve a maior alta diária desde janeiro de 1999 e o DI para janeiro de 2029 chegou a 15,25%, segundo a Gazeta do Povo. Os valores de 26 de outubro são do primeiro pregão depois do resultado e podem ter mudado desde então. Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Boletim Focus — expectativas do mercado</h2><span class="count">19 out</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Projeção para o fim de 2026</th><th>19 out</th><th>13 out</th></tr></thead><tbody>
@@ -1222,7 +1249,7 @@
         <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
       <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 16 de outubro, o último que consegui confirmar.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 26 de outubro, o último que consegui confirmar. Fontes do dia 26: Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
     </section>
   </div>
 
@@ -1260,7 +1287,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 24 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 27 de outubro de 2026.</footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1299,18 +1326,132 @@
 
 <script>
   const articles = {
+    "mercado-crash-26out": {
+      source: "Gazeta do Povo / NeoFeed / Money Times / Terra", date: "26 out", url: "https://www.gazetadopovo.com.br/economia/vitoria-lula-perspectivas-economicas/",
+      title: "Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula",
+      body: [
+        "Segundo a Gazeta do Povo, o Ibovespa chegou a cair mais de 17% em 26 de outubro, no primeiro pregão depois do resultado definitivo da eleição, e a B3 acionou o circuit breaker pela primeira vez desde março de 2020. O índice fechou em queda de 13,88%, aos 176.608 pontos. O NeoFeed registra que foi a maior queda diária da Bolsa em 24 anos.",
+        "O dólar comercial subiu 8,21% e fechou a R$ 5,403, a maior alta diária da moeda desde janeiro de 1999, segundo a Gazeta do Povo. Na manhã, chegou a R$ 5,60. Os juros futuros também dispararam: o DI para janeiro de 2029 chegou a 15,25%, contra 12,64% no fechamento anterior.",
+        "O movimento foi uma reversão do que o mercado tinha feito depois do 1º turno, quando a Bolsa chegou ao recorde de 209.066 pontos, em 9 de outubro, e o dólar ficou perto de R$ 5,00. Segundo o Money Times, o diretor para o Brasil do Eurasia Group, Silvio Cascione, avalia que a vitória de Lula foi mais folgada do que a de 2022. Na sexta-feira anterior (23), o Ibovespa tinha fechado a 205.083 pontos, e o dólar, a R$ 4,993, segundo O Povo.",
+        "A Revista Oeste informa que o BTG Pactual projetou, em relatório, que o Ibovespa pode recuar para cerca de 170 mil pontos nas próximas semanas e que o real pode perder de 10% a 15%. É uma projeção de um banco, e não um resultado. Historicamente, segundo o NeoFeed, a queda no primeiro pregão pós-eleição nem sempre se mantém nas semanas seguintes. Este painel não recomenda investimentos."
+      ]
+    },
+    "flavio-cassacao-26out": {
+      source: "BBC News Brasil (via Jornal Passaporte)", date: "26 out", url: "https://www.jornalpassaporte.com.br/2026/10/27/flavio-muda-a-rota-e-agora-diz-que-vai-pedir-ao-tse-cassacao-da-chapa-lula-alckmin/",
+      title: "Flávio muda de rota e diz que vai pedir ao TSE a cassação da chapa Lula-Alckmin; PL reconhece o resultado",
+      body: [
+        "Segundo a BBC News Brasil, Flávio Bolsonaro disse em vídeo, em 26 de outubro, que pedirá a cassação da chapa de Lula, alegando abuso de poder político e econômico e “difusão em massa de mentiras”. Ele citou também a prorrogação da votação, determinada pelo ministro do STF Cristiano Zanin. A reportagem diz que ele não apresentou provas e que a mudança de rota acontece um dia depois de ele ter anunciado que pediria a anulação da eleição. A BBC tentou confirmar com a assessoria dele se o pedido de anulação foi abandonado e não teve resposta.",
+        "No mesmo dia, o PL, partido de Flávio, divulgou nota assinada por Valdemar Costa Neto em que reconhece o resultado proclamado pelo TSE, mas diz que “questionamentos” precisam ser esclarecidos. A BBC lembra que a própria campanha de Flávio pediu a prorrogação da votação em cidades do Sul e de São Paulo por causa do mau tempo.",
+        "Um levantamento da BBC identificou 33.866 votos para presidente registrados depois das 17h, o equivalente a 0,026% dos 128.236.074 votos do 2º turno. Lula venceu por cerca de 4,4 milhões de votos. Para o advogado eleitoral Alberto Rollo, os votos depois das 17h não alteram o resultado, e para Fernando Neisser a tese de anulação por causa do horário ficou fraca. Segundo os especialistas ouvidos, uma ação pedindo a cassação de chapa (AIJE) costuma levar de um a dois anos.",
+        "Ainda segundo a BBC, o ministro Alexandre de Moraes determinou no domingo que Flávio entregasse o passaporte em 24 horas, e Flávio disse que a PF o abordou na segunda-feira de manhã. Ele é citado em dois procedimentos no STF, um sobre apostas e outro sobre o filme “Dark Horse”, e nega irregularidades. Ele disse que nunca pensou em deixar o país e que vai organizar a oposição."
+      ]
+    },
+    "economia-desafios-27out": {
+      source: "Gazeta do Povo / Banco Central / IFI", date: "27 out", url: "https://www.gazetadopovo.com.br/economia/vitoria-lula-perspectivas-economicas/",
+      title: "Quarto mandato começa com dívida de 82,9% do PIB e cobrança do mercado por sinal fiscal",
+      body: [
+        "Segundo a Gazeta do Povo, a dívida bruta do governo geral chegou a 82,9% do PIB em agosto, o equivalente a R$ 11,1 trilhões, de acordo com o Banco Central. É um aumento de 11,2 pontos percentuais do PIB desde dezembro de 2022. Os juros nominais pagos pelo setor público somaram R$ 1,182 trilhão em 12 meses, 8,86% do PIB.",
+        "A Instituição Fiscal Independente, do Senado, projeta dívida de 86,4% do PIB no fim de 2027. O projeto de orçamento de 2027 prevê superávit primário de R$ 18,6 bilhões, mas a IFI calcula um resultado negativo de R$ 86,1 bilhões. Analistas ouvidos pelo jornal dizem que o mercado vai exigir resultados concretos e que gastar mais sem compensação pode ser neutralizado por dólar, inflação e juros mais altos.",
+        "O boletim Focus de 26 de outubro, com respostas coletadas até 23 de outubro, antes do resultado, projetava IPCA de 5,19% em 2026 e de 4,34% em 2027, e a Selic no fim de 2027 em 11,75%. Segundo a Gazeta do Povo, consultorias já falam em juros mais altos e PIB menor se não houver sinal de ajuste fiscal.",
+        "Até o fechamento desta nota, não encontrei confirmação de nomes para o ministério do novo mandato nem anúncio de pacote fiscal. Este painel descreve as análises, e as projeções podem mudar."
+      ]
+    },
     "lula-reeleito-26out": { source: "Agência Gov / Agência Brasil", date: "26 out", url: "https://agenciagov.ebc.com.br/noticias/202610/lula-e-reeleito-presidente-do-brasil-201cfato-historico-que-devo-ao-povo-brasileiro201d", title: "Lula é reeleito presidente e inicia preparação para o quarto mandato; resultado foi confirmado após o segundo turno de 25 de outubro.", body: ["A Agência Gov informou em 26 de outubro que Luiz Inácio Lula da Silva foi reeleito presidente no segundo turno realizado em 25 de outubro. Segundo a publicação, Lula recebeu 64.256.232 votos e será a primeira pessoa eleita quatro vezes para a Presidência da República.", "Consulte a publicação original para os dados completos e eventuais atualizações oficiais."] },
-    "flavio-contesta-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/destaques/eleicoes-2026/pagina/1", title: "Flávio Bolsonaro contesta o resultado e anuncia pedido de anulação; acompanhe a cobertura e as informações oficiais sobre a manifestação.", body: ["O Senado Notícias listou em sua cobertura das Eleições 2026, em 26 de outubro, a notícia de que Flávio Bolsonaro contestou o resultado e anunciou um pedido de anulação.", "A existência de uma contestação não significa que o resultado tenha sido anulado. Consulte a cobertura da fonte e os comunicados oficiais da Justiça Eleitoral para acompanhar eventuais decisões."] },
+    "flavio-contesta-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/destaques/eleicoes-2026/pagina/1", title: "Flávio Bolsonaro contesta o resultado e anuncia pedido de anulação; acompanhe a cobertura e as informações oficiais sobre a manifestação.", body: ["O Senado Notícias listou em sua cobertura das Eleições 2026, em 26 de outubro, a notícia de que Flávio Bolsonaro contestou o resultado e anunciou um pedido de anulação.", "Segundo a CNN, a AP e a ABC News, Flávio disse que não aceita o resultado e vai contestá-lo na Justiça, citando a decisão do STF de estender a votação em duas horas. A ABC News lembra que o presidente do TSE, Kassio Nunes Marques, reconheceu a vitória de Lula e que a confiabilidade das urnas e a margem de cerca de 4,4 milhões de votos tornam difícil um pedido de anulação.", "Atualização de 26 de outubro: segundo a BBC News Brasil, Flávio passou a falar em pedir a cassação da chapa Lula-Alckmin, e o PL reconheceu o resultado proclamado pelo TSE. Veja a notícia “Flávio muda de rota”.","A existência de uma contestação não significa que o resultado tenha sido anulado. Consulte a cobertura da fonte e os comunicados oficiais da Justiça Eleitoral para acompanhar eventuais decisões."] },
     "tse-balanco-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/temas/politica/pagina/1", title: "Presidente do TSE confirma a reeleição de Lula e faz balanço do pleito; a Justiça Eleitoral também afirmou que a votação ocorreu com segurança.", body: ["A cobertura de política do Senado Notícias informou que o presidente do Tribunal Superior Eleitoral confirmou a reeleição de Lula e fez um balanço do pleito. A mesma página listou uma declaração do presidente do TSE de que a eleição ocorreu com segurança.", "Para acompanhar os desdobramentos e consultar as informações da Justiça Eleitoral, acesse a página da fonte original."] },
     "congresso-pacificacao-26out": { source: "Senado Notícias", date: "26 out", url: "https://www12.senado.leg.br/noticias/temas/politica/pagina/1", title: "Após o resultado das urnas, o presidente do Senado, Davi Alcolumbre, defende pacificação política e respeito ao resultado eleitoral.", body: ["Segundo a cobertura do Senado Notícias, Davi Alcolumbre afirmou que o Congresso atuará pela pacificação após as eleições e pediu respeito ao resultado das urnas.", "A articulação entre Executivo e Legislativo será um dos temas políticos acompanhados nos próximos dias. Consulte a fonte original para ler a reportagem completa."] },
     "desafios-novo-mandato-26out": { source: "CNN Brasil / Folha de S.Paulo", date: "26 out", url: "https://www.cnnbrasil.com.br/eleicoes/", title: "Com a eleição concluída, a articulação com o Congresso e a formação da equipe do novo mandato entram no centro do debate político.", body: ["Com a eleição concluída, as notícias políticas destacam a composição do Congresso, as negociações entre partidos e as escolhas para o próximo mandato presidencial.", "Este resumo é contextual e não confirma nomes cotados para cargos como decisões definitivas. Acompanhe as reportagens originais para distinguir anúncios oficiais de avaliações e especulações."] },
+    "rep-mundo-25out": {
+      source: "InfoMoney / Correio Braziliense / CNN Brasil", date: "25 out", url: "https://www.infomoney.com.br/politica/como-a-imprensa-internacional-reagiu-a-reeleicao-de-lula/",
+      title: "Mundo repercute a reeleição de Lula: virada inédita e freio à direita na região",
+      body: [
+        "Segundo o InfoMoney, a imprensa internacional tratou a vitória de Lula sobre Flávio Bolsonaro como um freio à onda conservadora na América Latina e como um revés para o presidente americano, Donald Trump. A reportagem destaca uma virada sem precedentes desde a redemocratização, já que Lula perdeu o 1º turno e venceu o 2º.",
+        "O Correio Braziliense e a CNN Brasil reuniram manchetes de jornais da Europa, da Ásia e das Américas. Os enfoques foram três: a virada do petista e o quarto mandato, os desafios de governar um país dividido com um Congresso hostil, e a confusão causada pela decisão de estender o horário de votação.",
+        "Veículos como CNN, AP e ABC (Austrália) registraram também que Flávio Bolsonaro disse não aceitar o resultado e anunciou que vai contestá-lo na Justiça. A ABC News (EUA) lembra que o presidente do TSE, Kassio Nunes Marques, nomeado por Jair Bolsonaro, reconheceu a vitória de Lula, e que a confiabilidade das urnas e a margem tornam difícil um pedido de anulação.",
+        "Abaixo, a repercussão por região, com a fonte de cada veículo."
+      ]
+    },
+    "rep-eua-25out": {
+      source: "NYT / Washington Post / AP / CNN / NPR", date: "25 out", url: "https://apnews.com/article/brazil-election-lula-bolsonaro-runoff-vote-president-e2c9fe8fc4aa3e3675b9a8ec15405d93",
+      title: "Estados Unidos: imprensa vê revés para Trump na região e destaca contestação de Flávio",
+      body: [
+        "Segundo a CNN Brasil, o The New York Times deu como manchete que o Brasil reelegeu Lula e rejeitou o filho de seu antecessor, e escreveu que o presidente completou um retorno político surpreendente.",
+        "De acordo com o Correio Braziliense, o The Washington Post afirmou que a vitória de Lula interrompe o avanço da direita na América Latina. O jornal também apontou que a oposição forte no Congresso vai impor desafios ao novo mandato e que o resultado afeta os planos de Trump de ampliar sua influência na região.",
+        "A Associated Press apresentou Lula como um crítico declarado de Trump e disse que o resultado alivia quem critica a ampliação da influência americana na América Latina. A agência registrou ainda que Flávio Bolsonaro se recusou a reconhecer a derrota e pediu a anulação, e que Lula respondeu que o Brasil não é quintal de ninguém.",
+        "A CNN destacou que Lula derrotou um aliado de Trump e que Flávio disse ser impossível reconhecer o resultado depois da decisão de última hora de estender a votação em duas horas. A NPR chamou o resultado de retorno político surpreendente de um líder de 80 anos, com mais de 51% dos votos contra mais de 48%."
+      ]
+    },
+    "rep-reinounido-25out": {
+      source: "The Guardian / BBC", date: "25 out", url: "https://www.theguardian.com/world/2026/oct/26/lula-wins-brazil-election",
+      title: "Reino Unido: Guardian fala em vitória histórica e BBC aponta Congresso hostil",
+      body: [
+        "Segundo o Correio Braziliense, o The Guardian destacou a vitória histórica de Lula sobre o candidato de extrema direita e acompanhou a apuração com resultados em tempo real e cobertura ao vivo. O clicRDC, com informações da Agência Brasil, registra que o jornal enfatizou a virada: Lula perdeu o 1º turno e conquistou um novo mandato no 2º.",
+        "A BBC lembrou que Flávio Bolsonaro tinha vencido o 1º turno e disse que Lula foi eleito para o quarto mandato numa votação acirrada. Na reportagem sobre o novo mandato, a emissora afirma que o presidente terá de lidar com um Congresso hostil e com um país dividido."
+      ]
+    },
+    "rep-espanha-25out": {
+      source: "El País", date: "25 out", url: "https://elpais.com/america/2026-10-26/lula-logra-una-remontada-historica-en-brasil-y-da-la-victoria-a-la-izquierda-frente-al-avance-ultra-de-los-bolsonaro.html",
+      title: "Espanha: El País vê “virada histórica” e fôlego para a esquerda",
+      body: [
+        "Segundo o Correio Braziliense, o El País definiu o resultado como uma virada histórica e ligou a vitória à disputa entre a esquerda e o avanço da direita na América Latina. O InfoMoney registra que o jornal falou em “virada épica”, que freia o avanço da extrema direita no Brasil e dá um balão de oxigênio à esquerda no mundo.",
+        "De acordo com o clicRDC, o jornal destacou ainda a vantagem de cerca de 4 milhões de votos de Lula sobre Flávio Bolsonaro."
+      ]
+    },
+    "rep-franca-italia-alemanha-25out": {
+      source: "Le Monde / La Repubblica / Der Spiegel", date: "25 out", url: "https://www.lemonde.fr/international/live/2026/10/25/en-direct-election-presidentielle-au-bresil-lula-accuse-des-maires-d-empecher-des-electeurs-d-aller-voter-apres-des-penuries-de-bus-dans-plusieurs-villes_6800074_3210.html",
+      title: "França, Itália e Alemanha: controvérsias do dia da votação, triunfo e idade de Lula",
+      body: [
+        "Segundo o Correio Braziliense, o francês Le Monde concentrou parte da cobertura nas controvérsias do dia da votação: as denúncias de dificuldades no transporte público e os questionamentos sobre a participação dos eleitores, em meio à decisão de ampliar o horário.",
+        "O italiano La Repubblica destacou o triunfo de Lula sobre Bolsonaro e a derrota da direita na tentativa de conquistar a Presidência, segundo a mesma reportagem.",
+        "De acordo com o clicRDC, com informações da Agência Brasil, o alemão Der Spiegel destacou a decisão dos eleitores de manter Lula na Presidência, chamando atenção para a idade do presidente, de 80 anos, e para a continuidade do seu projeto político."
+      ]
+    },
+    "rep-japao-25out": {
+      source: "The Japan Times", date: "25 out", url: "https://www.japantimes.co.jp/news/2026/10/26/world/politics/brazil-lula-election-victory/",
+      title: "Japão: Japan Times noticia a vitória de Lula",
+      body: [
+        "O Correio Braziliense inclui o The Japan Times entre os veículos da Ásia que repercutiram a reeleição de Lula, com uma reportagem publicada em 26 de outubro sobre a vitória do presidente brasileiro. Não encontrei outras coberturas asiáticas do resultado final para citar com segurança. Por isso, este painel registra apenas o que foi possível confirmar."
+      ]
+    },
+    "rep-australia-25out": {
+      source: "ABC News (Austrália)", date: "26 out", url: "https://www.abc.net.au/news/2026-10-26/lula-brazil-election-win-bolsonaro-rejects-results/107308542",
+      title: "Austrália: ABC destaca vitória de Lula e recusa de Flávio em aceitar a derrota",
+      body: [
+        "A emissora pública australiana ABC informou que Lula derrotou o senador Flávio Bolsonaro no 2º turno e garantiu o quarto mandato não consecutivo, com uma vantagem de quase 4,4 milhões de votos.",
+        "A reportagem registra que a campanha de Flávio também tinha pedido extensão da votação em algumas áreas por causa de chuvas fortes no Sul, onde ele é favorito, e que Lula é o primeiro candidato eleito depois de ficar em segundo lugar no 1º turno desde a volta da democracia, nos anos 1980."
+      ]
+    },
+    "rep-argentina-25out": {
+      source: "La Nación / Clarín / El Cronista", date: "25 out", url: "https://www.lanacion.com.ar/el-mundo/lula-logra-la-remontada-tras-un-balotaje-envuelto-en-polemica-y-sera-presidente-de-brasil-por-cuarta-nid25102026/",
+      title: "Argentina: La Nación e Clarín destacam virada e a polêmica da prorrogação",
+      body: [
+        "Segundo a CNN Brasil, o La Nación disse que Lula conseguiu uma reviravolta depois de um 2º turno controverso e será presidente pela quarta vez. O jornal lembra que Flávio era favorito nas pesquisas e que a decisão do ministro do STF Cristiano Zanin de estender o horário de votação gerou questionamentos.",
+        "O Clarín destacou que Lula derrotou Flávio no 2º turno depois de perder o primeiro, por uma diferença de cerca de três pontos, com 51,7% contra 48,3%. De acordo com o InfoMoney, o jornal chamou a vitória num 2º turno dramático de feito extraordinário que abre um cenário inesperado numa região que parecia homogênea.",
+        "O El Cronista, de Buenos Aires, registrou 51,75% para Lula contra 48,25% para Flávio e escreveu que Lula defendeu na campanha a continuidade da gestão, a proteção social e a soberania brasileira."
+      ]
+    },
+    "rep-uruguai-25out": {
+      source: "Montevideo Portal / Subrayado (via Rio Times)", date: "25 out", url: "https://www.montevideo.com.uy/Noticias/Historica-remontada-Lula-vencio-a-Bolsonaro-y-logra-su-cuarto-mandato-en-Brasil-uc979828",
+      title: "Uruguai: Montevideo Portal fala em “histórica remontada”; Orsi chama Lula de amigo",
+      body: [
+        "O Montevideo Portal noticiou uma “histórica remontada” de Lula, com 51,75% contra 48,25% de Flávio Bolsonaro, lembrando que o brasileiro perdeu o 1º turno, em 4 de outubro, com 45,16% contra 47,03%.",
+        "Segundo o Rio Times, que cita o Montevideo Portal e o Subrayado, o presidente uruguaio Yamandú Orsi falou com Lula no domingo, 25, e o chamou de amigo numa publicação no X. A vice-presidente Carolina Cosse chamou o Brasil de grande exemplo de democracia e a vitória de Lula de enorme. A mesma reportagem lembra que o Brasil foi o segundo maior comprador de exportações do Uruguai em setembro e que Montevidéu diz que vai trabalhar com quem governar o Brasil. Segundo o Rio Times, políticos da oposição uruguaia reagiram de forma diferente à do governo."
+      ]
+    },
+    "rep-aljazeera-25out": {
+      source: "Al Jazeera (via Agência Brasil)", date: "25 out", url: "https://clicrdc.com.br/eleicoes-2026/imprensa-internacional-repercute-vitoria-de-lula-nas-eleicoes-brasileiras/",
+      title: "Oriente Médio: Al Jazeera noticia vitória por margem estreita",
+      body: [
+        "De acordo com o clicRDC, com informações da Agência Brasil, a rede Al Jazeera, do Catar, informou que Lula venceu Flávio Bolsonaro por uma margem estreita e garantiu um quarto mandato, usando os dados oficiais da Justiça Eleitoral brasileira."
+      ]
+    },
     "resultado-2turno-25out": {
       source: "Plural / Bloomberg Línea / Mix Vale / Exame", date: "25 out", url: "https://www.plural.jor.br/curitiba/apuracao-segundo-turno-2026-lula-eleito-vai-e-vem/",
       title: "Lula é reeleito presidente após virada no fim da apuração do 2º turno",
       body: [
         "Segundo o Plural, Luiz Inácio Lula da Silva (PT) foi eleito presidente da República em 25 de outubro, com 51,79% dos votos válidos, contra 48,21% de Flávio Bolsonaro (PL). Os números são de uma apuração com 99,85% das seções totalizadas pelo TSE, então podem ter pequenos ajustes até o fechamento. O Mix Vale informa que Lula passou de 58 milhões de votos e que os votos restantes, concentrados na Bahia, em Sergipe, em Pernambuco e no Ceará, não mudariam o resultado.",
         "O 2º turno começou com Flávio como favorito pelos números do 1º turno, quando ele teve 47,03% e Lula, 45,16%. O Plural descreve uma noite de vai e vem na contagem, e o Mix Vale registra que Flávio chegou a aparecer na frente no começo da apuração, até Lula assumir a liderança e ampliar a vantagem. Segundo o Mix Vale, Lula somou quase 4,9 milhões de votos a mais do que no 1º turno. Será o quarto mandato do petista, e Geraldo Alckmin (PSB) segue como vice-presidente.",
-        "A Exame informa que o TSE prorrogou a votação até as 19h em todo o país, depois de pedidos das campanhas e de relatos de redução na frota de ônibus em algumas cidades. A Bloomberg Línea registra que presidentes de países vizinhos parabenizaram Lula pela reeleição. O resultado oficial e a proclamação do eleito estão em resultados.tse.jus.br."
+        "A Exame informa que o TSE prorrogou a votação até as 19h em todo o país, depois de pedidos das campanhas e de relatos de redução na frota de ônibus em algumas cidades. A Bloomberg Línea registra que presidentes de países vizinhos parabenizaram Lula pela reeleição. Flávio Bolsonaro disse que não aceita o resultado e anunciou que vai contestá-lo na Justiça, citando a decisão do STF de estender a votação em duas horas. Segundo a CNN e a ABC News, a diferença ficou em cerca de 4,4 milhões de votos, e o presidente do TSE, Kassio Nunes Marques, reconheceu a vitória de Lula. O resultado oficial e a proclamação do eleito estão em resultados.tse.jus.br."
       ]
     },
     "pesquisas-24out": {
@@ -2573,6 +2714,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
   (function(){
     const GEO = [
+      ['rep-mundo-25out','Global'],['rep-eua-25out','Américas'],['rep-argentina-25out','Américas'],['rep-uruguai-25out','Américas'],['rep-reinounido-25out','Europa'],['rep-espanha-25out','Europa'],['rep-franca-italia-alemanha-25out','Europa'],['rep-japao-25out','Ásia'],['rep-australia-25out','Oceania'],['rep-aljazeera-25out','Oriente Médio'],
       ['ucrania-trilateral-20out','Europa'],['franca-protestos-19out','Europa'],['ucrania-ataques-16out','Europa'],['ue-cupula-sancoes-16out','Europa'],
       ['ormuz-minas-20out','Oriente Médio'],['ira-petroleiro-mina-17out','Oriente Médio'],['houthis-arabia-saudita-17out','Oriente Médio'],
       ['mundo-19out','Global'],
