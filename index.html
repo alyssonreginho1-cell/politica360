@@ -449,6 +449,7 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('flavio-eua-28out')">Flávio chega aos EUA</button>
     <button class="trending-pill" onclick="openArticle('fazenda-equipe-27out')">Quem será o ministro da Fazenda?</button>
     <button class="trending-pill" onclick="openArticle('mercado-crash-26out')">Bolsa cai 13,9%, dólar a R$ 5,40</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
@@ -473,6 +474,18 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
         <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
         <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-eua-28out" role="button" tabindex="0" onclick="openArticle('flavio-eua-28out')" onkeypress="if(event.key=='Enter')openArticle('flavio-eua-28out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">⚖️</div><span class="fc-cand">Caso Flávio</span><span class="fc-dot"></span><span class="fc-time">28 out</span></div>
+        <p class="fc-headline">Flávio Bolsonaro chega a Miami com a família depois de deixar o Brasil; a PF diz que ele não é foragido, e não há mandado de prisão.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / O Liberal / Correio</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="mercado-28out" role="button" tabindex="0" onclick="openArticle('mercado-28out')" onkeypress="if(event.key=='Enter')openArticle('mercado-28out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">28 out</span></div>
+        <p class="fc-headline">Ibovespa cai 2,68% e fecha a 171.006 pontos, a menor marca desde agosto; dólar fica em R$ 5,34 e o Fed mantém os juros nos EUA.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Brasil / Times Brasil / Imirante</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="fazenda-equipe-27out" role="button" tabindex="0" onclick="openArticle('fazenda-equipe-27out')" onkeypress="if(event.key=='Enter')openArticle('fazenda-equipe-27out')">
@@ -1235,14 +1248,14 @@
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-mercado">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 27 out</span></div>
+      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 28 out</span></div>
       <div class="notice"><b>Dados de fechamento —</b> cotações mudam todos os dias, e o painel mostra o último pregão informado pelas fontes. É informação, não recomendação de investimento.</div>
 
       <div class="estrip" style="margin-top:14px;">
-        <div class="e"><div class="num">R$ 5,35</div><div class="lbl">dólar comercial · −1% no dia</div></div>
-        <div class="e"><div class="num">175.710</div><div class="lbl">Ibovespa · −0,51% no dia</div></div>
-        <div class="e"><div class="num">−13,88%</div><div class="lbl">Ibovespa em 26 out, a maior queda desde 2020</div></div>
-        <div class="e"><div class="num">+8,21%</div><div class="lbl">dólar em 26 out, a maior alta desde 1999</div></div>
+        <div class="e"><div class="num">R$ 5,34</div><div class="lbl">dólar comercial · −0,19% no dia</div></div>
+        <div class="e"><div class="num">171.006</div><div class="lbl">Ibovespa · −2,68% no dia</div></div>
+        <div class="e"><div class="num">−16,6%</div><div class="lbl">Ibovespa na semana</div></div>
+        <div class="e"><div class="num">+6,95%</div><div class="lbl">dólar na semana</div></div>
       </div>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Bolsa e dólar desde o 1º turno</h2></div>
@@ -1254,7 +1267,8 @@
         <tr><td class="theme-col">16 out</td><td>205.430 (+0,54%)</td><td>R$ 5,073 (−0,28%)</td></tr>
         <tr><td class="theme-col">23 out (véspera do 2º turno)</td><td>205.083 (+0,47%)</td><td>R$ 4,993 (−0,92%)</td></tr>
         <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td>176.608 (−13,88%)</td><td>R$ 5,403 (+8,21%)</td></tr>
-        <tr><td class="theme-col">27 out (2º pregão)</td><td><b>175.710 (−0,51%)</b></td><td><b>R$ 5,35 (−1%)</b></td></tr>
+        <tr><td class="theme-col">27 out (2º pregão)</td><td>175.710 (−0,51%)</td><td>R$ 5,35 (−1%)</td></tr>
+        <tr><td class="theme-col">28 out (3º pregão)</td><td><b>171.006 (−2,68%)</b></td><td><b>R$ 5,34 (−0,19%)</b></td></tr>
       </tbody></table></div>
       <p class="compare-note"><b>26 de outubro:</b> a B3 acionou o circuit breaker pela primeira vez desde março de 2020, o dólar teve a maior alta diária desde janeiro de 1999 e o DI para janeiro de 2029 chegou a 15,25%, segundo a Gazeta do Povo. Os valores de 26 de outubro são do primeiro pregão depois do resultado e podem ter mudado desde então. Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
@@ -1266,7 +1280,7 @@
         <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
       <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 27 de outubro, o último que consegui confirmar. O dólar aparece com pequenas diferenças entre fontes (R$ 5,349 a R$ 5,350). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 28 de outubro, o último que consegui confirmar. O dólar aparece com pequenas diferenças entre fontes (R$ 5,34 a R$ 5,35). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
     </section>
   </div>
 
@@ -1304,7 +1318,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 28 de outubro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 29 de outubro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1343,6 +1357,27 @@
 
 <script>
   const articles = {
+    "flavio-eua-28out": {
+      source: "CNN Brasil / O Liberal / Correio / Revista Fórum", date: "28 out", url: "https://www.cnnbrasil.com.br/politica/o-que-se-sabe-sobre-a-saida-de-flavio-bolsonaro-do-brasil/",
+      title: "Flávio Bolsonaro chega a Miami com a família depois de deixar o Brasil; PF diz que ele não é foragido",
+      body: [
+        "Segundo a CNN Brasil, aliados de Flávio Bolsonaro disseram em 27 de outubro que ele saiu do país com a família rumo aos Estados Unidos, e autoridades americanas confirmaram a informação à Reuters. A saída aconteceu depois de o ministro do STF Alexandre de Moraes mandar que ele entregasse os passaportes. O prazo ia até as 11h de terça, e a CNN diz que a entrega não ocorreu. A PF cancelou o passaporte comum e o diplomático.",
+        "De acordo com a CNN, a ordem se baseou no receio de fuga de investigadores da PF que conduzem o inquérito sobre lavagem de dinheiro e evasão de divisas em que Flávio é investigado, e também na fala do irmão, Eduardo Bolsonaro, de que apoiaria a saída dele se perdesse a eleição. Flávio nega irregularidades.",
+        "Sobre o trajeto, a CNN informa que o governo argentino negou, na manhã de terça, que ele tivesse entrado no país. Mais tarde, segundo O Liberal, registros migratórios da Argentina mostram que ele usou um passaporte italiano para entrar e deixou o aeroporto de Puerto Iguazú às 23h52 de terça. O Liberal e a Revista Fórum informam que ele chegou a Miami na manhã de quarta (28), com a esposa e as duas filhas.",
+        "Sobre a situação jurídica, O Liberal registra que a PF afirmou na quarta que Flávio não pode ser considerado foragido e que o descumprimento da ordem de entrega dos passaportes não autorizava a prisão nem uma vigilância permanente. A Revista Fórum diz que não existe mandado de prisão contra ele. O Correio lembra que, por ser senador, ele só pode ser preso em flagrante de crime inafiançável. Os deputados do PT Lindbergh Farias e Rogério Correia pediram a Moraes a prisão preventiva e, se houver mandado, a inclusão na lista vermelha da Interpol. O professor Thiago Bottino, da FGV, avalia que ele fugiu do país, por ter descumprido a medida de Moraes.",
+        "Segundo a Revista Fórum, Flávio divulgou um texto em que se declara presidente eleito, acusa a Justiça Eleitoral de fraude e diz que vai liderar a oposição a partir dos EUA. Não encontrei essa informação em outra fonte, e o PL, partido dele, tinha reconhecido o resultado na segunda-feira. A mesma revista informa que parlamentares democratas dos EUA cobram explicações do governo Trump. A situação segue em andamento, e este painel só registra o que as fontes confirmam."
+      ]
+    },
+    "mercado-28out": {
+      source: "Agência Brasil / Times Brasil / Imirante / CNN Brasil", date: "28 out", url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/ibovespa-cai-268-e-dolar-fecha-em-leve-baixa-r-534",
+      title: "Ibovespa cai 2,68% e fecha na menor marca desde agosto; dólar fica em R$ 5,34",
+      body: [
+        "Segundo a Agência Brasil, o Ibovespa fechou em 28 de outubro em queda de 2,68%, aos 171.006,10 pontos, no terceiro pregão seguido de perdas. O Imirante informa que é o menor fechamento desde 20 de agosto. O índice oscilou entre 170.162,48 e 175.711,22 pontos, e o Times Brasil registra volume de R$ 41,8 bilhões, com os grandes bancos entre as maiores pressões.",
+        "De acordo com o Imirante, a Bolsa acumula queda de 16,6% na semana e de 8,2% no mês. O dólar comercial fechou a R$ 5,34, com recuo de 0,19%. Segundo o Times Brasil, a moeda variou entre R$ 5,3116 e R$ 5,3992 durante a sessão. Ela sobe 6,95% na semana e 3,19% em outubro, mas ainda cai 2,59% no ano.",
+        "O Times Brasil informa que o Federal Reserve manteve os juros dos EUA na faixa de 3,75% a 4,00% ao ano, decisão já esperada. A CNN Brasil diz que os investidores também acompanharam a expectativa sobre o próximo ministro da Fazenda, os resultados do Santander e da Klabin e os desdobramentos da saída de Flávio Bolsonaro do país.",
+        "Este painel descreve os números do dia e não recomenda investimentos."
+      ]
+    },
     "fazenda-equipe-27out": {
       source: "Poder360 / CNN Brasil / NeoFeed / A Crítica de Campo Grande", date: "27 out", url: "https://www.poder360.com.br/poder-economia/rafael-fonteles-e-excelente-nome-para-ministro-da-fazenda-diz-durigan/",
       title: "Lula começa a desenhar o novo governo; Fazenda segue sem definição, e Fonteles é citado",
@@ -1381,6 +1416,7 @@
         "No mesmo dia, o PL, partido de Flávio, divulgou nota assinada por Valdemar Costa Neto em que reconhece o resultado proclamado pelo TSE, mas diz que “questionamentos” precisam ser esclarecidos. A BBC lembra que a própria campanha de Flávio pediu a prorrogação da votação em cidades do Sul e de São Paulo por causa do mau tempo.",
         "Um levantamento da BBC identificou 33.866 votos para presidente registrados depois das 17h, o equivalente a 0,026% dos 128.236.074 votos do 2º turno. Lula venceu por cerca de 4,4 milhões de votos. Para o advogado eleitoral Alberto Rollo, os votos depois das 17h não alteram o resultado, e para Fernando Neisser a tese de anulação por causa do horário ficou fraca. Segundo os especialistas ouvidos, uma ação pedindo a cassação de chapa (AIJE) costuma levar de um a dois anos.",
         "Ainda segundo a BBC, o ministro Alexandre de Moraes determinou no domingo que Flávio entregasse o passaporte em 24 horas, e Flávio disse que a PF o abordou na segunda-feira de manhã. Ele é citado em dois procedimentos no STF, um sobre apostas e outro sobre o filme “Dark Horse”, e nega irregularidades. Ele disse que nunca pensou em deixar o país e que vai organizar a oposição.",
+        "Atualização de 28 de outubro: Flávio deixou o Brasil e chegou aos EUA. Veja a notícia “Flávio Bolsonaro chega a Miami com a família”.",
         "Contexto: antes do 2º turno, a campanha de Flávio já tinha protocolado ações desse tipo no TSE contra a chapa de Lula e Alckmin, em 28 de setembro e em 20 de outubro, segundo o Jornal do Comércio e a Revista Oeste. A campanha de Lula também pediu ao TSE a cassação da chapa de Flávio, segundo a Revista Oeste. Nenhuma dessas ações tinha decisão de mérito nas fontes que consultei."
       ]
     },
@@ -3176,6 +3212,8 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <h2 style="font-size:24px;margin:0 0 8px">Arquivo de notícias</h2>
 <p style="margin:0 0 18px;color:#5c7382">Acesse cada notícia por um endereço próprio.</p>
 <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 24px;padding-left:22px">
+<li><a href="/noticias1/flavio-eua-28out.html">Flávio Bolsonaro chega a Miami com a família depois de deixar o Brasil; PF diz que ele não é foragido</a></li>
+<li><a href="/noticias1/mercado-28out.html">Ibovespa cai 2,68% e fecha na menor marca desde agosto; dólar fica em R$ 5,34</a></li>
 <li><a href="/noticias1/fazenda-equipe-27out.html">Lula começa a desenhar o novo governo; Fazenda segue sem definição, e Fonteles é citado</a></li>
 <li><a href="/noticias1/mercado-27out.html">Bolsa volta a cair 0,51% e dólar recua para R$ 5,35 no segundo pregão depois da eleição</a></li><li><a href="/noticias1/mercado-crash-26out.html">Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula</a></li>
 <li><a href="/noticias1/flavio-cassacao-26out.html">Flávio muda de rota e diz que vai pedir ao TSE a cassação da chapa Lula-Alckmin; PL reconhece o resultado</a></li>
