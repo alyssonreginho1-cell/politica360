@@ -15,6 +15,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B2038">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -446,6 +449,7 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
+    <button class="trending-pill" onclick="openArticle('fazenda-equipe-27out')">Quem será o ministro da Fazenda?</button>
     <button class="trending-pill" onclick="openArticle('mercado-crash-26out')">Bolsa cai 13,9%, dólar a R$ 5,40</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
@@ -469,6 +473,18 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
         <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
         <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="fazenda-equipe-27out" role="button" tabindex="0" onclick="openArticle('fazenda-equipe-27out')" onkeypress="if(event.key=='Enter')openArticle('fazenda-equipe-27out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">📌</div><span class="fc-cand">Próximo governo</span><span class="fc-dot"></span><span class="fc-time">27 out</span></div>
+        <p class="fc-headline">Lula começa a desenhar o novo ministério; a Fazenda segue sem definição, e o governador Rafael Fonteles é um dos nomes citados.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / CNN Brasil / NeoFeed / A Crítica</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="mercado-27out" role="button" tabindex="0" onclick="openArticle('mercado-27out')" onkeypress="if(event.key=='Enter')openArticle('mercado-27out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">27 out</span></div>
+        <p class="fc-headline">Bolsa recua mais 0,51%, a 175.710 pontos, e dólar cai a R$ 5,35 no 2º pregão depois da eleição; investidores aguardam a equipe econômica.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / Agência Brasil / Times Brasil</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="mercado-crash-26out" role="button" tabindex="0" onclick="openArticle('mercado-crash-26out')" onkeypress="if(event.key=='Enter')openArticle('mercado-crash-26out')">
@@ -1219,14 +1235,14 @@
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-mercado">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 26 out</span></div>
+      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 27 out</span></div>
       <div class="notice"><b>Dados de fechamento —</b> cotações mudam todos os dias, e o painel mostra o último pregão informado pelas fontes. É informação, não recomendação de investimento.</div>
 
       <div class="estrip" style="margin-top:14px;">
-        <div class="e"><div class="num">R$ 5,403</div><div class="lbl">dólar comercial · +8,21% no dia</div></div>
-        <div class="e"><div class="num">176.608</div><div class="lbl">Ibovespa · −13,88% no dia</div></div>
-        <div class="e"><div class="num">R$ 5,60</div><div class="lbl">máxima do dólar no dia</div></div>
-        <div class="e"><div class="num">15,25%</div><div class="lbl">DI jan/2029 (máx. do dia)</div></div>
+        <div class="e"><div class="num">R$ 5,35</div><div class="lbl">dólar comercial · −1% no dia</div></div>
+        <div class="e"><div class="num">175.710</div><div class="lbl">Ibovespa · −0,51% no dia</div></div>
+        <div class="e"><div class="num">−13,88%</div><div class="lbl">Ibovespa em 26 out, a maior queda desde 2020</div></div>
+        <div class="e"><div class="num">+8,21%</div><div class="lbl">dólar em 26 out, a maior alta desde 1999</div></div>
       </div>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Bolsa e dólar desde o 1º turno</h2></div>
@@ -1237,7 +1253,8 @@
         <tr><td class="theme-col">15 out</td><td>204.324 (−1,06%)</td><td>≈ R$ 5,09</td></tr>
         <tr><td class="theme-col">16 out</td><td>205.430 (+0,54%)</td><td>R$ 5,073 (−0,28%)</td></tr>
         <tr><td class="theme-col">23 out (véspera do 2º turno)</td><td>205.083 (+0,47%)</td><td>R$ 4,993 (−0,92%)</td></tr>
-        <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td><b>176.608 (−13,88%)</b></td><td><b>R$ 5,403 (+8,21%)</b></td></tr>
+        <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td>176.608 (−13,88%)</td><td>R$ 5,403 (+8,21%)</td></tr>
+        <tr><td class="theme-col">27 out (2º pregão)</td><td><b>175.710 (−0,51%)</b></td><td><b>R$ 5,35 (−1%)</b></td></tr>
       </tbody></table></div>
       <p class="compare-note"><b>26 de outubro:</b> a B3 acionou o circuit breaker pela primeira vez desde março de 2020, o dólar teve a maior alta diária desde janeiro de 1999 e o DI para janeiro de 2029 chegou a 15,25%, segundo a Gazeta do Povo. Os valores de 26 de outubro são do primeiro pregão depois do resultado e podem ter mudado desde então. Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
@@ -1249,7 +1266,7 @@
         <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
       <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 26 de outubro, o último que consegui confirmar. Fontes do dia 26: Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 27 de outubro, o último que consegui confirmar. O dólar aparece com pequenas diferenças entre fontes (R$ 5,349 a R$ 5,350). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
     </section>
   </div>
 
@@ -1287,7 +1304,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 27 de outubro de 2026.</footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 28 de outubro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1326,6 +1343,26 @@
 
 <script>
   const articles = {
+    "fazenda-equipe-27out": {
+      source: "Poder360 / CNN Brasil / NeoFeed / A Crítica de Campo Grande", date: "27 out", url: "https://www.poder360.com.br/poder-economia/rafael-fonteles-e-excelente-nome-para-ministro-da-fazenda-diz-durigan/",
+      title: "Lula começa a desenhar o novo governo; Fazenda segue sem definição, e Fonteles é citado",
+      body: [
+        "Segundo a CNN Brasil, Lula foi a Brasília depois da reeleição para iniciar as conversas sobre o ministério do mandato que começa em janeiro de 2027, com encontros com líderes do Congresso. O SP Diário informa que as prioridades são o comando da Fazenda, o da Casa Civil e a reorganização da comunicação presidencial.",
+        "O ministro da Fazenda, Dario Durigan, disse em 27 de outubro, segundo o Poder360, que o governador reeleito do Piauí, Rafael Fonteles (PT), é um excelente nome para o cargo, mas que Lula ainda não definiu a equipe econômica. O ND Mais registra que Geraldo Alckmin e Fernando Haddad também aparecem nas especulações, sem confirmação, e o NeoFeed diz que Alckmin poderia ir para a Casa Civil se Lula preferir outro nome para a Fazenda. Esses nomes são hipóteses de bastidores, e não decisões.",
+        "Segundo A Crítica de Campo Grande, o presidente do PT, Edinho Silva, afirmou que Lula escolherá o ministro da Fazenda até o fim do ano, que será alguém de extrema confiança e que o compromisso com a meta fiscal será mantido. O NeoFeed informa que Durigan disse que a equipe apresentará as medidas de ajuste para mostrar o compromisso do governo com a responsabilidade fiscal. Edinho também disse que Haddad continuará sendo ouvido por Lula nas discussões sobre economia.",
+        "Até o fechamento desta nota, não encontrei anúncio oficial de ministros nem de pacote fiscal."
+      ]
+    },
+    "mercado-27out": {
+      source: "Poder360 / Agência Brasil / Times Brasil / CNN Brasil / Mix Vale", date: "27 out", url: "https://www.poder360.com.br/poder-economia/bolsa-volta-a-cair-apos-tombo-com-reeleicao-de-lula-dolar-recua/",
+      title: "Bolsa volta a cair 0,51% e dólar recua para R$ 5,35 no segundo pregão depois da eleição",
+      body: [
+        "Segundo o Poder360, o Ibovespa fechou em 27 de outubro em queda de 0,51%, aos 175.710,05 pontos, depois de ensaiar uma alta na abertura. A Agência Brasil informa que o índice permaneceu nos menores níveis desde agosto. O Times Brasil registra volume de R$ 49,7 bilhões, bem abaixo dos R$ 88,6 bilhões da segunda-feira.",
+        "O dólar comercial recuou perto de 1% e ficou abaixo de R$ 5,35: R$ 5,349, com queda de 1,07%, segundo a Agência Brasil, e R$ 5,350, com queda de 0,97%, segundo o Poder360. A mínima do dia foi de R$ 5,316, e a moeda acumula queda de 2,55% em 2026. A CNN Brasil informa que os juros futuros também devolveram parte da alta do dia anterior.",
+        "A Agência Brasil aponta como pano de fundo a falta de definição do próximo ministro da Fazenda e as incertezas sobre a política econômica do novo mandato. O Mix Vale lembra que o índice de small caps tinha caído 26,92% na segunda-feira, a maior queda diária da série, e que o setor imobiliário recuou 28,63% e o de consumo, 26,14%. No pior momento de 26 de outubro, o Ibovespa chegou a 169.516 pontos, uma queda de mais de 17%.",
+        "Segundo o Poder360, Durigan avaliou que o movimento refletiu o posicionamento prévio dos investidores e comentou a recompra de títulos públicos feita pelo Tesouro na segunda. Este painel descreve os números e não recomenda investimentos."
+      ]
+    },
     "mercado-crash-26out": {
       source: "Gazeta do Povo / NeoFeed / Money Times / Terra", date: "26 out", url: "https://www.gazetadopovo.com.br/economia/vitoria-lula-perspectivas-economicas/",
       title: "Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula",
@@ -1343,7 +1380,8 @@
         "Segundo a BBC News Brasil, Flávio Bolsonaro disse em vídeo, em 26 de outubro, que pedirá a cassação da chapa de Lula, alegando abuso de poder político e econômico e “difusão em massa de mentiras”. Ele citou também a prorrogação da votação, determinada pelo ministro do STF Cristiano Zanin. A reportagem diz que ele não apresentou provas e que a mudança de rota acontece um dia depois de ele ter anunciado que pediria a anulação da eleição. A BBC tentou confirmar com a assessoria dele se o pedido de anulação foi abandonado e não teve resposta.",
         "No mesmo dia, o PL, partido de Flávio, divulgou nota assinada por Valdemar Costa Neto em que reconhece o resultado proclamado pelo TSE, mas diz que “questionamentos” precisam ser esclarecidos. A BBC lembra que a própria campanha de Flávio pediu a prorrogação da votação em cidades do Sul e de São Paulo por causa do mau tempo.",
         "Um levantamento da BBC identificou 33.866 votos para presidente registrados depois das 17h, o equivalente a 0,026% dos 128.236.074 votos do 2º turno. Lula venceu por cerca de 4,4 milhões de votos. Para o advogado eleitoral Alberto Rollo, os votos depois das 17h não alteram o resultado, e para Fernando Neisser a tese de anulação por causa do horário ficou fraca. Segundo os especialistas ouvidos, uma ação pedindo a cassação de chapa (AIJE) costuma levar de um a dois anos.",
-        "Ainda segundo a BBC, o ministro Alexandre de Moraes determinou no domingo que Flávio entregasse o passaporte em 24 horas, e Flávio disse que a PF o abordou na segunda-feira de manhã. Ele é citado em dois procedimentos no STF, um sobre apostas e outro sobre o filme “Dark Horse”, e nega irregularidades. Ele disse que nunca pensou em deixar o país e que vai organizar a oposição."
+        "Ainda segundo a BBC, o ministro Alexandre de Moraes determinou no domingo que Flávio entregasse o passaporte em 24 horas, e Flávio disse que a PF o abordou na segunda-feira de manhã. Ele é citado em dois procedimentos no STF, um sobre apostas e outro sobre o filme “Dark Horse”, e nega irregularidades. Ele disse que nunca pensou em deixar o país e que vai organizar a oposição.",
+        "Contexto: antes do 2º turno, a campanha de Flávio já tinha protocolado ações desse tipo no TSE contra a chapa de Lula e Alckmin, em 28 de setembro e em 20 de outubro, segundo o Jornal do Comércio e a Revista Oeste. A campanha de Lula também pediu ao TSE a cassação da chapa de Flávio, segundo a Revista Oeste. Nenhuma dessas ações tinha decisão de mérito nas fontes que consultei."
       ]
     },
     "economia-desafios-27out": {
@@ -2936,7 +2974,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
     });
   }
   window.addEventListener('load', function(){ p360AddNewTabButtons(); });
-  function articleLink(id){ return location.origin + '/noticia/' + id + '/'; }
+  function articleLink(id){ return location.origin + '/noticias/' + id + '.html'; }
   function shareArticle(id){
     const a = articles[id]; if(!a) return;
     const url = articleLink(id);
@@ -3137,7 +3175,9 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <section id="arquivo-noticias-seo" aria-label="Arquivo de notícias" style="max-width:1100px;margin:42px auto 30px;padding:24px;border-top:3px solid #0abab5;background:#f5fafb;color:#0b2038;border-radius:12px">
 <h2 style="font-size:24px;margin:0 0 8px">Arquivo de notícias</h2>
 <p style="margin:0 0 18px;color:#5c7382">Acesse cada notícia por um endereço próprio.</p>
-<ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 24px;padding-left:22px"><li><a href="/noticias/mercado-crash-26out.html">Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula</a></li>
+<ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 24px;padding-left:22px">
+<li><a href="/noticias/fazenda-equipe-27out.html">Lula começa a desenhar o novo governo; Fazenda segue sem definição, e Fonteles é citado</a></li>
+<li><a href="/noticias/mercado-27out.html">Bolsa volta a cair 0,51% e dólar recua para R$ 5,35 no segundo pregão depois da eleição</a></li><li><a href="/noticias/mercado-crash-26out.html">Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula</a></li>
 <li><a href="/noticias/flavio-cassacao-26out.html">Flávio muda de rota e diz que vai pedir ao TSE a cassação da chapa Lula-Alckmin; PL reconhece o resultado</a></li>
 <li><a href="/noticias/economia-desafios-27out.html">Quarto mandato começa com dívida de 82,9% do PIB e cobrança do mercado por sinal fiscal</a></li>
 <li><a href="/noticias/lula-reeleito-26out.html">Lula é reeleito presidente e inicia preparação para o quarto mandato; resultado foi confirmado após o segundo turno de 25 de outubro.</a></li>
@@ -3278,5 +3318,8 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <li><a href="/noticias/amcham-retaliacao.html">Amcham alertou para riscos de retaliação dos EUA</a></li></ul>
 </section>
 
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').catch(function(){});});}
+</script>
 </body>
 </html>
