@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,600&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;
@@ -394,6 +394,56 @@
   .ap-legend span{display:inline-flex;align-items:center;gap:6px;}
   .ap-box{background:var(--bg-card-2);border-radius:12px;padding:12px 14px;margin:12px 0;}
   .ap-box h3{font-size:14px;margin:0 0 6px;}
+
+  /* ---- Capa estilo jornal (layout 4 · misto) ---- */
+  #frontPage{padding:0 18px}
+  .masthead{border-top:6px solid var(--navy);margin-top:22px;padding:14px 0 10px;text-align:center}
+  .mast-row{display:flex;align-items:center;justify-content:center;gap:16px}
+  .mast-logo{width:clamp(40px,6vw,64px);height:clamp(40px,6vw,64px);flex:none}
+  .mast-name{font:700 clamp(34px,6vw,62px)/1 'Newsreader',serif;letter-spacing:-.01em;margin:0}
+  .mast-date{font:13px 'Inter',sans-serif;color:var(--ink-soft);margin-top:8px}
+  .ticker{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:baseline;border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);padding:10px 4px}
+  .tk{display:flex;align-items:baseline;gap:9px}
+  .tk b{font:500 11px 'JetBrains Mono',monospace;color:var(--ink-soft);letter-spacing:.08em}
+  .tk strong{font:600 17px 'JetBrains Mono',monospace}
+  .tk strong.down{color:#B3261E}
+  .tk span{font:12px 'JetBrains Mono',monospace;color:var(--ink-soft)}
+  .tk-note{font:11px 'JetBrains Mono',monospace;color:var(--ink-soft);margin-left:auto}
+  .front{display:grid;grid-template-columns:210px minmax(0,1fr) 290px;margin-top:24px}
+  .fr-col{min-width:0}
+  .fr-left{padding-right:22px;border-right:1px solid #D6D6D6}
+  .fr-mid{padding:0 28px;border-right:1px solid #D6D6D6}
+  .fr-right{padding-left:22px}
+  .fr-h{font:700 12px 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--navy);padding-bottom:8px;margin:0 0 14px}
+  .tl{list-style:none;margin:0;padding:0 0 0 6px}
+  .tl li{position:relative;padding:0 0 18px 20px;border-left:2px solid #CFE6E5}
+  .tl li::before{content:"";position:absolute;left:-7px;top:2px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--tiffany);box-sizing:border-box}
+  .tl li.hot::before{background:var(--tiffany)}
+  .fr-btn{all:unset;cursor:pointer;display:block;width:100%;box-sizing:border-box}
+  .fr-btn:focus-visible{outline:2px solid var(--tiffany);outline-offset:3px}
+  .tl .d{font:600 12px 'Inter',sans-serif;color:var(--tiffany-deep)}
+  .tl .t{font:500 14px/1.35 'Newsreader',serif;margin-top:2px}
+  .fr-btn:hover .t,.fr-btn:hover .lead-h,.fr-btn:hover h3{text-decoration:underline}
+  .kick{font:italic 600 14px 'Newsreader',serif;color:var(--tiffany-deep)}
+  .lead-h{font:700 clamp(28px,4vw,44px)/1.1 'Newsreader',serif;margin:8px 0 14px}
+  .lead-deck{font:19px/1.5 'Newsreader',serif;color:#333;margin:0 0 10px}
+  .src{font:12px 'Inter',sans-serif;color:#666;margin-bottom:18px}
+  .sec{padding:18px 0 4px;border-top:1px solid #D6D6D6}
+  .sec h3{font:600 22px/1.2 'Newsreader',serif;margin:6px 0}
+  .sec p{font:15px/1.45 'Newsreader',serif;color:#333;margin:0 0 6px}
+  .trk{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #E5E5E5}
+  .trk .nm{font:500 14px/1.3 'Inter',sans-serif;text-align:left}
+  .pill{font:600 11px 'Inter',sans-serif;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .pill.warn{background:#FBEFDD;color:#6B470B}.pill.ok{background:#E7F7F6;color:#065F5B}
+  .mread{margin:0;padding-left:20px}
+  .mread li{padding:5px 0;font:500 15px/1.4 'Newsreader',serif}
+  .mread .fr-btn{display:inline;width:auto}
+  @media (max-width:980px){
+    .front{grid-template-columns:1fr}
+    .fr-left,.fr-mid,.fr-right{border:0;padding:0}
+    .fr-mid{order:1}.fr-right{order:2;margin-top:22px}.fr-left{order:3;margin-top:22px}
+    .tk-note{margin-left:0}
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -440,12 +490,6 @@
 
   <div class="app">
 
-  <div class="estrip">
-    <div class="e"><div class="num">Lula</div><div class="lbl">reeleito presidente</div></div>
-    <div class="e"><div class="num">51,79%</div><div class="lbl">Lula, votos válidos</div></div>
-    <div class="e"><div class="num">48,21%</div><div class="lbl">Flávio, votos válidos</div></div>
-    <div class="e"><div class="num">25 out</div><div class="lbl">2º turno concluído</div></div>
-  </div>
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
@@ -462,6 +506,11 @@
 
   <!-- FEED TAB -->
   <div class="tab-panel active" id="tab-feed">
+    <div id="frontPage">
+      <header class="masthead"><div class="mast-row"><svg class="mast-logo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="58" fill="#0B2038"/><circle cx="60" cy="60" r="50" fill="none" stroke="#0ABAB5" stroke-width="3.5"/><circle cx="98.3" cy="27.9" r="5" fill="#D9A441"/><path d="M37.97 78V34H72.91Q75.42 34 77.47 35.22Q79.52 36.45 80.78 38.53Q82.03 40.61 82.03 43.06V54.44Q82.03 56.89 80.78 58.97Q79.52 61.05 77.47 62.27Q75.42 63.5 72.91 63.5L47.45 63.56V78ZM47.45 53.95H72.42Q72.42 53.95 72.42 53.95Q72.42 53.95 72.42 53.95V43.49Q72.42 43.49 72.42 43.49Q72.42 43.49 72.42 43.49H47.45Q47.45 43.49 47.45 43.49Q47.45 43.49 47.45 43.49V53.95Q47.45 53.95 47.45 53.95Q47.45 53.95 47.45 53.95Z" fill="#0ABAB5"/><path d="M47.08 95Q46.58 95 46.16 94.75Q45.75 94.5 45.5 94.09Q45.25 93.67 45.25 93.18V92.48H47.16V93.08Q47.16 93.08 47.16 93.08Q47.16 93.08 47.16 93.08H52.18Q52.18 93.08 52.18 93.08Q52.18 93.08 52.18 93.08V91.42Q52.18 91.42 52.18 91.42Q52.18 91.42 52.18 91.42H46.73V89.5H51.84Q51.84 89.5 51.84 89.5Q51.84 89.5 51.84 89.5V87.9Q51.84 87.9 51.84 87.9Q51.84 87.9 51.84 87.9H47.16Q47.16 87.9 47.16 87.9Q47.16 87.9 47.16 87.9V88.6H45.25V87.8Q45.25 87.3 45.5 86.89Q45.75 86.48 46.16 86.23Q46.58 85.99 47.08 85.99H51.95Q52.45 85.99 52.86 86.23Q53.27 86.48 53.52 86.89Q53.76 87.3 53.76 87.8V89.61Q53.76 89.74 53.74 89.9Q53.72 90.06 53.68 90.18Q53.87 90.41 53.99 90.7Q54.1 90.99 54.1 91.32V93.18Q54.1 93.67 53.85 94.09Q53.61 94.5 53.2 94.75Q52.78 95 52.28 95H47.08Z M57.47 95Q56.96 95 56.55 94.75Q56.14 94.5 55.89 94.09Q55.64 93.67 55.64 93.18V87.8Q55.64 87.3 55.89 86.89Q56.14 86.48 56.55 86.23Q56.96 85.99 57.47 85.99H63.12V87.9H57.55Q57.55 87.9 57.55 87.9Q57.55 87.9 57.55 87.9V89.47Q57.55 89.47 57.55 89.47Q57.55 89.47 57.55 89.47H62.66Q63.16 89.47 63.57 89.71Q63.99 89.96 64.24 90.37Q64.49 90.78 64.49 91.28V93.18Q64.49 93.67 64.24 94.09Q63.99 94.5 63.57 94.75Q63.16 95 62.66 95H57.47ZM57.55 93.08H62.57Q62.57 93.08 62.57 93.08Q62.57 93.08 62.57 93.08V91.39Q62.57 91.39 62.57 91.39Q62.57 91.39 62.57 91.39H57.55V93.08Q57.55 93.08 57.55 93.08Q57.55 93.08 57.55 93.08Z M67.73 95Q67.23 95 66.82 94.72Q66.4 94.44 66.15 93.99Q65.9 93.55 65.9 93.06V87.85Q65.9 87.35 66.15 86.93Q66.4 86.5 66.82 86.24Q67.23 85.99 67.73 85.99H72.92Q73.42 85.99 73.84 86.24Q74.25 86.5 74.5 86.93Q74.75 87.35 74.75 87.85V93.06Q74.75 93.55 74.5 93.99Q74.25 94.44 73.84 94.72Q73.42 95 72.92 95H67.73ZM68.84 92.96H72.84Q72.84 92.96 72.84 92.96Q72.84 92.96 72.84 92.96V89.61ZM67.82 91.31 71.81 87.95H67.82Q67.82 87.95 67.82 87.95Q67.82 87.95 67.82 87.95Z" fill="#FFFFFF"/></svg><h1 class="mast-name">Política 360º</h1></div><div class="mast-date" id="mastDate">Notícias, dados e fontes para entender a política brasileira</div></header>
+      <div class="ticker" id="ticker" aria-label="Indicadores do dia"></div>
+      <div class="front"><aside class="fr-col fr-left"><h2 class="fr-h">Esta semana</h2><ul class="tl" id="frTl"></ul></aside><div class="fr-col fr-mid" id="frMid"></div><aside class="fr-col fr-right" id="frRight"></aside></div>
+    </div>
     <section id="feed" style="margin-top:20px;">
       <div class="section-title">
         <h2>Agora</h2>
@@ -3356,6 +3405,49 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <li><a href="/noticias2/amcham-retaliacao.html">Amcham alertou para riscos de retaliação dos EUA</a></li></ul>
 </section>
 
+<script>
+// ---- Capa estilo jornal: edite só este bloco para atualizar a capa ----
+var FRONT = {
+  tickerNote: 'Pregão de 28 out',
+  ticker: [['IBOVESPA','171.006','−2,68%','down'],['DÓLAR','R$ 5,34','−0,19%',''],['FED','3,75–4,00%','mantidos',''],['LULA','51,79%','2º turno','']],
+  lead: {id:'flavio-eua-28out', kicker:'Caso Flávio · 28 out', deck:'A PF diz que o senador não é foragido, e não há mandado de prisão. Deputados do PT pediram a Moraes a prisão preventiva.'},
+  secondary: [{id:'mercado-28out', kicker:'Economia', deck:'O Fed manteve os juros nos EUA, e o dólar ficou em R$ 5,34.'},{id:'fazenda-equipe-27out', kicker:'Governo', deck:'O comando da Fazenda segue sem definição.'}],
+  timeline: [{d:'25 out',t:'Lula é reeleito presidente',id:'lula-reeleito-26out'},{d:'26 out',t:'Bolsa cai 13,88%; dólar sobe 8,21%',id:'mercado-crash-26out'},{d:'27 out',t:'Flávio deixa o Brasil',id:'flavio-eua-28out'},{d:'28 out',t:'Flávio chega a Miami; Bolsa a 171.006',id:'flavio-eua-28out',hot:true}],
+  tracker: [['Ministro da Fazenda','Em aberto','warn','fazenda-equipe-27out'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Mandado contra Flávio','Não há','ok','flavio-eua-28out'],['Resultado das urnas','Reconhecido','ok','tse-balanco-26out']],
+  mostRead: [['mercado-crash-26out','Bolsa despenca 13,88% após a reeleição'],['flavio-cassacao-26out','Flávio muda de rota e fala em cassar a chapa'],['fazenda-equipe-27out','Quem será o ministro da Fazenda?']]
+};
+(function(){
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+  function btn(id,cls){var b=el('button',(cls?cls+' ':'')+'fr-btn');b.type='button';b.addEventListener('click',function(){openArticle(id);});return b;}
+  function art(id){return (typeof articles!=='undefined'&&articles[id])||null;}
+  try{
+    var d=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    document.getElementById('mastDate').textContent=d.charAt(0).toUpperCase()+d.slice(1)+' · Notícias, dados e fontes para entender a política brasileira';
+  }catch(e){}
+  var tk=document.getElementById('ticker');
+  FRONT.ticker.forEach(function(t){var w=el('div','tk');w.appendChild(el('b',null,t[0]));w.appendChild(el('strong',t[3],t[1]));w.appendChild(el('span',null,t[2]));tk.appendChild(w);});
+  tk.appendChild(el('div','tk-note',FRONT.tickerNote));
+  var tl=document.getElementById('frTl');
+  FRONT.timeline.forEach(function(x){var li=el('li',x.hot?'hot':'');var b=btn(x.id);b.appendChild(el('div','d',x.d));b.appendChild(el('div','t',x.t));li.appendChild(b);tl.appendChild(li);});
+  var mid=document.getElementById('frMid'),lead=art(FRONT.lead.id);
+  if(lead){
+    mid.appendChild(el('div','kick',FRONT.lead.kicker));
+    var lb=btn(FRONT.lead.id);lb.appendChild(el('h2','lead-h',lead.title));mid.appendChild(lb);
+    mid.appendChild(el('p','lead-deck',FRONT.lead.deck));
+    mid.appendChild(el('div','src','Fontes: '+lead.source+' · '+lead.date));
+  }
+  FRONT.secondary.forEach(function(x){var a=art(x.id);if(!a)return;var s=el('div','sec');s.appendChild(el('div','kick',x.kicker));var b=btn(x.id);b.appendChild(el('h3',null,a.title));s.appendChild(b);s.appendChild(el('p',null,x.deck));s.appendChild(el('div','src',a.source+' · '+a.date));mid.appendChild(s);});
+  var r=document.getElementById('frRight');
+  r.appendChild(el('h2','fr-h','Acompanhe o governo'));
+  FRONT.tracker.forEach(function(x){var row=btn(x[3],'trk');row.appendChild(el('span','nm',x[0]));row.appendChild(el('span','pill '+x[2],x[1]));r.appendChild(row);});
+  var mh=el('h2','fr-h','Mais lidas');mh.style.marginTop='22px';r.appendChild(mh);
+  var ol=el('ol','mread');FRONT.mostRead.forEach(function(x){var li=el('li');var b=btn(x[0]);b.textContent=x[1];li.appendChild(b);ol.appendChild(li);});r.appendChild(ol);
+  // esconde a capa quando uma notícia está aberta
+  var fp=document.getElementById('frontPage'),_s=showArticle,_c=closeArticle;
+  showArticle=function(id,fr){fp.style.display='none';return _s(id,fr);};
+  closeArticle=function(fr){fp.style.display='';return _c(fr);};
+})();
+</script>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').catch(function(){});});}
 </script>
