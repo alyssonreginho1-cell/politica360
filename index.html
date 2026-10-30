@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="/manifest.webmanifest">
-<meta name="theme-color" content="#0B2038">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -444,6 +444,23 @@
     .fr-mid{order:1}.fr-right{order:2;margin-top:22px}.fr-left{order:3;margin-top:22px}
     .tk-note{margin-left:0}
   }
+
+  /* ---- Site todo branco ---- */
+  .topbar{background:#FFFFFF;border-bottom:1px solid var(--line)}
+  .brand-name{color:var(--navy)}.brand-tagline{color:var(--ink-soft)}
+  .topnav-btn{color:#46606E}.topnav-btn:hover{background:var(--tiffany-tint);color:var(--navy)}.topnav-btn.active{background:var(--tiffany);color:var(--navy)}
+  .live-pill{color:var(--tiffany-deep);border-color:rgba(6,140,136,.35);background:var(--tiffany-tint)}.live-pill::before{background:var(--tiffany-deep)}
+  .hdr-login{border:1px solid var(--line);background:#FFFFFF;color:var(--navy)}.hdr-login:hover{background:var(--bg-card-2)}
+  .hdr-user{color:var(--navy)}.hdr-logout{border-color:var(--line);color:var(--ink-soft)}.hdr-logout:hover{color:var(--tiffany-deep);border-color:var(--tiffany)}
+  .chip.following{color:#B3234B;background:rgba(217,79,112,.1)}
+  footer.note{background:#FFFFFF;color:var(--ink-soft);border-top:1px solid var(--line)}
+  footer.note a{color:var(--tiffany-deep)!important}
+  .bottomnav{background:#FFFFFF;border-top:1px solid var(--line);box-shadow:0 -1px 4px rgba(11,32,56,.06)}
+  .nav-item{color:#5C7382}.nav-item.active{color:var(--tiffany-deep)}
+  /* ---- Títulos das seções em estilo jornal (todas as páginas) ---- */
+  .section-title{border-bottom:2px solid var(--navy);padding-bottom:8px}
+  .section-title h2{font-family:'Newsreader',serif;font-size:24px;font-weight:700}
+  #siteHead .ticker{margin-bottom:4px}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -458,7 +475,6 @@
   <div class="topbar">
     <div class="topbar-row">
       <a class="brand" href="/" aria-label="Política 360º, ir para a página principal" onclick="if(location.pathname==='/'&&!location.hash){event.preventDefault();var b=document.querySelector('.topnav-btn[data-tab=feed]');if(b)b.click();window.scrollTo({top:0,behavior:'smooth'});}">
-        <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="58" fill="#0B2038"/><circle cx="60" cy="60" r="50" fill="none" stroke="#0ABAB5" stroke-width="3.5"/><circle cx="98.3" cy="27.9" r="5" fill="#D9A441"/><path d="M37.97 78V34H72.91Q75.42 34 77.47 35.22Q79.52 36.45 80.78 38.53Q82.03 40.61 82.03 43.06V54.44Q82.03 56.89 80.78 58.97Q79.52 61.05 77.47 62.27Q75.42 63.5 72.91 63.5L47.45 63.56V78ZM47.45 53.95H72.42Q72.42 53.95 72.42 53.95Q72.42 53.95 72.42 53.95V43.49Q72.42 43.49 72.42 43.49Q72.42 43.49 72.42 43.49H47.45Q47.45 43.49 47.45 43.49Q47.45 43.49 47.45 43.49V53.95Q47.45 53.95 47.45 53.95Q47.45 53.95 47.45 53.95Z" fill="#0ABAB5"/><path d="M47.08 95Q46.58 95 46.16 94.75Q45.75 94.5 45.5 94.09Q45.25 93.67 45.25 93.18V92.48H47.16V93.08Q47.16 93.08 47.16 93.08Q47.16 93.08 47.16 93.08H52.18Q52.18 93.08 52.18 93.08Q52.18 93.08 52.18 93.08V91.42Q52.18 91.42 52.18 91.42Q52.18 91.42 52.18 91.42H46.73V89.5H51.84Q51.84 89.5 51.84 89.5Q51.84 89.5 51.84 89.5V87.9Q51.84 87.9 51.84 87.9Q51.84 87.9 51.84 87.9H47.16Q47.16 87.9 47.16 87.9Q47.16 87.9 47.16 87.9V88.6H45.25V87.8Q45.25 87.3 45.5 86.89Q45.75 86.48 46.16 86.23Q46.58 85.99 47.08 85.99H51.95Q52.45 85.99 52.86 86.23Q53.27 86.48 53.52 86.89Q53.76 87.3 53.76 87.8V89.61Q53.76 89.74 53.74 89.9Q53.72 90.06 53.68 90.18Q53.87 90.41 53.99 90.7Q54.1 90.99 54.1 91.32V93.18Q54.1 93.67 53.85 94.09Q53.61 94.5 53.2 94.75Q52.78 95 52.28 95H47.08Z M57.47 95Q56.96 95 56.55 94.75Q56.14 94.5 55.89 94.09Q55.64 93.67 55.64 93.18V87.8Q55.64 87.3 55.89 86.89Q56.14 86.48 56.55 86.23Q56.96 85.99 57.47 85.99H63.12V87.9H57.55Q57.55 87.9 57.55 87.9Q57.55 87.9 57.55 87.9V89.47Q57.55 89.47 57.55 89.47Q57.55 89.47 57.55 89.47H62.66Q63.16 89.47 63.57 89.71Q63.99 89.96 64.24 90.37Q64.49 90.78 64.49 91.28V93.18Q64.49 93.67 64.24 94.09Q63.99 94.5 63.57 94.75Q63.16 95 62.66 95H57.47ZM57.55 93.08H62.57Q62.57 93.08 62.57 93.08Q62.57 93.08 62.57 93.08V91.39Q62.57 91.39 62.57 91.39Q62.57 91.39 62.57 91.39H57.55V93.08Q57.55 93.08 57.55 93.08Q57.55 93.08 57.55 93.08Z M67.73 95Q67.23 95 66.82 94.72Q66.4 94.44 66.15 93.99Q65.9 93.55 65.9 93.06V87.85Q65.9 87.35 66.15 86.93Q66.4 86.5 66.82 86.24Q67.23 85.99 67.73 85.99H72.92Q73.42 85.99 73.84 86.24Q74.25 86.5 74.5 86.93Q74.75 87.35 74.75 87.85V93.06Q74.75 93.55 74.5 93.99Q74.25 94.44 73.84 94.72Q73.42 95 72.92 95H67.73ZM68.84 92.96H72.84Q72.84 92.96 72.84 92.96Q72.84 92.96 72.84 92.96V89.61ZM67.82 91.31 71.81 87.95H67.82Q67.82 87.95 67.82 87.95Q67.82 87.95 67.82 87.95Z" fill="#FFFFFF"/></svg>
         <div>
           <div class="brand-name">Política 360º</div>
           <div class="brand-tagline">Notícias, dados e fontes para entender a política brasileira</div>
@@ -489,6 +505,10 @@
   <div class="auth-msg auth-toast" id="authMsg" style="display:none;"></div>
 
   <div class="app">
+  <div id="siteHead" style="padding:0 18px">
+      <header class="masthead"><div class="mast-row"><h1 class="mast-name">Política 360º</h1></div><div class="mast-date" id="mastDate">Notícias, dados e fontes para entender a política brasileira</div></header>
+    <div class="ticker" id="ticker" aria-label="Indicadores do dia"></div>
+  </div>
 
 
   <div class="trending" id="trendingRow">
@@ -507,8 +527,6 @@
   <!-- FEED TAB -->
   <div class="tab-panel active" id="tab-feed">
     <div id="frontPage">
-      <header class="masthead"><div class="mast-row"><svg class="mast-logo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="58" fill="#0B2038"/><circle cx="60" cy="60" r="50" fill="none" stroke="#0ABAB5" stroke-width="3.5"/><circle cx="98.3" cy="27.9" r="5" fill="#D9A441"/><path d="M37.97 78V34H72.91Q75.42 34 77.47 35.22Q79.52 36.45 80.78 38.53Q82.03 40.61 82.03 43.06V54.44Q82.03 56.89 80.78 58.97Q79.52 61.05 77.47 62.27Q75.42 63.5 72.91 63.5L47.45 63.56V78ZM47.45 53.95H72.42Q72.42 53.95 72.42 53.95Q72.42 53.95 72.42 53.95V43.49Q72.42 43.49 72.42 43.49Q72.42 43.49 72.42 43.49H47.45Q47.45 43.49 47.45 43.49Q47.45 43.49 47.45 43.49V53.95Q47.45 53.95 47.45 53.95Q47.45 53.95 47.45 53.95Z" fill="#0ABAB5"/><path d="M47.08 95Q46.58 95 46.16 94.75Q45.75 94.5 45.5 94.09Q45.25 93.67 45.25 93.18V92.48H47.16V93.08Q47.16 93.08 47.16 93.08Q47.16 93.08 47.16 93.08H52.18Q52.18 93.08 52.18 93.08Q52.18 93.08 52.18 93.08V91.42Q52.18 91.42 52.18 91.42Q52.18 91.42 52.18 91.42H46.73V89.5H51.84Q51.84 89.5 51.84 89.5Q51.84 89.5 51.84 89.5V87.9Q51.84 87.9 51.84 87.9Q51.84 87.9 51.84 87.9H47.16Q47.16 87.9 47.16 87.9Q47.16 87.9 47.16 87.9V88.6H45.25V87.8Q45.25 87.3 45.5 86.89Q45.75 86.48 46.16 86.23Q46.58 85.99 47.08 85.99H51.95Q52.45 85.99 52.86 86.23Q53.27 86.48 53.52 86.89Q53.76 87.3 53.76 87.8V89.61Q53.76 89.74 53.74 89.9Q53.72 90.06 53.68 90.18Q53.87 90.41 53.99 90.7Q54.1 90.99 54.1 91.32V93.18Q54.1 93.67 53.85 94.09Q53.61 94.5 53.2 94.75Q52.78 95 52.28 95H47.08Z M57.47 95Q56.96 95 56.55 94.75Q56.14 94.5 55.89 94.09Q55.64 93.67 55.64 93.18V87.8Q55.64 87.3 55.89 86.89Q56.14 86.48 56.55 86.23Q56.96 85.99 57.47 85.99H63.12V87.9H57.55Q57.55 87.9 57.55 87.9Q57.55 87.9 57.55 87.9V89.47Q57.55 89.47 57.55 89.47Q57.55 89.47 57.55 89.47H62.66Q63.16 89.47 63.57 89.71Q63.99 89.96 64.24 90.37Q64.49 90.78 64.49 91.28V93.18Q64.49 93.67 64.24 94.09Q63.99 94.5 63.57 94.75Q63.16 95 62.66 95H57.47ZM57.55 93.08H62.57Q62.57 93.08 62.57 93.08Q62.57 93.08 62.57 93.08V91.39Q62.57 91.39 62.57 91.39Q62.57 91.39 62.57 91.39H57.55V93.08Q57.55 93.08 57.55 93.08Q57.55 93.08 57.55 93.08Z M67.73 95Q67.23 95 66.82 94.72Q66.4 94.44 66.15 93.99Q65.9 93.55 65.9 93.06V87.85Q65.9 87.35 66.15 86.93Q66.4 86.5 66.82 86.24Q67.23 85.99 67.73 85.99H72.92Q73.42 85.99 73.84 86.24Q74.25 86.5 74.5 86.93Q74.75 87.35 74.75 87.85V93.06Q74.75 93.55 74.5 93.99Q74.25 94.44 73.84 94.72Q73.42 95 72.92 95H67.73ZM68.84 92.96H72.84Q72.84 92.96 72.84 92.96Q72.84 92.96 72.84 92.96V89.61ZM67.82 91.31 71.81 87.95H67.82Q67.82 87.95 67.82 87.95Q67.82 87.95 67.82 87.95Z" fill="#FFFFFF"/></svg><h1 class="mast-name">Política 360º</h1></div><div class="mast-date" id="mastDate">Notícias, dados e fontes para entender a política brasileira</div></header>
-      <div class="ticker" id="ticker" aria-label="Indicadores do dia"></div>
       <div class="front"><aside class="fr-col fr-left"><h2 class="fr-h">Esta semana</h2><ul class="tl" id="frTl"></ul></aside><div class="fr-col fr-mid" id="frMid"></div><aside class="fr-col fr-right" id="frRight"></aside></div>
     </div>
     <section id="feed" style="margin-top:20px;">
@@ -3257,153 +3275,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 
 </script>
 
-<section id="arquivo-noticias-seo" aria-label="Arquivo de notícias" style="max-width:1100px;margin:42px auto 30px;padding:24px;border-top:3px solid #0abab5;background:#f5fafb;color:#0b2038;border-radius:12px">
-<h2 style="font-size:24px;margin:0 0 8px">Arquivo de notícias</h2>
-<p style="margin:0 0 18px;color:#5c7382">Acesse cada notícia por um endereço próprio.</p>
-<ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 24px;padding-left:22px">
-<li><a href="/noticias1/flavio-eua-28out.html">Flávio Bolsonaro chega a Miami com a família depois de deixar o Brasil; PF diz que ele não é foragido</a></li>
-<li><a href="/noticias1/mercado-28out.html">Ibovespa cai 2,68% e fecha na menor marca desde agosto; dólar fica em R$ 5,34</a></li>
-<li><a href="/noticias1/fazenda-equipe-27out.html">Lula começa a desenhar o novo governo; Fazenda segue sem definição, e Fonteles é citado</a></li>
-<li><a href="/noticias1/mercado-27out.html">Bolsa volta a cair 0,51% e dólar recua para R$ 5,35 no segundo pregão depois da eleição</a></li><li><a href="/noticias1/mercado-crash-26out.html">Bolsa despenca 13,88% e dólar sobe 8,21% no primeiro pregão após a reeleição de Lula</a></li>
-<li><a href="/noticias1/flavio-cassacao-26out.html">Flávio muda de rota e diz que vai pedir ao TSE a cassação da chapa Lula-Alckmin; PL reconhece o resultado</a></li>
-<li><a href="/noticias1/economia-desafios-27out.html">Quarto mandato começa com dívida de 82,9% do PIB e cobrança do mercado por sinal fiscal</a></li>
-<li><a href="/noticias1/lula-reeleito-26out.html">Lula é reeleito presidente e inicia preparação para o quarto mandato; resultado foi confirmado após o segundo turno de 25 de outubro.</a></li>
-<li><a href="/noticias1/flavio-contesta-26out.html">Flávio Bolsonaro contesta o resultado e anuncia pedido de anulação; acompanhe a cobertura e as informações oficiais sobre a manifestação.</a></li>
-<li><a href="/noticias1/tse-balanco-26out.html">Presidente do TSE confirma a reeleição de Lula e faz balanço do pleito; a Justiça Eleitoral também afirmou que a votação ocorreu com segurança.</a></li>
-<li><a href="/noticias1/congresso-pacificacao-26out.html">Após o resultado das urnas, o presidente do Senado, Davi Alcolumbre, defende pacificação política e respeito ao resultado eleitoral.</a></li>
-<li><a href="/noticias1/desafios-novo-mandato-26out.html">Com a eleição concluída, a articulação com o Congresso e a formação da equipe do novo mandato entram no centro do debate político.</a></li>
-<li><a href="/noticias1/rep-mundo-25out.html">Mundo repercute a reeleição de Lula: virada inédita e freio à direita na região</a></li>
-<li><a href="/noticias1/rep-eua-25out.html">Estados Unidos: imprensa vê revés para Trump na região e destaca contestação de Flávio</a></li>
-<li><a href="/noticias1/rep-reinounido-25out.html">Reino Unido: Guardian fala em vitória histórica e BBC aponta Congresso hostil</a></li>
-<li><a href="/noticias1/rep-espanha-25out.html">Espanha: El País vê “virada histórica” e fôlego para a esquerda</a></li>
-<li><a href="/noticias1/rep-franca-italia-alemanha-25out.html">França, Itália e Alemanha: controvérsias do dia da votação, triunfo e idade de Lula</a></li>
-<li><a href="/noticias1/rep-japao-25out.html">Japão: Japan Times noticia a vitória de Lula</a></li>
-<li><a href="/noticias1/rep-australia-25out.html">Austrália: ABC destaca vitória de Lula e recusa de Flávio em aceitar a derrota</a></li>
-<li><a href="/noticias1/rep-argentina-25out.html">Argentina: La Nación e Clarín destacam virada e a polêmica da prorrogação</a></li>
-<li><a href="/noticias1/rep-uruguai-25out.html">Uruguai: Montevideo Portal fala em “histórica remontada”; Orsi chama Lula de amigo</a></li>
-<li><a href="/noticias1/rep-aljazeera-25out.html">Oriente Médio: Al Jazeera noticia vitória por margem estreita</a></li>
-<li><a href="/noticias1/resultado-2turno-25out.html">Lula é reeleito presidente após virada no fim da apuração do 2º turno</a></li>
-<li><a href="/noticias1/pesquisas-24out.html">Véspera do 2º turno: 11 institutos divulgam pesquisas neste sábado</a></li>
-<li><a href="/noticias1/debate-globo-23out.html">Debate da Globo: troca de acusações e embate de propostas no último confronto</a></li>
-<li><a href="/noticias1/checagem-debate-globo-23out.html">Checamos Flávio Bolsonaro e Lula no debate da Globo</a></li>
-<li><a href="/noticias1/sigilos-23out.html">Sigilos: Flávio envia autorizações ao TSE na madrugada de sexta, e campanha de Lula diz que o prazo foi perdido</a></li>
-<li><a href="/noticias1/pesquisas-22out.html">Datafolha: Flávio e Lula empatam com 50% dos votos válidos a 3 dias do 2º turno</a></li>
-<li><a href="/noticias1/sigilos-22out.html">Sigilos: campanha de Lula protocola resposta no TSE, e Mendonça diz que a Corte não decide a divulgação</a></li>
-<li><a href="/noticias1/dia-candidatos-22out.html">Dia dos candidatos: sem atos públicos, Flávio visita o pai e Lula faz live</a></li>
-<li><a href="/noticias1/piaui-lancha-21out.html">Piauí relata passeio de lancha de Flávio com lobistas da Covaxin</a></li>
-<li><a href="/noticias1/piaui-bet-20out.html">Piauí liga Flávio à casa de apostas Best Bet; ele nega sociedade</a></li>
-<li><a href="/noticias1/quaest-2turno-21out.html">Quaest: Flávio 45% e Lula 44%; rejeição de Lula cai de 53% para 47%</a></li>
-<li><a href="/noticias1/sigilos-21out.html">Disputa pelos sigilos: Flávio impõe condições e campanha de Lula diz aceitá-las</a></li>
-<li><a href="/noticias1/gerp-2turno-21out.html">Gerp: Flávio tem 53% e Lula 47% dos votos válidos no 2º turno</a></li>
-<li><a href="/noticias1/pesquisas-19out.html">Pesquisas de 19 e 20 de outubro: Flávio segue à frente, com diferença de 0,6 a 4 pontos</a></li>
-<li><a href="/noticias1/realtime-2turno-20out.html">Real Time Big Data: Flávio tem 52% e Lula 48% dos votos válidos</a></li>
-<li><a href="/noticias1/lula-sbt-19out.html">Lula no SBT: quebra de sigilo, emendas, segurança e reforma do Judiciário</a></li>
-<li><a href="/noticias1/focus-19out.html">Focus: IPCA de 2026 fica em 5,22%, PIB cai para 1,83% e Selic segue em 13,25%</a></li>
-<li><a href="/noticias1/ormuz-minas-20out.html">Ormuz: novos petroleiros atingidos por minas; Irã pede reunião de emergência da ONU</a></li>
-<li><a href="/noticias1/ucrania-trilateral-20out.html">Ucrânia: Putin aceita reunião trilateral proposta por Witkoff</a></li>
-<li><a href="/noticias1/franca-protestos-19out.html">França impõe toques de recolher depois de protestos violentos</a></li>
-<li><a href="/noticias1/mundo-19out.html">Mundo em 19 de outubro: Trump apoia Netanyahu, PMA corta ajuda em Gaza e protestos “No Kings” nos EUA</a></li>
-<li><a href="/noticias1/debate-band-18out.html">Debate na Band: Lula e Flávio trocam acusações sobre Master, Dark Horse e Luchsinger</a></li>
-<li><a href="/noticias1/checagem-debate-band-18out.html">Checagem do debate da Band: o que as agências verificaram</a></li>
-<li><a href="/noticias1/ue-cupula-sancoes-16out.html">Cúpula da UE reafirma apoio à Ucrânia e prepara 22º pacote de sanções à Rússia</a></li>
-<li><a href="/noticias1/houthis-arabia-saudita-17out.html">Arábia Saudita avalia ação militar depois de impasse com os houthis</a></li>
-<li><a href="/noticias1/etiopia-tigre-16out.html">Etiópia: Abiy anuncia governo interino em Tigré após retomada de combates</a></li>
-<li><a href="/noticias1/rdc-ebola-belgica-17out.html">RDC proíbe contato com a embaixada belga; Ebola chega ao Quênia</a></li>
-<li><a href="/noticias1/sahel-sudao-16out.html">Sahel: jihadistas rivais combatem em quatro países; ataque aéreo no Sudão é contestado</a></li>
-<li><a href="/noticias1/taiwan-china-14out.html">Taiwan e China: jato d’água contra pesqueiro eleva tensão, sem exercícios militares neste ano</a></li>
-<li><a href="/noticias1/trump-eleicao-brasil-7out.html">Trump acompanha a eleição brasileira, mas evita declarar apoio a Flávio</a></li>
-<li><a href="/noticias1/midterms-agenda-externa-16out.html">Próximo presidente terá agenda externa complexa, diz análise</a></li>
-<li><a href="/noticias1/pacifico-ciber-png-14out.html">Pacífico: EUA acusam China de ciberataques; massacre em mina em Papua-Nova Guiné</a></li>
-<li><a href="/noticias1/pesquisas-7dias-18out.html">A 7 dias do 2º turno, Flávio lidera numericamente em 11 de 13 pesquisas</a></li>
-<li><a href="/noticias1/luchsinger-cnn-17out.html">Luchsinger diz à CNN que Lulinha se reuniu com ministros e quer fazer delação</a></li>
-<li><a href="/noticias1/flavio-salvador-17out.html">Flávio recebe título de Cidadão de Salvador depois de TJ-BA derrubar liminar</a></li>
-<li><a href="/noticias1/agenda-pesquisas-19-22out.html">Pesquisas da última semana: veja as datas de divulgação</a></li>
-<li><a href="/noticias1/mercado-semana-16out.html">Ibovespa sobe 0,54% na sexta, mas cai 1,74% na semana; dólar fecha a R$ 5,07</a></li>
-<li><a href="/noticias1/tarifa-zero-pec-15out.html">Lula confirma que enviará PEC da Tarifa Zero no transporte coletivo</a></li>
-<li><a href="/noticias1/kassio-master-impedimento-16out.html">Kassio avalia estender impedimento no caso Master</a></li>
-<li><a href="/noticias1/mei-teto-perdao-senado-15out.html">Senado aprova novo teto do MEI e perdão de dívidas por 78 a 0</a></li>
-<li><a href="/noticias1/pec-seguranca-adiada-15out.html">Alcolumbre retira PEC da Segurança Pública da pauta do Senado</a></li>
-<li><a href="/noticias1/ucrania-ataques-16out.html">Rússia ataca nove regiões da Ucrânia; Zelensky critica acordo do diesel de Trump</a></li>
-<li><a href="/noticias1/richarlison-ilha-17out.html">Richarlison acusa Flávio de ficar com ilha em Angra e pede investigação da PF; Flávio nega envolvimento</a></li>
-<li><a href="/noticias1/ipespe-2turno-17out.html">Ipespe/Abrapel: Flávio 51,2% e Lula 48,8% em votos válidos; diferença cai para 2,4 pontos</a></li>
-<li><a href="/noticias1/globo-entrevistas-15-16out.html">Entrevistas na Globo: Flávio promete ajuste de R$ 200 bilhões; Lula defende mandato para ministros do STF</a></li>
-<li><a href="/noticias1/escala-6x1-promulgacao-16out.html">Fim da escala 6x1 é promulgado; Flávio diz que não tentará reverter</a></li>
-<li><a href="/noticias1/ira-petroleiro-mina-17out.html">Guarda Revolucionária diz que superpetroleiro explodiu em Ormuz; Irã diz que reabertura está nas mãos dos EUA</a></li>
-<li><a href="/noticias1/datafolha-2turno-15out.html">Datafolha: Flávio 51% e Lula 49% em votos válidos; diferença cai de 4 para 2 pontos</a></li>
-<li><a href="/noticias1/ira-escalada-15out.html">EUA estudam opções para retomar ataques ao Irã; Teerã promete continuar lutando</a></li>
-<li><a href="/noticias1/quaest-2turno-14out.html">Quaest: Flávio tem 46% e Lula 44% no 2º turno; em votos válidos, 51% a 49%</a></li>
-<li><a href="/noticias1/btg-nexus-2turno-13out.html">BTG/Nexus: Flávio tem 52% e Lula 48% em votos válidos</a></li>
-<li><a href="/noticias2/visita-jair-moraes-13out.html">Moraes libera visita de Flávio a Jair, mas proíbe encontros e manifestos eleitorais</a></li>
-<li><a href="/noticias2/poderdata-2turno-13out.html">PoderData/Aya: Flávio 51% e Lula 49%; diferença cai de 6 para 2 pontos</a></li>
-<li><a href="/noticias2/futura-2turno-13out.html">Futura/100% Cidades: Flávio 50% e Lula 46,6% no 2º turno</a></li>
-<li><a href="/noticias2/agenda-13out.html">Agenda de terça (13): Lula em Brasília e São Paulo; Flávio visita o pai</a></li>
-<li><a href="/noticias2/tse-remocoes-8-9out.html">TSE manda remover conteúdos dos dois lados</a></li>
-<li><a href="/noticias2/ira-rejeita-resposta-11out.html">Irã diz que resposta dos EUA é insuficiente e mantém Ormuz fechado</a></li>
-<li><a href="/noticias2/datatrends-2turno-11out.html">DataTrends: Flávio tem 53,1% e Lula 46,9% dos votos válidos</a></li>
-<li><a href="/noticias2/partidos-apoio-flavio.html">PP, União Brasil e Republicanos oficializam apoio a Flávio</a></li>
-<li><a href="/noticias2/atlas-2turno-9out.html">Atlas/Bloomberg: Flávio tem 51,1% e Lula 45,7% no 2º turno</a></li>
-<li><a href="/noticias2/vox-2turno-9out.html">Vox Brasil: Lula tem 44,2% e Flávio 42,7% no 2º turno</a></li>
-<li><a href="/noticias2/lula-natal-10out.html">Em Natal, Lula desafia Flávio a detalhar cortes de gastos</a></li>
-<li><a href="/noticias2/flavio-madureira-10out.html">Flávio vai a culto no Rio com Douglas Ruas e fala em “guerra espiritual”</a></li>
-<li><a href="/noticias2/china-flavio-10out.html">China monitora “falas e práticas” de Flávio para decidir a relação com o Brasil</a></li>
-<li><a href="/noticias2/datafolha-2turno-8out.html">Datafolha: Flávio tem 49% e Lula 45% no 2º turno; em votos válidos, 52% a 48%</a></li>
-<li><a href="/noticias2/poderdata-2turno-8out.html">PoderData/Aya: Flávio abre 53% a 47% em votos válidos no 2º turno</a></li>
-<li><a href="/noticias2/apoios-2turno.html">Zema, Caiado e Cury declaram apoio a Flávio; Renan Santos fica neutro</a></li>
-<li><a href="/noticias2/horario-eleitoral-2turno.html">Horário eleitoral do 2º turno volta ao rádio e à TV; debate da Globo é no dia 23</a></li>
-<li><a href="/noticias2/ira-resposta-ormuz-8out.html">Irã analisa resposta dos EUA sobre Ormuz; Trump diz que não atacará antes das eleições de meio de mandato</a></li>
-<li><a href="/noticias2/reacoes-flavio-lula.html">Flávio fala em fim da era do PT; campanha de Lula aposta em virada no 2º turno</a></li>
-<li><a href="/noticias2/terceiro-quarto-lugar.html">Terceira via soma 7,79%, o menor índice desde 2006; Cury, Renan e Caiado não declaram apoio</a></li>
-<li><a href="/noticias2/estados-parciais-4out.html">Flávio vence em 14 estados e no DF; Lula, em 12, com todo o Nordeste</a></li>
-<li><a href="/noticias2/urnas-vs-pesquisas.html">Flávio supera Lula nas urnas, acima do que mostravam as pesquisas</a></li>
-<li><a href="/noticias2/apuracao-parcial-4out.html">TSE encerra o 1º turno: Flávio tem 47,03% e Lula 45,16%; 2º turno é em 25 de outubro</a></li>
-<li><a href="/noticias2/apuracao-exterior-4out.html">Exterior: Lula vence em 27 países e soma 53.746 votos contra 40.914 de Flávio</a></li>
-<li><a href="/noticias2/quaest-final-3out.html">Quaest de véspera: Lula 46% e Flávio 45% dos votos válidos</a></li>
-<li><a href="/noticias2/datafolha-ultima-3out.html">Datafolha de véspera: Lula tem 45% e Flávio 42% dos votos válidos</a></li>
-<li><a href="/noticias2/cnt-mda-3out.html">CNT/MDA: Lula tem 47,8% e Flávio 42,1% dos votos válidos</a></li>
-<li><a href="/noticias2/campanha-sp-sabado.html">Lula e Flávio fecham a campanha em São Paulo na véspera do 1º turno</a></li>
-<li><a href="/noticias2/regras-sabado-3out.html">Último dia de campanha de rua: o que ainda é permitido neste sábado</a></li>
-<li><a href="/noticias2/ormuz-petroleiros.html">Dois petroleiros são atingidos por projéteis perto do Estreito de Ormuz</a></li>
-<li><a href="/noticias2/hoc-europa-russia.html">Professor HOC: a Europa está se preparando para uma guerra com a Rússia?</a></li>
-<li><a href="/noticias2/hoc-irao-vietna.html">Professor HOC compara as guerras do Irã e da Ucrânia com Vietnã e Coreia</a></li>
-<li><a href="/noticias2/rubio-ira-delegacao.html">Rubio manda delegação do Irã deixar os EUA após impasse nas negociações</a></li>
-<li><a href="/noticias2/putin-valdai.html">Putin descarta cessar-fogo de ataques de longo alcance com a Ucrânia</a></li>
-<li><a href="/noticias2/kyiv-ponte-drones.html">Ataques de drones russos fecham ponte em Kiev; Zelensky pede mais sanções</a></li>
-<li><a href="/noticias2/guerra-ira-brasil.html">Guerra EUA-Israel x Irã: o que está em jogo para o Brasil</a></li>
-<li><a href="/noticias2/debate-globo-cancelado.html">Debate da Globo, o último antes do 1º turno, é cancelado após decisões judiciais</a></li>
-<li><a href="/noticias2/candidatos-12.html">Disputa presidencial tem 12 candidatos ativos; Marçal e Avalanche estão fora</a></li>
-<li><a href="/noticias2/datafolha-1out.html">Datafolha: Lula 42% e Flávio 38% no 1º turno; no 2º, 48% a 45%</a></li>
-<li><a href="/noticias2/pesquisas-semana-antes.html">A uma semana do 1º turno, Lula e Flávio seguem em empate técnico</a></li>
-<li><a href="/noticias2/avalanche-desiste.html">Leonardo Avalanche (PRTB) anuncia desistência da candidatura à Presidência</a></li>
-<li><a href="/noticias2/fachin-master-pf.html">Fachin pede reunião com diretor-geral da PF sobre ministros no Caso Master</a></li>
-<li><a href="/noticias2/toffoli-suspende-renan-grassi.html">Toffoli suspende campanha digital de Renan Santos e Wilson Grassi</a></li>
-<li><a href="/noticias2/btg-nexus-empate.html">BTG/Nexus: Flávio 46%, Lula 45% — empate técnico no 2º turno</a></li>
-<li><a href="/noticias2/tse-prazo-marcal.html">TSE tem até 14 de setembro para julgar candidatura de Marçal</a></li>
-<li><a href="/noticias2/quaest-indecisos.html">Quaest: indecisos caem de 51% para 42% com início da campanha</a></li>
-<li><a href="/noticias2/master-moraes-vorcaro.html">Documentos apreendidos com Vorcaro reacendem debate sobre contrato da mulher de Moraes</a></li>
-<li><a href="/noticias2/flavio-live-advogado.html">Em live, Flávio chama Moraes de &#x27;advogado de Vorcaro&#x27;</a></li>
-<li><a href="/noticias2/alcolumbre-defende-moraes.html">Alcolumbre defende Moraes e cita pedido de Flávio a Vorcaro</a></li>
-<li><a href="/noticias2/audio-dark-horse.html">Áudio revela Flávio cobrando R$ 134 milhões de Vorcaro para filme</a></li>
-<li><a href="/noticias2/marcal-lista-final.html">Justiça Eleitoral confirma lista final: 13 candidaturas à Presidência</a></li>
-<li><a href="/noticias2/marcal-tse-liminar.html">TSE proíbe Marçal de usar recursos oficiais de campanha, por ora</a></li>
-<li><a href="/noticias2/marcal-registro.html">A 9 minutos do prazo final, PRTB registra candidatura de Marçal</a></li>
-<li><a href="/noticias2/debate-hoje.html">Primeiro debate presidencial foi ao ar em 23 de agosto, na Band</a></li>
-<li><a href="/noticias2/caiado-kassab.html">Com Kassab de vice, Caiado mira o segundo turno contra Lula</a></li>
-<li><a href="/noticias2/flavio-urnas.html">Flávio promete respeitar resultado das urnas</a></li>
-<li><a href="/noticias2/flavio-tse.html">Candidatura de Flávio é registrada oficialmente no TSE</a></li>
-<li><a href="/noticias2/tv-tempo.html">Lula deve ter o maior tempo de propaganda no rádio e TV</a></li>
-<li><a href="/noticias2/tse-11.html">11 candidaturas à Presidência já foram registradas</a></li>
-<li><a href="/noticias2/campanha-lancamento.html">Cinco presidenciáveis lançam campanha em seus redutos políticos</a></li>
-<li><a href="/noticias2/tse-prazo.html">TSE encerra prazo de registro de candidaturas</a></li>
-<li><a href="/noticias2/kassab-zero.html">Kassab avaliou que chance de Flávio vencer era nula</a></li>
-<li><a href="/noticias2/flavio-pt-boato.html">Flávio negou boato de filiação ao PT</a></li>
-<li><a href="/noticias2/renan-pl-embate.html">PL e Missão trocaram farpas às vésperas da campanha</a></li>
-<li><a href="/noticias2/renan-largo-sf.html">Missão iniciou campanha no Largo São Francisco</a></li>
-<li><a href="/noticias2/zema-montes-claros.html">Zema lançou candidatura em Montes Claros</a></li>
-<li><a href="/noticias2/caiado-entorno-df.html">Caiado percorreu o Entorno do DF no 1º dia de campanha</a></li>
-<li><a href="/noticias2/lula-vila-euclides.html">Lula abriu campanha na Vila Euclides</a></li>
-<li><a href="/noticias2/lula-pec-seguranca.html">Após reunião com Lula, Alcolumbre liberou a PEC da Segurança</a></li>
-<li><a href="/noticias2/amcham-retaliacao.html">Amcham alertou para riscos de retaliação dos EUA</a></li></ul>
-</section>
+
 
 <script>
 // ---- Capa estilo jornal: edite só este bloco para atualizar a capa ----
