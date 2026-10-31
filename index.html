@@ -3095,7 +3095,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
   function openArticle(id, fromRoute){ if(articles[id]) showArticle(id, fromRoute); }
   function openArticleNewTab(id){
     if(!articles[id]) return;
-    var url = '/noticias/' + encodeURIComponent(id) + '.html';
+    var url = location.origin + location.pathname + '#noticia=' + encodeURIComponent(id);
     var w = window.open(url, '_blank');
     if(w){ try{ w.opener = null; }catch(e){} }
   }
