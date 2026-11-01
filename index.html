@@ -564,9 +564,9 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('flavio-eua-28out')">Flávio chega aos EUA</button>
+    <button class="trending-pill" onclick="openArticle('flavio-live-30out')">Flávio fala dos EUA</button>
     <button class="trending-pill" onclick="openArticle('fazenda-equipe-27out')">Quem será o ministro da Fazenda?</button>
-    <button class="trending-pill" onclick="openArticle('mercado-crash-26out')">Bolsa cai 13,9%, dólar a R$ 5,40</button>
+    <button class="trending-pill" onclick="openArticle('mercado-30out')">Pior semana da Bolsa desde 2020</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
     <button class="trending-pill" onclick="openArticle('tse-balanco-26out')">Balanço do TSE</button>
@@ -592,6 +592,18 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
         <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
         <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-live-30out" role="button" tabindex="0" onclick="openArticle('flavio-live-30out')" onkeypress="if(event.key=='Enter')openArticle('flavio-live-30out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">⚖️</div><span class="fc-cand">Caso Flávio</span><span class="fc-dot"></span><span class="fc-time">30 out</span></div>
+        <p class="fc-headline">Dos EUA, Flávio fala em perseguição de Moraes; a defesa pede ao STF que ele deixe a investigação e que o passaporte seja revisto.</p>
+        <div class="fc-bottom"><span class="fc-source">● Poder360 / O Tempo / CNN Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="mercado-30out" role="button" tabindex="0" onclick="openArticle('mercado-30out')" onkeypress="if(event.key=='Enter')openArticle('mercado-30out')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">30 out</span></div>
+        <p class="fc-headline">Ibovespa fecha a semana com queda de 18,12%, a pior desde 2020; dólar sobe a R$ 5,446, a maior alta semanal desde 2008.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Brasil / CNN Brasil / Money Times</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="flavio-eua-28out" role="button" tabindex="0" onclick="openArticle('flavio-eua-28out')" onkeypress="if(event.key=='Enter')openArticle('flavio-eua-28out')">
@@ -1366,14 +1378,14 @@
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-mercado">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 28 out</span></div>
+      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 30 out</span></div>
       <div class="notice"><b>Dados de fechamento —</b> cotações mudam todos os dias, e o painel mostra o último pregão informado pelas fontes. É informação, não recomendação de investimento.</div>
 
       <div class="estrip" style="margin-top:14px;">
-        <div class="e"><div class="num">R$ 5,34</div><div class="lbl">dólar comercial · −0,19% no dia</div></div>
-        <div class="e"><div class="num">171.006</div><div class="lbl">Ibovespa · −2,68% no dia</div></div>
-        <div class="e"><div class="num">−16,6%</div><div class="lbl">Ibovespa na semana</div></div>
-        <div class="e"><div class="num">+6,95%</div><div class="lbl">dólar na semana</div></div>
+        <div class="e"><div class="num">R$ 5,446</div><div class="lbl">dólar comercial · +1,09% no dia</div></div>
+        <div class="e"><div class="num">167.922</div><div class="lbl">Ibovespa · −0,75% no dia</div></div>
+        <div class="e"><div class="num">−18,12%</div><div class="lbl">Ibovespa na semana</div></div>
+        <div class="e"><div class="num">+9,15%</div><div class="lbl">dólar na semana</div></div>
       </div>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Bolsa e dólar desde o 1º turno</h2></div>
@@ -1386,7 +1398,8 @@
         <tr><td class="theme-col">23 out (véspera do 2º turno)</td><td>205.083 (+0,47%)</td><td>R$ 4,993 (−0,92%)</td></tr>
         <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td>176.608 (−13,88%)</td><td>R$ 5,403 (+8,21%)</td></tr>
         <tr><td class="theme-col">27 out (2º pregão)</td><td>175.710 (−0,51%)</td><td>R$ 5,35 (−1%)</td></tr>
-        <tr><td class="theme-col">28 out (3º pregão)</td><td><b>171.006 (−2,68%)</b></td><td><b>R$ 5,34 (−0,19%)</b></td></tr>
+        <tr><td class="theme-col">28 out (3º pregão)</td><td>171.006 (−2,68%)</td><td>R$ 5,34 (−0,19%)</td></tr>
+        <tr><td class="theme-col">30 out (5º pregão)</td><td><b>167.922 (−0,75%)</b></td><td><b>R$ 5,446 (+1,09%)</b></td></tr>
       </tbody></table></div>
       <p class="compare-note"><b>26 de outubro:</b> a B3 acionou o circuit breaker pela primeira vez desde março de 2020, o dólar teve a maior alta diária desde janeiro de 1999 e o DI para janeiro de 2029 chegou a 15,25%, segundo a Gazeta do Povo. Os valores de 26 de outubro são do primeiro pregão depois do resultado e podem ter mudado desde então. Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
@@ -1398,7 +1411,7 @@
         <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
       <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 28 de outubro, o último que consegui confirmar. O dólar aparece com pequenas diferenças entre fontes (R$ 5,34 a R$ 5,35). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Os valores de bolsa e dólar são do pregão de 30 de outubro, o último que consegui confirmar. Não achei o fechamento de 29 de outubro. A semana foi a pior do Ibovespa desde março de 2020 (−18,12%), e outubro fechou em −9,88%. O dólar aparece com pequenas diferenças entre fontes (R$ 5,4443 a R$ 5,446). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
     </section>
   </div>
 
@@ -1436,7 +1449,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 29 de outubro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 31 de outubro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1475,6 +1488,26 @@
 
 <script>
   const articles = {
+    "mercado-30out": {
+      source: "Agência Brasil / CNN Brasil / Money Times / Alô Alô Bahia", date: "30 out", url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
+      title: "Ibovespa fecha a semana com queda de 18,12%, a pior desde 2020; dólar sobe a R$ 5,446",
+      body: [
+        "Segundo a CNN Brasil, o Ibovespa caiu pelo quinto pregão seguido em 30 de outubro, e a semana depois da eleição foi a pior desde março de 2020, no início da pandemia. O índice fechou em queda de 0,75%, aos 167.921,80 pontos, e a Agência Brasil informa que a perda semanal foi de 18,12%. No pior momento do dia, chegou a 167.007,57 pontos.",
+        "O dólar comercial subiu 1,09% e fechou a R$ 5,446, o maior valor de fechamento de 2026, segundo a Agência Brasil. Durante a sessão, chegou a R$ 5,463. A moeda sobe 9,15% na semana, a maior alta semanal desde outubro de 2008, e 5,27% em outubro. O Money Times, que mede o dólar à vista, registra R$ 5,4443.",
+        "Em outubro, o Ibovespa cai 9,88%, o pior mês desde junho de 2022, segundo a Agência Brasil. O Alô Alô Bahia informa que, em Nova York, o Dow Jones caiu 1,05%, o S&P 500, 1,75% e o Nasdaq, 2,86% no mesmo dia.",
+        "A CNN Brasil e o Money Times ligam a queda à reprecificação das ações depois da vitória de Lula e à incerteza fiscal. Este painel descreve os números do dia e não recomenda investimentos."
+      ]
+    },
+    "flavio-live-30out": {
+      source: "Poder360 / O Tempo / CNN Brasil / Revista Oeste", date: "30 out", url: "https://www.poder360.com.br/poder-justica/flavio-fala-em-perseguicao-de-moraes-e-anuncia-reacao-juridica/",
+      title: "Dos EUA, Flávio fala em perseguição de Moraes, e a defesa pede ao STF que ele deixe o caso",
+      body: [
+        "Segundo o Poder360, Flávio Bolsonaro disse na noite de 30 de outubro, em transmissão feita dos Estados Unidos, que considera perseguição política a decisão de Alexandre de Moraes de apreender seus passaportes e proibi-lo de deixar o país. Ele afirmou que soube da decisão em 26 de outubro, ao sair da casa do pai, e que os advogados vão tomar as providências jurídicas.",
+        "O Tempo informa que ele disse que a saída do Brasil não é sinal de fraqueza, que tomou a decisão com a mulher, Fernanda, sem avisar ninguém, e pediu que ninguém fosse responsabilizado. Chamou a decisão de “sem pé nem cabeça” e falou em novas eleições antes de 2030, insinuando fraude, o que o jornal diz que ele fez sem apresentar provas. Segundo O Tempo, o Departamento de Estado americano anunciou que daria vistos a ele e à família.",
+        "Na mesma noite, segundo a CNN Brasil e a Revista Oeste, a defesa protocolou três petições no STF. Duas pedem que Moraes deixe a investigação sobre a relação do senador com o advogado Willer Thomaz e que o caso passe ao ministro André Mendonça. A terceira pede a revisão da apreensão do passaporte e da proibição de sair do Brasil. Os advogados dizem que as acusações se baseiam na amizade entre os dois, que o Santander negou a existência de uma conta conjunta e que Flávio comparecerá às convocações do Supremo. Flávio nega irregularidades.",
+        "Até o fechamento desta nota, não encontrei decisão do STF sobre os pedidos. A situação segue em andamento."
+      ]
+    },
     "flavio-eua-28out": {
       source: "CNN Brasil / O Liberal / Correio / Revista Fórum", date: "28 out", url: "https://www.cnnbrasil.com.br/politica/o-que-se-sabe-sobre-a-saida-de-flavio-bolsonaro-do-brasil/",
       title: "Flávio Bolsonaro chega a Miami com a família depois de deixar o Brasil; PF diz que ele não é foragido",
@@ -1483,7 +1516,8 @@
         "De acordo com a CNN, a ordem se baseou no receio de fuga de investigadores da PF que conduzem o inquérito sobre lavagem de dinheiro e evasão de divisas em que Flávio é investigado, e também na fala do irmão, Eduardo Bolsonaro, de que apoiaria a saída dele se perdesse a eleição. Flávio nega irregularidades.",
         "Sobre o trajeto, a CNN informa que o governo argentino negou, na manhã de terça, que ele tivesse entrado no país. Mais tarde, segundo O Liberal, registros migratórios da Argentina mostram que ele usou um passaporte italiano para entrar e deixou o aeroporto de Puerto Iguazú às 23h52 de terça. O Liberal e a Revista Fórum informam que ele chegou a Miami na manhã de quarta (28), com a esposa e as duas filhas.",
         "Sobre a situação jurídica, O Liberal registra que a PF afirmou na quarta que Flávio não pode ser considerado foragido e que o descumprimento da ordem de entrega dos passaportes não autorizava a prisão nem uma vigilância permanente. A Revista Fórum diz que não existe mandado de prisão contra ele. O Correio lembra que, por ser senador, ele só pode ser preso em flagrante de crime inafiançável. Os deputados do PT Lindbergh Farias e Rogério Correia pediram a Moraes a prisão preventiva e, se houver mandado, a inclusão na lista vermelha da Interpol. O professor Thiago Bottino, da FGV, avalia que ele fugiu do país, por ter descumprido a medida de Moraes.",
-        "Segundo a Revista Fórum, Flávio divulgou um texto em que se declara presidente eleito, acusa a Justiça Eleitoral de fraude e diz que vai liderar a oposição a partir dos EUA. Não encontrei essa informação em outra fonte, e o PL, partido dele, tinha reconhecido o resultado na segunda-feira. A mesma revista informa que parlamentares democratas dos EUA cobram explicações do governo Trump. A situação segue em andamento, e este painel só registra o que as fontes confirmam."
+        "Segundo a Revista Fórum, Flávio divulgou um texto em que se declara presidente eleito, acusa a Justiça Eleitoral de fraude e diz que vai liderar a oposição a partir dos EUA. Não encontrei essa informação em outra fonte, e o PL, partido dele, tinha reconhecido o resultado na segunda-feira. A mesma revista informa que parlamentares democratas dos EUA cobram explicações do governo Trump. A situação segue em andamento, e este painel só registra o que as fontes confirmam.",
+        "Atualização de 30 de outubro: Flávio falou dos EUA, e a defesa fez pedidos ao STF. Veja a notícia “Dos EUA, Flávio fala em perseguição de Moraes”."
       ]
     },
     "mercado-28out": {
@@ -1503,7 +1537,7 @@
         "Segundo a CNN Brasil, Lula foi a Brasília depois da reeleição para iniciar as conversas sobre o ministério do mandato que começa em janeiro de 2027, com encontros com líderes do Congresso. O SP Diário informa que as prioridades são o comando da Fazenda, o da Casa Civil e a reorganização da comunicação presidencial.",
         "O ministro da Fazenda, Dario Durigan, disse em 27 de outubro, segundo o Poder360, que o governador reeleito do Piauí, Rafael Fonteles (PT), é um excelente nome para o cargo, mas que Lula ainda não definiu a equipe econômica. O ND Mais registra que Geraldo Alckmin e Fernando Haddad também aparecem nas especulações, sem confirmação, e o NeoFeed diz que Alckmin poderia ir para a Casa Civil se Lula preferir outro nome para a Fazenda. Esses nomes são hipóteses de bastidores, e não decisões.",
         "Segundo A Crítica de Campo Grande, o presidente do PT, Edinho Silva, afirmou que Lula escolherá o ministro da Fazenda até o fim do ano, que será alguém de extrema confiança e que o compromisso com a meta fiscal será mantido. O NeoFeed informa que Durigan disse que a equipe apresentará as medidas de ajuste para mostrar o compromisso do governo com a responsabilidade fiscal. Edinho também disse que Haddad continuará sendo ouvido por Lula nas discussões sobre economia.",
-        "Até o fechamento desta nota, não encontrei anúncio oficial de ministros nem de pacote fiscal."
+        "O NeoFeed registra que Durigan prometeu enviar ao Congresso, até o fim do ano, um projeto de lei para perseguir o centro da meta fiscal de 2027. A Agenda do Poder informa que Gabriel Galípolo, Camilo Santana e o próprio Durigan também estão entre os cotados para a Fazenda, e que uma PEC para reforçar a meta fiscal depende de decisão de Lula. Até 31 de outubro, não encontrei anúncio oficial de ministros nem de pacote fiscal."
       ]
     },
     "mercado-27out": {
@@ -3331,14 +3365,15 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
 // ---- Capa estilo jornal: edite só este bloco para atualizar a capa ----
 var FRONT = {
-  tickerNote: 'Pregão de 28 out',
-  ticker: [['IBOVESPA','171.006','−2,68%','down'],['DÓLAR','R$ 5,34','−0,19%',''],['FED','3,75–4,00%','mantidos',''],['LULA','51,79%','2º turno','']],
-  lead: {id:'flavio-eua-28out', kicker:'Caso Flávio · 28 out', deck:'A PF diz que o senador não é foragido, e não há mandado de prisão. Deputados do PT pediram a Moraes a prisão preventiva.'},
-  secondary: [{id:'mercado-28out', kicker:'Economia', deck:'O Fed manteve os juros nos EUA, e o dólar ficou em R$ 5,34.'},{id:'fazenda-equipe-27out', kicker:'Governo', deck:'O comando da Fazenda segue sem definição.'}],
-  timeline: [{d:'25 out',t:'Lula é reeleito presidente',id:'lula-reeleito-26out'},{d:'26 out',t:'Bolsa cai 13,88%; dólar sobe 8,21%',id:'mercado-crash-26out'},{d:'27 out',t:'Flávio deixa o Brasil',id:'flavio-eua-28out'},{d:'28 out',t:'Flávio chega a Miami; Bolsa a 171.006',id:'flavio-eua-28out',hot:true}],
-  tracker: [['Ministro da Fazenda','Em aberto','warn','fazenda-equipe-27out'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Mandado contra Flávio','Não há','ok','flavio-eua-28out'],['Resultado das urnas','Reconhecido','ok','tse-balanco-26out']],
-  mostRead: [['mercado-crash-26out','Bolsa despenca 13,88% após a reeleição'],['flavio-cassacao-26out','Flávio muda de rota e fala em cassar a chapa'],['fazenda-equipe-27out','Quem será o ministro da Fazenda?']]
+  tickerNote: 'Pregão de 30 out',
+  ticker: [['IBOVESPA','167.922','−0,75%','down'],['DÓLAR','R$ 5,446','+1,09%',''],['IBOV. NA SEMANA','−18,12%','pior desde 2020','down'],['LULA','51,79%','2º turno','']],
+  lead: {id:'flavio-live-30out', kicker:'Caso Flávio · 30 out', deck:'Em transmissão dos EUA, o senador diz ser vítima de perseguição. A defesa pede ao STF que Moraes deixe a investigação e que o passaporte seja revisto.'},
+  secondary: [{id:'mercado-30out', kicker:'Economia', deck:'O dólar fecha a R$ 5,446, o maior valor do ano, e sobe 9,15% na semana.'},{id:'fazenda-equipe-27out', kicker:'Governo', deck:'O comando da Fazenda segue sem definição, e o governo promete um projeto fiscal até o fim do ano.'}],
+  timeline: [{d:'27 out',t:'Flávio deixa o Brasil',id:'flavio-eua-28out'},{d:'28 out',t:'Flávio chega a Miami',id:'flavio-eua-28out'},{d:'30 out',t:'Defesa pede ao STF que Moraes deixe o caso',id:'flavio-live-30out'},{d:'30 out',t:'Bolsa tem a pior semana desde 2020',id:'mercado-30out',hot:true}],
+  tracker: [['Ministro da Fazenda','Em aberto','warn','fazenda-equipe-27out'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Prisão de Flávio (pedido do PT)','Sem decisão','warn','flavio-eua-28out'],['Revisão do passaporte (defesa)','Sem decisão','warn','flavio-live-30out']],
+  mostRead: [['mercado-30out','Bolsa tem a pior semana desde 2020'],['flavio-live-30out','Flávio fala dos EUA e pede que Moraes deixe o caso'],['mercado-crash-26out','Bolsa despenca 13,88% após a reeleição']]
 };
+
 (function(){
   function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
   function btn(id,cls){var b=el('button',(cls?cls+' ':'')+'fr-btn');b.type='button';b.addEventListener('click',function(){openArticle(id);});return b;}
