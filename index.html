@@ -577,7 +577,7 @@
 
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
-    <button class="trending-pill" onclick="openArticle('flavio-live-30out')">Flávio fala dos EUA</button>
+    <button class="trending-pill" onclick="openArticle('flavio-recurso-2nov')">Defesa de Flávio recorre ao STF</button>
     <button class="trending-pill" onclick="openArticle('ministerio-cotados-1nov')">Quem será o ministro da Fazenda?</button>
     <button class="trending-pill" onclick="openArticle('semana-copom-2nov')">Copom decide a Selic</button>
     <button class="trending-pill" onclick="openArticle('mercado-30out')">Pior semana da Bolsa desde 2020</button>
@@ -606,6 +606,18 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
         <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
         <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="flavio-recurso-2nov" role="button" tabindex="0" onclick="openArticle('flavio-recurso-2nov')" onkeypress="if(event.key=='Enter')openArticle('flavio-recurso-2nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">⚖️</div><span class="fc-cand">Caso Flávio</span><span class="fc-dot"></span><span class="fc-time">2 nov</span></div>
+        <p class="fc-headline">Defesa de Flávio recorre ao STF e pede que Moraes seja declarado impedido; o caso iria para o ministro André Mendonça.</p>
+        <div class="fc-bottom"><span class="fc-source">● Folhapress / O Tempo / Estadão Conteúdo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="midterms-eua-3nov" role="button" tabindex="0" onclick="openArticle('midterms-eua-3nov')" onkeypress="if(event.key=='Enter')openArticle('midterms-eua-3nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">3 nov</span></div>
+        <p class="fc-headline">EUA votam hoje nas eleições de meio de mandato, e o mercado acompanha; a disputa pode afetar o espaço de Trump no Congresso.</p>
+        <div class="fc-bottom"><span class="fc-source">● InfoMoney / SpaceMoney (g1)</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="ministerio-cotados-1nov" role="button" tabindex="0" onclick="openArticle('ministerio-cotados-1nov')" onkeypress="if(event.key=='Enter')openArticle('ministerio-cotados-1nov')">
@@ -1475,7 +1487,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 2 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 3 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1514,6 +1526,24 @@
 
 <script>
   const articles = {
+    "flavio-recurso-2nov": {
+      source: "Folhapress / O Tempo / Estadão Conteúdo / O Povo", date: "2 nov", url: "https://www.otempo.com.br/politica/congresso/2026/11/2/flavio-bolsonaro-recorre-ao-stf-contra-apreensao-de-passaportes",
+      title: "Defesa de Flávio recorre ao STF e pede que Moraes seja declarado impedido; caso iria para Mendonça",
+      body: [
+        "Segundo O Tempo, com informações da Folhapress, a defesa de Flávio Bolsonaro recorreu ao STF para reverter a decisão de Alexandre de Moraes que mandou apreender os passaportes dele e o proibiu de deixar o país. Os pedidos foram protocolados na sexta-feira (30), dirigidos ao presidente da Corte, Edson Fachin, e ganharam novos desdobramentos na segunda (2), segundo a Istoé.",
+        "Uma das petições pede que Moraes seja declarado impedido ou suspeito de conduzir o inquérito e que o caso passe ao ministro André Mendonça. Outra pede a revogação das medidas cautelares, entre elas a apreensão dos passaportes, a proibição de viajar ao exterior e a restrição de contato com o advogado Willer Tomaz. A investigação, conduzida a pedido da PF, apura suspeitas de lavagem de dinheiro e evasão de divisas, e Flávio nega irregularidades.",
+        "O Diário do Acre, com informações do Estadão Conteúdo, registra o argumento central da defesa: Moraes e a mulher dele, Viviane Barci de Moraes, teriam usado em 2025 um jato executivo pertencente à empresa Fraction 024, e cotas dessa empresa teriam sido destinadas ao escritório de Viviane no contrato com o Banco Master. Essa é a alegação dos advogados, e não encontrei resposta de Moraes ou do STF a ela.",
+        "Segundo O Tempo, Flávio chegou a Miami depois de uma escala no Equador. O Povo informa que a primeira aparição pública dele depois da saída do Brasil foi num culto no domingo (1º), com o irmão e a mulher, e que ele disse não se arrepender de nada. Até 3 de novembro, não encontrei decisão do STF sobre os pedidos."
+      ]
+    },
+    "midterms-eua-3nov": {
+      source: "InfoMoney / SpaceMoney (análise do g1)", date: "3 nov", url: "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03112026/",
+      title: "EUA votam hoje nas eleições de meio de mandato, e o mercado acompanha",
+      body: [
+        "Segundo o InfoMoney, as eleições de meio de mandato nos Estados Unidos, em 3 de novembro, estão entre os assuntos que movimentam o mercado nesta terça, junto com o balanço da Apple. Os índices futuros americanos operavam mistos pela manhã.",
+        "Uma análise do g1 reproduzida pelo SpaceMoney em outubro afirma que, se as pesquisas se confirmarem e os democratas conquistarem o Congresso, o espaço de Donald Trump pode diminuir. Esse é um cenário apontado por especialistas, e não um resultado. Não encontrei apuração das eleições até o fechamento desta nota."
+      ]
+    },
     "ministerio-cotados-1nov": {
       source: "Diário do Povo / Diário do Centro do Mundo / Metrópoles / Folha de S.Paulo", date: "1 nov", url: "https://diario.dopovo.com.br/2026/11/01/lula-avalia-nomes-para-ministerios-do-quarto-mandato/",
       title: "Lula só deve definir o ministério depois de 16 de novembro; Fazenda tem quatro nomes cotados",
@@ -1550,7 +1580,8 @@
         "Segundo o Poder360, Flávio Bolsonaro disse na noite de 30 de outubro, em transmissão feita dos Estados Unidos, que considera perseguição política a decisão de Alexandre de Moraes de apreender seus passaportes e proibi-lo de deixar o país. Ele afirmou que soube da decisão em 26 de outubro, ao sair da casa do pai, e que os advogados vão tomar as providências jurídicas.",
         "O Tempo informa que ele disse que a saída do Brasil não é sinal de fraqueza, que tomou a decisão com a mulher, Fernanda, sem avisar ninguém, e pediu que ninguém fosse responsabilizado. Chamou a decisão de “sem pé nem cabeça” e falou em novas eleições antes de 2030, insinuando fraude, o que o jornal diz que ele fez sem apresentar provas. Segundo O Tempo, o Departamento de Estado americano anunciou que daria vistos a ele e à família.",
         "Na mesma noite, segundo a CNN Brasil e a Revista Oeste, a defesa protocolou três petições no STF. Duas pedem que Moraes deixe a investigação sobre a relação do senador com o advogado Willer Thomaz e que o caso passe ao ministro André Mendonça. A terceira pede a revisão da apreensão do passaporte e da proibição de sair do Brasil. Os advogados dizem que as acusações se baseiam na amizade entre os dois, que o Santander negou a existência de uma conta conjunta e que Flávio comparecerá às convocações do Supremo. Flávio nega irregularidades.",
-        "Até o fechamento desta nota, não encontrei decisão do STF sobre os pedidos. A situação segue em andamento."
+        "Até o fechamento desta nota, não encontrei decisão do STF sobre os pedidos. A situação segue em andamento.",
+        "Atualização de 2 de novembro: veja a notícia “Defesa de Flávio recorre ao STF e pede que Moraes seja declarado impedido”."
       ]
     },
     "flavio-eua-28out": {
@@ -2986,6 +3017,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
   (function(){
     const GEO = [
+      ['midterms-eua-3nov','Américas'],
       ['rep-mundo-25out','Global'],['rep-eua-25out','Américas'],['rep-argentina-25out','Américas'],['rep-uruguai-25out','Américas'],['rep-reinounido-25out','Europa'],['rep-espanha-25out','Europa'],['rep-franca-italia-alemanha-25out','Europa'],['rep-japao-25out','Ásia'],['rep-australia-25out','Oceania'],['rep-aljazeera-25out','Oriente Médio'],
       ['ucrania-trilateral-20out','Europa'],['franca-protestos-19out','Europa'],['ucrania-ataques-16out','Europa'],['ue-cupula-sancoes-16out','Europa'],
       ['ormuz-minas-20out','Oriente Médio'],['ira-petroleiro-mina-17out','Oriente Médio'],['houthis-arabia-saudita-17out','Oriente Médio'],
@@ -3413,11 +3445,11 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 var FRONT = {
   tickerNote: 'Pregão de 30 out',
   ticker: [['IBOVESPA','167.922','−0,75%','down'],['DÓLAR','R$ 5,446','+1,09%',''],['IBOV. NA SEMANA','−18,12%','pior desde 2020','down'],['LULA','51,79%','2º turno','']],
-  lead: {id:'ministerio-cotados-1nov', kicker:'Novo governo · 1 nov', deck:'Aliados esperam que o presidente só comece a montar a equipe depois da viagem à Turquia e às Filipinas. Fonteles, Durigan, Moretti e Alckmin aparecem para a Fazenda.'},
-  secondary: [{id:'flavio-live-30out', kicker:'Caso Flávio', deck:'A defesa pede ao STF que Moraes deixe a investigação e que o passaporte seja revisto. Não achei decisão até agora.'},{id:'semana-copom-2nov', kicker:'Economia', deck:'O Copom decide a Selic na quarta (4), depois da pior semana da Bolsa desde 2020.'}],
-  timeline: [{d:'28 out',t:'Flávio chega a Miami',id:'flavio-eua-28out'},{d:'30 out',t:'Defesa pede ao STF que Moraes deixe o caso',id:'flavio-live-30out'},{d:'30 out',t:'Bolsa tem a pior semana desde 2020',id:'mercado-30out'},{d:'4 nov',t:'Copom decide a Selic',id:'semana-copom-2nov',hot:true}],
-  tracker: [['Ministro da Fazenda','Em aberto','warn','ministerio-cotados-1nov'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Prisão de Flávio (pedido do PT)','Sem decisão','warn','flavio-eua-28out'],['Revisão do passaporte (defesa)','Sem decisão','warn','flavio-live-30out']],
-  mostRead: [['mercado-30out','Bolsa tem a pior semana desde 2020'],['ministerio-cotados-1nov','Quem será o ministro da Fazenda?'],['flavio-live-30out','Flávio fala dos EUA e pede que Moraes deixe o caso']]
+  lead: {id:'flavio-recurso-2nov', kicker:'Caso Flávio · 2 nov', deck:'A defesa pede ao STF que Moraes seja declarado impedido e que o caso vá para Mendonça. Não achei decisão até agora.'},
+  secondary: [{id:'ministerio-cotados-1nov', kicker:'Novo governo', deck:'Aliados esperam que Lula só defina a equipe depois de 16 de novembro. Os nomes da Fazenda são bastidor.'},{id:'semana-copom-2nov', kicker:'Economia', deck:'O Copom decide a Selic na quarta (4), depois da pior semana da Bolsa desde 2020.'}],
+  timeline: [{d:'28 out',t:'Flávio chega a Miami',id:'flavio-eua-28out'},{d:'30 out',t:'Bolsa tem a pior semana desde 2020',id:'mercado-30out'},{d:'2 nov',t:'Defesa de Flávio recorre ao STF',id:'flavio-recurso-2nov'},{d:'4 nov',t:'Copom decide a Selic',id:'semana-copom-2nov',hot:true}],
+  tracker: [['Ministro da Fazenda','Em aberto','warn','ministerio-cotados-1nov'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Prisão de Flávio (pedido do PT)','Sem decisão','warn','flavio-eua-28out'],['Recurso da defesa no STF','Sem decisão','warn','flavio-recurso-2nov']],
+  mostRead: [['mercado-30out','Bolsa tem a pior semana desde 2020'],['ministerio-cotados-1nov','Quem será o ministro da Fazenda?'],['flavio-recurso-2nov','Defesa de Flávio recorre ao STF contra Moraes']]
 };
 
 (function(){
