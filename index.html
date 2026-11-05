@@ -579,7 +579,8 @@
     <span class="trending-label">🔥 Em alta</span>
     <button class="trending-pill" onclick="openArticle('flavio-recurso-2nov')">Defesa de Flávio recorre ao STF</button>
     <button class="trending-pill" onclick="openArticle('ministerio-cotados-1nov')">Quem será o ministro da Fazenda?</button>
-    <button class="trending-pill" onclick="openArticle('semana-copom-2nov')">Copom decide a Selic</button>
+    <button class="trending-pill" onclick="openArticle('copom-hoje-4nov')">Copom decide hoje</button>
+    <button class="trending-pill" onclick="openArticle('midterms-resultado-4nov')">Democratas vencem nos EUA</button>
     <button class="trending-pill" onclick="openArticle('mercado-30out')">Pior semana da Bolsa desde 2020</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
@@ -606,6 +607,36 @@
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
         <p class="fc-headline">Lula é reeleito presidente com cerca de 51,8% dos votos válidos, contra 48,2% de Flávio Bolsonaro, após virada na reta final da apuração.</p>
         <div class="fc-bottom"><span class="fc-source">● Plural / Bloomberg Línea / Mix Vale</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="copom-hoje-4nov" role="button" tabindex="0" onclick="openArticle('copom-hoje-4nov')" onkeypress="if(event.key=='Enter')openArticle('copom-hoje-4nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🏦</div><span class="fc-cand">Economia</span><span class="fc-dot"></span><span class="fc-time">4 nov</span></div>
+        <p class="fc-headline">Copom decide hoje a Selic; 24 de 29 economistas da Bloomberg esperam manutenção em 13,75%, e o Focus vê 13,5% no fim do ano.</p>
+        <div class="fc-bottom"><span class="fc-source">● Jornal do Comércio / Agência Brasil / Contec</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="midterms-resultado-4nov" role="button" tabindex="0" onclick="openArticle('midterms-resultado-4nov')" onkeypress="if(event.key=='Enter')openArticle('midterms-resultado-4nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">4 nov</span></div>
+        <p class="fc-headline">Democratas conquistam a Câmara e o Senado dos EUA nas eleições de meio de mandato, em derrota para Trump.</p>
+        <div class="fc-bottom"><span class="fc-source">● Brasil de Fato / CNN Brasil / Forbes Brasil</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="mercado-3nov" role="button" tabindex="0" onclick="openArticle('mercado-3nov')" onkeypress="if(event.key=='Enter')openArticle('mercado-3nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">3 nov</span></div>
+        <p class="fc-headline">Ibovespa cai pela 6ª vez seguida e fecha no menor nível desde janeiro; dólar passa de R$ 5,48 na véspera do Copom.</p>
+        <div class="fc-bottom"><span class="fc-source">● Exame / CNN Brasil / Bom Dia Mercado</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="ucrania-abu-dhabi-3nov" role="button" tabindex="0" onclick="openArticle('ucrania-abu-dhabi-3nov')" onkeypress="if(event.key=='Enter')openArticle('ucrania-abu-dhabi-3nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">3 nov</span></div>
+        <p class="fc-headline">Rússia, Ucrânia e EUA negociam em Abu Dhabi em 10 e 11 de novembro, depois de ataque a centro de ajuda que matou ao menos 26.</p>
+        <div class="fc-bottom"><span class="fc-source">● Lusa / DN / O Cafezinho</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="geo" data-id="ira-ormuz-3nov" role="button" tabindex="0" onclick="openArticle('ira-ormuz-3nov')" onkeypress="if(event.key=='Enter')openArticle('ira-ormuz-3nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--navy)">🌍</div><span class="fc-cand">Geopolítica</span><span class="fc-dot"></span><span class="fc-time">3 nov</span></div>
+        <p class="fc-headline">Irã diz que pode reabrir Ormuz em dois dias se os EUA aceitarem suas exigências; petróleo cai.</p>
+        <div class="fc-bottom"><span class="fc-source">● Just Security / Vatican News</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
       <div class="feed-card" data-cand="all" data-id="flavio-recurso-2nov" role="button" tabindex="0" onclick="openArticle('flavio-recurso-2nov')" onkeypress="if(event.key=='Enter')openArticle('flavio-recurso-2nov')">
@@ -1239,8 +1270,8 @@
   <!-- APURAÇÃO TAB -->
   <div class="tab-panel" id="tab-apuracao">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Apuração — 2º turno</h2><span class="count">25 out, 99,85% das seções</span></div>
-      <div class="notice"><b>Lula é reeleito presidente —</b> segundo o Plural, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Os números ainda podem ter pequenos ajustes até o TSE fechar 100% das seções. Flávio Bolsonaro disse que não aceita o resultado e vai contestá-lo na Justiça; o presidente do TSE, Kassio Nunes Marques, reconheceu a vitória de Lula. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
+      <div class="section-title"><h2>Apuração — 2º turno</h2><span class="count">25 out, resultado confirmado</span></div>
+      <div class="notice"><b>Lula é reeleito presidente —</b> com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Segundo a Agência Gov, Lula recebeu 64.256.232 votos, e o presidente do TSE, Kassio Nunes Marques, confirmou a vitória. Flávio disse que não aceita o resultado e que vai contestá-lo na Justiça. O resultado oficial está em <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">resultados.tse.jus.br</a>.</div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato</th><th>1º turno (4 out)</th><th>2º turno (25 out)</th></tr></thead><tbody>
         <tr><td class="theme-col">Lula (PT)</td><td>45,16%</td><td><b>51,79%</b> · eleito</td></tr>
         <tr><td class="theme-col">Flávio Bolsonaro (PL)</td><td>47,03%</td><td>48,21%</td></tr>
@@ -1268,18 +1299,18 @@
   <!-- COMPARAR TAB -->
   <div class="tab-panel" id="tab-comparar">
     <section style="margin-top:24px;">
-      <div class="notice"><b>Sobre estes dados —</b> o 1º turno terminou em 4 de outubro: Flávio Bolsonaro e Lula disputam o 2º turno em 25 de outubro. Os outros dez candidatos ficaram de fora e saíram desta aba. As posições abaixo são sínteses de planos, discursos e entrevistas, e podem mudar.</div>
+      <div class="notice"><b>Eleição encerrada —</b> Lula foi reeleito no 2º turno de 25 de outubro, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. Esta aba guarda a comparação feita durante a campanha, como histórico. As posições são sínteses de planos, discursos e entrevistas.</div>
 
-      <div class="section-title"><h2>Os 2 candidatos do 2º turno</h2></div>
+      <div class="section-title"><h2>Os 2 candidatos do 2º turno: resultado</h2></div>
       <div class="cand-grid">
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div><button class="follow-star" data-follow="lula" onclick="toggleFollow('lula', this)">☆</button></div><span class="status-pill status-confirmado">Vai ao 2º turno</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c1)">LU</div><div><div class="cand-name">Luiz Inácio Lula da Silva</div><div class="cand-party">PT · Presidente da República</div></div><button class="follow-star" data-follow="lula" onclick="toggleFollow('lula', this)">☆</button></div><span class="status-pill status-lider">Reeleito · 51,79%</span><div class="cand-body"><p>Busca um quarto mandato. Metalúrgico e fundador do PT, aposta em comparação com o bolsonarismo, justiça tributária e fim da escala 6x1.</p></div></div>
 
-        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div><button class="follow-star" data-follow="flavio" onclick="toggleFollow('flavio', this)">☆</button></div><span class="status-pill status-confirmado">Vai ao 2º turno</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
+        <div class="candidate"><div class="cand-top"><div class="cand-avatar" style="background:var(--c2)">FB</div><div><div class="cand-name">Flávio Bolsonaro</div><div class="cand-party">PL · Senador pelo Rio de Janeiro</div></div><button class="follow-star" data-follow="flavio" onclick="toggleFollow('flavio', this)">☆</button></div><span class="status-pill status-indefinido">Derrotado no 2º turno · 48,21%</span><div class="cand-body"><p>Defende anistia do 8 de janeiro, revisão da Previdência, retomada da Reforma Trabalhista e redução de tributos sobre o custo de vida.</p></div></div>
 
       </div>
 
-      <div class="section-title" style="margin-top:28px;"><h2>Apoios dos candidatos eliminados</h2><span class="count">até 8 out</span></div>
+      <div class="section-title" style="margin-top:28px;"><h2>Apoios no 2º turno (histórico)</h2><span class="count">até 8 out</span></div>
       <div class="compare-scroll"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Candidato (1º turno)</th><th>Posição no 2º turno</th></tr></thead><tbody>
         <tr><td class="theme-col">Romeu Zema (Novo)</td><td><b>Apoia Flávio</b></td></tr>
         <tr><td class="theme-col">Ronaldo Caiado (PSD)</td><td><b>Apoia Flávio</b> (evento em Goiânia, 6 out); o PSD liberou os diretórios estaduais</td></tr>
@@ -1289,7 +1320,7 @@
       </tbody></table></div>
       <p class="compare-note">Fontes: A Crítica de Campo Grande, Agência Brasil, Correio da Manhã e Folha de Pernambuco. O PSDB não declarou apoio nacional e liberou os filiados. Até agora Lula não anunciou apoio entre os eliminados com mais votos.</p>
 
-      <div class="section-title" id="cmpDiverge" style="margin-top:28px;"><h2>Onde Lula e Flávio divergem</h2></div>
+      <div class="section-title" id="cmpDiverge" style="margin-top:28px;"><h2>Onde Lula e Flávio divergiam na campanha</h2></div>
       <div class="compare-scroll">
         <table class="compare-table">
           <thead><tr><th class="theme-col">Tema</th><th>Lula<br><span>PT</span></th><th>Flávio<br><span>PL</span></th></tr></thead>
@@ -1311,6 +1342,10 @@
   <div class="tab-panel" id="tab-pesquisas">
     <section style="margin-top:24px;">
       <div class="section-title"><h2>Pesquisas e dados</h2></div>
+      <div class="notice"><b>A eleição acabou —</b> Lula foi reeleito no 2º turno de 25 de outubro, com 51,79% dos votos válidos contra 48,21% de Flávio Bolsonaro. As tabelas abaixo mostram as pesquisas de antes da votação e ficam aqui como histórico.</div>
+      <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">Pesquisas x resultado — votos válidos de Lula</h2><span class="count">resultado final: 51,79%</span></div>
+      <div class="compare-scroll" style="margin-top:0;"><table class="compare-table" style="min-width:0;"><thead><tr><th class="theme-col">Instituto (última rodada registrada aqui)</th><th>Lula na pesquisa</th><th>Diferença para o resultado</th></tr></thead><tbody><tr><td class="theme-col">Vox Brasil</td><td>50,6%</td><td>−1,19 p.p.</td></tr><tr><td class="theme-col">Datafolha</td><td>50,0%</td><td>−1,79 p.p.</td></tr><tr><td class="theme-col">Indexa/Broadcast</td><td>49,7%</td><td>−2,09 p.p.</td></tr><tr><td class="theme-col">BTG/Nexus</td><td>49,7%</td><td>−2,09 p.p.</td></tr><tr><td class="theme-col">Futura</td><td>49,6%</td><td>−2,19 p.p.</td></tr><tr><td class="theme-col">Veritá</td><td>49,3%</td><td>−2,49 p.p.</td></tr><tr><td class="theme-col">PoderData/Aya</td><td>49,0%</td><td>−2,79 p.p.</td></tr><tr><td class="theme-col">Quaest*</td><td>49,0%</td><td>−2,79 p.p.</td></tr><tr><td class="theme-col">AtlasIntel</td><td>48,9%</td><td>−2,89 p.p.</td></tr><tr><td class="theme-col">Real Time Big Data</td><td>48,0%</td><td>−3,79 p.p.</td></tr><tr><td class="theme-col">Gerp</td><td>47,0%</td><td>−4,79 p.p.</td></tr></tbody></table></div>
+      <p class="compare-note">Todos os institutos da lista ficaram abaixo do resultado de Lula nos votos válidos, entre 1,19 e 4,79 ponto percentual, e a maioria dentro ou perto da margem de erro. Faltam aqui as rodadas de 24 de outubro do Datafolha, da AtlasIntel e da Quaest. *Na Quaest, o 49% é cálculo próprio a partir dos votos totais. Pesquisa é retrato do momento, não previsão.</p>
       <div class="notice"><b>Foto de agora, não um placar fixo —</b> os números abaixo são da rodada mais recente de cada instituto. Pesquisa eleitoral muda a cada nova rodada, então trate isso como uma fotografia do momento, não uma previsão. As fontes abaixo do quadro atualizam isso ao vivo, sempre que sair pesquisa nova.</div>
 
       <div class="section-title" style="margin-top:20px;"><h2 style="font-size:15px;">2º turno — primeiras pesquisas depois da votação</h2><span class="count">votos válidos, 24 out</span></div>
@@ -1416,14 +1451,14 @@
   <!-- FONTES TAB -->
   <div class="tab-panel" id="tab-mercado">
     <section style="margin-top:24px;">
-      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 30 out</span></div>
+      <div class="section-title"><h2>Mercado e economia</h2><span class="count">pregão de 3 nov</span></div>
       <div class="notice"><b>Dados de fechamento —</b> cotações mudam todos os dias, e o painel mostra o último pregão informado pelas fontes. É informação, não recomendação de investimento.</div>
 
       <div class="estrip" style="margin-top:14px;">
-        <div class="e"><div class="num">R$ 5,446</div><div class="lbl">dólar comercial · +1,09% no dia</div></div>
-        <div class="e"><div class="num">167.922</div><div class="lbl">Ibovespa · −0,75% no dia</div></div>
-        <div class="e"><div class="num">−18,12%</div><div class="lbl">Ibovespa na semana</div></div>
-        <div class="e"><div class="num">+9,15%</div><div class="lbl">dólar na semana</div></div>
+        <div class="e"><div class="num">R$ 5,487</div><div class="lbl">dólar comercial · +0,79% no dia</div></div>
+        <div class="e"><div class="num">165.529</div><div class="lbl">Ibovespa · −1,42% no dia</div></div>
+        <div class="e"><div class="num">6ª queda</div><div class="lbl">seguida do Ibovespa, o menor nível desde janeiro</div></div>
+        <div class="e"><div class="num">13,75%</div><div class="lbl">Selic · Copom decide hoje (4)</div></div>
       </div>
 
       <div class="section-title" style="margin-top:22px;"><h2 style="font-size:15px;">Bolsa e dólar desde o 1º turno</h2></div>
@@ -1437,7 +1472,8 @@
         <tr><td class="theme-col">26 out (1º pregão pós-eleição)</td><td>176.608 (−13,88%)</td><td>R$ 5,403 (+8,21%)</td></tr>
         <tr><td class="theme-col">27 out (2º pregão)</td><td>175.710 (−0,51%)</td><td>R$ 5,35 (−1%)</td></tr>
         <tr><td class="theme-col">28 out (3º pregão)</td><td>171.006 (−2,68%)</td><td>R$ 5,34 (−0,19%)</td></tr>
-        <tr><td class="theme-col">30 out (5º pregão)</td><td><b>167.922 (−0,75%)</b></td><td><b>R$ 5,446 (+1,09%)</b></td></tr>
+        <tr><td class="theme-col">30 out (5º pregão)</td><td>167.922 (−0,75%)</td><td>R$ 5,446 (+1,09%)</td></tr>
+        <tr><td class="theme-col">3 nov (1º pregão de novembro)</td><td><b>165.529 (−1,42%)</b></td><td><b>R$ 5,487 (+0,79%)</b></td></tr>
       </tbody></table></div>
       <p class="compare-note"><b>26 de outubro:</b> a B3 acionou o circuit breaker pela primeira vez desde março de 2020, o dólar teve a maior alta diária desde janeiro de 1999 e o DI para janeiro de 2029 chegou a 15,25%, segundo a Gazeta do Povo. Os valores de 26 de outubro são do primeiro pregão depois do resultado e podem ter mudado desde então. Na sexta (16), o Ibovespa interrompeu três quedas seguidas, com apoio das ações de petróleo e do IBC-Br, que subiu 0,3% em agosto. O índice segue abaixo do recorde de fechamento, de cerca de 209 mil pontos, e acumula 27,5% de alta em 2026. Segundo o Poder360, a alta de 8 de outubro foi apoiada por entrada de capital estrangeiro e pelo petróleo, com o mercado acompanhando as pesquisas do 2º turno.</p>
 
@@ -1449,7 +1485,7 @@
         <tr><td class="theme-col">Dólar</td><td><b>R$ 5,13</b></td><td>R$ 5,15</td></tr>
       </tbody></table></div>
       <p class="compare-note">A projeção de inflação ficou estável, em 5,22%, e segue acima do teto da meta, de 4,5%. Para 2027, o mercado vê IPCA de 4,32% e Selic de 12%. A Selic está hoje em 13,75%, e a mediana do Focus aponta mais um corte de 0,50 ponto até dezembro. O IPCA de setembro ficou em 4,58% em 12 meses e 3,95% no ano, segundo o IBGE, e a próxima decisão do Copom é em novembro.</p>
-      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Agenda: o Copom se reúne em 3 e 4 de novembro, com decisão na quarta (4). Os valores de bolsa e dólar são do pregão de 30 de outubro, o último que consegui confirmar. Não achei o fechamento de 29 de outubro. A semana foi a pior do Ibovespa desde março de 2020 (−18,12%), e outubro fechou em −9,88%. O dólar aparece com pequenas diferenças entre fontes (R$ 5,4443 a R$ 5,446). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
+      <p class="compare-note">Fontes: Metrópoles, Finance News, InfoMoney, Central do Varejo, Sou Brasília, Poder360 e DGABC. Agenda: o Copom decide a Selic hoje, quarta (4), no início da noite. O Focus de 2 de novembro vê a Selic em 13,5% no fim de 2026 (eram 13,25%), e uma pesquisa da Bloomberg com 29 economistas indica manutenção em 13,75%. Os valores de bolsa e dólar são do pregão de 3 de novembro, o último que consegui confirmar. Não achei o fechamento de 29 de outubro. A semana foi a pior do Ibovespa desde março de 2020 (−18,12%), e outubro fechou em −9,88%. O dólar aparece com pequenas diferenças entre fontes (R$ 5,4443 a R$ 5,446). Fontes: Poder360, Agência Brasil, Times Brasil, Gazeta do Povo, NeoFeed, Money Times e O Povo.</p>
     </section>
   </div>
 
@@ -1487,7 +1523,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 3 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -1526,6 +1562,52 @@
 
 <script>
   const articles = {
+    "copom-hoje-4nov": {
+      source: "Jornal do Comércio (Bloomberg) / Agência Brasil / Contec / O Tempo", date: "4 nov", url: "https://www.jornaldocomercio.com/economia/2026/11/1269181-copom-deve-manter-selic-em-1375-e-interromper-ciclo-de-cortes.html",
+      title: "Copom decide hoje a Selic; maioria dos economistas espera manutenção em 13,75%",
+      body: [
+        "Segundo o Jornal do Comércio, que cita levantamento da Bloomberg com 29 economistas, 24 esperam que o Copom mantenha a Selic em 13,75% ao ano na decisão de 4 de novembro, e 5 ainda apostam em mais um corte de 0,25 ponto. Isso interromperia o ciclo de cortes iniciado em março. A decisão será anunciada no início da noite.",
+        "A Agência Brasil lembra que o Boletim Focus, divulgado antes dos efeitos da reeleição de Lula no mercado, previa corte para 13,5%, e que a Selic chegou a ficar em 15% de junho de 2025 a março deste ano. A Contec informa que, nas opções de Copom negociadas na B3, a manutenção tinha 72,5% de probabilidade na sexta (30), contra 26% para um corte de 0,25 ponto.",
+        "O Focus de 2 de novembro, segundo a Contec, já vê a Selic em 13,5% no fim de 2026, acima dos 13,25% de antes. O Jornal GGN registra que o Copom está sem dois diretores, porque os mandatos terminaram no fim de 2025, e que Lula ainda não enviou ao Senado as indicações. O Tempo diz que o tom do comunicado deve pesar mais do que a decisão em si.",
+        "Este painel descreve as expectativas e não faz previsão nem recomenda investimentos. Atualize a página depois das 18h para ver a decisão."
+      ]
+    },
+    "mercado-3nov": {
+      source: "Exame / CNN Brasil / Bom Dia Mercado / NC News", date: "3 nov", url: "https://exame.com/invest/mercados/ibovespa-tem-6a-queda-seguida-e-dolar-sobe-ao-maior-nivel-do-ano/",
+      title: "Ibovespa cai pela sexta vez seguida e fecha no menor nível desde janeiro; dólar passa de R$ 5,48",
+      body: [
+        "Segundo a Exame, o Ibovespa fechou em 3 de novembro, na volta do feriado de Finados, em queda de 1,42%, aos 165.528,92 pontos, a sexta queda seguida. A CNN Brasil informa que é o menor nível desde janeiro. O índice oscilou entre 164.446,53 e 168.005,46 pontos, e o volume foi de R$ 32,4 bilhões.",
+        "O dólar comercial fechou em R$ 5,487, alta de 0,79%, segundo a Exame, e em R$ 5,486, alta de 0,74%, segundo a CNN Brasil. A Exame diz que é o maior valor de fechamento do ano. A máxima do dia foi de R$ 5,515, segundo a Exame, e de R$ 5,509, segundo o Metro News. A diferença vem do tipo de cotação usada por cada fonte.",
+        "A Exame atribui a queda à pressão de Petrobras e Vale e a dúvidas sobre a política econômica do próximo governo. O Bom Dia Mercado cita rumores de um possível “tabelamento” da Selic, em proposta atribuída ao economista André Lara Resende, que a direção do PT nega ter debatido. Este painel não confirma os rumores e não recomenda investimentos."
+      ]
+    },
+    "midterms-resultado-4nov": {
+      source: "Brasil de Fato / CNN Brasil / Forbes Brasil / Metrópoles (Reuters)", date: "4 nov", url: "https://www.brasildefato.com.br/2026/11/04/democratas-conquistam-maioria-na-camara-e-no-senado-dos-eua-e-impoem-derrota-a-trump/",
+      title: "Democratas conquistam a Câmara e o Senado dos EUA nas eleições de meio de mandato",
+      body: [
+        "Segundo o Brasil de Fato, o Partido Democrata conquistou o controle das duas Casas do Congresso dos EUA nas eleições de meio de mandato de 3 de novembro, o que o jornal chama da derrota política mais dura de Donald Trump desde a volta à Casa Branca. A Associated Press confirmou a maioria democrata no Senado ainda na noite de terça e na Câmara na madrugada de quarta (4).",
+        "No Senado, os democratas precisavam de um ganho líquido de quatro cadeiras sobre a vantagem republicana de 53 a 47. A CNN Brasil informa que o partido chegou a 54 cadeiras contra 44 dos republicanos nas apurações até a manhã de quarta, faltando apenas Alasca e Mississippi, e que na Câmara os democratas tinham ao menos 231 cadeiras contra 139, com 27 tiradas dos republicanos. A Forbes Brasil e a Metrópoles registram números um pouco diferentes durante a noite, porque a apuração ainda estava em andamento.",
+        "De acordo com o Brasil de Fato, com a maioria nas duas Casas os democratas poderão barrar indicações de Trump, inclusive para tribunais federais, e assumir o comando das comissões do Congresso, o que deve travar a agenda do presidente nos dois anos que restam de mandato. Os números são parciais e podem mudar até a contagem final."
+      ]
+    },
+    "ucrania-abu-dhabi-3nov": {
+      source: "Lusa / DN / O Cafezinho / Just Security", date: "3 nov", url: "https://www.dn.pt/internacional/moscovo-confirma-presena-nas-negociaes-com-kiev-e-washington-em-abu-dhabi",
+      title: "Rússia e Ucrânia vão negociar em Abu Dhabi em 10 e 11 de novembro, depois de ataque que matou ao menos 26 pessoas",
+      body: [
+        "Segundo a Lusa, o enviado americano Steve Witkoff anunciou que EUA, Rússia e Ucrânia terão negociações em 10 e 11 de novembro em Abu Dhabi, com foco em garantias de segurança para o pós-guerra, desescalada e ajuda humanitária. O DN informa que o Kremlin confirmou, em 3 de novembro, a presença da delegação russa. O Cafezinho, citando a Reuters, diz que Witkoff e Jared Kushner devem representar os EUA.",
+        "O anúncio veio depois de um bombardeio russo, em 2 de novembro, contra uma escola usada como centro de distribuição de ajuda em Komyshuvakha, na região de Zaporíjia. O Cafezinho fala em ao menos 26 mortos, e outras reportagens elevam o número para 29. A Lusa registra ainda que Moscou retomou os combates em Kherson depois de uma rara trégua local para evacuar a cidade de Olechky.",
+        "O Cafezinho informa que Reino Unido e França anunciaram o primeiro exercício da nova força multinacional de apoio à Ucrânia, com cerca de 2.800 soldados de dez países europeus, de 9 a 22 de novembro, na Polônia."
+      ]
+    },
+    "ira-ormuz-3nov": {
+      source: "Just Security / Vatican News", date: "3 nov", url: "https://www.justsecurity.org/163177/early-edition-november-3-2026/",
+      title: "Irã diz que pode reabrir Ormuz em dois dias se os EUA aceitarem suas exigências; petróleo cai",
+      body: [
+        "Segundo o Just Security, o porta-voz do Ministério das Relações Exteriores do Irã, Esmaeil Baghaei, disse em 2 de novembro que o país está pronto para reabrir o Estreito de Ormuz em dois dias, e não mais em sete, se os EUA aceitarem um conjunto de exigências. Uma delegação do Catar chegou a Teerã para continuar a mediação, segundo fontes ouvidas pelo New York Times.",
+        "Uma autoridade iraniana disse à Reuters que os dois países seguem longe de um acordo. A Vatican News informa que os EUA atacaram instalações militares na ilha de Qeshm e que Trump vem repetindo a ameaça de voltar a atacar o Irã depois das eleições de meio de mandato.",
+        "Ainda segundo a Vatican News, as declarações iranianas aliviaram o petróleo: o WTI chegou a cair até 6,7%, para US$ 97,10 por barril, e o Brent chegou a uma mínima de US$ 105,86."
+      ]
+    },
     "flavio-recurso-2nov": {
       source: "Folhapress / O Tempo / Estadão Conteúdo / O Povo", date: "2 nov", url: "https://www.otempo.com.br/politica/congresso/2026/11/2/flavio-bolsonaro-recorre-ao-stf-contra-apreensao-de-passaportes",
       title: "Defesa de Flávio recorre ao STF e pede que Moraes seja declarado impedido; caso iria para Mendonça",
@@ -1533,7 +1615,8 @@
         "Segundo O Tempo, com informações da Folhapress, a defesa de Flávio Bolsonaro recorreu ao STF para reverter a decisão de Alexandre de Moraes que mandou apreender os passaportes dele e o proibiu de deixar o país. Os pedidos foram protocolados na sexta-feira (30), dirigidos ao presidente da Corte, Edson Fachin, e ganharam novos desdobramentos na segunda (2), segundo a Istoé.",
         "Uma das petições pede que Moraes seja declarado impedido ou suspeito de conduzir o inquérito e que o caso passe ao ministro André Mendonça. Outra pede a revogação das medidas cautelares, entre elas a apreensão dos passaportes, a proibição de viajar ao exterior e a restrição de contato com o advogado Willer Tomaz. A investigação, conduzida a pedido da PF, apura suspeitas de lavagem de dinheiro e evasão de divisas, e Flávio nega irregularidades.",
         "O Diário do Acre, com informações do Estadão Conteúdo, registra o argumento central da defesa: Moraes e a mulher dele, Viviane Barci de Moraes, teriam usado em 2025 um jato executivo pertencente à empresa Fraction 024, e cotas dessa empresa teriam sido destinadas ao escritório de Viviane no contrato com o Banco Master. Essa é a alegação dos advogados, e não encontrei resposta de Moraes ou do STF a ela.",
-        "Segundo O Tempo, Flávio chegou a Miami depois de uma escala no Equador. O Povo informa que a primeira aparição pública dele depois da saída do Brasil foi num culto no domingo (1º), com o irmão e a mulher, e que ele disse não se arrepender de nada. Até 3 de novembro, não encontrei decisão do STF sobre os pedidos."
+        "Segundo O Tempo, Flávio chegou a Miami depois de uma escala no Equador. O Povo informa que a primeira aparição pública dele depois da saída do Brasil foi num culto no domingo (1º), com o irmão e a mulher, e que ele disse não se arrepender de nada. Até 3 de novembro, não encontrei decisão do STF sobre os pedidos.",
+        "Atualização de 3 de novembro: reportagens reproduzidas pelo Diário do Centro do Mundo e pelo Brasil 247 dizem que o presidente do STF, Edson Fachin, deve negar os pedidos de afastamento de Moraes, porque integrantes da Corte entendem que precedentes justificam manter o relator. É uma expectativa, e não uma decisão. O portal Terra Brasil Notícias informa que a defesa também apresentou um agravo para que Moraes reconsidere as medidas, alegando que o banco informou que Flávio não é titular das contas das empresas e contestando o uso de falas de Eduardo Bolsonaro como base para o risco de fuga."
       ]
     },
     "midterms-eua-3nov": {
@@ -1541,7 +1624,8 @@
       title: "EUA votam hoje nas eleições de meio de mandato, e o mercado acompanha",
       body: [
         "Segundo o InfoMoney, as eleições de meio de mandato nos Estados Unidos, em 3 de novembro, estão entre os assuntos que movimentam o mercado nesta terça, junto com o balanço da Apple. Os índices futuros americanos operavam mistos pela manhã.",
-        "Uma análise do g1 reproduzida pelo SpaceMoney em outubro afirma que, se as pesquisas se confirmarem e os democratas conquistarem o Congresso, o espaço de Donald Trump pode diminuir. Esse é um cenário apontado por especialistas, e não um resultado. Não encontrei apuração das eleições até o fechamento desta nota."
+        "Uma análise do g1 reproduzida pelo SpaceMoney em outubro afirma que, se as pesquisas se confirmarem e os democratas conquistarem o Congresso, o espaço de Donald Trump pode diminuir. Esse é um cenário apontado por especialistas, e não um resultado. Não encontrei apuração das eleições até o fechamento desta nota.",
+        "Atualização de 4 de novembro: os democratas conquistaram a Câmara e o Senado. Veja a notícia “Democratas conquistam a Câmara e o Senado dos EUA”."
       ]
     },
     "ministerio-cotados-1nov": {
@@ -1560,7 +1644,8 @@
       body: [
         "Segundo o calendário do Banco Central divulgado pela XP, o Copom se reúne em 3 e 4 de novembro, e a decisão sai na quarta-feira (4), depois das 18h. A Selic está em 13,75% ao ano.",
         "No Boletim Focus de 26 de outubro, com respostas coletadas antes do resultado da eleição, os economistas esperavam um corte de 0,25 ponto percentual em novembro e outro igual em dezembro, o que levaria a Selic a 13,25% no fim do ano, segundo a Forbes Brasil. A Forbes lembra que a projeção para o IPCA de 2026 era de 5,19%, acima do teto da meta, de 4,5%.",
-        "Desde então, o dólar fechou a semana em R$ 5,446 e os juros futuros chegaram a disparar, segundo a Agência Brasil e a Gazeta do Povo. Não encontrei um Focus atualizado depois do resultado nem uma projeção nova para o Copom. Este painel descreve o calendário e os números, e não faz previsão nem recomenda investimentos."
+        "Desde então, o dólar fechou a semana em R$ 5,446 e os juros futuros chegaram a disparar, segundo a Agência Brasil e a Gazeta do Povo. Não encontrei um Focus atualizado depois do resultado nem uma projeção nova para o Copom. Este painel descreve o calendário e os números, e não faz previsão nem recomenda investimentos.",
+        "Atualização de 4 de novembro: veja a notícia “Copom decide hoje a Selic; maioria dos economistas espera manutenção em 13,75%”."
       ]
     },
     "mercado-30out": {
@@ -3017,6 +3102,7 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
   (function(){
     const GEO = [
+      ['midterms-resultado-4nov','Américas'],['ucrania-abu-dhabi-3nov','Europa'],['ira-ormuz-3nov','Oriente Médio'],
       ['midterms-eua-3nov','Américas'],
       ['rep-mundo-25out','Global'],['rep-eua-25out','Américas'],['rep-argentina-25out','Américas'],['rep-uruguai-25out','Américas'],['rep-reinounido-25out','Europa'],['rep-espanha-25out','Europa'],['rep-franca-italia-alemanha-25out','Europa'],['rep-japao-25out','Ásia'],['rep-australia-25out','Oceania'],['rep-aljazeera-25out','Oriente Médio'],
       ['ucrania-trilateral-20out','Europa'],['franca-protestos-19out','Europa'],['ucrania-ataques-16out','Europa'],['ue-cupula-sancoes-16out','Europa'],
@@ -3443,13 +3529,13 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
 // ---- Capa estilo jornal: edite só este bloco para atualizar a capa ----
 var FRONT = {
-  tickerNote: 'Pregão de 30 out',
-  ticker: [['IBOVESPA','167.922','−0,75%','down'],['DÓLAR','R$ 5,446','+1,09%',''],['IBOV. NA SEMANA','−18,12%','pior desde 2020','down'],['LULA','51,79%','2º turno','']],
-  lead: {id:'flavio-recurso-2nov', kicker:'Caso Flávio · 2 nov', deck:'A defesa pede ao STF que Moraes seja declarado impedido e que o caso vá para Mendonça. Não achei decisão até agora.'},
-  secondary: [{id:'ministerio-cotados-1nov', kicker:'Novo governo', deck:'Aliados esperam que Lula só defina a equipe depois de 16 de novembro. Os nomes da Fazenda são bastidor.'},{id:'semana-copom-2nov', kicker:'Economia', deck:'O Copom decide a Selic na quarta (4), depois da pior semana da Bolsa desde 2020.'}],
-  timeline: [{d:'28 out',t:'Flávio chega a Miami',id:'flavio-eua-28out'},{d:'30 out',t:'Bolsa tem a pior semana desde 2020',id:'mercado-30out'},{d:'2 nov',t:'Defesa de Flávio recorre ao STF',id:'flavio-recurso-2nov'},{d:'4 nov',t:'Copom decide a Selic',id:'semana-copom-2nov',hot:true}],
-  tracker: [['Ministro da Fazenda','Em aberto','warn','ministerio-cotados-1nov'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out'],['Prisão de Flávio (pedido do PT)','Sem decisão','warn','flavio-eua-28out'],['Recurso da defesa no STF','Sem decisão','warn','flavio-recurso-2nov']],
-  mostRead: [['mercado-30out','Bolsa tem a pior semana desde 2020'],['ministerio-cotados-1nov','Quem será o ministro da Fazenda?'],['flavio-recurso-2nov','Defesa de Flávio recorre ao STF contra Moraes']]
+  tickerNote: 'Pregão de 3 nov',
+  ticker: [['IBOVESPA','165.529','−1,42%','down'],['DÓLAR','R$ 5,487','+0,79%',''],['SELIC','13,75%','Copom decide hoje',''],['LULA','51,79%','2º turno','']],
+  lead: {id:'midterms-resultado-4nov', kicker:'Mundo · 4 nov', deck:'A vitória nas duas Casas permite aos democratas barrar indicações de Trump e comandar as comissões do Congresso. Os números ainda são parciais.'},
+  secondary: [{id:'copom-hoje-4nov', kicker:'Economia', deck:'A maioria dos economistas espera que a Selic fique em 13,75%. A decisão sai no início da noite.'},{id:'flavio-recurso-2nov', kicker:'Caso Flávio', deck:'A defesa pede o afastamento de Moraes. Reportagens dizem que Fachin deve negar, mas não há decisão.'}],
+  timeline: [{d:'3 nov',t:'Bolsa fecha no menor nível desde janeiro',id:'mercado-3nov'},{d:'4 nov',t:'Democratas vencem Câmara e Senado nos EUA',id:'midterms-resultado-4nov'},{d:'4 nov',t:'Copom decide a Selic',id:'copom-hoje-4nov',hot:true},{d:'10 e 11 nov',t:'Negociação da Ucrânia em Abu Dhabi',id:'ucrania-abu-dhabi-3nov'}],
+  tracker: [['Ministro da Fazenda','Em aberto','warn','ministerio-cotados-1nov'],['Selic (Copom, hoje)','Decisão à noite','warn','copom-hoje-4nov'],['Recurso de Flávio no STF','Sem decisão','warn','flavio-recurso-2nov'],['Ação no TSE contra a chapa','Anunciada','warn','flavio-cassacao-26out']],
+  mostRead: [['copom-hoje-4nov','Copom decide hoje a Selic'],['midterms-resultado-4nov','Democratas vencem nos EUA'],['mercado-3nov','Bolsa no menor nível desde janeiro']]
 };
 
 (function(){
