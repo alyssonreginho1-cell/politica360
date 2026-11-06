@@ -524,6 +524,14 @@
   .ls-speed select{font:inherit;color:var(--ink);background:var(--bg-card,var(--card,#fff));border:1px solid var(--line);border-radius:8px;padding:5px 8px}
   .ls-note{font:13px Inter,system-ui,sans-serif;color:var(--ink-soft,var(--muted))}
   .reading{background:rgba(10,186,181,.16);border-radius:6px;box-shadow:0 0 0 6px rgba(10,186,181,.16)}
+
+  /* PWA install prompt */
+  .pwa-install-wrap{max-width:1160px;margin:12px auto 0;padding:0 18px}
+  .pwa-install-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid rgba(10,186,181,.35);border-radius:12px;background:var(--tiffany-tint);color:var(--ink)}
+  .pwa-install-copy{font-size:12px;line-height:1.45}.pwa-install-copy strong{display:block;color:var(--navy);font-size:13px}
+  .pwa-install-btn{flex:none;border:0;border-radius:9px;background:var(--navy);color:#fff;padding:10px 14px;font:600 12px 'Inter',sans-serif;cursor:pointer}
+  .pwa-install-wrap[hidden]{display:none}
+  @media(max-width:480px){.pwa-install-card{align-items:stretch;flex-direction:column}.pwa-install-btn{width:100%}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z83BM7FMS3"></script>
@@ -565,6 +573,13 @@
       <div class="chip" data-filter="flavio"><span class="dot" style="background:var(--c2)"></span>Flávio</div>
     </div>
   </div><!-- /topbar -->
+
+  <div class="pwa-install-wrap" id="pwaInstallWrap" hidden>
+    <div class="pwa-install-card">
+      <div class="pwa-install-copy"><strong>Leve o Política 360º com você</strong>Instale gratuitamente e acompanhe as notícias direto do celular.</div>
+      <button class="pwa-install-btn" id="pwaInstallBtn" type="button">Instalar aplicativo</button>
+    </div>
+  </div>
 
   <div class="auth-msg auth-toast" id="authMsg" style="display:none;"></div>
 
@@ -3598,6 +3613,40 @@ var P360Listen=(function(){
 </script>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').catch(function(){});});}
+</script>
+
+<script>
+(function(){
+  var wrap=document.getElementById('pwaInstallWrap');
+  var button=document.getElementById('pwaInstallBtn');
+  if(!wrap||!button)return;
+  var deferredPrompt=null;
+  var ua=navigator.userAgent||'';
+  var ios=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  if(standalone)return;
+  if(ios){
+    wrap.hidden=false;
+    button.textContent='Como instalar no iPhone';
+    button.addEventListener('click',function(){
+      window.alert('Para instalar o Política 360º no iPhone:\n\n1. Abra este site no Safari.\n2. Toque em Compartilhar.\n3. Escolha “Adicionar à Tela de Início”.\n4. Confirme em “Adicionar”.');
+    });
+    return;
+  }
+  window.addEventListener('beforeinstallprompt',function(event){
+    event.preventDefault();deferredPrompt=event;wrap.hidden=false;
+  });
+  button.addEventListener('click',async function(){
+    if(!deferredPrompt){
+      window.alert('No Android, abra o site no Chrome, toque no menu ⋮ e escolha “Instalar aplicativo” ou “Adicionar à tela inicial”.');
+      return;
+    }
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt=null;wrap.hidden=true;
+  });
+  window.addEventListener('appinstalled',function(){wrap.hidden=true;deferredPrompt=null;});
+})();
 </script>
 </body>
 </html>
