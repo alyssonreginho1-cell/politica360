@@ -19,6 +19,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#FFFFFF" id="metaTheme">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Política 360º">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <script>try{if(localStorage.getItem("p360-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
 <link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -592,7 +595,7 @@
 
   <div class="p360-desktop-install-banner" style="margin:14px 18px 0;padding:13px 16px;border:1px solid rgba(10,186,181,.45);border-left:4px solid #0ABAB5;border-radius:12px;background:rgba(10,186,181,.09);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
     <div><strong style="display:block;color:var(--ink);font-size:14px;">Política 360º no seu computador</strong><span style="display:block;color:var(--ink-soft);font-size:12px;">Instale gratuitamente no Windows ou Linux e abra em uma janela própria.</span></div>
-    <a href="#instalar-politica360" style="display:inline-block;background:#0ABAB5;color:#0B2038;text-decoration:none;font-weight:700;font-size:13px;padding:9px 14px;border-radius:8px;">Ver como instalar</a>
+    <button type="button" id="p360-open-installer" style="display:inline-block;background:#0ABAB5;color:#0B2038;border:0;font-weight:700;font-size:13px;padding:9px 14px;border-radius:8px;cursor:pointer;">Instalar aplicativo</button>
   </div>
 
   <!-- FEED TAB -->
@@ -1533,8 +1536,8 @@
     .p360-install .hint{font-size:11px}
   </style>
   <section class="p360-install" id="instalar-politica360" aria-labelledby="p360-install-title">
-    <h2 id="p360-install-title">Instale o Política 360º no computador</h2>
-    <p>Use o site como aplicativo, em uma janela própria, no Windows ou Linux. A instalação gratuita funciona nos navegadores compatíveis.</p>
+    <h2 id="p360-install-title">Instale o Política 360º no seu dispositivo</h2>
+    <p>Escolha seu sistema: Windows, Linux, Android ou iPhone. A instalação é gratuita e feita pelo navegador.</p>
     <button type="button" id="p360-install-button">Instalar aplicativo</button>
     <p class="hint" id="p360-install-status" role="status" aria-live="polite">Se o botão não abrir a instalação, siga as instruções do seu navegador.</p>
     <details>
@@ -1555,6 +1558,44 @@
     </details>
     <p class="hint">O site continua acessível em qualquer navegador moderno. A instalação como aplicativo depende dos recursos oferecidos por cada navegador; não existe um botão de instalação universal no Firefox desktop.</p>
   </section>
+
+
+  <style>
+    .p360-install-trigger{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .p360-install-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(5,18,31,.72)}
+    .p360-install-modal.open{display:flex}
+    .p360-install-dialog{width:min(100%,520px);max-height:88vh;overflow:auto;background:var(--bg-card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 22px 70px rgba(0,0,0,.3)}
+    .p360-install-dialog h2{font-family:'Fraunces',serif;font-size:22px;margin:0 34px 6px 0}
+    .p360-install-dialog p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+    .p360-platforms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+    .p360-platform{border:1px solid var(--line);border-radius:12px;padding:15px 12px;background:var(--bg-card-2);color:var(--ink);font:600 14px 'Inter',sans-serif;text-align:left;cursor:pointer}
+    .p360-platform:hover,.p360-platform:focus{border-color:var(--tiffany);outline:2px solid rgba(10,186,181,.2)}
+    .p360-platform span{display:block;font-size:11px;font-weight:400;color:var(--ink-soft);margin-top:4px}
+    .p360-install-instructions{padding:14px;border-radius:12px;background:var(--tiffany-tint);border:1px solid rgba(10,186,181,.25);font-size:13px;line-height:1.6}
+    .p360-install-instructions ol{padding-left:20px;margin:8px 0}
+    .p360-modal-close{float:right;border:0;background:transparent;color:var(--ink);font-size:25px;cursor:pointer;line-height:1}
+    .p360-install-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+    .p360-install-actions button{border:0;border-radius:9px;padding:10px 14px;background:var(--tiffany);color:var(--navy);font:600 13px 'Inter',sans-serif;cursor:pointer}
+    @media(max-width:420px){.p360-install-dialog{padding:18px}.p360-platforms{gap:8px}.p360-platform{padding:13px 10px}}
+  </style>
+  <div class="p360-install-modal" id="p360-install-modal" role="dialog" aria-modal="true" aria-labelledby="p360-modal-title">
+    <div class="p360-install-dialog">
+      <button type="button" class="p360-modal-close" id="p360-modal-close" aria-label="Fechar">&times;</button>
+      <h2 id="p360-modal-title">Instalar Política 360º</h2>
+      <p>Selecione o dispositivo para ver o caminho de instalação.</p>
+      <div class="p360-platforms">
+        <button type="button" class="p360-platform" data-platform="windows">🖥️ Windows<span>PC ou notebook</span></button>
+        <button type="button" class="p360-platform" data-platform="linux">🐧 Linux<span>PC ou notebook</span></button>
+        <button type="button" class="p360-platform" data-platform="android">📱 Android<span>Chrome no celular</span></button>
+        <button type="button" class="p360-platform" data-platform="iphone">🍎 iPhone<span>Safari no iOS</span></button>
+      </div>
+      <div class="p360-install-instructions" id="p360-platform-instructions" aria-live="polite">Escolha uma das quatro opções acima.</div>
+      <div class="p360-install-actions">
+        <button type="button" id="p360-native-install" hidden>Instalar agora</button>
+      </div>
+      <p class="hint" id="p360-install-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
 
   <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
@@ -3652,35 +3693,42 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
 </script>
 <script>
 (function(){
-  var deferredPrompt=null;
-  var button=document.getElementById('p360-install-button');
+  var deferredPrompt=null, selectedPlatform='';
+  var modal=document.getElementById('p360-install-modal');
+  var openBtn=document.getElementById('p360-open-installer');
+  var closeBtn=document.getElementById('p360-modal-close');
+  var instructions=document.getElementById('p360-platform-instructions');
+  var nativeBtn=document.getElementById('p360-native-install');
   var status=document.getElementById('p360-install-status');
-  if(!button||!status)return;
-  window.addEventListener('beforeinstallprompt',function(event){
-    event.preventDefault();
-    deferredPrompt=event;
-    button.disabled=false;
-    status.textContent='Instalação disponível neste navegador. Clique em “Instalar aplicativo”.';
+  if(!modal||!openBtn)return;
+  function open(){modal.classList.add('open');document.body.style.overflow='hidden';closeBtn.focus();}
+  function close(){modal.classList.remove('open');document.body.style.overflow='';openBtn.focus();}
+  openBtn.addEventListener('click',open);
+  closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;if(selectedPlatform==='android'||selectedPlatform==='windows'||selectedPlatform==='linux')nativeBtn.hidden=false;});
+  window.addEventListener('appinstalled',function(){deferredPrompt=null;status.textContent='Política 360º foi instalado neste dispositivo.';nativeBtn.hidden=true;});
+  var guides={
+    windows:'<strong>Windows (Edge ou Chrome)</strong><ol><li>Abra o Política 360º no Microsoft Edge ou Google Chrome.</li><li>Clique em “Instalar agora” se o navegador oferecer a instalação.</li><li>Se não aparecer, abra o menu ⋯ e procure “Aplicativos” → “Instalar este site como aplicativo” (Edge) ou “Instalar página como app” (Chrome).</li></ol>',
+    linux:'<strong>Linux (Chrome, Edge ou Brave)</strong><ol><li>Abra o Política 360º em um navegador Chromium compatível.</li><li>Clique em “Instalar agora” se a opção aparecer.</li><li>Se não aparecer, abra o menu do navegador e escolha “Instalar aplicativo” ou “Instalar página como app”.</li></ol><small>Firefox para computador não oferece instalação nativa de PWA.</small>',
+    android:'<strong>Android (Google Chrome)</strong><ol><li>Abra esta página no Chrome do Android.</li><li>Toque em “Instalar agora” se o botão estiver disponível.</li><li>Se não estiver, toque no menu ⋮ do Chrome e escolha “Instalar aplicativo” ou “Adicionar à tela inicial”.</li><li>Confirme. O ícone do Política 360º ficará na tela inicial.</li></ol>',
+    iphone:'<strong>iPhone (Safari)</strong><ol><li>Abra <b>politica360.net.br</b> no Safari. Não use o navegador interno do WhatsApp ou Instagram.</li><li>Toque no botão <b>Compartilhar</b> (quadrado com seta para cima).</li><li>Role a lista e escolha <b>Adicionar à Tela de Início</b>.</li><li>Toque em <b>Adicionar</b>. O ícone do Política 360º aparecerá na tela inicial.</li></ol><small>No iPhone, o iOS não permite que um site dispare sozinho a confirmação de instalação; é necessário seguir esses passos no Safari.</small>'
+  };
+  document.querySelectorAll('.p360-platform').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      selectedPlatform=btn.getAttribute('data-platform');
+      instructions.innerHTML=guides[selectedPlatform]||'Escolha uma plataforma.';
+      nativeBtn.hidden=!(deferredPrompt&&(selectedPlatform==='android'||selectedPlatform==='windows'||selectedPlatform==='linux'));
+      status.textContent='';
+    });
   });
-  window.addEventListener('appinstalled',function(){
-    deferredPrompt=null;
-    button.disabled=true;
-    button.textContent='Aplicativo instalado';
-    status.textContent='Política 360º foi instalado neste dispositivo.';
-  });
-  button.addEventListener('click',async function(){
-    if(deferredPrompt){
-      deferredPrompt.prompt();
-      var choice=await deferredPrompt.userChoice;
-      status.textContent=choice&&choice.outcome==='accepted'?'Instalação iniciada.':'Instalação cancelada. Você pode tentar novamente pelo menu do navegador.';
-      deferredPrompt=null;
-      return;
-    }
-    status.textContent='Abra as instruções abaixo para instalar pelo menu do Microsoft Edge, Google Chrome ou outro navegador compatível.';
-    var details=document.querySelectorAll('#instalar-politica360 details');
-    var ua=navigator.userAgent;
-    var target=/Linux/i.test(ua)?details[1]:details[0];
-    if(target)target.open=true;
+  nativeBtn.addEventListener('click',async function(){
+    if(!deferredPrompt){status.textContent='A instalação direta não está disponível neste navegador. Siga as instruções acima.';return;}
+    deferredPrompt.prompt();
+    var choice=await deferredPrompt.userChoice;
+    status.textContent=choice&&choice.outcome==='accepted'?'Instalação confirmada pelo navegador.':'Instalação não concluída. Você pode seguir as instruções acima.';
+    deferredPrompt=null;nativeBtn.hidden=true;
   });
 })();
 </script>
