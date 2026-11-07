@@ -1515,6 +1515,42 @@
     </section>
   </div>
 
+  <style>
+    .p360-install{margin:28px 18px 0;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--bg-card);box-shadow:var(--shadow)}
+    .p360-install h2{font-family:'Fraunces',serif;font-size:20px;margin:0 0 6px;color:var(--ink)}
+    .p360-install p,.p360-install li{font-size:13px;color:var(--ink-soft);line-height:1.55}
+    .p360-install p{margin:6px 0 12px}
+    .p360-install button{border:0;border-radius:9px;padding:11px 16px;background:var(--tiffany);color:var(--navy);font:600 14px 'Inter',sans-serif;cursor:pointer}
+    .p360-install button:disabled{opacity:.55;cursor:default}
+    .p360-install details{margin-top:12px}
+    .p360-install summary{font-size:13px;font-weight:600;color:var(--tiffany-deep);cursor:pointer}
+    .p360-install ul{padding-left:20px;margin:8px 0}
+    .p360-install .hint{font-size:11px}
+  </style>
+  <section class="p360-install" id="instalar-politica360" aria-labelledby="p360-install-title">
+    <h2 id="p360-install-title">Instale o Política 360º no computador</h2>
+    <p>Use o site como aplicativo, em uma janela própria, no Windows ou Linux. A instalação gratuita funciona nos navegadores compatíveis.</p>
+    <button type="button" id="p360-install-button">Instalar aplicativo</button>
+    <p class="hint" id="p360-install-status" role="status" aria-live="polite">Se o botão não abrir a instalação, siga as instruções do seu navegador.</p>
+    <details>
+      <summary>Como instalar no Windows</summary>
+      <ul>
+        <li><strong>Microsoft Edge:</strong> abra o site, clique em Configurações e mais (⋯) → Aplicativos → Instalar este site como aplicativo.</li>
+        <li><strong>Google Chrome:</strong> abra o site e use o ícone Instalar na barra de endereço, se aparecer, ou ⋮ → Transmitir, salvar e compartilhar → Instalar página como app.</li>
+        <li><strong>Brave e outros navegadores Chromium:</strong> procure Instalar aplicativo ou Instalar página no menu do navegador.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Como instalar no Linux</summary>
+      <ul>
+        <li><strong>Google Chrome ou Microsoft Edge:</strong> abra o site e escolha Instalar aplicativo na barra de endereço ou no menu do navegador.</li>
+        <li><strong>Brave e outros navegadores Chromium:</strong> procure a opção Instalar aplicativo no menu.</li>
+        <li><strong>Firefox:</strong> a versão desktop não oferece instalação nativa de PWA. Você pode adicionar o site aos favoritos ou criar um atalho pelo ambiente de trabalho.</li>
+      </ul>
+    </details>
+    <p class="hint">O site continua acessível em qualquer navegador moderno. A instalação como aplicativo depende dos recursos oferecidos por cada navegador; não existe um botão de instalação universal no Firefox desktop.</p>
+  </section>
+
   <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
 
   <div class="bottomnav">
@@ -3608,6 +3644,40 @@ var P360Listen=(function(){
 </script>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').catch(function(){});});}
+</script>
+<script>
+(function(){
+  var deferredPrompt=null;
+  var button=document.getElementById('p360-install-button');
+  var status=document.getElementById('p360-install-status');
+  if(!button||!status)return;
+  window.addEventListener('beforeinstallprompt',function(event){
+    event.preventDefault();
+    deferredPrompt=event;
+    button.disabled=false;
+    status.textContent='Instalação disponível neste navegador. Clique em “Instalar aplicativo”.';
+  });
+  window.addEventListener('appinstalled',function(){
+    deferredPrompt=null;
+    button.disabled=true;
+    button.textContent='Aplicativo instalado';
+    status.textContent='Política 360º foi instalado neste dispositivo.';
+  });
+  button.addEventListener('click',async function(){
+    if(deferredPrompt){
+      deferredPrompt.prompt();
+      var choice=await deferredPrompt.userChoice;
+      status.textContent=choice&&choice.outcome==='accepted'?'Instalação iniciada.':'Instalação cancelada. Você pode tentar novamente pelo menu do navegador.';
+      deferredPrompt=null;
+      return;
+    }
+    status.textContent='Abra as instruções abaixo para instalar pelo menu do Microsoft Edge, Google Chrome ou outro navegador compatível.';
+    var details=document.querySelectorAll('#instalar-politica360 details');
+    var ua=navigator.userAgent;
+    var target=/Linux/i.test(ua)?details[1]:details[0];
+    if(target)target.open=true;
+  });
+})();
 </script>
 </body>
 </html>
