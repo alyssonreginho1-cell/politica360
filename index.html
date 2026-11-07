@@ -1530,7 +1530,7 @@
     </section>
   </div>
 
-  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a></footer>
+  <footer class="note">Painel informativo e não-partidário. Atualizado em 4 de novembro de 2026. · <a href="/politica-editorial.html" style="color:#9FC0BE">Política editorial</a> · <a href="/privacidade.html" style="color:#9FC0BE">Privacidade</a> · <a href="#" id="pwaFooterInstall" style="color:#3FD1CC;font-weight:700;text-decoration:underline">Aplicativo aqui</a></footer>
 
   <div class="bottomnav">
     <div class="bottomnav-inner">
@@ -3624,6 +3624,11 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
   var ua=navigator.userAgent||'';
   var ios=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  var footerLink=document.getElementById('pwaFooterInstall');
+  if(footerLink){
+    if(standalone)footerLink.style.display='none';
+    else footerLink.addEventListener('click',function(event){event.preventDefault();button.click();});
+  }
   if(standalone)return;
   if(ios){
     wrap.hidden=false;
