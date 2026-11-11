@@ -1,0 +1,148 @@
+name: Construir aplicativos
+
+on:
+  workflow_dispatch:
+    inputs:
+      versao:
+        description: "Nome da versão (ex.: app-v1.0.0)"
+        required: true
+        default: "app-v1.0.0"
+  push:
+    tags:
+      - "app-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  desktop:
+    name: ${{ matrix.nome }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            nome: Windows
+          - os: ubuntu-22.04
+            nome: Linux
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: app-nativo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Dependências do Linux
+        if: matrix.os == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libgtk-3-dev libssl-dev libxdo-dev libfuse2 xdg-utils
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: "app-nativo/src-tauri -> target"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Gerar os ícones do aplicativo
+        run: npx tauri icon icon-fonte.png
+
+      - name: Construir o aplicativo
+        run: npx tauri build
+        env:
+          NO_STRIP: "true"
+
+      - name: Separar os instaladores
+        shell: bash
+        run: |
+          mkdir -p ../saida
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            cp src-tauri/target/release/bundle/nsis/*-setup.exe ../saida/Politica360-Windows-instalador.exe
+            cp src-tauri/target/release/bundle/msi/*.msi ../saida/Politica360-Windows.msi
+          else
+            cp src-tauri/target/release/bundle/appimage/*.AppImage ../saida/Politica360-Linux.AppImage
+            cp src-tauri/target/release/bundle/deb/*.deb ../saida/Politica360-Linux.deb
+          fi
+          ls -la ../saida
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ matrix.nome }}
+          path: saida/*
+
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app-nativo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar o projeto Android
+        run: npx cap add android
+
+      - name: Gerar os ícones
+        run: npx capacitor-assets generate --android --iconBackgroundColor "#0B2038" --iconBackgroundColorDark "#0B2038"
+
+      - name: Sincronizar
+        run: npx cap sync android
+
+      - name: Construir o APK
+        working-directory: app-nativo/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Separar o instalador
+        run: |
+          mkdir -p ../saida
+          cp android/app/build/outputs/apk/debug/app-debug.apk ../saida/Politica360-Android.apk
+          ls -la ../saida
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-Android
+          path: saida/*
+
+  publicar:
+    name: Publicar os instaladores
+    needs: [desktop, android]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: instaladores
+          merge-multiple: true
+
+      - run: ls -la instaladores
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.versao || github.ref_name }}
+          name: Aplicativo Política 360º ${{ github.event.inputs.versao || github.ref_name }}
+          body: |
+            Instaladores do aplicativo Política 360º.
+            Windows: Politica360-Windows-instalador.exe (ou .msi)
+            Linux: Politica360-Linux.AppImage (ou .deb)
+            Android: Politica360-Android.apk
+          files: instaladores/*
