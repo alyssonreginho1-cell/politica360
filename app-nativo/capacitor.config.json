@@ -1,0 +1,13 @@
+{
+  "appId": "br.net.politica360.app",
+  "appName": "Política 360º",
+  "webDir": "www",
+  "server": {
+    "url": "https://politica360.net.br",
+    "androidScheme": "https",
+    "allowNavigation": ["politica360.net.br", "*.politica360.net.br"]
+  },
+  "android": {
+    "appendUserAgent": "Politica360App"
+  }
+}

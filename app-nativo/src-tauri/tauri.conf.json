@@ -1,0 +1,42 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Politica360",
+  "version": "1.0.0",
+  "identifier": "br.net.politica360.app",
+  "build": {
+    "frontendDist": "../www"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Política 360º",
+        "url": "https://politica360.net.br/",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 420,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Política 360º",
+    "category": "News",
+    "shortDescription": "Notícias, dados e fontes para entender a política brasileira",
+    "longDescription": "Aplicativo do Política 360º: notícias, dados e fontes para entender a política brasileira, com a fonte original sempre identificada.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

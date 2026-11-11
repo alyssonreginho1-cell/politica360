@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Política 360º</title>
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;color:#0b2038;font:16px/1.5 system-ui,sans-serif;text-align:center;padding:24px}h1{font:700 40px Georgia,'Times New Roman',serif;margin:0 0 8px}p{color:#5c7382;margin:0 0 18px}button{border:0;border-radius:22px;padding:12px 22px;background:#0abab5;color:#0b2038;font:600 15px system-ui,sans-serif;cursor:pointer}</style></head>
+<body><main><h1>Política 360º</h1><p id="msg">Abrindo o site…</p><button type="button" id="b" hidden onclick="location.href='https://politica360.net.br/'">Tentar de novo</button></main>
+<script>
+// Tela de segurança: se o aplicativo abrir esta página (sem internet), tenta ir para o site.
+(function(){
+  var url='https://politica360.net.br/';
+  function go(){ if(navigator.onLine){ location.replace(url); } else { document.getElementById('msg').textContent='Sem conexão com a internet. Conecte-se e tente de novo.'; document.getElementById('b').hidden=false; } }
+  window.addEventListener('online',go); go();
+})();
+</script></body></html>
