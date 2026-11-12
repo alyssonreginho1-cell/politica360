@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>try{if(localStorage.getItem("p360-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<title>Instalar o aplicativo | Política 360º</title>
+<meta name="description" content="Instale o aplicativo do Política 360º no Windows, Linux ou Android, com ícone próprio e sem abrir o navegador.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://politica360.net.br/instalar.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Instalar o aplicativo Política 360º"><meta property="og:description" content="Aplicativo para Windows, Linux e Android, com ícone próprio."><meta property="og:url" content="https://politica360.net.br/instalar.html"><meta property="og:image" content="https://politica360.net.br/og/default.png"><meta name="twitter:card" content="summary_large_image">
+<style>
+:root{color-scheme:light;--ink:#0b2038;--muted:#5c7382;--line:#dce7ed;--bg:#fff;--card:#fff;--soft:#e7f7f6;--teal:#0abab5;--link:#067f7b}
+html[data-theme="dark"]{color-scheme:dark;--ink:#e8f1f0;--muted:#9db6b8;--line:#1c3350;--bg:#0a1624;--card:#101f33;--soft:#13263d;--link:#3fd1cc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:18px max(20px,calc((100% - 960px)/2));border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font:700 24px 'Times New Roman',Times,serif;color:var(--ink);text-decoration:none}
+main{max-width:960px;margin:0 auto;padding:30px 20px 60px}
+h1{font:700 clamp(32px,6vw,48px)/1.1 'Times New Roman',Times,serif;margin:0 0 10px}
+.lead{color:var(--muted);margin:0 0 26px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card.rec{border-color:var(--teal);box-shadow:0 0 0 2px rgba(10,186,181,.25)}
+.card h2{font:700 22px 'Times New Roman',Times,serif;margin:0}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.tag{font:600 11px Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--link)}
+.btn{display:inline-block;margin-top:auto;text-align:center;border:0;border-radius:22px;padding:11px 16px;background:var(--teal);color:#0b2038;font:600 14px Inter,sans-serif;text-decoration:none;cursor:pointer}
+.btn[aria-disabled="true"]{background:var(--soft);color:var(--muted);cursor:default;pointer-events:none}
+.btn.sec{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.small{font-size:12px;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:12px;padding:4px 16px;margin-top:12px;background:var(--card)}
+summary{cursor:pointer;font-weight:600;padding:10px 0}details p,details li{color:var(--muted);font-size:15px}
+.note{margin-top:26px;padding:14px 16px;border-left:4px solid var(--teal);background:var(--soft);border-radius:8px;font-size:15px}
+a{color:var(--link)}
+</style></head>
+<body>
+<header><a class="brand" href="/">Política 360º</a><a href="/">← Voltar ao site</a></header>
+<main>
+<h1>Instale o aplicativo</h1>
+<p class="lead">Escolha o seu aparelho. O aplicativo abre pelo ícone do Política 360º, numa janela própria, sem precisar abrir o navegador. As notícias são as mesmas do site e se atualizam sozinhas.</p>
+<div class="grid" id="cards">
+  <div class="card" data-os="windows"><span class="tag" hidden>Recomendado para o seu aparelho</span><h2>Windows</h2><p>Instalador para Windows 10 e 11.</p><a class="btn" href="#" aria-disabled="true">Em breve</a><span class="small"></span></div>
+  <div class="card" data-os="android"><span class="tag" hidden>Recomendado para o seu aparelho</span><h2>Android</h2><p>Arquivo APK para celulares e tablets Android.</p><a class="btn" href="#" aria-disabled="true">Em breve</a><span class="small"></span></div>
+  <div class="card" data-os="linux"><span class="tag" hidden>Recomendado para o seu aparelho</span><h2>Linux</h2><p>Pacote AppImage (qualquer distribuição) ou .deb (Ubuntu e Debian).</p><a class="btn" href="#" aria-disabled="true">Em breve</a><a class="btn sec" href="#" aria-disabled="true" style="margin-top:6px">Pacote .deb</a><span class="small"></span></div>
+  <div class="card" data-os="ios"><span class="tag" hidden>Recomendado para o seu aparelho</span><h2>iPhone</h2><p>O aplicativo para iPhone só pode ser distribuído pela App Store, e ainda está em preparação.</p><a class="btn" href="#como-iphone">Ver como usar agora</a></div>
+</div>
+<div style="margin-top:14px"><button class="btn sec" id="pwaBtn" type="button" hidden>Instalar pelo navegador (mais rápido, sem arquivo)</button></div>
+<details id="como-iphone"><summary>iPhone: como usar enquanto o aplicativo não está na App Store</summary><p>Abra politica360.net.br no navegador do iPhone, toque no botão <b>Compartilhar</b> e escolha <b>Adicionar à Tela de Início</b>. O Política 360º passa a ter um ícone próprio e abre em tela cheia.</p></details>
+<details><summary>Windows: o que fazer se aparecer um aviso de segurança</summary><p>Como o instalador ainda não tem assinatura digital paga, o Windows pode mostrar “O Windows protegeu o seu computador”. Clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>. Baixe sempre por esta página.</p></details>
+<details><summary>Android: como instalar o arquivo APK</summary><p>Baixe o arquivo, toque nele e, se o Android pedir, permita a instalação de aplicativos desta fonte. Depois da instalação, você pode desligar essa permissão.</p></details>
+<details><summary>Linux: como instalar</summary><ul><li><b>AppImage:</b> clique com o botão direito no arquivo, abra as propriedades e marque “permitir executar como programa”; depois abra o arquivo.</li><li><b>.deb:</b> no terminal, <code>sudo apt install ./Politica360-Linux.deb</code>.</li></ul></details>
+<div class="note"><b>Login e comentários:</b> o Google costuma bloquear o login dentro de aplicativos. Para comentar, abra politica360.net.br no navegador. Ler notícias, ouvir a leitura em voz e usar o modo escuro funcionam normalmente no aplicativo.</div>
+<p class="small" id="versao"></p>
+</main>
+<script>
+// Repositório do GitHub de onde vêm os instaladores:
+var REPO = 'alyssonreginho1-cell/politica360';
+(function(){
+  var ua=navigator.userAgent||'',os='desktop';
+  if(/android/i.test(ua))os='android';else if(/iphone|ipad|ipod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1))os='ios';else if(/windows/i.test(ua))os='windows';else if(/linux|x11/i.test(ua))os='linux';
+  var cards={};[].forEach.call(document.querySelectorAll('.card'),function(c){cards[c.dataset.os]=c;});
+  if(cards[os]){cards[os].classList.add('rec');cards[os].querySelector('.tag').hidden=false;var g=document.getElementById('cards');g.insertBefore(cards[os],g.firstChild);}
+  function enable(a,url,label){a.href=url;a.textContent=label;a.removeAttribute('aria-disabled');}
+  function mb(n){return (n/1048576).toFixed(0)+' MB';}
+  var deferred=null,pb=document.getElementById('pwaBtn');
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;pb.hidden=false;});
+  pb.addEventListener('click',function(){if(deferred){deferred.prompt();deferred=null;pb.hidden=true;}});
+  if(REPO.indexOf('USUARIO')===0){return;}
+  var api='https://api.github.com/repos/'+REPO+'/releases/latest';
+  fetch(api,{headers:{Accept:'application/vnd.github+json'}}).then(function(r){if(r.status===404)throw 'nenhum';if(!r.ok)throw new Error(r.status);return r.json();}).then(function(rel){
+    var map={};(rel.assets||[]).forEach(function(a){
+      var n=a.name.toLowerCase();
+      if(/\.exe$/.test(n))map.exe=a;else if(/\.msi$/.test(n))map.msi=a;else if(/\.apk$/.test(n))map.apk=a;else if(/\.appimage$/.test(n))map.appimage=a;else if(/\.deb$/.test(n))map.deb=a;
+    });
+    var w=cards.windows,an=cards.android,l=cards.linux;
+    var win=map.exe||map.msi;
+    if(win){enable(w.querySelector('.btn'),win.browser_download_url,'Baixar para Windows');w.querySelector('.small').textContent=mb(win.size);}
+    if(map.apk){enable(an.querySelector('.btn'),map.apk.browser_download_url,'Baixar para Android');an.querySelector('.small').textContent=mb(map.apk.size);}
+    if(map.appimage){enable(l.querySelectorAll('.btn')[0],map.appimage.browser_download_url,'Baixar AppImage');l.querySelector('.small').textContent=mb(map.appimage.size);}
+    if(map.deb){enable(l.querySelectorAll('.btn')[1],map.deb.browser_download_url,'Pacote .deb');}
+    document.getElementById('versao').textContent='Versão '+(rel.tag_name||'')+(rel.published_at?' · publicada em '+new Date(rel.published_at).toLocaleDateString('pt-BR'):'');
+  }).catch(function(e){document.getElementById('versao').textContent=(e==='nenhum')?'Os instaladores ainda não foram publicados. Volte em breve.':'Não foi possível carregar os instaladores agora. Tente de novo em instantes.';});
+})();
+</script>
+</body></html>
