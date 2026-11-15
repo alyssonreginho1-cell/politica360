@@ -1,0 +1,31 @@
+APLICATIVO DO POLÍTICA 360º (Windows, Linux e Android)
+
+O QUE É
+Um aplicativo com ícone e janela próprios que abre o site politica360.net.br. A pessoa instala com um clique e abre pelo ícone, sem escolher Chrome ou Edge. O conteúdo é o do site e se atualiza sozinho, sem precisar publicar uma versão nova a cada notícia.
+Ele usa o componente de páginas web do próprio sistema (WebView2 no Windows, WebKitGTK no Linux, WebView do Android). Não abre o Chrome nem o Edge.
+
+COMO PUBLICAR (passo a passo)
+1. No repositório do site no GitHub, envie estas duas coisas, na raiz:
+   - a pasta app-nativo (com tudo que está dentro);
+   - o arquivo .github/workflows/build-apps.yml (crie a pasta .github/workflows pelo botão "Add file > Create new file", digitando o caminho no nome, e cole o conteúdo).
+2. Abra a aba "Actions" do repositório, escolha "Construir aplicativos" e clique em "Run workflow". Deixe o nome da versão como app-v1.0.0.
+3. Espere entre 15 e 30 minutos. O GitHub constrói os instaladores sozinho, nos servidores dele.
+4. Quando terminar, abra "Releases" (lado direito da página inicial do repositório). Os arquivos estarão lá:
+   - Politica360-Windows-instalador.exe (e .msi)
+   - Politica360-Linux.AppImage (e .deb)
+   - Politica360-Android.apk
+5. O repositório já está configurado em instalar.html (alyssonreginho1-cell/politica360). Envie o instalar.html, o index.html e o sitemap.xml para o GitHub.
+6. Pronto: o site passa a ter o botão "Instalar o aplicativo", e a página instalar.html mostra o instalador certo para o aparelho de cada pessoa.
+
+SE A CONSTRUÇÃO FALHAR
+Na aba Actions, clique na execução com o X vermelho, depois no passo que falhou, e copie as últimas linhas do texto. Mande para mim que eu corrijo. Não consegui compilar aqui, então é normal precisar de um ou dois ajustes na primeira vez.
+
+IPHONE
+O aplicativo para iPhone só pode ser distribuído pela App Store e exige a conta de desenvolvedor da Apple (paga, cerca de US$ 99 por ano) e um Mac ou um servidor Mac para construir. A Apple também costuma recusar aplicativos que são apenas um site dentro de uma janela. Por isso, por enquanto, o iPhone usa "Adicionar à Tela de Início", explicado na página instalar.html.
+
+CUSTOS E AVISOS
+- Windows: sem assinatura digital paga, o Windows mostra o aviso "O Windows protegeu o seu computador" (a pessoa clica em Mais informações > Executar assim mesmo). A assinatura é paga e opcional.
+- Android: o APK serve para instalar direto (a pessoa precisa permitir instalar de fonte desconhecida). Para entrar na Google Play é preciso conta de desenvolvedor (pagamento único de cerca de US$ 25) e um pacote assinado com sua chave, que ainda não está configurado.
+- Login com Google: o Google costuma bloquear o login dentro de aplicativos. No aplicativo, o botão avisa que é preciso abrir o site no navegador para comentar. Ler, ouvir a leitura em voz e o modo escuro funcionam.
+- Precisa de internet: sem conexão, o aplicativo mostra uma tela avisando.
+- Os instaladores são gerados a partir do site no ar, então o site continua sendo o centro de tudo.
