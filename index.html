@@ -580,10 +580,10 @@
   <div class="trending" id="trendingRow">
     <span class="trending-label">🔥 Em alta</span>
     <button class="trending-pill install-link" onclick="location.href='/instalar.html'">Instalar o aplicativo</button>
-    <button class="trending-pill" onclick="openArticle('flavio-recurso-2nov')">Defesa de Flávio recorre ao STF</button>
-    <button class="trending-pill" onclick="openArticle('ministerio-cotados-1nov')">Quem será o ministro da Fazenda?</button>
-    <button class="trending-pill" onclick="openArticle('pacote-fiscal-senado-12nov')">Pacote fiscal no Senado</button>
-    <button class="trending-pill" onclick="openArticle('lula-cop31-11nov')">Lula na COP31</button>
+    <button class="trending-pill" onclick="openArticle('fachin-abre-sigilo-mendonca-20nov')">Caso Master: Fachin abre sigilo</button>
+    <button class="trending-pill" onclick="openArticle('dino-juscelino-denuncia-20nov')">Dino vota sobre Juscelino Filho</button>
+    <button class="trending-pill" onclick="openArticle('ajuste-fiscal-camara-20nov')">Ajuste fiscal na Câmara</button>
+    <button class="trending-pill" onclick="openArticle('escala-6x1-reacao-setores-20nov')">Debate sobre escala 6x1</button>
     <button class="trending-pill" onclick="openArticle('mercado-30out')">Pior semana da Bolsa desde 2020</button>
     <button class="trending-pill" onclick="openArticle('lula-reeleito-26out')">Resultado oficial</button>
     <button class="trending-pill" onclick="document.querySelector('.topnav-btn[data-tab=apuracao]').click()">Apuração</button>
@@ -605,6 +605,36 @@
       </div>
 
       <div id="feedList">
+
+      <div class="feed-card" data-cand="all" data-id="mercado-fechamento-19nov" role="button" tabindex="0" onclick="openArticle('mercado-fechamento-19nov')" onkeypress="if(event.key=='Enter')openArticle('mercado-fechamento-19nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📉</div><span class="fc-cand">Mercado</span><span class="fc-dot"></span><span class="fc-time">19 nov</span></div>
+        <p class="fc-headline">Ibovespa cai 0,69% e dólar fecha a R$ 5,935 na véspera do feriado; B3 não abre nesta sexta.</p>
+        <div class="fc-bottom"><span class="fc-source">● Agência Brasil / UOL</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="fachin-abre-sigilo-mendonca-20nov" role="button" tabindex="0" onclick="openArticle('fachin-abre-sigilo-mendonca-20nov')" onkeypress="if(event.key=='Enter')openArticle('fachin-abre-sigilo-mendonca-20nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">⚖️</div><span class="fc-cand">STF · Caso Master</span><span class="fc-dot"></span><span class="fc-time">20 nov</span></div>
+        <p class="fc-headline">Fachin autoriza retirada de sigilo de relatório da PF sobre André Mendonça no caso Master.</p>
+        <div class="fc-bottom"><span class="fc-source">● UOL / Congresso em Foco</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="dino-juscelino-denuncia-20nov" role="button" tabindex="0" onclick="openArticle('dino-juscelino-denuncia-20nov')" onkeypress="if(event.key=='Enter')openArticle('dino-juscelino-denuncia-20nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">🏛️</div><span class="fc-cand">STF · Câmara</span><span class="fc-dot"></span><span class="fc-time">20 nov</span></div>
+        <p class="fc-headline">Flávio Dino vota para tornar Juscelino Filho réu em investigação sobre suspeitas envolvendo emendas.</p>
+        <div class="fc-bottom"><span class="fc-source">● UOL</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="escala-6x1-reacao-setores-20nov" role="button" tabindex="0" onclick="openArticle('escala-6x1-reacao-setores-20nov')" onkeypress="if(event.key=='Enter')openArticle('escala-6x1-reacao-setores-20nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--tiffany)">🧰</div><span class="fc-cand">Trabalho · Governo</span><span class="fc-dot"></span><span class="fc-time">20 nov</span></div>
+        <p class="fc-headline">Entidades empresariais questionam prazo e regras para mudança da escala 6x1.</p>
+        <div class="fc-bottom"><span class="fc-source">● Folha de S.Paulo</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
+
+      <div class="feed-card" data-cand="all" data-id="ajuste-fiscal-camara-20nov" role="button" tabindex="0" onclick="openArticle('ajuste-fiscal-camara-20nov')" onkeypress="if(event.key=='Enter')openArticle('ajuste-fiscal-camara-20nov')">
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c2)">📑</div><span class="fc-cand">Congresso · Economia</span><span class="fc-dot"></span><span class="fc-time">20 nov</span></div>
+        <p class="fc-headline">Ajuste fiscal chega à Câmara com parecer favorável e votação prevista para segunda-feira.</p>
+        <div class="fc-bottom"><span class="fc-source">● CNN Brasil / Congresso em Foco</span><span class="fc-link">ler mais ↗</span></div>
+      </div>
 
       <div class="feed-card" data-cand="all" data-id="resultado-2turno-25out" role="button" tabindex="0" onclick="openArticle('resultado-2turno-25out')" onkeypress="if(event.key=='Enter')openArticle('resultado-2turno-25out')">
         <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">🗳️</div><span class="fc-cand">Resultado do 2º turno</span><span class="fc-dot"></span><span class="fc-time">25 out</span></div>
@@ -967,8 +997,7 @@
       </div>
 
       <div class="feed-card" data-cand="all" data-id="ipespe-2turno-17out" role="button" tabindex="0" onclick="openArticle('ipespe-2turno-17out')" onkeypress="if(event.key=='Enter')openArticle('ipespe-2turno-17out')">
-        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">IP</div><span class="fc-cand">Pesquisa Ipespe/Abrapel</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>
-        <p class="fc-headline">Ipespe/Abrapel: Flávio tem 48% e Lula 46%; em votos válidos, 51,2% a 48,8%, e a diferença cai de 5,4 para 2,4 pontos.</p>
+        <div class="fc-top"><div class="fc-avatar" style="background:var(--c1)">IP</div><span class="fc-cand">Pesquisa Ipespe/Abrapel</span><span class="fc-dot"></span><span class="fc-time">17 out</span></div>        <p class="fc-headline">Ipespe/Abrapel: Flávio tem 48% e Lula 46%; em votos válidos, 51,2% a 48,8%, e a diferença cai de 5,4 para 2,4 pontos.</p>
         <div class="fc-bottom"><span class="fc-source">● Metrópoles / Transmissão Política</span><span class="fc-link">ler mais ↗</span></div>
       </div>
 
@@ -1594,6 +1623,52 @@
 
 <script>
   const articles = {
+
+    "mercado-fechamento-19nov": {
+      source: "Agência Brasil / UOL", date: "19 nov", url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-supera-r-593-e-fecha-no-maior-valor-desde-abril-de-2025",
+      title: "Ibovespa cai 0,69% e dólar fecha a R$ 5,935 na véspera do feriado",
+      body: [
+        "No último pregão antes do feriado de 20 de novembro, o Ibovespa recuou 0,69% e fechou aos 166.376 pontos, segundo os dados publicados pela Agência Brasil e pelo UOL. Foi uma sessão de pressão sobre os ativos brasileiros e de queda também nas bolsas de Nova York.",
+        "O dólar comercial encerrou o dia a R$ 5,935, com alta de 1,16%, de acordo com o fechamento divulgado pelo UOL. A Agência Brasil informou que a moeda superou R$ 5,93 e atingiu o maior patamar desde abril de 2025. O Banco Central vendeu US$ 1 bilhão no mercado à vista durante a sessão.",
+        "A B3 não teve pregão nesta sexta-feira (20), feriado do Dia da Consciência Negra. Os números apresentados são do fechamento de quinta-feira (19), não cotações em tempo real."
+      ]
+    },
+    "fachin-abre-sigilo-mendonca-20nov": {
+      source: "UOL / Congresso em Foco", date: "20 nov", url: "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/20/fachin-sigilo-relatorio-pf.ghtm",
+      title: "Fachin autoriza retirada de sigilo de relatório da PF sobre André Mendonça no caso Master",
+      body: [
+        "O presidente do Supremo Tribunal Federal, Edson Fachin, autorizou nesta sexta-feira (20) a retirada do sigilo do relatório da Polícia Federal que menciona o ministro André Mendonça no caso Banco Master. A decisão ocorreu depois de Mendonça renunciar à confidencialidade e pedir acesso público à íntegra dos documentos.",
+        "Segundo o UOL, Fachin encaminhou quatro relatórios à Procuradoria-Geral da República, que terá 15 dias para decidir se pede a abertura de investigações, e arquivou outros seis. Os documentos foram produzidos a partir de mensagens encontradas nos celulares de Daniel Vorcaro, controlador do Banco Master.",
+        "A existência de menções em relatórios não significa, por si só, que os ministros tenham cometido irregularidades. O conteúdo deve ser analisado no contexto e pelas autoridades competentes."
+      ]
+    },
+    "dino-juscelino-denuncia-20nov": {
+      source: "UOL", date: "20 nov", url: "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/20/dino-vota-para-tornar-juscelino-filho-reu-por-desvio-de-emendas.ghtm",
+      title: "Flávio Dino vota para tornar Juscelino Filho réu em investigação sobre emendas",
+      body: [
+        "O ministro Flávio Dino, do Supremo Tribunal Federal, votou pelo recebimento da denúncia contra o deputado federal e ex-ministro Juscelino Filho e outros cinco acusados. O caso envolve suspeitas de fraudes em licitações e desvio de recursos da Codevasf destinados a obras no Maranhão.",
+        "De acordo com o UOL, o julgamento ocorre na Primeira Turma, em plenário virtual, e deve terminar em 30 de novembro. A denúncia da Procuradoria-Geral da República atribui a Juscelino suspeitas de organização criminosa, fraude em licitação, peculato e corrupção ativa. A defesa poderá se manifestar no processo.",
+        "O voto do relator não equivale a uma condenação. Se a maioria aceitar a denúncia, será aberta uma ação penal e o deputado passará à condição de réu."
+      ]
+    },
+    "escala-6x1-reacao-setores-20nov": {
+      source: "Folha de S.Paulo", date: "20 nov", url: "https://www1.folha.uol.com.br/mercado/2026/11/entidades-criticam-decreto-de-lula-que-regulamenta-fim-da-escala-6x1-e-falam-em-falta-de-informacoes.shtml",
+      title: "Entidades empresariais questionam prazo e regras para mudança da escala 6x1",
+      body: [
+        "Entidades de setores como varejo, bares e restaurantes, indústria, telecomunicações e construção criticaram a falta de detalhamento e o prazo para adaptação às regras anunciadas para substituir a escala 6x1 pela 5x2. A mudança está prevista para 16 de dezembro de 2026, segundo a Folha de S.Paulo.",
+        "As organizações pedem esclarecimentos sobre a aplicação das regras, transição mais longa e definição de possíveis regimes especiais. A reportagem registra estimativas de aumento de custos apresentadas por representantes de alguns setores; são projeções das entidades, não resultados já observados.",
+        "O tema também envolve dúvidas sobre a relação entre o decreto, contratos existentes e discussões judiciais. A implementação e eventuais ajustes ainda podem ser objeto de novos esclarecimentos."
+      ]
+    },
+    "ajuste-fiscal-camara-20nov": {
+      source: "CNN Brasil / Congresso em Foco", date: "20 nov", url: "https://www.cnnbrasil.com.br/politica/",
+      title: "Ajuste fiscal chega à Câmara com parecer favorável e votação prevista para segunda-feira",
+      body: [
+        "O relator Mauro Benevides Filho manteve o texto do ajuste fiscal aprovado pelo Senado e apresentou parecer favorável na Câmara. A proposta deve ser analisada pelos deputados em sessão extraordinária prevista para segunda-feira, 23 de novembro, conforme noticiado pela CNN Brasil e pelo Congresso em Foco.",
+        "O pacote reúne medidas de contenção de despesas e mudanças na arrecadação. A estimativa divulgada durante a tramitação aponta impacto de até R$ 56,1 bilhões em 2027, mas o efeito depende da aprovação final e da execução das medidas.",
+        "Até a votação dos deputados, o texto ainda pode ser alterado. Se aprovado sem mudanças, seguirá para sanção presidencial."
+      ]
+    },
     "pacote-fiscal-senado-12nov": {
       source: "Agência Brasil / GC Mais / Agora RN / ISTOÉ", date: "12 nov", url: "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/senado-aprova-texto-base-de-pacote-que-preve-economia-de-ate-r-60-bi",
       title: "Senado aprova por 45 a 31 o texto-base do pacote fiscal de Lula; destaques serão votados na terça (17)",
@@ -1921,8 +1996,7 @@
       ]
     },
     "resultado-2turno-25out": {
-      source: "Plural / Bloomberg Línea / Mix Vale / Exame", date: "25 out", url: "https://www.plural.jor.br/curitiba/apuracao-segundo-turno-2026-lula-eleito-vai-e-vem/",
-      title: "Lula é reeleito presidente após virada no fim da apuração do 2º turno",
+      source: "Plural / Bloomberg Línea / Mix Vale / Exame", date: "25 out", url: "https://www.plural.jor.br/curitiba/apuracao-segundo-turno-2026-lula-eleito-vai-e-vem/",      title: "Lula é reeleito presidente após virada no fim da apuração do 2º turno",
       body: [
         "Segundo o Plural, Luiz Inácio Lula da Silva (PT) foi eleito presidente da República em 25 de outubro, com 51,79% dos votos válidos, contra 48,21% de Flávio Bolsonaro (PL). Os números são de uma apuração com 99,85% das seções totalizadas pelo TSE, então podem ter pequenos ajustes até o fechamento. O Mix Vale informa que Lula passou de 58 milhões de votos e que os votos restantes, concentrados na Bahia, em Sergipe, em Pernambuco e no Ceará, não mudariam o resultado.",
         "O 2º turno começou com Flávio como favorito pelos números do 1º turno, quando ele teve 47,03% e Lula, 45,16%. O Plural descreve uma noite de vai e vem na contagem, e o Mix Vale registra que Flávio chegou a aparecer na frente no começo da apuração, até Lula assumir a liderança e ampliar a vantagem. Segundo o Mix Vale, Lula somou quase 4,9 milhões de votos a mais do que no 1º turno. Será o quarto mandato do petista, e Geraldo Alckmin (PSB) segue como vice-presidente.",
@@ -2921,8 +2995,7 @@
       source: "Cobertura política", date: "13 ago", url: "https://eliashacker.com.br/noticia/46060/eleicoes-2026-inicio-da-campanha-sera-nos-redutos-eleitorais-dos-candidatos-a-presidencia.html",
       title: "Kassab avaliou que chance de Flávio vencer era nula",
       body: [
-        "Antes de se tornar vice na chapa de Ronaldo Caiado, o presidente do PSD, Gilberto Kassab, chegou a declarar publicamente que via como nulas as chances de vitória de Flávio Bolsonaro na disputa.",
-        "A fala evidenciou a disputa também dentro do campo de centro-direita, que seguiu fragmentado entre diferentes pré-candidaturas até as convenções."
+        "Antes de se tornar vice na chapa de Ronaldo Caiado, o presidente do PSD, Gilberto Kassab, chegou a declarar publicamente que via como nulas as chances de vitória de Flávio Bolsonaro na disputa.",        "A fala evidenciou a disputa também dentro do campo de centro-direita, que seguiu fragmentado entre diferentes pré-candidaturas até as convenções."
       ]
     },
     "flavio-pt-boato": {
@@ -3542,13 +3615,13 @@ const COMMENTS_HTML = '<section class="comments-box art-comments"><h2 class="ac-
 <script>
 // ---- Capa estilo jornal: edite só este bloco para atualizar a capa ----
 var FRONT = {
-  tickerNote: 'Pregão de 13 nov',
-  ticker: [['IBOVESPA','172.458','+0,66%',''],['DÓLAR','R$ 5,65','+2,63% na semana',''],['SELIC','13,75%','mantida em 4 nov',''],['LULA','51,79%','2º turno','']],
-  lead: {id:'pacote-fiscal-senado-12nov', kicker:'Congresso · 12 nov', deck:'O texto-base foi aprovado por 45 a 31. Os destaques serão votados na terça (17), e o projeto segue depois para a Câmara.'},
-  secondary: [{id:'flavio-julgamento-stf-13nov', kicker:'Caso Flávio', deck:'O recurso contra a apreensão dos passaportes será julgado no plenário virtual de 20 a 30 de novembro.'},{id:'lula-cop31-11nov', kicker:'Governo', deck:'Lula volta ao Brasil em 16 de novembro, e a definição da equipe fica para depois da viagem.'}],
-  timeline: [{d:'4 nov',t:'Copom mantém a Selic em 13,75%',id:'copom-mantem-4nov'},{d:'11 nov',t:'Lula discursa na COP31',id:'lula-cop31-11nov'},{d:'12 nov',t:'Senado aprova o texto-base do pacote fiscal',id:'pacote-fiscal-senado-12nov'},{d:'17 nov',t:'Senado vota os destaques do pacote',id:'pacote-fiscal-senado-12nov',hot:true}],
-  tracker: [['Pacote fiscal no Senado','Destaques na terça (17)','warn','pacote-fiscal-senado-12nov'],['Ministro da Fazenda','Em aberto','warn','ministerio-cotados-1nov'],['Recurso de Flávio no STF','Julgamento de 20 a 30 nov','warn','flavio-julgamento-stf-13nov'],['Selic','13,75% mantida','ok','copom-mantem-4nov']],
-  mostRead: [['pacote-fiscal-senado-12nov','Senado aprova o texto-base do pacote fiscal'],['mercado-13nov','Dólar a R$ 5,65 e Bolsa em alta na semana'],['flavio-julgamento-stf-13nov','STF julga o recurso de Flávio em 20 a 30 de novembro']]
+  tickerNote: 'Último pregão: 19 nov · B3 fechada em 20 nov',
+  ticker: [['IBOVESPA','166.376','−0,69% em 19 nov','down'],['DÓLAR','R$ 5,935','+1,16% em 19 nov','down'],['SELIC','13,75%','última decisão: 4 nov',''],['B3','Fechada','feriado · 20 nov','']],
+  lead: {id:'fachin-abre-sigilo-mendonca-20nov', kicker:'STF · Caso Master · 20 nov', deck:'Fachin autorizou a divulgação do relatório da PF sobre André Mendonça. Quatro documentos foram enviados à PGR e outros seis, arquivados.'},
+  secondary: [{id:'dino-juscelino-denuncia-20nov', kicker:'STF · Câmara', deck:'Flávio Dino votou pelo recebimento da denúncia; o julgamento virtual deve terminar em 30 de novembro.'},{id:'ajuste-fiscal-camara-20nov', kicker:'Congresso · Economia', deck:'Relator mantém o texto aprovado pelo Senado; deputados devem analisar a proposta em 23 de novembro.'}],
+  timeline: [{d:'18 nov',t:'Senado conclui votação do ajuste fiscal',id:'pacote-fiscal-senado-12nov'},{d:'19 nov',t:'Relator mantém texto do Senado na Câmara',id:'ajuste-fiscal-camara-20nov'},{d:'20 nov',t:'Fachin abre sigilo de relatório da PF',id:'fachin-abre-sigilo-mendonca-20nov',hot:true},{d:'23 nov',t:'Câmara deve analisar o ajuste fiscal',id:'ajuste-fiscal-camara-20nov'}],
+  tracker: [['Relatórios da PF','4 enviados à PGR','warn','fachin-abre-sigilo-mendonca-20nov'],['Denúncia contra Juscelino','Julgamento até 30 nov','warn','dino-juscelino-denuncia-20nov'],['Ajuste fiscal','Câmara: previsão 23 nov','warn','ajuste-fiscal-camara-20nov'],['Escala 6x1','Regras sob questionamento','warn','escala-6x1-reacao-setores-20nov']],
+  mostRead: [['fachin-abre-sigilo-mendonca-20nov','Fachin abre sigilo de relatório da PF'],['mercado-fechamento-19nov','Ibovespa cai e dólar fecha acima de R$ 5,93'],['dino-juscelino-denuncia-20nov','Dino vota sobre denúncia contra Juscelino']]
 };
 
 (function(){
