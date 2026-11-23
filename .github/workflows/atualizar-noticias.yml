@@ -1,0 +1,33 @@
+name: Atualizar notícias automaticamente
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Buscar e validar feeds RSS
+        run: python scripts/update_news.py
+      - name: Publicar notícias novas
+        run: |
+          if git diff --quiet -- noticias-auto.json; then
+            echo "Nenhuma notícia nova; sem commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add noticias-auto.json
+            git commit -m "Atualizar notícias automaticamente"
+            git push
+          fi
