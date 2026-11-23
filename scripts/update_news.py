@@ -90,6 +90,8 @@ for source, url in FEEDS:
         print(f"Feed indisponível: {source}: {exc}")
 
 items.sort(key=lambda item: item["published"], reverse=True)
+if not items:
+    raise SystemExit("Nenhum feed forneceu notícia recente válida; mantendo o JSON anterior.")
 payload = {
     "updated_at": NOW.isoformat(),
     "count": min(len(items), 15),
