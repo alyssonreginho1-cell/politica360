@@ -4,16 +4,29 @@ on:
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/atualizar-noticias.yml"
+      - "scripts/update_news.py"
 
 permissions:
   contents: write
 
+concurrency:
+  group: atualizar-noticias
+  cancel-in-progress: false
+
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
@@ -22,12 +35,12 @@ jobs:
         run: python scripts/update_news.py
       - name: Publicar notícias novas
         run: |
-          if git diff --quiet -- noticias-auto.json; then
+          if [ -z "$(git status --porcelain -- noticias-auto.json)" ]; then
             echo "Nenhuma notícia nova; sem commit."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add noticias-auto.json
             git commit -m "Atualizar notícias automaticamente"
-            git push
+            git push origin HEAD:main
           fi
