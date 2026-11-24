@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-11-24T19:26:31.639463+00:00",
+  "updated_at": "2026-11-24T20:03:47.786885+00:00",
   "count": 15,
   "items": [
+    {
+      "title": "Comissão aprova projeto que permite abertura de igrejas em períodos de calamidade pública",
+      "summary": "Proposta segue para análise do Senado, a menos que haja recurso para que seja votado no Plenário da Câmara",
+      "url": "https://www.camara.leg.br/noticias/1322460-comissao-aprova-projeto-que-permite-abertura-de-igrejas-em-periodos-de-calamidade-publica",
+      "source": "Agência Câmara",
+      "category": "Congresso",
+      "published": "2026-11-24T19:54:00+00:00"
+    },
     {
       "title": "Adiada votação de parecer da comissão especial sobre política nacional para pessoas com autismo",
       "summary": "Texto consolida a legislação sobre o transtorno e assegura a continuidade de políticas públicas já conquistadas",
@@ -17,6 +25,14 @@
       "source": "Agência Câmara",
       "category": "Congresso",
       "published": "2026-11-24T19:12:00+00:00"
+    },
+    {
+      "title": "Falta de salas e de divulgação limita alcance da animação brasileira",
+      "summary": "Nos últimos anos, o cinema brasileiro voltou a ficar em evidência após o sucesso de filmes como Ainda Estou Aqui e o Agente Secreto em festivais internacionais, incluindo o Oscar.     \n\n  Mas para que longa-metragens brasileiros cheguem às salas de cinema existe um árduo caminho, especialmente nos casos de longa-metragens de animação.   \n\n  Notícias relacionadas:    Festival Animage reúne mais de 280 filmes de animaç",
+      "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-11/falta-de-salas-e-de-divulgacao-limita-alcance-da-animacao-brasileira",
+      "source": "Agência Brasil",
+      "category": "Brasil",
+      "published": "2026-11-24T19:06:00+00:00"
     },
     {
       "title": "Relator defende proibição de atividade exclusiva de formulação de combustíveis",
@@ -105,22 +121,6 @@
       "source": "Agência Câmara",
       "category": "Política",
       "published": "2026-11-24T17:23:00+00:00"
-    },
-    {
-      "title": "Incubadora vai apoiar empreendimentos de afroturismo no país",
-      "summary": "A criação de uma incubadora para apoiar até 50 projetos de afroturismo foi anunciada nesta terça-feira (24) pela ministra da Igualdade Racial, Rachel Barros, na abertura da 3ª Conferência Global de Afroturismo, que prossegue até quarta-feira (25), na cidade do Rio de Janeiro.    \n\n De acordo com a ministra, a estrutura abrange experiências culturais em territórios de matriz africana e afrodiaspórica, como rotas turís",
-      "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-11/incubadora-vai-apoiar-empreendimentos-de-afroturismo-no-pais",
-      "source": "Agência Brasil",
-      "category": "Política",
-      "published": "2026-11-24T17:20:00+00:00"
-    },
-    {
-      "title": "Projeto fixa regras de transparência para gastos do governo com publicidade digital",
-      "summary": "Texto está em análise na Câmara dos Deputados",
-      "url": "https://www.camara.leg.br/noticias/1313444-projeto-fixa-regras-de-transparencia-para-gastos-do-governo-com-publicidade-digital",
-      "source": "Agência Câmara",
-      "category": "Política",
-      "published": "2026-11-24T17:11:00+00:00"
     }
   ]
 }
