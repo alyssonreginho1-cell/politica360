@@ -99,3 +99,5 @@ payload = {
 }
 Path("noticias-auto.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"Arquivo gerado com {payload['count']} notícias.")
+
+# Execução manual solicitada em 25/11/2026.
