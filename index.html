@@ -3845,13 +3845,60 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
 </script>
 
 <script>
-/* Notícias automáticas do Política 360º — conteúdo externo, sem alterar o layout-base. */
+/* Notícias automáticas do Política 360º — leitura dentro do site. */
 (function(){
   function node(tag, cls, value){
     var e=document.createElement(tag);
     if(cls)e.className=cls;
     if(value!=null)e.textContent=value;
     return e;
+  }
+  function openAutoNews(item){
+    var view=document.getElementById('articleView');
+    var feed=document.getElementById('feedList');
+    var front=document.getElementById('frontPage');
+    var note=document.getElementById('verifyNote');
+    var feedSection=document.getElementById('feed');
+    if(!view)return;
+    view.textContent='';
+    var back=node('button','back-btn','← Voltar às notícias');
+    back.type='button';
+    back.addEventListener('click',function(){
+      view.style.display='none';
+      view.textContent='';
+      if(feed)feed.style.display='block';
+      if(front)front.style.display='';
+      if(note)note.style.display='flex';
+      var heading=feedSection&&feedSection.querySelector('.section-title');
+      if(heading)heading.style.display='';
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+    view.appendChild(back);
+    var header=node('div','article-header');
+    header.appendChild(node('span','article-source',item.source||'Notícias'));
+    header.appendChild(node('span','article-date',new Date(item.published).toLocaleDateString('pt-BR')));
+    view.appendChild(header);
+    view.appendChild(node('h1','article-title',item.title||'Notícia'));
+    var body=node('div','article-body');
+    if(item.summary){
+      item.summary.split(/\\n\\s*\\n/).filter(Boolean).forEach(function(p){
+        body.appendChild(node('p',null,p.trim()));
+      });
+    }else{
+      body.appendChild(node('p',null,'Esta notícia foi disponibilizada pela fonte original. Acesse a publicação para ler todos os detalhes.'));
+    }
+    view.appendChild(body);
+    var original=node('a','article-original-link','Ler matéria completa na fonte original ↗');
+    original.href=item.url;original.target='_blank';original.rel='noopener noreferrer';
+    view.appendChild(original);
+    if(front)front.style.display='none';
+    if(feed)feed.style.display='none';
+    if(note)note.style.display='none';
+    view.style.display='block';
+    var heading=feedSection&&feedSection.querySelector('.section-title');
+    if(heading)heading.style.display='none';
+    document.title=(item.title||'Notícia')+' | Política 360º';
+    window.scrollTo({top:0,behavior:'smooth'});
   }
   fetch('./noticias-auto.json?atualizacao='+Date.now(), {cache:'no-store'})
     .then(function(response){if(!response.ok)throw new Error('Feed ainda não publicado');return response.json();})
@@ -3863,11 +3910,12 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
       if(mid){
         var section=node('section','auto-news-feature');
         section.appendChild(node('div','kick','ÚLTIMAS NOTÍCIAS · ATUALIZAÇÃO AUTOMÁTICA'));
-        items.slice(0,4).forEach(function(item,index){
+        items.slice(0,4).forEach(function(item){
           var card=node('div','sec');
           var link=node('a','auto-news-link',item.title);
-          link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';
-          if(index===0){var h=node('h2','lead-h');h.appendChild(link);card.appendChild(h);}
+          link.href='#';
+          link.addEventListener('click',function(e){e.preventDefault();openAutoNews(item);});
+          if(section.children.length===1){var h=node('h2','lead-h');h.appendChild(link);card.appendChild(h);}
           else {var h3=node('h3');h3.appendChild(link);card.appendChild(h3);}
           if(item.summary)card.appendChild(node('p','lead-deck',item.summary));
           card.appendChild(node('div','src',(item.category||'Notícias')+' · '+item.source+' · '+new Date(item.published).toLocaleDateString('pt-BR')));
@@ -3884,21 +3932,21 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
           top.appendChild(node('span','fc-time',new Date(item.published).toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})));
           card.appendChild(top);
           var title=node('a','fc-headline auto-news-link',item.title);
-          title.href=item.url;title.target='_blank';title.rel='noopener noreferrer';
+          title.href='#';
+          title.addEventListener('click',function(e){e.preventDefault();openAutoNews(item);});
           card.appendChild(title);
           if(item.summary)card.appendChild(node('p','fc-summary',item.summary));
           var bottom=node('div','fc-bottom');
           bottom.appendChild(node('span','fc-source','● '+item.source));
-          var read=node('a','fc-link','ler na fonte ↗');
-          read.href=item.url;read.target='_blank';read.rel='noopener noreferrer';
-          bottom.appendChild(read);card.appendChild(bottom);
+          bottom.appendChild(node('span','fc-link','ler notícia ↗'));
+          card.appendChild(bottom);
+          card.addEventListener('click',function(e){if(e.target.closest('a'))return;openAutoNews(item);});
           feed.insertBefore(card,feed.firstChild);
         });
       }
     })
     .catch(function(error){console.info('Notícias automáticas indisponíveis nesta visita:',error.message);});
 })();
-</script>
 
 </body>
 </html>
