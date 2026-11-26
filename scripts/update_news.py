@@ -101,3 +101,5 @@ Path("noticias-auto.json").write_text(json.dumps(payload, ensure_ascii=False, in
 print(f"Arquivo gerado com {payload['count']} notícias.")
 
 # Execução manual solicitada em 25/11/2026.
+
+# Atualização manual solicitada em 26/11/2026.
