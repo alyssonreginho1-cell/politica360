@@ -3921,7 +3921,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
           card.appendChild(node('div','src',(item.category||'Notícias')+' · '+item.source+' · '+new Date(item.published).toLocaleDateString('pt-BR')));
           section.appendChild(card);
         });
-        mid.insertBefore(section,mid.firstChild);
+        Array.from(mid.children).forEach(function(el){el.hidden=true;});mid.insertBefore(section,mid.firstChild);section.hidden=false;
       }
       if(feed){
         items.slice().reverse().forEach(function(item){
